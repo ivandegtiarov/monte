@@ -241,7 +241,7 @@
         "reverse_desktop": false,
         "reverse_mobile": false,
         "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40,
+        "padding_bottom_desktop": 20,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
@@ -286,8 +286,8 @@
         "body_color": "#182153bf",
         "reverse_desktop": true,
         "reverse_mobile": false,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
@@ -333,7 +333,7 @@
         "body_color": "#182153bf",
         "reverse_desktop": false,
         "reverse_mobile": false,
-        "padding_top_desktop": 40,
+        "padding_top_desktop": 20,
         "padding_bottom_desktop": 40,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
