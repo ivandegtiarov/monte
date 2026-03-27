@@ -174,6 +174,22 @@
         "input_text_color": ""
       }
     },
+    "marquee_bar": {
+      "type": "marquee-bar",
+      "blocks": {
+        "item_1": { "type": "item", "settings": { "text": "Same-Day Dispatch" } },
+        "item_2": { "type": "item", "settings": { "text": "1–2 Business Day Delivery" } },
+        "item_3": { "type": "item", "settings": { "text": "30-Night Money-Back Guarantee" } },
+        "item_4": { "type": "item", "settings": { "text": "Free Shipping over 250 zł" } }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4"],
+      "settings": {
+        "background_color": "#232e71",
+        "text_color": "#f8f1e9",
+        "speed": 24,
+        "pause_on_hover": true
+      }
+    },
     "stats_social_proof": {
       "type": "stats-social-proof",
       "blocks": {
@@ -424,6 +440,7 @@
   },
   "order": [
     "main",
+    "marquee_bar",
     "stats_social_proof",
     "stats_social_proof_LHaDaL",
     "stats_social_proof_TKncbt",
