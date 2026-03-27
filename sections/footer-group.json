@@ -11,78 +11,40 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
-    "text-with-icons": {
-      "type": "text-with-icons",
+    "trust_bar": {
+      "type": "trust-bar",
       "blocks": {
-        "free-shipping": {
+        "trust_1": {
           "type": "item",
           "settings": {
-            "icon": "picto-box",
-            "mobile_icon_width": 24,
-            "icon_width": 24,
-            "icon_background_type": "none",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "Free shipping",
-            "content": "<p>Tell your customers about your shipping offer.</p>"
+            "heading": "Free Shipping over 250 zł",
+            "subline": "Taxes and duties included."
           }
         },
-        "customer-support": {
+        "trust_2": {
           "type": "item",
           "settings": {
-            "icon": "picto-customer-support",
-            "mobile_icon_width": 24,
-            "icon_width": 24,
-            "icon_background_type": "none",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "Customer service",
-            "content": "<p>Tell your customers how they can reach you.</p>"
+            "heading": "30-Night Money-Back Guarantee",
+            "subline": "Try it at home, return it if it's not right."
           }
         },
-        "discount": {
+        "trust_3": {
           "type": "item",
           "settings": {
-            "icon": "picto-coupon",
-            "mobile_icon_width": 24,
-            "icon_width": 24,
-            "icon_background_type": "none",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "Refer a friend",
-            "content": "<p>Tell your customers about your promotional offers.</p>"
-          }
-        },
-        "payment": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-lock",
-            "mobile_icon_width": 24,
-            "icon_width": 24,
-            "icon_background_type": "none",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "Secure payment",
-            "content": "<p>Tel your customers about your payment methods.</p>"
+            "heading": "Same-Day Dispatch",
+            "subline": "Order today, we dispatch it the same day."
           }
         }
       },
       "block_order": [
-        "free-shipping",
-        "customer-support",
-        "discount",
-        "payment"
+        "trust_1",
+        "trust_2",
+        "trust_3"
       ],
       "settings": {
-        "full_width": true,
-        "stack_on_mobile": false,
-        "title": "",
-        "heading_tag": "h6",
-        "text_alignment": "center",
-        "icon_spacing": "small",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153"
       }
     },
     "footer": {
@@ -225,25 +187,10 @@
         "newsletter_placeholder": "Enter your email",
         "copyright_text": "© 2026 Monté. All Rights Reserved."
       }
-    },
-    "trust_bar": {
-      "type": "trust-bar",
-      "blocks": {
-        "trust_1": { "type": "item", "settings": { "heading": "Free Shipping over 250 zł", "subline": "Taxes and duties included." } },
-        "trust_2": { "type": "item", "settings": { "heading": "30-Night Money-Back Guarantee", "subline": "Try it at home, return it if it's not right." } },
-        "trust_3": { "type": "item", "settings": { "heading": "Same-Day Dispatch", "subline": "Order today, we dispatch it the same day." } }
-      },
-      "block_order": ["trust_1", "trust_2", "trust_3"],
-      "settings": {
-        "background_color": "#fdfbf9",
-        "heading_color": "#182153",
-        "body_color": "#182153"
-      }
     }
   },
   "order": [
     "trust_bar",
-    "text-with-icons",
     "footer",
     "monte_footer"
   ]
