@@ -40,10 +40,12 @@
     line-height: 1.4;
     color: {{ section.settings.text_color }};
     white-space: nowrap;
+    font-style: italic;
   }
 
   .marquee-bar-{{ section.id }} .marquee__dot {
     flex-shrink: 0;
+    display: flex;
   }
 
   @keyframes marquee-scroll-{{ section.id }} {
