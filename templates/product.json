@@ -238,6 +238,54 @@
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
         "body_color": "#182153bf",
+        "reverse_desktop": false,
+        "reverse_mobile": false,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "stats_social_proof_LHaDaL": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_PnqMAr": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_item_KAbrAf": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        },
+        "review_card_wYxTgi": {
+          "type": "review_card",
+          "disabled": true,
+          "settings": {
+            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
+            "reviewer_name": "Anna K.",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_PnqMAr",
+        "feature_item_KAbrAf",
+        "review_card_wYxTgi"
+      ],
+      "settings": {
+        "tagline": "Beauty Sleep",
+        "heading": "Silk that **feels gentle**",
+        "body": "A refined routine starts with what touches your skin for hours. 22-momme mulberry silk feels smooth and calm on the face, so you wake up looking rested, not pressed.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": true,
+        "reverse_mobile": false,
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 40,
         "padding_top_mobile": 32,
@@ -247,6 +295,7 @@
   },
   "order": [
     "main",
-    "stats_social_proof"
+    "stats_social_proof",
+    "stats_social_proof_LHaDaL"
   ]
 }
