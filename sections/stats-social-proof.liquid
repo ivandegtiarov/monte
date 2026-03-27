@@ -1,8 +1,14 @@
 <style>
+  .section.stats-proof-{{ section.id }} {
+    padding: 0;
+  }
+
   .stats-proof-{{ section.id }} {
     background-color: {{ section.settings.background_color }};
     padding-top: {{ section.settings.padding_top_mobile }}px;
     padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .stats-proof-{{ section.id }} .stats-proof__inner {
