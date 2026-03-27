@@ -134,6 +134,55 @@
     "monte_footer": {
       "type": "monte-footer",
       "blocks": {
+        "payment_icon_w4HH6j": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/Payment_Method_49.svg",
+            "label": "Payment method"
+          }
+        },
+        "payment_icon_gMnJ7t": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/Payment_Method_50.svg",
+            "label": "Payment method"
+          }
+        },
+        "payment_icon_BUiAyY": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/Payment_Method_51.svg",
+            "label": "Payment method"
+          }
+        },
+        "payment_icon_NtV3tV": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/Payment_Method_52.svg",
+            "label": "Payment method"
+          }
+        },
+        "payment_icon_HfERAr": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/Payment_Method_53.svg",
+            "label": "Payment method"
+          }
+        },
+        "payment_icon_EGyjHe": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/Payment_Method_54.svg",
+            "label": "Payment method"
+          }
+        },
+        "payment_icon_3hfMtQ": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/Payment_Method_55.svg",
+            "label": "Payment method"
+          }
+        },
         "nav_store": {
           "type": "nav_column",
           "settings": {
@@ -157,6 +206,13 @@
         }
       },
       "block_order": [
+        "payment_icon_w4HH6j",
+        "payment_icon_gMnJ7t",
+        "payment_icon_BUiAyY",
+        "payment_icon_NtV3tV",
+        "payment_icon_HfERAr",
+        "payment_icon_EGyjHe",
+        "payment_icon_3hfMtQ",
         "nav_store",
         "nav_legal",
         "nav_social"
