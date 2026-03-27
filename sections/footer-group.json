@@ -17,6 +17,7 @@
         "trust_1": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Shipping-Transfer-Truck--Streamline-Sharp_1.svg",
             "heading": "Free Shipping over 250 zł",
             "subline": "Taxes and duties included."
           }
@@ -24,6 +25,7 @@
         "trust_2": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Shipment-Return--Streamline-Sharp.svg",
             "heading": "30-Night Money-Back Guarantee",
             "subline": "Try it at home, return it if it's not right."
           }
@@ -31,6 +33,7 @@
         "trust_3": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Package--Streamline-Sharp_1.svg",
             "heading": "Same-Day Dispatch",
             "subline": "Order today, we dispatch it the same day."
           }
