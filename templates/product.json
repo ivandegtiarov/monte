@@ -174,85 +174,6 @@
         "input_text_color": ""
       }
     },
-    "media_with_text_PYwfmw": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_8pMt3h": {
-          "type": "image",
-          "settings": {
-            "media_width": 50,
-            "media_position": "start",
-            "text_position": "place-self-center-start text-start",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "Light Sleepers",
-            "title": "Protect your night",
-            "content": "<p>If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete. Monté creates a private pocket of darkness so you can stay settled, even when the world is not.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "rgba(0,0,0,0)",
-            "background_gradient": "",
-            "text_color": "#182153",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        },
-        "image_7NtCNe": {
-          "type": "image",
-          "settings": {
-            "media_width": 50,
-            "media_position": "end",
-            "text_position": "place-self-center-start text-start",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "Beauty Sleep",
-            "title": "Silk that feels gentle",
-            "content": "<p>A refined routine starts with what touches your skin for hours. 22-momme mulberry silk feels smooth and calm on the face, so you wake up looking rested, not pressed.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "rgba(0,0,0,0)",
-            "background_gradient": "",
-            "text_color": "#182153",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        },
-        "image_7xnTGt": {
-          "type": "image",
-          "settings": {
-            "media_width": 50,
-            "media_position": "start",
-            "text_position": "place-self-center-start text-start",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "Quiet Luxury",
-            "title": "Make rest feel intentional",
-            "content": "<p>This is not another sleep gadget. It is a small upgrade you will use every night, turning going to bed into a calm ritual you look forward to. Minimal, elegant, and made to belong in your evening routine.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "rgba(0,0,0,0)",
-            "background_gradient": "",
-            "text_color": "#182153",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_8pMt3h",
-        "image_7NtCNe",
-        "image_7xnTGt"
-      ],
-      "name": "Media with text",
-      "settings": {
-        "full_width": false,
-        "alternate_media_position": false,
-        "spacing": "small"
-      }
-    },
     "stats_social_proof": {
       "type": "stats-social-proof",
       "blocks": {
@@ -322,88 +243,10 @@
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "recommendations_count": 6,
-        "products": [],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "You may also like",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
-    "faq_fDUKfX": {
-      "type": "faq",
-      "blocks": {
-        "item_QpFVHD": {
-          "type": "item",
-          "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
-          }
-        },
-        "item_LbD6Ee": {
-          "type": "item",
-          "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
-          }
-        },
-        "item_B3rr3J": {
-          "type": "item",
-          "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_QpFVHD",
-        "item_LbD6Ee",
-        "item_B3rr3J"
-      ],
-      "name": "FAQ",
-      "settings": {
-        "full_width": true,
-        "subheading": "",
-        "title": "FAQ",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
-        "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
-        "button_text": "",
-        "button_url": "",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "button_background": "",
-        "button_text_color": "",
-        "accordion_background": "",
-        "accordion_text_color": ""
-      }
     }
   },
   "order": [
     "main",
-    "media_with_text_PYwfmw",
-    "stats_social_proof",
-    "related-products",
-    "faq_fDUKfX"
+    "stats_social_proof"
   ]
 }
