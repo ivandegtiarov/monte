@@ -32,6 +32,12 @@
     gap: 0;
   }
 
+  .mfooter-{{ section.id }} .mfooter__newsletter-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .mfooter-{{ section.id }} .mfooter__col-heading {
     font-family: "PP Neue Montreal Mono", monospace;
     font-size: 14px;
@@ -324,10 +330,12 @@
 
       <!-- Newsletter -->
       <div class="mfooter__newsletter">
-        <h3 class="mfooter__col-heading">{{ section.settings.newsletter_heading }}</h3>
-        {%- if section.settings.newsletter_desc != blank -%}
-          <p class="mfooter__newsletter-desc">{{ section.settings.newsletter_desc }}</p>
-        {%- endif -%}
+        <div class="mfooter__newsletter-header">
+          <h3 class="mfooter__col-heading">{{ section.settings.newsletter_heading }}</h3>
+          {%- if section.settings.newsletter_desc != blank -%}
+            <p class="mfooter__newsletter-desc">{{ section.settings.newsletter_desc }}</p>
+          {%- endif -%}
+        </div>
         <div class="mfooter__newsletter-form">
           {%- form 'customer', id: 'footer-newsletter-form' -%}
             <input type="hidden" name="contact[tags]" value="newsletter">
