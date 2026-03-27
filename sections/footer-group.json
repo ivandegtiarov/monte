@@ -137,14 +137,14 @@
           "type": "nav_column",
           "settings": {
             "heading": "Store",
-            "menu": "footer"
+            "menu": "main-menu"
           }
         },
         "nav_legal": {
           "type": "nav_column",
           "settings": {
             "heading": "Legal",
-            "menu": "footer"
+            "menu": "customer-account-main-menu"
           }
         },
         "nav_social": {
