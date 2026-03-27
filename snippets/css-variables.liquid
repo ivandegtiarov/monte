@@ -11,6 +11,47 @@ note that this may have impact on different places.
   {%- assign text_font_bold = settings.text_font | font_modify: 'weight', 'bolder' -%}
   {%- assign text_font_bold_italic = text_font_bold | font_modify: 'style', 'italic' -%}
 
+  /* Custom fonts */
+  @font-face {
+    font-family: "PP Pangaia";
+    src: url("https://cdn.shopify.com/s/files/1/1018/4258/3886/files/PPPangaia-Medium.ttf?v=1774251783") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: "PP Pangaia";
+    src: url("https://cdn.shopify.com/s/files/1/1018/4258/3886/files/PPPangaia-MediumItalic.ttf?v=1774251783") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: "PP Neue Montreal Mono";
+    src: url("https://cdn.shopify.com/s/files/1/1018/4258/3886/files/PPNeueMontrealMono-Medium.ttf?v=1774251806") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: "PP Mori";
+    src: url("https://cdn.shopify.com/s/files/1/1018/4258/3886/files/PPMori-Regular.ttf?v=1774251856") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: "PP Mori";
+    src: url("https://cdn.shopify.com/s/files/1/1018/4258/3886/files/PPMori-Semibold.ttf?v=1774251857") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+  }
+
   /* Typography (heading) */
   {{ settings.heading_font | font_face: font_display: 'fallback' }}
 
@@ -118,12 +159,12 @@ note that this may have impact on different places.
      */
 
     /* Font properties */
-    --heading-font-family: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};
+    --heading-font-family: "PP Pangaia", {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};
     --heading-font-weight: {{ settings.heading_font.weight }};
     --heading-font-style: {{ settings.heading_font.style }};
     --heading-text-transform: {{ settings.heading_text_transform }};
     --heading-letter-spacing: {% if direction == 'rtl' %}0{% else %}{{ settings.heading_letter_spacing | divided_by: 100.0 }}em{% endif %};
-    --text-font-family: {{ settings.text_font.family }}, {{ settings.text_font.fallback_families }};
+    --text-font-family: "PP Mori", {{ settings.text_font.family }}, {{ settings.text_font.fallback_families }};
     --text-font-weight: {{ settings.text_font.weight }};
     --text-font-style: {{ settings.text_font.style }};
     --text-letter-spacing: {% if direction == 'rtl' %}0{% else %}{{ settings.text_font_letter_spacing | divided_by: 100.0 }}em{% endif %};
