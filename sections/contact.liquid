@@ -7,10 +7,6 @@
     --section-stack-intro: {% if text_position == 'center' %}66.6667%{% elsif section.settings.contact_form_size == 'small' %}50%{% else %}41.6667%{% endif %};
     --section-stack-main: {% if section.settings.contact_form_size == 'small' %}50%{% else %}58.3334%{% endif %};
   }
-
-  #shopify-section-{{ section.id }} .contact-form {
-    padding: 0;
-  }
 </style>
 
 <div {% render 'section-properties' %}>
