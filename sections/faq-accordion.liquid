@@ -1,0 +1,518 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    padding: 0;
+  }
+
+  .faq-accordion-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Header */
+  .faq-accordion-{{ section.id }} .faq__header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__tagline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "PP Neue Montreal Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: {{ section.settings.heading_color }};
+    opacity: 0.75;
+    line-height: 1.5;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__tagline-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: currentColor;
+    flex-shrink: 0;
+    opacity: 1;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__heading {
+    font-family: "PP Pangaia", serif;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: italic;
+    color: {{ section.settings.heading_color }};
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__heading em {
+    font-style: normal;
+  }
+
+  /* Accordion list */
+  .faq-accordion-{{ section.id }} .faq__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Each item */
+  .faq-accordion-{{ section.id }} .faq__item {
+    border-bottom: 1px dashed #dcd6cf;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__item:first-child {
+    border-top: 1px dashed #dcd6cf;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    cursor: pointer;
+    list-style: none;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 20px;
+    background-color: #f8f1e9;
+    border-radius: 999px;
+    font-family: "PP Neue Montreal Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #232e71;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__question-text {
+    flex: 1;
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ section.settings.heading_color }};
+    line-height: 1.5;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    position: relative;
+    color: {{ section.settings.heading_color }};
+    transition: transform 0.3s ease;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__icon::before,
+  .faq-accordion-{{ section.id }} .faq__icon::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* horizontal bar */
+  .faq-accordion-{{ section.id }} .faq__icon::before {
+    width: 12px;
+    height: 1.5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* vertical bar */
+  .faq-accordion-{{ section.id }} .faq__icon::after {
+    width: 1.5px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Answer */
+  .faq-accordion-{{ section.id }} .faq__answer-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__answer-wrap.is-open {
+    grid-template-rows: 1fr;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__answer-inner {
+    overflow: hidden;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__answer {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: {{ section.settings.body_color }};
+    line-height: 1.6;
+    padding-bottom: 16px;
+    padding-left: 44px;
+    margin: 0;
+  }
+
+  .faq-accordion-{{ section.id }} .faq__answer p {
+    margin: 0;
+  }
+
+  /* Open state — rotate vertical bar to horizontal (becomes minus) */
+  .faq-accordion-{{ section.id }} .faq__item.is-open .faq__icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 900px) {
+    .faq-accordion-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__inner {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__header {
+      flex: 1;
+      padding: 40px;
+      gap: 20px;
+      position: sticky;
+      top: 80px;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__tagline {
+      font-size: 12px;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__heading {
+      font-size: 32px;
+      font-style: normal;
+      line-height: 1.3;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__heading em {
+      font-style: italic;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__list {
+      flex: 1;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__question {
+      gap: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__badge {
+      font-size: 12px;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__question-text {
+      font-size: 16px;
+    }
+
+    .faq-accordion-{{ section.id }} .faq__answer {
+      font-size: 15px;
+      padding-bottom: 20px;
+      padding-left: 52px;
+    }
+  }
+</style>
+
+{%- liquid
+  assign heading_parts = section.settings.heading | split: '**'
+-%}
+
+<div class="faq-accordion-{{ section.id }}">
+  <div class="faq__inner">
+
+    <div class="faq__header">
+      {%- if section.settings.tagline != blank -%}
+        <div class="faq__tagline">
+          <span class="faq__tagline-dot"></span>
+          {{ section.settings.tagline }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="faq__heading">{%- for part in heading_parts -%}{%- if forloop.index0 == 1 -%}<em>{{ part }}</em>{%- else -%}{{ part }}{%- endif -%}{%- endfor -%}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="faq__list" role="list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq_item' -%}
+          <div class="faq__item" role="listitem" {{ block.shopify_attributes }}>
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-{{ section.id }}-{{ forloop.index }}">
+              <span class="faq__badge">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+              <span class="faq__question-text">{{ block.settings.question }}</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer-wrap" id="faq-answer-{{ section.id }}-{{ forloop.index }}">
+              <div class="faq__answer-inner">
+                {%- if block.settings.answer != blank -%}
+                  <div class="faq__answer">{{ block.settings.answer }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function() {
+    var section = document.querySelector('.faq-accordion-{{ section.id }}');
+    if (!section) return;
+
+    var items = section.querySelectorAll('.faq__item');
+
+    function closeItem(item) {
+      var btn = item.querySelector('.faq__question');
+      var wrap = item.querySelector('.faq__answer-wrap');
+      item.classList.remove('is-open');
+      wrap.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function openItem(item) {
+      var btn = item.querySelector('.faq__question');
+      var wrap = item.querySelector('.faq__answer-wrap');
+      item.classList.add('is-open');
+      wrap.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    items.forEach(function(item) {
+      var btn = item.querySelector('.faq__question');
+      btn.addEventListener('click', function() {
+        var isOpen = item.classList.contains('is-open');
+
+        // Close all
+        items.forEach(function(other) {
+          closeItem(other);
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          openItem(item);
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Wrap italic words with **. Example: We know what **you're wondering**",
+      "default": "We know what **you're wondering**"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading & question text",
+      "default": "#182153"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Answer text",
+      "default": "#182153"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top — desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom — desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top — mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom — mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Your question here"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Your answer here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Accordion",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it actually block light?",
+            "answer": "<p>Yes. The Monté sleep mask is designed with a contoured shape and blackout-grade fabric that blocks 100% of light — even in bright rooms or on early-morning flights.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "I hate tight masks. Will this press on my eyes?",
+            "answer": "<p>No. The mask uses a 3D contoured shell that sits away from your eyelids entirely, so there's no pressure on your eyes — even if you're a side sleeper.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it stay in place if I move at night?",
+            "answer": "<p>Yes. The adjustable elastic band is designed to hold the mask comfortably in place through the night, whether you sleep on your back, side, or stomach.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does \"22-momme silk\" mean, and why does it matter?",
+            "answer": "<p>Momme (mm) is the weight and density measure for silk. 22mm is considered premium — it's heavier, more durable, and feels noticeably softer than lower-grade silks used in most sleep masks.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is Monté a medical product or does it \"treat\" sleep issues?",
+            "answer": "<p>Monté is not a medical device. It's a sleep accessory designed to improve the conditions for rest. If you have a sleep disorder, please consult a healthcare professional.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it good for travel and naps?",
+            "answer": "<p>Yes — it's one of the best travel companions you can pack. Lightweight, compact, and effective in any lighting environment. Works just as well on a plane, train, or couch.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I care for it?",
+            "answer": "<p>Hand wash in cool water with a gentle detergent. Lay flat to dry. Avoid machine washing or wringing to preserve the silk and shape.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if it's not right for me?",
+            "answer": "<p>We offer a 30-day return policy. If it doesn't work for you, reach out to our team and we'll sort it out — no questions asked.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

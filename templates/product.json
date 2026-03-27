@@ -292,6 +292,27 @@
         "padding_bottom_mobile": 32
       }
     },
+    "faq_accordion": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_1": { "type": "faq_item", "settings": { "question": "Will it actually block light?", "answer": "<p>Yes. The Monté sleep mask is designed with a contoured shape and blackout-grade fabric that blocks 100% of light — even in bright rooms or on early-morning flights.</p>" } },
+        "faq_2": { "type": "faq_item", "settings": { "question": "I hate tight masks. Will this press on my eyes?", "answer": "<p>No. The mask uses a 3D contoured shell that sits away from your eyelids entirely, so there's no pressure on your eyes — even if you're a side sleeper.</p>" } },
+        "faq_3": { "type": "faq_item", "settings": { "question": "Will it stay in place if I move at night?", "answer": "<p>Yes. The adjustable elastic band is designed to hold the mask comfortably in place through the night, whether you sleep on your back, side, or stomach.</p>" } },
+        "faq_4": { "type": "faq_item", "settings": { "question": "What does \"22-momme silk\" mean, and why does it matter?", "answer": "<p>Momme (mm) is the weight and density measure for silk. 22mm is considered premium — it's heavier, more durable, and feels noticeably softer than lower-grade silks used in most sleep masks.</p>" } },
+        "faq_5": { "type": "faq_item", "settings": { "question": "Is Monté a medical product or does it \"treat\" sleep issues?", "answer": "<p>Monté is not a medical device. It's a sleep accessory designed to improve the conditions for rest. If you have a sleep disorder, please consult a healthcare professional.</p>" } },
+        "faq_6": { "type": "faq_item", "settings": { "question": "Is it good for travel and naps?", "answer": "<p>Yes — it's one of the best travel companions you can pack. Lightweight, compact, and effective in any lighting environment. Works just as well on a plane, train, or couch.</p>" } },
+        "faq_7": { "type": "faq_item", "settings": { "question": "How do I care for it?", "answer": "<p>Hand wash in cool water with a gentle detergent. Lay flat to dry. Avoid machine washing or wringing to preserve the silk and shape.</p>" } },
+        "faq_8": { "type": "faq_item", "settings": { "question": "What if it's not right for me?", "answer": "<p>We offer a 30-day return policy. If it doesn't work for you, reach out to our team and we'll sort it out — no questions asked.</p>" } }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6", "faq_7", "faq_8"],
+      "settings": {
+        "tagline": "FAQ",
+        "heading": "We know what **you're wondering**",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf"
+      }
+    },
     "stats_social_proof_TKncbt": {
       "type": "stats-social-proof",
       "blocks": {
@@ -344,6 +365,7 @@
     "main",
     "stats_social_proof",
     "stats_social_proof_LHaDaL",
-    "stats_social_proof_TKncbt"
+    "stats_social_proof_TKncbt",
+    "faq_accordion"
   ]
 }
