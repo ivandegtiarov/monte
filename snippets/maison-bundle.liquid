@@ -820,9 +820,12 @@ Supported variables:
     });
   });
 
-  // ── ATC click: add all items in active card to cart ──
+  // ── ATC click: mirrors ProductForm._onSubmit behaviour exactly ──
+  var mbAtcBusy = false;
   if (atcBtn) {
     atcBtn.addEventListener('click', function() {
+      if (mbAtcBusy) return;
+
       var card  = getActiveCard();
       var r1Id  = atcBtn.getAttribute('data-r1-id');
       var items = [{ id: parseInt(r1Id, 10), quantity: 1 }];
@@ -838,22 +841,64 @@ Supported variables:
       // Loading state
       var inner   = atcBtn.querySelector('[data-mb-atc-inner]');
       var spinner = atcBtn.querySelector('[data-mb-atc-spinner]');
-      atcBtn.disabled = true;
+      mbAtcBusy = true;
+      atcBtn.setAttribute('aria-busy', 'true');
       if (inner)   inner.hidden   = true;
       if (spinner) spinner.hidden = false;
 
-      fetch('/cart/add.js', {
+      // Collect sections to bundle (same as ProductForm — cart drawer needs its section HTML)
+      var sectionsToBundle = ['variant-added'];
+      document.documentElement.dispatchEvent(new CustomEvent('cart:prepare-bundled-sections', {
+        bubbles: true,
+        detail: { sections: sectionsToBundle }
+      }));
+
+      // Add items sequentially (Shopify /cart/add.js supports items[] array)
+      var formData = new FormData();
+      items.forEach(function(item, i) {
+        formData.append('items[' + i + '][id]', item.id);
+        formData.append('items[' + i + '][quantity]', item.quantity);
+      });
+      formData.set('sections', sectionsToBundle.join(','));
+      formData.set('sections_url', window.location.pathname);
+
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-        body: JSON.stringify({ items: items })
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        body: formData
       })
-      .then(function(res) { return res.json(); })
-      .then(function() {
-        document.dispatchEvent(new CustomEvent('cart:refresh'));
+      .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+      .then(function(result) {
+        if (!result.ok) {
+          document.dispatchEvent(new CustomEvent('cart:refresh'));
+          return;
+        }
+        // Fetch updated cart (same as ProductForm)
+        return fetch(window.Shopify.routes.root + 'cart.js')
+          .then(function(r) { return r.json(); })
+          .then(function(cartContent) {
+            cartContent['sections'] = result.data['sections'];
+
+            // variant:add — this is what opens the cart drawer
+            atcBtn.dispatchEvent(new CustomEvent('variant:add', {
+              bubbles: true,
+              detail: {
+                items: result.data.hasOwnProperty('items') ? result.data['items'] : [result.data],
+                cart: cartContent
+              }
+            }));
+
+            // cart:change — this updates the cart drawer contents
+            document.documentElement.dispatchEvent(new CustomEvent('cart:change', {
+              bubbles: true,
+              detail: { baseEvent: 'variant:add', cart: cartContent }
+            }));
+          });
       })
       .catch(function(err) { console.error('Bundle ATC error:', err); })
       .finally(function() {
-        atcBtn.disabled = false;
+        mbAtcBusy = false;
+        atcBtn.removeAttribute('aria-busy');
         if (inner)   inner.hidden   = false;
         if (spinner) spinner.hidden = true;
       });
