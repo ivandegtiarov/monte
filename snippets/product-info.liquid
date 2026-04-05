@@ -432,6 +432,9 @@ Supported variables
             </div>
           {%- endif -%}
 
+        {%- when 'maison-bundle' -%}
+          {%- render 'maison-bundle', block: block, product: product, product_form_id: product_form_id -%}
+
         {%- when 'payment_terms' -%}
           <payment-terms class="product-info__payment-terms">
             {%- capture product_installment_form_id -%}{{ product_form_id }}-product-installment-form{%- endcapture -%}

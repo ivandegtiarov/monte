@@ -1,0 +1,558 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAISON: BUNDLE BLOCK
+----------------------------------------------------------------------------------------------------------------------
+
+Renders the color swatch picker, bundle set rows (1/2/3 masks), and stock bar.
+The color popup is also rendered here and controlled via inline JS.
+
+Supported variables:
+* block: the block object
+* product: the current product
+* product_form_id: the product form ID (passed from product-info.liquid)
+{%- endcomment -%}
+
+{%- liquid
+  assign mb = block.settings
+  assign color_products = mb.color_products
+  assign bundle_2_product = mb.bundle_2_product
+  assign bundle_3_product = mb.bundle_3_product
+-%}
+
+<style>
+  .mb {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: {{ mb.mobile_margin_top }}px;
+    margin-bottom: {{ mb.mobile_margin_bottom }}px;
+    padding-top: {{ mb.mobile_padding_top }}px;
+    padding-bottom: {{ mb.mobile_padding_bottom }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .mb {
+      gap: 40px;
+      margin-top: {{ mb.desktop_margin_top }}px;
+      margin-bottom: {{ mb.desktop_margin_bottom }}px;
+      padding-top: {{ mb.desktop_padding_top }}px;
+      padding-bottom: {{ mb.desktop_padding_bottom }}px;
+    }
+  }
+
+  /* ── Color Picker ── */
+  .mb-colors__label { display: flex; gap: 8px; align-items: center; font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600; color: #182153; line-height: 1.5; opacity: .5; }
+  .mb-colors__swatches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .mb-colors__swatch {
+    display: block; width: 48px; height: 48px; border-radius: 8px;
+    overflow: hidden; border: 2px solid transparent; background: #fdfbf9;
+    cursor: pointer; text-decoration: none; transition: border-color .15s;
+  }
+  .mb-colors__swatch img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mb-colors__swatch--active { border-color: #232e71; }
+  @media screen and (min-width: 750px) {
+    .mb-colors__swatch { width: 56px; height: 56px; border-radius: 12px; }
+  }
+
+  /* ── Bundle rows ── */
+  .mb-sets__label { display: flex; gap: 8px; align-items: center; font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600; color: #182153; line-height: 1.5; opacity: .5; }
+  .mb-sets { display: flex; flex-direction: column; gap: 12px; }
+
+  .mb-row { position: relative; }
+
+  /* Tab badge */
+  .mb-row__tab {
+    position: absolute; top: -10px; right: 11px;
+    display: flex; align-items: flex-start; pointer-events: none; z-index: 1;
+  }
+  .mb-row__tab-corner {
+    width: 9px; height: 9px; background: #141a3f;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  }
+  .mb-row__tab-corner--right { clip-path: polygon(0 0, 0 100%, 100% 100%); }
+  .mb-row__tab-label {
+    background: #232e71; color: #fdfbf9;
+    font-family: "PP Neue Montreal Mono", monospace; font-size: 10px; font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase; line-height: 1.5;
+    padding: 0 12px; height: 20px; display: flex; align-items: center;
+    border-radius: 0 0 8px 8px;
+  }
+  @media screen and (min-width: 750px) {
+    .mb-row__tab { right: 19px; }
+  }
+
+  /* Card */
+  .mb-card {
+    border-radius: 8px; border: 2px solid transparent;
+    background: #fdfbf9; overflow: hidden; width: 100%;
+  }
+  .mb-card--selected { border-color: #232e71; background: #e8e9f0; }
+  .mb-card__top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px; gap: 12px; cursor: pointer;
+  }
+  @media screen and (min-width: 750px) {
+    .mb-card { border-radius: 12px; }
+    .mb-card__top { padding: 12px 20px; }
+  }
+  .mb-card__left { display: flex; flex-direction: column; gap: 0; }
+  .mb-card__title-row { display: flex; align-items: center; gap: 12px; }
+  .mb-card__title {
+    font-family: "PP Mori", sans-serif; font-size: 14px; font-weight: 600;
+    color: #182153; line-height: 1.5; white-space: nowrap;
+  }
+  .mb-card__badge-disc {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 20px; padding: 0 12px;
+    background: rgba(47, 107, 87, 0.08); border-radius: 999px;
+    font-family: "PP Neue Montreal Mono", monospace; font-size: 10px; font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase; color: #2f6b57; line-height: 1.5;
+    white-space: nowrap;
+  }
+  .mb-card__save {
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #182153; opacity: .5; line-height: 1.5; white-space: nowrap;
+  }
+  .mb-card__right { display: flex; flex-direction: column; align-items: flex-end; gap: 0; white-space: nowrap; }
+  .mb-card__price-row { display: flex; gap: 4px; align-items: baseline; }
+  .mb-card__price {
+    font-family: "PP Mori", sans-serif; font-size: 14px; font-weight: 600;
+    color: #182153; line-height: 1.5;
+  }
+  .mb-card__price-each {
+    font-family: "PP Mori", sans-serif; font-size: 14px; font-weight: 600;
+    color: rgba(24,33,83,.5); line-height: 1.5;
+  }
+  .mb-card__compare {
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #182153; opacity: .5; line-height: 1.5; text-decoration: line-through;
+  }
+
+  /* Expanded body */
+  .mb-card__body { display: none; }
+  .mb-card--selected .mb-card__body { display: flex; flex-direction: column; gap: 8px; padding: 0 12px 12px; }
+  @media screen and (min-width: 750px) {
+    .mb-card--selected .mb-card__body { padding: 0 20px 12px; }
+  }
+  .mb-card__divider { border: none; border-top: 1px solid rgba(24,33,83,.12); margin: 0 0 4px; }
+
+  .mb-card__item { display: flex; align-items: center; gap: 12px; }
+  .mb-card__item-img { width: 32px; height: 32px; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
+  .mb-card__item-img-placeholder {
+    width: 32px; height: 32px; border-radius: 4px; flex-shrink: 0;
+    background: #c4c7d9;
+  }
+  .mb-card__item-name {
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #182153; line-height: 1.5; flex: 1;
+  }
+
+  /* Choose color button row */
+  .mb-card__color-row { display: flex; align-items: center; gap: 12px; }
+  .mb-card__color-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 28px; padding: 0 16px;
+    background: #232e71; border-radius: 999px; border: none; cursor: pointer;
+    font-family: "PP Mori", sans-serif; font-size: 10px; font-weight: 600;
+    color: #fdfbf9; text-transform: uppercase; letter-spacing: .5px; white-space: nowrap;
+  }
+  .mb-card__color-thumb {
+    width: 32px; height: 32px; border-radius: 4px; background: #c4c7d9;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .mb-card__color-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* Footer strip */
+  .mb-card__footer {
+    background: #f8f1e9; border-top: 1px solid #f8f1e9;
+    padding: 4px 10px; text-align: center;
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #42403e; line-height: 1.5;
+  }
+  .mb-card--selected .mb-card__footer { background: #c4c7d9; border-color: #232e71; color: #182153; font-size: 10px; }
+
+  /* Stock bar */
+  .mb-stock { display: flex; align-items: center; gap: 20px; }
+  .mb-stock__dot {
+    width: 8px; height: 8px; border-radius: 999px; flex-shrink: 0;
+    background: #8a2f3a; box-shadow: 0 0 0 3px rgba(138,47,58,.25);
+  }
+  .mb-stock__label {
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #182153; line-height: 1.5; white-space: nowrap;
+  }
+  @media screen and (min-width: 750px) { .mb-stock__label { font-size: 14px; } }
+  .mb-stock__bar { flex: 1; height: 4px; border-radius: 999px; background: rgba(24,33,83,.08); overflow: hidden; }
+  .mb-stock__fill { height: 100%; border-radius: 999px; background: #8a2f3a; }
+
+  /* Color popup */
+  .mb-popup-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(24,33,83,.7); backdrop-filter: blur(4px);
+    align-items: flex-end; justify-content: center;
+  }
+  @media screen and (min-width: 750px) {
+    .mb-popup-overlay { align-items: center; justify-content: flex-end; padding: 8px; }
+  }
+  .mb-popup-overlay.is-open { display: flex; }
+
+  .mb-popup {
+    background: #fff; width: 100%; overflow: hidden;
+    border-radius: 16px 16px 0 0; max-height: 90vh; display: flex; flex-direction: column;
+  }
+  @media screen and (min-width: 750px) {
+    .mb-popup { width: 520px; height: 100%; border-radius: 24px; max-height: none; }
+  }
+  .mb-popup__header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 20px 8px;
+  }
+  .mb-popup__title {
+    font-family: "PP Pangaia", serif; font-size: 20px; font-weight: 500;
+    color: #182153; line-height: 1.4;
+  }
+  @media screen and (min-width: 750px) { .mb-popup__title { font-size: 24px; } }
+  .mb-popup__close {
+    width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+    border: none; background: none; cursor: pointer; border-radius: 8px; padding: 8px;
+  }
+  .mb-popup__list { overflow-y: auto; flex: 1; }
+  .mb-popup__item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 20px; border-bottom: 1px solid rgba(24,33,83,.08);
+  }
+  .mb-popup__img {
+    width: 64px; height: 64px; border-radius: 12px; object-fit: cover;
+    flex-shrink: 0; background: #fbf7f3;
+  }
+  @media screen and (min-width: 750px) { .mb-popup__img { width: 80px; height: 80px; } }
+  .mb-popup__info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .mb-popup__name {
+    font-family: "PP Mori", sans-serif; font-size: 14px; font-weight: 600;
+    color: #182153; line-height: 1.5;
+  }
+  @media screen and (min-width: 750px) { .mb-popup__name { font-size: 16px; } }
+  .mb-popup__prices { display: flex; align-items: center; gap: 8px; }
+  .mb-popup__compare {
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #182153; opacity: .5; text-decoration: line-through; line-height: 1.5;
+  }
+  @media screen and (min-width: 750px) { .mb-popup__compare { font-size: 14px; } }
+  .mb-popup__price {
+    font-family: "PP Mori", sans-serif; font-size: 14px; font-weight: 600;
+    color: #182153; line-height: 1.5;
+  }
+  @media screen and (min-width: 750px) { .mb-popup__price { font-size: 16px; } }
+  .mb-popup__choose {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 32px; padding: 0 16px; background: #232e71; border-radius: 999px;
+    border: none; cursor: pointer; text-decoration: none;
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #fdfbf9; text-transform: uppercase; letter-spacing: .5px; white-space: nowrap;
+  }
+</style>
+
+{%- comment -%} ── COLOR POPUP ── {%- endcomment -%}
+<div class="mb-popup-overlay" id="mb-popup-{{ block.id }}" aria-modal="true" role="dialog">
+  <div class="mb-popup">
+    <div class="mb-popup__header">
+      <p class="mb-popup__title">{{ mb.popup_title | default: 'Choose product' }}</p>
+      <button class="mb-popup__close" data-mb-close aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 2L14 14M14 2L2 14" stroke="#182153" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="mb-popup__list">
+      {%- for cp in color_products -%}
+        {%- assign cv = cp.selected_or_first_available_variant -%}
+        <div class="mb-popup__item">
+          {%- if cp.featured_image -%}
+            <img class="mb-popup__img" src="{{ cp.featured_image | image_url: width: 160 }}" alt="{{ cp.title | escape }}" width="80" height="80" loading="lazy">
+          {%- else -%}
+            <div class="mb-popup__img"></div>
+          {%- endif -%}
+          <div class="mb-popup__info">
+            <p class="mb-popup__name">{{ cp.title }}</p>
+            <div class="mb-popup__prices">
+              {%- if cv.compare_at_price > cv.price -%}
+                <span class="mb-popup__compare">
+                  {%- if settings.currency_code_enabled -%}{{ cv.compare_at_price | money_with_currency }}{%- else -%}{{ cv.compare_at_price | money }}{%- endif -%}
+                </span>
+              {%- endif -%}
+              <span class="mb-popup__price">
+                {%- if settings.currency_code_enabled -%}{{ cv.price | money_with_currency }}{%- else -%}{{ cv.price | money }}{%- endif -%}
+              </span>
+            </div>
+          </div>
+          <a href="{{ cp.url }}" class="mb-popup__choose">{{ mb.popup_choose_label | default: 'Choose' }}</a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<div class="mb" {{ block.shopify_attributes }}>
+
+  {%- comment -%} ── COLOR SWATCHES ── {%- endcomment -%}
+  {%- if color_products.count > 0 -%}
+    <div class="mb-colors">
+      <div class="mb-colors__label">
+        <span>{{ mb.color_label | default: 'SELECT YOUR COLOR:' }}</span>
+        <span style="font-weight:375;">{{ product.title }}</span>
+      </div>
+      <div class="mb-colors__swatches">
+        {%- for cp in color_products -%}
+          <a href="{{ cp.url }}"
+             class="mb-colors__swatch{% if cp.handle == product.handle %} mb-colors__swatch--active{% endif %}"
+             title="{{ cp.title | escape }}"
+             aria-label="{{ cp.title | escape }}"
+             aria-current="{% if cp.handle == product.handle %}true{% else %}false{% endif %}">
+            {%- if cp.featured_image -%}
+              <img src="{{ cp.featured_image | image_url: width: 112 }}" alt="{{ cp.title | escape }}" width="56" height="56" loading="lazy">
+            {%- endif -%}
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} ── BUNDLE SET ROWS ── {%- endcomment -%}
+  <div class="mb-sets">
+    <div class="mb-sets__label">
+      <span>{{ mb.set_label | default: 'CHOOSE YOUR SET:' }}</span>
+      <span style="font-weight:375;">{{ mb.set_label_default | default: '1 Mask' }}</span>
+    </div>
+
+    {%- comment -%} Row 1 – current product (1 mask) {%- endcomment -%}
+    {%- assign r1v = product.selected_or_first_available_variant -%}
+    <div class="mb-row" data-mb-row="0">
+      <div class="mb-card mb-card--selected" data-mb-card>
+        <div class="mb-card__top" data-mb-toggle>
+          <div class="mb-card__left">
+            <div class="mb-card__title-row">
+              <span class="mb-card__title">{{ mb.row1_title | default: '1 Mask' }}</span>
+            </div>
+          </div>
+          <div class="mb-card__right">
+            <div class="mb-card__price-row">
+              <span class="mb-card__price">
+                {%- if settings.currency_code_enabled -%}{{ r1v.price | money_with_currency }}{%- else -%}{{ r1v.price | money }}{%- endif -%}
+              </span>
+              <span class="mb-card__price-each">/ {{ mb.each_label | default: 'each' }}</span>
+            </div>
+            {%- if r1v.compare_at_price > r1v.price -%}
+              <span class="mb-card__compare">
+                {%- if settings.currency_code_enabled -%}{{ r1v.compare_at_price | money_with_currency }}{%- else -%}{{ r1v.compare_at_price | money }}{%- endif -%}
+              </span>
+            {%- endif -%}
+          </div>
+        </div>
+        <div class="mb-card__body">
+          <hr class="mb-card__divider">
+          <div class="mb-card__item">
+            {%- if product.featured_image -%}
+              <img class="mb-card__item-img" src="{{ product.featured_image | image_url: width: 64 }}" alt="{{ product.title | escape }}" width="32" height="32" loading="lazy">
+            {%- else -%}
+              <div class="mb-card__item-img-placeholder"></div>
+            {%- endif -%}
+            <span class="mb-card__item-name">{{ product.title }}</span>
+          </div>
+          <div class="mb-card__color-row">
+            {%- render 'buy-buttons',
+              product: product,
+              show_payment_button: false,
+              button_size: 'sm',
+              form_id: product_form_id
+            -%}
+          </div>
+        </div>
+      </div>
+      {%- if mb.row1_footer != blank -%}
+        <div class="mb-card__footer">{{ mb.row1_footer }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Row 2 {%- endcomment -%}
+    {%- if bundle_2_product != blank -%}
+      {%- assign r2v = bundle_2_product.selected_or_first_available_variant -%}
+      <div class="mb-row" data-mb-row="1">
+        {%- if mb.row2_tab != blank -%}
+          <div class="mb-row__tab">
+            <div class="mb-row__tab-corner"></div>
+            <div class="mb-row__tab-label">{{ mb.row2_tab }}</div>
+            <div class="mb-row__tab-corner mb-row__tab-corner--right"></div>
+          </div>
+        {%- endif -%}
+        <div class="mb-card" data-mb-card>
+          <div class="mb-card__top" data-mb-toggle>
+            <div class="mb-card__left">
+              <div class="mb-card__title-row">
+                <span class="mb-card__title">{{ mb.row2_title | default: '2 Masks' }}</span>
+                {%- if mb.row2_badge != blank -%}
+                  <span class="mb-card__badge-disc">{{ mb.row2_badge }}</span>
+                {%- endif -%}
+              </div>
+              {%- if mb.row2_save != blank -%}
+                <span class="mb-card__save">{{ mb.row2_save }}</span>
+              {%- endif -%}
+            </div>
+            <div class="mb-card__right">
+              <div class="mb-card__price-row">
+                <span class="mb-card__price">
+                  {%- if settings.currency_code_enabled -%}{{ r2v.price | money_with_currency }}{%- else -%}{{ r2v.price | money }}{%- endif -%}
+                </span>
+                <span class="mb-card__price-each">/ {{ mb.each_label | default: 'each' }}</span>
+              </div>
+              {%- if r2v.compare_at_price > r2v.price -%}
+                <span class="mb-card__compare">
+                  {%- if settings.currency_code_enabled -%}{{ r2v.compare_at_price | money_with_currency }}{%- else -%}{{ r2v.compare_at_price | money }}{%- endif -%}
+                </span>
+              {%- endif -%}
+            </div>
+          </div>
+          <div class="mb-card__body">
+            <hr class="mb-card__divider">
+            <div class="mb-card__item">
+              {%- if product.featured_image -%}
+                <img class="mb-card__item-img" src="{{ product.featured_image | image_url: width: 64 }}" alt="{{ product.title | escape }}" width="32" height="32" loading="lazy">
+              {%- else -%}
+                <div class="mb-card__item-img-placeholder"></div>
+              {%- endif -%}
+              <span class="mb-card__item-name">{{ product.title }}</span>
+            </div>
+            <div class="mb-card__color-row">
+              <div class="mb-card__color-thumb">
+                <div style="width:100%;height:100%;background:#c4c7d9;"></div>
+              </div>
+              <button class="mb-card__color-btn" data-mb-open="{{ block.id }}">
+                {{ mb.choose_color_label | default: 'Choose Mask Color' }}
+              </button>
+            </div>
+          </div>
+        </div>
+        {%- if mb.row2_footer != blank -%}
+          <div class="mb-card__footer">{{ mb.row2_footer }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Row 3 {%- endcomment -%}
+    {%- if bundle_3_product != blank -%}
+      {%- assign r3v = bundle_3_product.selected_or_first_available_variant -%}
+      <div class="mb-row" data-mb-row="2">
+        {%- if mb.row3_tab != blank -%}
+          <div class="mb-row__tab">
+            <div class="mb-row__tab-corner"></div>
+            <div class="mb-row__tab-label">{{ mb.row3_tab }}</div>
+            <div class="mb-row__tab-corner mb-row__tab-corner--right"></div>
+          </div>
+        {%- endif -%}
+        <div class="mb-card" data-mb-card>
+          <div class="mb-card__top" data-mb-toggle>
+            <div class="mb-card__left">
+              <div class="mb-card__title-row">
+                <span class="mb-card__title">{{ mb.row3_title | default: '3 Masks' }}</span>
+                {%- if mb.row3_badge != blank -%}
+                  <span class="mb-card__badge-disc">{{ mb.row3_badge }}</span>
+                {%- endif -%}
+              </div>
+              {%- if mb.row3_save != blank -%}
+                <span class="mb-card__save">{{ mb.row3_save }}</span>
+              {%- endif -%}
+            </div>
+            <div class="mb-card__right">
+              <div class="mb-card__price-row">
+                <span class="mb-card__price">
+                  {%- if settings.currency_code_enabled -%}{{ r3v.price | money_with_currency }}{%- else -%}{{ r3v.price | money }}{%- endif -%}
+                </span>
+                <span class="mb-card__price-each">/ {{ mb.each_label | default: 'each' }}</span>
+              </div>
+              {%- if r3v.compare_at_price > r3v.price -%}
+                <span class="mb-card__compare">
+                  {%- if settings.currency_code_enabled -%}{{ r3v.compare_at_price | money_with_currency }}{%- else -%}{{ r3v.compare_at_price | money }}{%- endif -%}
+                </span>
+              {%- endif -%}
+            </div>
+          </div>
+          <div class="mb-card__body">
+            <hr class="mb-card__divider">
+            <div class="mb-card__item">
+              {%- if product.featured_image -%}
+                <img class="mb-card__item-img" src="{{ product.featured_image | image_url: width: 64 }}" alt="{{ product.title | escape }}" width="32" height="32" loading="lazy">
+              {%- else -%}
+                <div class="mb-card__item-img-placeholder"></div>
+              {%- endif -%}
+              <span class="mb-card__item-name">{{ product.title }}</span>
+            </div>
+            <div class="mb-card__color-row">
+              <div class="mb-card__color-thumb">
+                <div style="width:100%;height:100%;background:#c4c7d9;"></div>
+              </div>
+              <button class="mb-card__color-btn" data-mb-open="{{ block.id }}">
+                {{ mb.choose_color_label | default: 'Choose Mask Color' }}
+              </button>
+            </div>
+          </div>
+        </div>
+        {%- if mb.row3_footer != blank -%}
+          <div class="mb-card__footer">{{ mb.row3_footer }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} ── STOCK BAR ── {%- endcomment -%}
+  {%- if mb.show_stock_bar -%}
+    <div class="mb-stock">
+      <div class="mb-stock__dot"></div>
+      <span class="mb-stock__label">{{ mb.stock_label | default: 'Limited availability' }}</span>
+      <div class="mb-stock__bar">
+        <div class="mb-stock__fill" style="width: {{ mb.stock_percentage | default: 30 }}%;"></div>
+      </div>
+    </div>
+  {%- endif -%}
+
+</div>
+
+<script>
+  (function() {
+    var popupId = {{ block.id | json }};
+    var overlay = document.getElementById('mb-popup-' + popupId);
+    if (!overlay) return;
+
+    // Open popup
+    document.querySelectorAll('[data-mb-open="' + popupId + '"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close popup
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closePopup();
+    });
+    overlay.querySelectorAll('[data-mb-close]').forEach(function(btn) {
+      btn.addEventListener('click', closePopup);
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closePopup();
+    });
+    function closePopup() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    // Expand/collapse rows — only one active at a time
+    document.querySelectorAll('[data-mb-toggle]').forEach(function(toggle) {
+      toggle.addEventListener('click', function() {
+        var card = toggle.closest('[data-mb-card]');
+        var isSelected = card.classList.contains('mb-card--selected');
+        document.querySelectorAll('[data-mb-card]').forEach(function(c) {
+          c.classList.remove('mb-card--selected');
+        });
+        if (!isSelected) card.classList.add('mb-card--selected');
+      });
+    });
+  })();
+</script>

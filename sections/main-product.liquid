@@ -2122,6 +2122,281 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       ]
     },
     {
+      "type": "maison-bundle",
+      "name": "Maison: Bundle",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Color swatches"
+        },
+        {
+          "type": "product_list",
+          "id": "color_products",
+          "label": "Color variants",
+          "info": "Each product represents a color option. The active product is highlighted."
+        },
+        {
+          "type": "text",
+          "id": "color_label",
+          "label": "Color label",
+          "default": "SELECT YOUR COLOR:"
+        },
+        {
+          "type": "header",
+          "content": "Set selector"
+        },
+        {
+          "type": "text",
+          "id": "set_label",
+          "label": "Set label",
+          "default": "CHOOSE YOUR SET:"
+        },
+        {
+          "type": "text",
+          "id": "set_label_default",
+          "label": "Selected set name",
+          "default": "1 Mask"
+        },
+        {
+          "type": "text",
+          "id": "each_label",
+          "label": "Per unit suffix",
+          "default": "each"
+        },
+        {
+          "type": "header",
+          "content": "Row 1 — 1 Mask"
+        },
+        {
+          "type": "text",
+          "id": "row1_title",
+          "label": "Title",
+          "default": "1 Mask"
+        },
+        {
+          "type": "text",
+          "id": "row1_footer",
+          "label": "Footer text",
+          "info": "Leave blank to hide footer strip."
+        },
+        {
+          "type": "header",
+          "content": "Row 2 — 2 Masks"
+        },
+        {
+          "type": "product",
+          "id": "bundle_2_product",
+          "label": "Bundle product (2 masks)"
+        },
+        {
+          "type": "text",
+          "id": "row2_title",
+          "label": "Title",
+          "default": "2 Masks"
+        },
+        {
+          "type": "text",
+          "id": "row2_badge",
+          "label": "Discount badge",
+          "default": "Extra 10% off"
+        },
+        {
+          "type": "text",
+          "id": "row2_save",
+          "label": "Save label",
+          "default": "Save 130,00 zł"
+        },
+        {
+          "type": "text",
+          "id": "row2_tab",
+          "label": "Tab label (e.g. Most Popular)",
+          "default": "Most Popular"
+        },
+        {
+          "type": "text",
+          "id": "row2_footer",
+          "label": "Footer text",
+          "default": "+ Free Shipping"
+        },
+        {
+          "type": "header",
+          "content": "Row 3 — 3 Masks"
+        },
+        {
+          "type": "product",
+          "id": "bundle_3_product",
+          "label": "Bundle product (3 masks)"
+        },
+        {
+          "type": "text",
+          "id": "row3_title",
+          "label": "Title",
+          "default": "3 Masks"
+        },
+        {
+          "type": "text",
+          "id": "row3_badge",
+          "label": "Discount badge",
+          "default": "Extra 20% off"
+        },
+        {
+          "type": "text",
+          "id": "row3_save",
+          "label": "Save label",
+          "default": "Save 270,00 zł"
+        },
+        {
+          "type": "text",
+          "id": "row3_tab",
+          "label": "Tab label (e.g. Best Value)",
+          "default": "Best Value"
+        },
+        {
+          "type": "text",
+          "id": "row3_footer",
+          "label": "Footer text",
+          "default": "+ Free Shipping"
+        },
+        {
+          "type": "header",
+          "content": "Color popup"
+        },
+        {
+          "type": "text",
+          "id": "popup_title",
+          "label": "Popup title",
+          "default": "Choose product"
+        },
+        {
+          "type": "text",
+          "id": "popup_choose_label",
+          "label": "Choose button label",
+          "default": "Choose"
+        },
+        {
+          "type": "text",
+          "id": "choose_color_label",
+          "label": "Choose color button label",
+          "default": "Choose Mask Color"
+        },
+        {
+          "type": "header",
+          "content": "Stock bar"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stock_bar",
+          "label": "Show stock bar",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "stock_label",
+          "label": "Label",
+          "default": "Limited availability"
+        },
+        {
+          "type": "range",
+          "id": "stock_percentage",
+          "label": "Fill percentage",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 30
+        },
+        {
+          "type": "header",
+          "content": "Desktop spacing"
+        },
+        {
+          "type": "range",
+          "id": "desktop_padding_top",
+          "label": "Padding top",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "desktop_padding_bottom",
+          "label": "Padding bottom",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "desktop_margin_top",
+          "label": "Margin top",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "desktop_margin_bottom",
+          "label": "Margin bottom",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Mobile spacing"
+        },
+        {
+          "type": "range",
+          "id": "mobile_padding_top",
+          "label": "Padding top",
+          "min": 0,
+          "max": 60,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mobile_padding_bottom",
+          "label": "Padding bottom",
+          "min": 0,
+          "max": 60,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mobile_margin_top",
+          "label": "Margin top",
+          "min": 0,
+          "max": 60,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mobile_margin_bottom",
+          "label": "Margin bottom",
+          "min": 0,
+          "max": 60,
+          "step": 4,
+          "unit": "px",
+          "default": 0
+        }
+      ]
+    },
+    {
       "type": "maison-price",
       "name": "Maison: Price",
       "limit": 1,
