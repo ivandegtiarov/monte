@@ -203,10 +203,7 @@ Supported variables
           {%- endif -%}
 
         {%- when 'maison-rating' -%}
-          {%- if product.metafields.reviews.rating.value != blank -%}
-            {%- assign rating_value = product.metafields.reviews.rating.value.rating | round: 1 -%}
-            {%- assign rating_count = product.metafields.reviews.rating_count.value -%}
-            {%- assign rating_max = product.metafields.reviews.rating.value.scale_max -%}
+          {%- if block.settings.rating_value != blank and block.settings.rating_count != blank -%}
             <style>
               .maison-rating {
                 display: flex;
@@ -248,11 +245,11 @@ Supported variables
               }
             </style>
             <div class="maison-rating" {{ block.shopify_attributes }}>
-              <div class="maison-rating__stars" role="img" aria-label="{{ 'general.rating.info' | t: rating_value: rating_value, rating_max: rating_max }}">
+              <div class="maison-rating__stars" role="img" aria-label="{{ block.settings.rating_value }} out of 5 stars">
                 {%- render 'icon' with 'rating-star', width: 12, height: 12, class: 'maison-rating__star' -%}
               </div>
               <p class="maison-rating__text">
-                Rated <strong>{{ rating_value }}</strong>/5 based on <strong>{{ rating_count }}</strong> reviews.
+                Rated <strong>{{ block.settings.rating_value }}</strong>/5 based on <strong>{{ block.settings.rating_count }}</strong> reviews.
               </p>
             </div>
           {%- endif -%}
@@ -291,6 +288,17 @@ Supported variables
                 border-radius: 999px;
                 color: #fff;
               }
+              .maison-features__icon--custom {
+                background-color: transparent;
+                border-radius: 0;
+                width: 20px;
+                height: 20px;
+              }
+              .maison-features__icon--custom img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
               .maison-features__text {
                 font-family: "PP Mori", sans-serif;
                 font-size: 12px;
@@ -312,11 +320,18 @@ Supported variables
             <ul class="maison-features" {{ block.shopify_attributes }}>
               {%- for i in (1..4) -%}
                 {%- assign fkey = 'feature_' | append: i -%}
+                {%- assign ficon = 'feature_' | append: i | append: '_icon' -%}
                 {%- if block.settings[fkey] != blank -%}
                   <li class="maison-features__item">
-                    <span class="maison-features__icon" aria-hidden="true">
-                      {%- render 'icon' with 'checkmark', width: 10, height: 10 -%}
-                    </span>
+                    {%- if block.settings[ficon] != blank -%}
+                      <span class="maison-features__icon maison-features__icon--custom" aria-hidden="true">
+                        <img src="{{ block.settings[ficon] | image_url: width: 20 }}" alt="" width="20" height="20" loading="lazy">
+                      </span>
+                    {%- else -%}
+                      <span class="maison-features__icon" aria-hidden="true">
+                        {%- render 'icon' with 'checkmark', width: 10, height: 10 -%}
+                      </span>
+                    {%- endif -%}
                     <span class="maison-features__text">{{ block.settings[fkey] }}</span>
                   </li>
                 {%- endif -%}

@@ -1859,8 +1859,18 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       "limit": 1,
       "settings": [
         {
-          "type": "paragraph",
-          "content": "Displays star rating and review count automatically from product metafields (reviews.rating)."
+          "type": "text",
+          "id": "rating_value",
+          "label": "Rating value",
+          "default": "4.8",
+          "info": "e.g. 4.8"
+        },
+        {
+          "type": "text",
+          "id": "rating_count",
+          "label": "Review count",
+          "default": "847",
+          "info": "e.g. 847"
         },
         {
           "type": "header",
@@ -1958,28 +1968,68 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       "limit": 1,
       "settings": [
         {
+          "type": "header",
+          "content": "Feature 1"
+        },
+        {
           "type": "text",
           "id": "feature_1",
-          "label": "Feature 1",
+          "label": "Text",
           "default": "100% Blackout for uninterrupted rest"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_1_icon",
+          "label": "Custom icon",
+          "info": "Replaces the default checkmark. 96x96px PNG or SVG recommended."
+        },
+        {
+          "type": "header",
+          "content": "Feature 2"
         },
         {
           "type": "text",
           "id": "feature_2",
-          "label": "Feature 2",
+          "label": "Text",
           "default": "Gentle on skin and hair"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_2_icon",
+          "label": "Custom icon",
+          "info": "Replaces the default checkmark. 96x96px PNG or SVG recommended."
+        },
+        {
+          "type": "header",
+          "content": "Feature 3"
         },
         {
           "type": "text",
           "id": "feature_3",
-          "label": "Feature 3",
+          "label": "Text",
           "default": "Pressure-free, all-night comfort"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_3_icon",
+          "label": "Custom icon",
+          "info": "Replaces the default checkmark. 96x96px PNG or SVG recommended."
+        },
+        {
+          "type": "header",
+          "content": "Feature 4"
         },
         {
           "type": "text",
           "id": "feature_4",
-          "label": "Feature 4",
+          "label": "Text",
           "default": "Secure fit that stays in place"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_4_icon",
+          "label": "Custom icon",
+          "info": "Replaces the default checkmark. 96x96px PNG or SVG recommended."
         },
         {
           "type": "header",
