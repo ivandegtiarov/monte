@@ -141,28 +141,22 @@ Supported variables:
   }
   .mb-card__color-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* Footer strip — inside card, after body */
+  /* Footer strip — always visible below card body */
   .mb-card__footer {
-    display: none;
-    padding: 4px 10px; text-align: center; margin-top: 8px;
-    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    padding: 6px 12px; text-align: center;
+    font-family: "PP Mori", sans-serif; font-size: 11px; font-weight: 600;
     color: #42403e; line-height: 1.5;
     background: #f8f1e9;
     border-top: 1px solid rgba(24,33,83,.08);
+    border-radius: 0 0 6px 6px;
   }
-  /* Collapsed state: show footer outside body with warm color */
-  .mb-card:not(.mb-card--selected) + .mb-card__footer-collapsed {
-    display: block;
-    background: #f8f1e9; color: #42403e;
-  }
-  /* Selected state: footer inside, blue tint */
+  /* Selected state: blue tint footer */
   .mb-card--selected .mb-card__footer {
-    display: block;
-    background: #c4c7d9; border-color: #232e71; color: #182153; font-size: 10px;
+    background: #c4c7d9; border-color: #232e71; color: #182153;
   }
 
   /* ── ATC wrapper: hide in collapsed, show in expanded ── */
-  .mb-card__atc { display: none; }
+  .mb-card__atc { display: none; padding: 0 0 8px; }
   .mb-card--selected .mb-card__atc { display: block; }
 
   /* Stock bar */
@@ -173,13 +167,17 @@ Supported variables:
   .mb-stock__bar { flex: 1; height: 4px; border-radius: 999px; background: rgba(24,33,83,.08); overflow: hidden; }
   .mb-stock__fill { height: 100%; border-radius: 999px; background: #8a2f3a; }
 
-  /* ── Popup ── */
+  /* ── Popup overlay ── */
   .mb-popup-overlay {
-    display: none; position: fixed; inset: 0; z-index: 1000;
+    position: fixed; inset: 0; z-index: 10000;
     background: rgba(24,33,83,.7); backdrop-filter: blur(4px);
-    align-items: flex-end; justify-content: center;
+    display: flex; align-items: flex-end; justify-content: center;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .35s ease, visibility .35s ease;
   }
-  .mb-popup-overlay.is-open { display: flex; }
+  .mb-popup-overlay.is-open {
+    opacity: 1; visibility: visible; pointer-events: auto;
+  }
   @media screen and (min-width: 750px) {
     .mb-popup-overlay { align-items: stretch; justify-content: flex-end; padding: 8px; }
   }
@@ -190,16 +188,17 @@ Supported variables:
     border-radius: 16px 16px 0 0; max-height: 90vh;
     display: flex; flex-direction: column; overflow: hidden;
     transform: translateY(100%);
-    transition: transform .35s cubic-bezier(.32,.72,0,1);
+    transition: transform .4s cubic-bezier(.32,.72,0,1);
+    will-change: transform;
   }
   .mb-popup-overlay.is-open .mb-popup { transform: translateY(0); }
 
   /* Desktop: slide in from right */
   @media screen and (min-width: 750px) {
     .mb-popup {
-      width: 520px; border-radius: 24px; max-height: none; height: 100%;
+      width: 420px; border-radius: 16px; max-height: none; height: 100%;
       transform: translateX(120%);
-      transition: transform .35s cubic-bezier(.32,.72,0,1);
+      transition: transform .4s cubic-bezier(.32,.72,0,1);
     }
     .mb-popup-overlay.is-open .mb-popup { transform: translateX(0); }
   }
@@ -230,7 +229,7 @@ Supported variables:
 </style>
 
 {%- comment -%} ── COLOR POPUP ── {%- endcomment -%}
-<div class="mb-popup-overlay" id="mb-popup-{{ block.id }}" role="dialog" aria-modal="true">
+<div class="mb-popup-overlay" id="mb-popup-{{ block.id }}" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="mb-popup">
     <div class="mb-popup__header">
       <p class="mb-popup__title">{{ mb.popup_title | default: 'Choose product' }}</p>
@@ -353,19 +352,10 @@ Supported variables:
             {%- endif -%}
             <span class="mb-card__item-name">{{ product.title }}</span>
           </div>
-          {%- comment -%} ATC — only visible when this row is active {%- endcomment -%}
-          <div class="mb-card__atc">
-            {%- render 'buy-buttons',
-              product: product,
-              show_payment_button: false,
-              button_size: 'sm',
-              form_id: product_form_id
-            -%}
-          </div>
-          {%- if mb.row1_footer != blank -%}
-            <div class="mb-card__footer">{{ mb.row1_footer }}</div>
-          {%- endif -%}
         </div>
+        {%- if mb.row1_footer != blank -%}
+          <div class="mb-card__footer">{{ mb.row1_footer }}</div>
+        {%- endif -%}
       </div>
     </div>
 
@@ -427,12 +417,19 @@ Supported variables:
                 <span data-mb-btn-label>{{ mb.choose_color_label | default: 'Choose Mask Color' }}</span>
               </button>
             </div>
-            {%- comment -%} Hidden input for chosen variant {%- endcomment -%}
-            <input type="hidden" data-mb-variant-input name="items[][id]" value="" disabled>
-            {%- if mb.row2_footer != blank -%}
-              <div class="mb-card__footer">{{ mb.row2_footer }}</div>
-            {%- endif -%}
+            {%- comment -%} ATC for row 2 {%- endcomment -%}
+            <div class="mb-card__atc">
+              {%- render 'buy-buttons',
+                product: bundle_2_product,
+                show_payment_button: false,
+                button_size: 'sm',
+                form_id: product_form_id
+              -%}
+            </div>
           </div>
+          {%- if mb.row2_footer != blank -%}
+            <div class="mb-card__footer">{{ mb.row2_footer }}</div>
+          {%- endif -%}
         </div>
       </div>
     {%- endif -%}
@@ -504,11 +501,19 @@ Supported variables:
                 <span data-mb-btn-label>{{ mb.choose_color_label | default: 'Choose Mask Color' }}</span>
               </button>
             </div>
-            <input type="hidden" data-mb-variant-input name="items[][id]" value="" disabled>
-            {%- if mb.row3_footer != blank -%}
-              <div class="mb-card__footer">{{ mb.row3_footer }}</div>
-            {%- endif -%}
+            {%- comment -%} ATC for row 3 {%- endcomment -%}
+            <div class="mb-card__atc">
+              {%- render 'buy-buttons',
+                product: bundle_3_product,
+                show_payment_button: false,
+                button_size: 'sm',
+                form_id: product_form_id
+              -%}
+            </div>
           </div>
+          {%- if mb.row3_footer != blank -%}
+            <div class="mb-card__footer">{{ mb.row3_footer }}</div>
+          {%- endif -%}
         </div>
       </div>
     {%- endif -%}
@@ -592,6 +597,7 @@ Supported variables:
       activeCard = btn.closest('[data-mb-card]');
       activeSlot = parseInt(btn.getAttribute('data-mb-target-slot') || '2', 10);
       overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     });
   });
@@ -608,6 +614,7 @@ Supported variables:
   });
   function closePopup() {
     overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     activeCard = null;
     activeSlot = null;
