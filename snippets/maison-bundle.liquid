@@ -409,22 +409,24 @@ Supported variables:
               <span class="mb-card__item-name">{{ product.title }}</span>
             </div>
             {%- comment -%} Slot 2: chosen via popup {%- endcomment -%}
-            <div class="mb-card__color-row" data-mb-slot="2">
-              <div class="mb-card__color-thumb" data-mb-thumb>
-                <div style="width:100%;height:100%;background:#c4c7d9;"></div>
+            <div class="mb-card__slot" data-mb-slot="2">
+              <div class="mb-card__slot-chosen" data-mb-chosen hidden>
+                <img class="mb-card__item-img" data-mb-thumb src="" alt="" width="32" height="32" loading="lazy">
+                <span class="mb-card__item-name" data-mb-btn-label></span>
+                <button class="mb-card__slot-clear" data-mb-clear aria-label="Remove">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
               </div>
-              <button class="mb-card__color-btn" data-mb-open="{{ block.id }}" data-mb-target-slot="2">
-                <span data-mb-btn-label>{{ mb.choose_color_label | default: 'Choose Mask Color' }}</span>
-              </button>
-            </div>
-            {%- comment -%} ATC for row 2 {%- endcomment -%}
-            <div class="mb-card__atc">
-              {%- render 'buy-buttons',
-                product: bundle_2_product,
-                show_payment_button: false,
-                button_size: 'sm',
-                form_id: product_form_id
-              -%}
+              <div class="mb-card__slot-empty" data-mb-empty>
+                <div class="mb-card__color-thumb">
+                  <div style="width:100%;height:100%;background:#c4c7d9;display:flex;align-items:center;justify-content:center;">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1V13M1 7H13" stroke="#182153" stroke-width="1.5" stroke-linecap="round" opacity=".4"/></svg>
+                  </div>
+                </div>
+                <button class="mb-card__color-btn" data-mb-open="{{ block.id }}" data-mb-target-slot="2">
+                  {{ mb.choose_color_label | default: 'Choose Mask Color' }}
+                </button>
+              </div>
             </div>
           </div>
           {%- if mb.row2_footer != blank -%}
@@ -484,31 +486,44 @@ Supported variables:
               <span class="mb-card__item-name">{{ product.title }}</span>
             </div>
             {%- comment -%} Slot 2: chosen via popup {%- endcomment -%}
-            <div class="mb-card__color-row" data-mb-slot="2">
-              <div class="mb-card__color-thumb" data-mb-thumb>
-                <div style="width:100%;height:100%;background:#c4c7d9;"></div>
+            <div class="mb-card__slot" data-mb-slot="2">
+              <div class="mb-card__slot-chosen" data-mb-chosen hidden>
+                <img class="mb-card__item-img" data-mb-thumb src="" alt="" width="32" height="32" loading="lazy">
+                <span class="mb-card__item-name" data-mb-btn-label></span>
+                <button class="mb-card__slot-clear" data-mb-clear aria-label="Remove">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
               </div>
-              <button class="mb-card__color-btn" data-mb-open="{{ block.id }}" data-mb-target-slot="2">
-                <span data-mb-btn-label>{{ mb.choose_color_label | default: 'Choose Mask Color' }}</span>
-              </button>
+              <div class="mb-card__slot-empty" data-mb-empty>
+                <div class="mb-card__color-thumb">
+                  <div style="width:100%;height:100%;background:#c4c7d9;display:flex;align-items:center;justify-content:center;">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1V13M1 7H13" stroke="#182153" stroke-width="1.5" stroke-linecap="round" opacity=".4"/></svg>
+                  </div>
+                </div>
+                <button class="mb-card__color-btn" data-mb-open="{{ block.id }}" data-mb-target-slot="2">
+                  {{ mb.choose_color_label | default: 'Choose Mask Color' }}
+                </button>
+              </div>
             </div>
             {%- comment -%} Slot 3: chosen via popup {%- endcomment -%}
-            <div class="mb-card__color-row" data-mb-slot="3">
-              <div class="mb-card__color-thumb" data-mb-thumb>
-                <div style="width:100%;height:100%;background:#c4c7d9;"></div>
+            <div class="mb-card__slot" data-mb-slot="3">
+              <div class="mb-card__slot-chosen" data-mb-chosen hidden>
+                <img class="mb-card__item-img" data-mb-thumb src="" alt="" width="32" height="32" loading="lazy">
+                <span class="mb-card__item-name" data-mb-btn-label></span>
+                <button class="mb-card__slot-clear" data-mb-clear aria-label="Remove">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
               </div>
-              <button class="mb-card__color-btn" data-mb-open="{{ block.id }}" data-mb-target-slot="3">
-                <span data-mb-btn-label>{{ mb.choose_color_label | default: 'Choose Mask Color' }}</span>
-              </button>
-            </div>
-            {%- comment -%} ATC for row 3 {%- endcomment -%}
-            <div class="mb-card__atc">
-              {%- render 'buy-buttons',
-                product: bundle_3_product,
-                show_payment_button: false,
-                button_size: 'sm',
-                form_id: product_form_id
-              -%}
+              <div class="mb-card__slot-empty" data-mb-empty>
+                <div class="mb-card__color-thumb">
+                  <div style="width:100%;height:100%;background:#c4c7d9;display:flex;align-items:center;justify-content:center;">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1V13M1 7H13" stroke="#182153" stroke-width="1.5" stroke-linecap="round" opacity=".4"/></svg>
+                  </div>
+                </div>
+                <button class="mb-card__color-btn" data-mb-open="{{ block.id }}" data-mb-target-slot="3">
+                  {{ mb.choose_color_label | default: 'Choose Mask Color' }}
+                </button>
+              </div>
             </div>
           </div>
           {%- if mb.row3_footer != blank -%}
@@ -552,11 +567,12 @@ Supported variables:
   var chosenBySlot = new WeakMap();
 
   function formatMoney(cents) {
-    var formatted = MONEY_FORMAT.replace('{{amount}}', (cents / 100).toFixed(2))
-                                .replace('{{amount_no_decimals}}', Math.round(cents / 100))
-                                .replace('{{amount_with_comma_separator}}', (cents / 100).toFixed(2).replace('.', ','))
-                                .replace('{{amount_no_decimals_with_comma_separator}}', Math.round(cents / 100).toString());
-    if (CURRENCY_CODE_ENABLED) formatted += ' ' + CURRENCY_CODE;
+    var amount = cents / 100;
+    var formatted = MONEY_FORMAT
+      .replace(/\{\{amount_no_decimals_with_comma_separator\}\}/g, Math.round(amount).toString().replace('.', ','))
+      .replace(/\{\{amount_with_comma_separator\}\}/g, amount.toFixed(2).replace('.', ','))
+      .replace(/\{\{amount_no_decimals\}\}/g, Math.round(amount).toString())
+      .replace(/\{\{amount\}\}/g, amount.toFixed(2));
     return formatted;
   }
 
