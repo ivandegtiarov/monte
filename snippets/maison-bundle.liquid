@@ -88,6 +88,7 @@ Supported variables:
   .mb-card {
     border-radius: 8px; border: 2px solid transparent;
     background: #fdfbf9; width: 100%; overflow: hidden;
+    transition: border-color .25s ease, background .25s ease;
   }
   .mb-card--selected { border-color: #232e71; background: #e8e9f0; }
   @media screen and (min-width: 750px) { .mb-card { border-radius: 12px; } }
@@ -116,10 +117,17 @@ Supported variables:
   .mb-card__price-each { font-family: "PP Mori", sans-serif; font-size: 14px; font-weight: 600; color: rgba(24,33,83,.5); line-height: 1.5; }
   .mb-card__compare { font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600; color: #182153; opacity: .5; line-height: 1.5; text-decoration: line-through; }
 
-  /* Expanded body — hidden by default */
-  .mb-card__body { display: none; flex-direction: column; gap: 8px; padding: 0 12px 0; }
-  .mb-card--selected .mb-card__body { display: flex; }
-  @media screen and (min-width: 750px) { .mb-card__body { padding: 0 20px 0; } }
+  /* Expanded body — height animated via JS */
+  .mb-card__body {
+    display: flex; flex-direction: column; gap: 8px; padding: 0 12px 0;
+    overflow: hidden; max-height: 0;
+    transition: max-height .38s cubic-bezier(.32,.72,0,1),
+                opacity .25s ease,
+                padding-bottom .38s cubic-bezier(.32,.72,0,1);
+    opacity: 0; padding-bottom: 0;
+  }
+  .mb-card--selected .mb-card__body { opacity: 1; padding-bottom: 12px; }
+  @media screen and (min-width: 750px) { .mb-card__body { padding-left: 20px; padding-right: 20px; } }
   .mb-card__divider { border: none; border-top: 1px solid rgba(24,33,83,.12); margin: 0 0 4px; }
 
   .mb-card__item { display: flex; align-items: center; gap: 12px; }
@@ -158,14 +166,13 @@ Supported variables:
     background: #f8f1e9;
     border-top: 1px solid rgba(24,33,83,.08);
     border-radius: 0 0 6px 6px;
+    transition: background .25s ease, border-color .25s ease, color .25s ease;
   }
   /* Selected state: blue tint footer */
   .mb-card--selected .mb-card__footer {
     background: #c4c7d9; border-color: #232e71; color: #182153;
   }
 
-  /* ── Card body bottom padding ── */
-  .mb-card--selected .mb-card__body { padding-bottom: 12px; }
 
   /* ── ATC button ── */
   .mb-atc {
@@ -614,6 +621,9 @@ Supported variables:
   var atcBtn    = mbBlock ? mbBlock.querySelector('[data-mb-atc]') : null;
   if (!overlay || !mbBlock) return;
 
+  // ── Teleport popup to <body> so it escapes any stacking context (same as cart-drawer) ──
+  document.body.appendChild(overlay);
+
   // ── State ──
   // activeCard: the currently expanded card element
   // activeSlot: which slot index we're filling (2 or 3)
@@ -632,30 +642,67 @@ Supported variables:
     return formatted;
   }
 
+  // ── Animate card body open/close ──
+  function openBody(card) {
+    var body = card.querySelector('.mb-card__body');
+    if (!body) return;
+    // Measure full height before class is applied
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+
+  function closeBody(card) {
+    var body = card.querySelector('.mb-card__body');
+    if (!body) return;
+    // Pin to current height first, then collapse to 0 next frame
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(function() {
+      body.style.maxHeight = '0px';
+    });
+  }
+
+  // ── Init: open first card body immediately (no animation on load) ──
+  var initialCard = mbBlock.querySelector('[data-mb-card].mb-card--selected');
+  if (initialCard) {
+    var initialBody = initialCard.querySelector('.mb-card__body');
+    if (initialBody) {
+      initialBody.style.transition = 'none';
+      initialBody.style.maxHeight  = initialBody.scrollHeight + 'px';
+      // Re-enable transitions after paint
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          initialBody.style.transition = '';
+        });
+      });
+    }
+  }
+
   // ── Expand / collapse rows ──
   document.querySelectorAll('[data-mb-toggle]').forEach(function(toggle) {
     toggle.addEventListener('click', function() {
-      var card = toggle.closest('[data-mb-card]');
+      var card       = toggle.closest('[data-mb-card]');
       var isSelected = card.classList.contains('mb-card--selected');
+      var labelEl    = mbBlock.querySelector('[data-mb-active-label]');
 
-      // Deselect all
+      // Close all other open cards
       document.querySelectorAll('[data-mb-card]').forEach(function(c) {
-        c.classList.remove('mb-card--selected');
+        if (c !== card && c.classList.contains('mb-card--selected')) {
+          closeBody(c);
+          c.classList.remove('mb-card--selected');
+        }
       });
-
-      // Update active label
-      var labelEl = mbBlock.querySelector('[data-mb-active-label]');
 
       if (!isSelected) {
         card.classList.add('mb-card--selected');
+        openBody(card);
         if (labelEl) {
           var title = card.querySelector('.mb-card__title');
           if (title) labelEl.textContent = title.textContent.trim();
         }
       } else {
-        // nothing selected — reset label to row 1 title
+        closeBody(card);
+        card.classList.remove('mb-card--selected');
         if (labelEl) {
-          var firstTitle = document.querySelector('[data-mb-row="1"] .mb-card__title');
+          var firstTitle = mbBlock.querySelector('[data-mb-row="1"] .mb-card__title');
           if (firstTitle) labelEl.textContent = firstTitle.textContent.trim();
         }
       }
