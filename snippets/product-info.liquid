@@ -149,10 +149,19 @@ Supported variables
                 text-transform: uppercase;
                 color: rgba(24, 33, 83, 0.75);
                 line-height: 1.5;
-                margin: 0;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
               }
               @media screen and (min-width: 750px) {
-                .maison-tagline { font-size: 12px; }
+                .maison-tagline {
+                  font-size: 12px;
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
               }
             </style>
             <p class="maison-tagline" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
@@ -166,14 +175,23 @@ Supported variables
               font-weight: 500;
               line-height: 1.4;
               color: #182153;
-              margin: 0;
+              margin-top: {{ block.settings.mobile_margin_top }}px;
+              margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+              padding-top: {{ block.settings.mobile_padding_top }}px;
+              padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
             }
             .maison-product-name a {
               color: inherit;
               text-decoration: none;
             }
             @media screen and (min-width: 750px) {
-              .maison-product-name { font-size: 24px; }
+              .maison-product-name {
+                font-size: 24px;
+                margin-top: {{ block.settings.desktop_margin_top }}px;
+                margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                padding-top: {{ block.settings.desktop_padding_top }}px;
+                padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+              }
             }
           </style>
           {%- if request.page_type == 'product' -%}
@@ -194,6 +212,10 @@ Supported variables
                 display: flex;
                 align-items: center;
                 gap: 8px;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
               }
               .maison-rating__stars {
                 display: flex;
@@ -216,6 +238,12 @@ Supported variables
                 font-weight: 800;
               }
               @media screen and (min-width: 750px) {
+                .maison-rating {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
                 .maison-rating__text { font-size: 12px; }
               }
             </style>
@@ -239,8 +267,10 @@ Supported variables
             <style>
               .maison-features {
                 list-style: none;
-                padding: 0;
-                margin: 0;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
@@ -269,6 +299,12 @@ Supported variables
                 line-height: 1.5;
               }
               @media screen and (min-width: 750px) {
+                .maison-features {
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                }
                 .maison-features__icon { width: 20px; height: 20px; }
                 .maison-features__text { font-size: 14px; }
               }
@@ -296,6 +332,10 @@ Supported variables
                 display: flex;
                 align-items: center;
                 gap: 12px;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
               }
               .maison-price__compare {
                 font-family: "PP Mori", sans-serif;
@@ -333,6 +373,12 @@ Supported variables
                 white-space: nowrap;
               }
               @media screen and (min-width: 750px) {
+                .maison-price {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
                 .maison-price__compare { font-size: 16px; }
                 .maison-price__sale { font-size: 18px; }
               }
