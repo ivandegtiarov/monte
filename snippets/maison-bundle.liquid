@@ -127,7 +127,16 @@ Supported variables:
   .mb-card__item-img-placeholder { width: 32px; height: 32px; border-radius: 4px; flex-shrink: 0; background: #c4c7d9; }
   .mb-card__item-name { font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600; color: #182153; line-height: 1.5; flex: 1; }
 
-  .mb-card__color-row { display: flex; align-items: center; gap: 12px; }
+  /* Slot rows */
+  .mb-card__slot { display: flex; align-items: center; }
+  .mb-card__slot-chosen { display: flex; align-items: center; gap: 12px; width: 100%; }
+  .mb-card__slot-chosen[hidden] { display: none; }
+  .mb-card__slot-empty { display: flex; align-items: center; gap: 12px; }
+  .mb-card__slot-clear {
+    margin-left: auto; width: 28px; height: 28px; border-radius: 999px;
+    border: none; background: rgba(24,33,83,.08); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
   .mb-card__color-btn {
     display: inline-flex; align-items: center; justify-content: center;
     height: 28px; padding: 0 16px;
@@ -653,15 +662,17 @@ Supported variables:
       if (!chosenBySlot.has(activeCard)) chosenBySlot.set(activeCard, {});
       chosenBySlot.get(activeCard)[activeSlot] = chosen;
 
-      // Update thumb + label for this slot
-      var slotRow = activeCard.querySelector('[data-mb-slot="' + activeSlot + '"]');
-      if (slotRow) {
-        var thumb = slotRow.querySelector('[data-mb-thumb]');
-        if (thumb) {
-          thumb.innerHTML = '<img src="' + chosen.image + '" alt="' + chosen.title + '" width="32" height="32">';
-        }
-        var btnLabel = slotRow.querySelector('[data-mb-btn-label]');
-        if (btnLabel) btnLabel.textContent = chosen.title;
+      // Update slot UI: show chosen row, hide empty row
+      var slotEl = activeCard.querySelector('[data-mb-slot="' + activeSlot + '"]');
+      if (slotEl) {
+        var chosenRow = slotEl.querySelector('[data-mb-chosen]');
+        var emptyRow  = slotEl.querySelector('[data-mb-empty]');
+        var thumb     = slotEl.querySelector('[data-mb-thumb]');
+        var label     = slotEl.querySelector('[data-mb-btn-label]');
+        if (thumb) { thumb.src = chosen.image; thumb.alt = chosen.title; }
+        if (label) label.textContent = chosen.title;
+        if (chosenRow) chosenRow.hidden = false;
+        if (emptyRow)  emptyRow.hidden  = true;
       }
 
       // Update price display
@@ -669,6 +680,26 @@ Supported variables:
 
       closePopup();
     });
+  });
+
+  // ── Clear a chosen slot ──
+  mbBlock.addEventListener('click', function(e) {
+    var clearBtn = e.target.closest('[data-mb-clear]');
+    if (!clearBtn) return;
+    var slotEl   = clearBtn.closest('[data-mb-slot]');
+    var card     = clearBtn.closest('[data-mb-card]');
+    var slotIdx  = parseInt(slotEl.getAttribute('data-mb-slot'), 10);
+
+    // Remove from state
+    if (chosenBySlot.has(card)) delete chosenBySlot.get(card)[slotIdx];
+
+    // Restore empty row
+    var chosenRow = slotEl.querySelector('[data-mb-chosen]');
+    var emptyRow  = slotEl.querySelector('[data-mb-empty]');
+    if (chosenRow) chosenRow.hidden = true;
+    if (emptyRow)  emptyRow.hidden  = false;
+
+    updatePrice(card);
   });
 
   // ── Update dynamic price ──
