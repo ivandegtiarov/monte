@@ -120,10 +120,10 @@ Supported variables:
   /* Expanded body — height animated via JS */
   .mb-card__body {
     display: flex; flex-direction: column; gap: 8px;
-    padding: 0 12px 12px 12px;
+    padding: 0 12px 0 12px;
     overflow: hidden; max-height: 0;
     opacity: 0;
-    transition: max-height .38s cubic-bezier(.32,.72,0,1), opacity .25s ease;
+    transition: max-height .38s cubic-bezier(.32,.72,0,1), opacity .25s ease, padding-bottom .38s cubic-bezier(.32,.72,0,1);
   }
   .mb-card--selected .mb-card__body { opacity: 1; }
   @media screen and (min-width: 750px) { .mb-card__body { padding-left: 20px; padding-right: 20px; } }
@@ -641,21 +641,23 @@ Supported variables:
     return formatted;
   }
 
+  var BODY_PADDING_BOTTOM = 12;
+
   // ── Animate card body open/close ──
   function openBody(card) {
     var body = card.querySelector('.mb-card__body');
     if (!body) return;
-    // Measure full height before class is applied
-    body.style.maxHeight = body.scrollHeight + 'px';
+    body.style.paddingBottom = BODY_PADDING_BOTTOM + 'px';
+    body.style.maxHeight = (body.scrollHeight + BODY_PADDING_BOTTOM) + 'px';
   }
 
   function closeBody(card) {
     var body = card.querySelector('.mb-card__body');
     if (!body) return;
-    // Pin to current height first, then collapse to 0 next frame
     body.style.maxHeight = body.scrollHeight + 'px';
     requestAnimationFrame(function() {
       body.style.maxHeight = '0px';
+      body.style.paddingBottom = '0px';
     });
   }
 
@@ -665,8 +667,8 @@ Supported variables:
     var initialBody = initialCard.querySelector('.mb-card__body');
     if (initialBody) {
       initialBody.style.transition = 'none';
-      initialBody.style.maxHeight  = initialBody.scrollHeight + 'px';
-      // Re-enable transitions after paint
+      initialBody.style.paddingBottom = BODY_PADDING_BOTTOM + 'px';
+      initialBody.style.maxHeight = (initialBody.scrollHeight + BODY_PADDING_BOTTOM) + 'px';
       requestAnimationFrame(function() {
         requestAnimationFrame(function() {
           initialBody.style.transition = '';
