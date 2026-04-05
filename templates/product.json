@@ -42,6 +42,8 @@
         "maison_rating_6TRbti": {
           "type": "maison-rating",
           "settings": {
+            "rating_value": "4.8",
+            "rating_count": "847",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
@@ -56,9 +58,13 @@
           "type": "maison-features",
           "settings": {
             "feature_1": "100% Blackout for uninterrupted rest",
+            "feature_1_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "feature_2": "Gentle on skin and hair",
+            "feature_2_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "feature_3": "Pressure-free, all-night comfort",
+            "feature_3_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "feature_4": "Secure fit that stays in place",
+            "feature_4_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
