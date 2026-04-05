@@ -167,6 +167,31 @@ Supported variables:
   /* ── Card body bottom padding ── */
   .mb-card--selected .mb-card__body { padding-bottom: 12px; }
 
+  /* ── ATC button ── */
+  .mb-atc {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; padding: 14px 32px; gap: 8px;
+    background: #232e71; border-radius: 999px; border: none; cursor: pointer;
+    font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600;
+    color: #fdfbf9; text-transform: uppercase; letter-spacing: .5px;
+    line-height: 1.5; white-space: nowrap; position: relative;
+    transition: opacity .15s ease;
+  }
+  .mb-atc:disabled { opacity: .6; cursor: wait; }
+  @media screen and (min-width: 750px) { .mb-atc { font-size: 14px; gap: 12px; } }
+  .mb-atc__inner { display: flex; align-items: center; gap: 8px; }
+  @media screen and (min-width: 750px) { .mb-atc__inner { gap: 12px; } }
+  .mb-atc__icon { flex-shrink: 0; }
+  .mb-atc__dot {
+    width: 4px; height: 4px; border-radius: 999px;
+    background: rgba(253,251,249,.5); flex-shrink: 0;
+  }
+  .mb-atc__spinner {
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mb-atc__spinner svg { animation: mb-spin .75s linear infinite; }
+  @keyframes mb-spin { to { transform: rotate(360deg); } }
+
   /* Stock bar */
   .mb-stock { display: flex; align-items: center; gap: 20px; }
   .mb-stock__dot { width: 8px; height: 8px; border-radius: 999px; flex-shrink: 0; background: #8a2f3a; box-shadow: 0 0 0 3px rgba(138,47,58,.25); }
@@ -553,6 +578,28 @@ Supported variables:
     </div>
   {%- endif -%}
 
+  {%- comment -%} ── ATC BUTTON ── {%- endcomment -%}
+  <button class="mb-atc" data-mb-atc
+    data-r1-id="{{ r1v.id }}"
+    aria-label="{{ 'product.general.add_to_cart_button' | t }}">
+    <span class="mb-atc__inner" data-mb-atc-inner>
+      <svg class="mb-atc__icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+        <path d="M6 1V11M1 6H11" stroke="#fdfbf9" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="mb-atc__label">{{ 'product.general.add_to_cart_button' | t }}</span>
+      <span class="mb-atc__dot" aria-hidden="true"></span>
+      <span class="mb-atc__price" data-mb-atc-price>
+        {%- if settings.currency_code_enabled -%}{{ r1v.price | money_with_currency }}{%- else -%}{{ r1v.price | money }}{%- endif -%}
+      </span>
+    </span>
+    <span class="mb-atc__spinner" data-mb-atc-spinner aria-hidden="true" hidden>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <circle cx="9" cy="9" r="7" stroke="rgba(253,251,249,.3)" stroke-width="2"/>
+        <path d="M9 2A7 7 0 0 1 16 9" stroke="#fdfbf9" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </button>
+
 </div>
 
 <script>
@@ -564,6 +611,7 @@ Supported variables:
 
   var overlay   = document.getElementById('mb-popup-' + BLOCK_ID);
   var mbBlock   = document.querySelector('[data-mb-block]');
+  var atcBtn    = mbBlock ? mbBlock.querySelector('[data-mb-atc]') : null;
   if (!overlay || !mbBlock) return;
 
   // ── State ──
@@ -701,37 +749,115 @@ Supported variables:
     updatePrice(card);
   });
 
-  // ── Update dynamic price ──
-  function updatePrice(card) {
+  // ── Get total price for a card ──
+  function getTotalPrice(card) {
     var slots   = parseInt(card.getAttribute('data-mb-slots'), 10);
     var choices = chosenBySlot.has(card) ? chosenBySlot.get(card) : {};
-    if (slots === 1) return; // Row 1 is static
-
     var r1Price   = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
     var r1Compare = parseInt(mbBlock.getAttribute('data-r1-compare'), 10) || 0;
-
     var totalPrice   = r1Price;
     var totalCompare = r1Compare;
-
     for (var s = 2; s <= slots; s++) {
-      if (choices[s]) {
-        totalPrice   += choices[s].price;
-        totalCompare += choices[s].compare;
-      }
+      if (choices[s]) { totalPrice += choices[s].price; totalCompare += choices[s].compare; }
     }
+    return { price: totalPrice, compare: totalCompare };
+  }
 
+  // ── Update active card price display + ATC price ──
+  function updatePrice(card) {
+    var slots = parseInt(card.getAttribute('data-mb-slots'), 10);
+    if (slots === 1) {
+      // Row 1 static — just sync ATC with r1 price
+      var r1Price = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
+      updateAtcPrice(r1Price);
+      return;
+    }
+    var totals    = getTotalPrice(card);
     var priceEl   = card.querySelector('[data-mb-price]');
     var compareEl = card.querySelector('[data-mb-compare]');
-
-    if (priceEl) priceEl.textContent = formatMoney(totalPrice);
+    if (priceEl) priceEl.textContent = formatMoney(totals.price);
     if (compareEl) {
-      if (totalCompare > totalPrice) {
-        compareEl.textContent    = formatMoney(totalCompare);
-        compareEl.style.display  = '';
+      if (totals.compare > totals.price) {
+        compareEl.textContent   = formatMoney(totals.compare);
+        compareEl.style.display = '';
       } else {
-        compareEl.style.display  = 'none';
+        compareEl.style.display = 'none';
       }
     }
+    updateAtcPrice(totals.price);
+  }
+
+  function updateAtcPrice(cents) {
+    if (!atcBtn) return;
+    var el = atcBtn.querySelector('[data-mb-atc-price]');
+    if (el) el.textContent = formatMoney(cents);
+  }
+
+  // ── Get active card ──
+  function getActiveCard() {
+    return mbBlock.querySelector('[data-mb-card].mb-card--selected');
+  }
+
+  // ── Also sync ATC price when a card is selected ──
+  // (patch the toggle listener to call updateAtcPrice)
+  document.querySelectorAll('[data-mb-toggle]').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      // After the main toggle fires, sync ATC price for newly active card
+      setTimeout(function() {
+        var active = getActiveCard();
+        if (!active) {
+          var r1Price = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
+          updateAtcPrice(r1Price);
+        } else {
+          var slots = parseInt(active.getAttribute('data-mb-slots'), 10);
+          if (slots === 1) {
+            updateAtcPrice(parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0);
+          } else {
+            updateAtcPrice(getTotalPrice(active).price);
+          }
+        }
+      }, 0);
+    });
+  });
+
+  // ── ATC click: add all items in active card to cart ──
+  if (atcBtn) {
+    atcBtn.addEventListener('click', function() {
+      var card  = getActiveCard();
+      var r1Id  = atcBtn.getAttribute('data-r1-id');
+      var items = [{ id: parseInt(r1Id, 10), quantity: 1 }];
+
+      if (card) {
+        var slots   = parseInt(card.getAttribute('data-mb-slots'), 10);
+        var choices = chosenBySlot.has(card) ? chosenBySlot.get(card) : {};
+        for (var s = 2; s <= slots; s++) {
+          if (choices[s]) items.push({ id: parseInt(choices[s].id, 10), quantity: 1 });
+        }
+      }
+
+      // Loading state
+      var inner   = atcBtn.querySelector('[data-mb-atc-inner]');
+      var spinner = atcBtn.querySelector('[data-mb-atc-spinner]');
+      atcBtn.disabled = true;
+      if (inner)   inner.hidden   = true;
+      if (spinner) spinner.hidden = false;
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body: JSON.stringify({ items: items })
+      })
+      .then(function(res) { return res.json(); })
+      .then(function() {
+        document.dispatchEvent(new CustomEvent('cart:refresh'));
+      })
+      .catch(function(err) { console.error('Bundle ATC error:', err); })
+      .finally(function() {
+        atcBtn.disabled = false;
+        if (inner)   inner.hidden   = false;
+        if (spinner) spinner.hidden = true;
+      });
+    });
   }
 
 })();
