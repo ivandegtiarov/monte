@@ -164,9 +164,8 @@ Supported variables:
     background: #c4c7d9; border-color: #232e71; color: #182153;
   }
 
-  /* ── ATC wrapper: hide in collapsed, show in expanded ── */
-  .mb-card__atc { display: none; padding: 0 0 8px; }
-  .mb-card--selected .mb-card__atc { display: block; }
+  /* ── Card body bottom padding ── */
+  .mb-card--selected .mb-card__body { padding-bottom: 12px; }
 
   /* Stock bar */
   .mb-stock { display: flex; align-items: center; gap: 20px; }
@@ -704,21 +703,15 @@ Supported variables:
 
   // ── Update dynamic price ──
   function updatePrice(card) {
-    var slots = parseInt(card.getAttribute('data-mb-slots'), 10);
+    var slots   = parseInt(card.getAttribute('data-mb-slots'), 10);
     var choices = chosenBySlot.has(card) ? chosenBySlot.get(card) : {};
-    var filledSlots = Object.keys(choices).length;
+    if (slots === 1) return; // Row 1 is static
 
-    // Base price: always the current product variant price
     var r1Price   = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
     var r1Compare = parseInt(mbBlock.getAttribute('data-r1-compare'), 10) || 0;
 
-    if (slots === 1) return; // Row 1 is static
-
-    // For row 2: total = r1 + chosen slot 2
-    // For row 3: total = r1 + chosen slot 2 + chosen slot 3
     var totalPrice   = r1Price;
     var totalCompare = r1Compare;
-    var allFilled    = (filledSlots >= slots - 1); // -1 because slot 1 is always the current product
 
     for (var s = 2; s <= slots; s++) {
       if (choices[s]) {
@@ -730,13 +723,13 @@ Supported variables:
     var priceEl   = card.querySelector('[data-mb-price]');
     var compareEl = card.querySelector('[data-mb-compare]');
 
-    if (allFilled) {
-      if (priceEl)   priceEl.textContent   = formatMoney(totalPrice);
-      if (compareEl && totalCompare > totalPrice) {
-        compareEl.textContent = formatMoney(totalCompare);
-        compareEl.style.display = '';
-      } else if (compareEl) {
-        compareEl.style.display = 'none';
+    if (priceEl) priceEl.textContent = formatMoney(totalPrice);
+    if (compareEl) {
+      if (totalCompare > totalPrice) {
+        compareEl.textContent    = formatMoney(totalCompare);
+        compareEl.style.display  = '';
+      } else {
+        compareEl.style.display  = 'none';
       }
     }
   }
