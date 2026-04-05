@@ -120,14 +120,12 @@ Supported variables:
   /* Expanded body — height animated via JS */
   .mb-card__body {
     display: flex; flex-direction: column; gap: 8px;
-    padding: 0 12px 0 12px;
+    padding: 0 12px 12px 12px;
     overflow: hidden; max-height: 0;
     opacity: 0;
-    transition: max-height .38s cubic-bezier(.32,.72,0,1),
-                opacity .25s ease,
-                padding-bottom .38s cubic-bezier(.32,.72,0,1);
+    transition: max-height .38s cubic-bezier(.32,.72,0,1), opacity .25s ease;
   }
-  .mb-card--selected .mb-card__body { opacity: 1; padding-bottom: 12px; }
+  .mb-card--selected .mb-card__body { opacity: 1; }
   @media screen and (min-width: 750px) { .mb-card__body { padding-left: 20px; padding-right: 20px; } }
   .mb-card__divider { border: none; border-top: 1px solid rgba(24,33,83,.12); margin: 0 0 4px; }
 
