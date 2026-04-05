@@ -92,6 +92,49 @@
           "type": "separator",
           "settings": {}
         },
+        "maison_bundle_d9UmU6": {
+          "type": "maison-bundle",
+          "settings": {
+            "color_products": [
+              "champagne-gold-silk-sleep-mask",
+              "midnight-blue-sleep-mask-copy",
+              "monte-silk-sleep-mask",
+              "rose-noir-silk-sleep-mask"
+            ],
+            "color_label": "SELECT YOUR COLOR:",
+            "set_label": "CHOOSE YOUR SET:",
+            "set_label_default": "1 Mask",
+            "each_label": "each",
+            "row1_title": "1 Mask",
+            "row1_footer": "",
+            "bundle_2_product": "rose-noir-silk-sleep-mask",
+            "row2_title": "2 Masks",
+            "row2_badge": "Extra 10% off",
+            "row2_save": "Save 130,00 zł",
+            "row2_tab": "Most Popular",
+            "row2_footer": "+ Free Shipping",
+            "bundle_3_product": "rose-noir-silk-sleep-mask",
+            "row3_title": "3 Masks",
+            "row3_badge": "Extra 20% off",
+            "row3_save": "Save 270,00 zł",
+            "row3_tab": "Best Value",
+            "row3_footer": "+ Free Shipping",
+            "popup_title": "Choose product",
+            "popup_choose_label": "Choose",
+            "choose_color_label": "Choose Mask Color",
+            "show_stock_bar": true,
+            "stock_label": "Limited availability",
+            "stock_percentage": 30,
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -109,12 +152,6 @@
             "swatch_selector_style": "swatch",
             "variant_image_options": "",
             "size_chart_page": ""
-          }
-        },
-        "inventory_mFQxhW": {
-          "type": "inventory",
-          "settings": {
-            "low_inventory_threshold": 20
           }
         },
         "buy_buttons": {
@@ -136,9 +173,9 @@
         "maison_features_hJRyX4",
         "maison_price_7dRbXE",
         "separator",
+        "maison_bundle_d9UmU6",
         "description",
         "variant_picker",
-        "inventory_mFQxhW",
         "buy_buttons"
       ],
       "settings": {
