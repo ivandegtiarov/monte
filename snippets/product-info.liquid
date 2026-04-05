@@ -138,6 +138,231 @@ Supported variables
             </div>
           {%- endif -%}
 
+        {%- when 'maison-tagline' -%}
+          {%- if block.settings.text != blank -%}
+            <style>
+              .maison-tagline {
+                font-family: "PP Neue Montreal Mono", monospace;
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: rgba(24, 33, 83, 0.75);
+                line-height: 1.5;
+                margin: 0;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-tagline { font-size: 12px; }
+              }
+            </style>
+            <p class="maison-tagline" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+          {%- endif -%}
+
+        {%- when 'maison-product-name' -%}
+          <style>
+            .maison-product-name {
+              font-family: "PP Pangaia", serif;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 1.4;
+              color: #182153;
+              margin: 0;
+            }
+            .maison-product-name a {
+              color: inherit;
+              text-decoration: none;
+            }
+            @media screen and (min-width: 750px) {
+              .maison-product-name { font-size: 24px; }
+            }
+          </style>
+          {%- if request.page_type == 'product' -%}
+            <h1 class="maison-product-name" {{ block.shopify_attributes }}>{{ product.title }}</h1>
+          {%- else -%}
+            <h2 class="maison-product-name" {{ block.shopify_attributes }}>
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h2>
+          {%- endif -%}
+
+        {%- when 'maison-rating' -%}
+          {%- if product.metafields.reviews.rating.value != blank -%}
+            {%- assign rating_value = product.metafields.reviews.rating.value.rating | round: 1 -%}
+            {%- assign rating_count = product.metafields.reviews.rating_count.value -%}
+            {%- assign rating_max = product.metafields.reviews.rating.value.scale_max -%}
+            <style>
+              .maison-rating {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              }
+              .maison-rating__stars {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+              }
+              .maison-rating__star {
+                color: #D9A17D;
+              }
+              .maison-rating__text {
+                font-family: "PP Mori", sans-serif;
+                font-size: 10px;
+                font-weight: 375;
+                color: #182153;
+                line-height: 1.5;
+                margin: 0;
+                white-space: nowrap;
+              }
+              .maison-rating__text strong {
+                font-weight: 800;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-rating__text { font-size: 12px; }
+              }
+            </style>
+            <div class="maison-rating" {{ block.shopify_attributes }}>
+              <div class="maison-rating__stars" role="img" aria-label="{{ 'general.rating.info' | t: rating_value: rating_value, rating_max: rating_max }}">
+                {%- render 'icon' with 'rating-star', width: 12, height: 12, class: 'maison-rating__star' -%}
+              </div>
+              <p class="maison-rating__text">
+                Rated <strong>{{ rating_value }}</strong>/5 based on <strong>{{ rating_count }}</strong> reviews.
+              </p>
+            </div>
+          {%- endif -%}
+
+        {%- when 'maison-features' -%}
+          {%- assign has_features = false -%}
+          {%- for i in (1..4) -%}
+            {%- assign fkey = 'feature_' | append: i -%}
+            {%- if block.settings[fkey] != blank -%}{%- assign has_features = true -%}{%- endif -%}
+          {%- endfor -%}
+          {%- if has_features -%}
+            <style>
+              .maison-features {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+              }
+              .maison-features__item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              }
+              .maison-features__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                background-color: #232e71;
+                border-radius: 999px;
+                color: #fff;
+              }
+              .maison-features__text {
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                color: #182153;
+                line-height: 1.5;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-features__icon { width: 20px; height: 20px; }
+                .maison-features__text { font-size: 14px; }
+              }
+            </style>
+            <ul class="maison-features" {{ block.shopify_attributes }}>
+              {%- for i in (1..4) -%}
+                {%- assign fkey = 'feature_' | append: i -%}
+                {%- if block.settings[fkey] != blank -%}
+                  <li class="maison-features__item">
+                    <span class="maison-features__icon" aria-hidden="true">
+                      {%- render 'icon' with 'checkmark', width: 10, height: 10 -%}
+                    </span>
+                    <span class="maison-features__text">{{ block.settings[fkey] }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+
+        {%- when 'maison-price' -%}
+          {%- assign maison_variant = product.selected_or_first_available_variant -%}
+          {%- if maison_variant != nil -%}
+            <style>
+              .maison-price {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+              }
+              .maison-price__compare {
+                font-family: "PP Mori", sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                color: #182153;
+                opacity: 0.5;
+                line-height: 1.5;
+                white-space: nowrap;
+                text-decoration: line-through;
+              }
+              .maison-price__sale {
+                font-family: "PP Mori", sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                color: #182153;
+                line-height: 1.5;
+                white-space: nowrap;
+              }
+              .maison-price__badge {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 24px;
+                padding: 4px 12px;
+                background-color: #2f6b57;
+                border-radius: 999px;
+                font-family: "PP Neue Montreal Mono", monospace;
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: #d9e8e1;
+                line-height: 1.5;
+                white-space: nowrap;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-price__compare { font-size: 16px; }
+                .maison-price__sale { font-size: 18px; }
+              }
+            </style>
+            <div class="maison-price" {{ block.shopify_attributes }}>
+              {%- if maison_variant.compare_at_price > maison_variant.price -%}
+                <s class="maison-price__compare">
+                  <span class="sr-only">{{ 'product.price.regular_price' | t }}</span>
+                  {%- if settings.currency_code_enabled -%}
+                    {{- maison_variant.compare_at_price | money_with_currency -}}
+                  {%- else -%}
+                    {{- maison_variant.compare_at_price | money -}}
+                  {%- endif -%}
+                </s>
+              {%- endif -%}
+              <span class="maison-price__sale">
+                <span class="sr-only">{{ 'product.price.sale_price' | t }}</span>
+                {%- if settings.currency_code_enabled -%}
+                  {{- maison_variant.price | money_with_currency -}}
+                {%- else -%}
+                  {{- maison_variant.price | money -}}
+                {%- endif -%}
+              </span>
+              {%- if maison_variant.compare_at_price > maison_variant.price -%}
+                {%- assign maison_discount = maison_variant.compare_at_price | minus: maison_variant.price | times: 100.0 | divided_by: maison_variant.compare_at_price | round -%}
+                <span class="maison-price__badge">SAVE {{ maison_discount }}%</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
         {%- when 'payment_terms' -%}
           <payment-terms class="product-info__payment-terms">
             {%- capture product_installment_form_id -%}{{ product_form_id }}-product-installment-form{%- endcapture -%}
