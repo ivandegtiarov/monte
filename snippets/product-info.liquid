@@ -219,9 +219,6 @@ Supported variables
                 align-items: center;
                 gap: 2px;
               }
-              .maison-rating__star {
-                color: #D9A17D;
-              }
               .maison-rating__text {
                 font-family: "PP Mori", sans-serif;
                 font-size: 10px;
@@ -246,7 +243,18 @@ Supported variables
             </style>
             <div class="maison-rating" {{ block.shopify_attributes }}>
               <div class="maison-rating__stars" role="img" aria-label="{{ block.settings.rating_value }} out of 5 stars">
-                {%- render 'icon' with 'rating-star', width: 12, height: 12, class: 'maison-rating__star' -%}
+                {%- for i in (1..5) -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <g clip-path="url(#clip0_maison_star_{{ i }})">
+                      <path d="M7.5 4.25L6.00049 1.25L4.5 4.25L1 4.5L3.5 7.25L2.5 10.75L6 9.25L9.5 10.75L8.5 7.25L11 4.50021L7.5 4.25Z" fill="#D9A17D" stroke="#D9A17D" stroke-miterlimit="16" stroke-linecap="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_maison_star_{{ i }}">
+                        <rect width="12" height="12" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                {%- endfor -%}
               </div>
               <p class="maison-rating__text">
                 Rated <strong>{{ block.settings.rating_value }}</strong>/5 based on <strong>{{ block.settings.rating_count }}</strong> reviews.
