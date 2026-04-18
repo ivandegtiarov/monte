@@ -284,12 +284,14 @@
                 </div>
 
                 <button class="lumen-ugc__sound-btn" data-ugc-sound aria-label="Toggle sound">
-                  <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" data-icon-sound>
+                  {{- '<!-- sound on -->' -}}
+                  <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" data-icon-sound style="display:none">
                     <path d="M1 4.5H3L6 2V10L3 7.5H1V4.5Z" fill="currentColor"/>
                     <path d="M8 4C8.667 4.5 9 5 9 6C9 7 8.667 7.5 8 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                     <path d="M9.5 2.5C10.833 3.5 11.5 4.667 11.5 6C11.5 7.333 10.833 8.5 9.5 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                   </svg>
-                  <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" data-icon-mute style="display:none">
+                  {{- '<!-- muted -->' -}}
+                  <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" data-icon-mute>
                     <path d="M1 4.5H3L6 2V10L3 7.5H1V4.5Z" fill="currentColor"/>
                     <path d="M8 4L11 8M11 4L8 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                   </svg>
@@ -317,25 +319,21 @@
         sliderEl._ugcInit = true;
 
         var dotsEl = document.getElementById(UGC_ID + '-dots');
-        var slides = sliderEl.querySelectorAll('.lumen-ugc__slide');
-        var total = slides.length;
 
-        /* Build dots */
-        function renderDots(active) {
-          var dots = dotsEl.querySelectorAll('.lumen-ugc__dot');
-          dots.forEach(function (d, i) {
-            if (i === active) {
-              d.classList.add('is-active');
-            } else {
-              d.classList.remove('is-active');
-            }
-          });
+        /* Build dots based on snap count (= number of prev/next clicks to reach end) */
+        function buildDots(count, active) {
+          dotsEl.innerHTML = '';
+          for (var k = 0; k < count; k++) {
+            var d = document.createElement('span');
+            d.className = 'lumen-ugc__dot' + (k === active ? ' is-active' : '');
+            dotsEl.appendChild(d);
+          }
         }
 
-        for (var k = 0; k < total; k++) {
-          var d = document.createElement('span');
-          d.className = 'lumen-ugc__dot' + (k === 0 ? ' is-active' : '');
-          dotsEl.appendChild(d);
+        function renderDots(active) {
+          dotsEl.querySelectorAll('.lumen-ugc__dot').forEach(function (d, i) {
+            d.classList.toggle('is-active', i === active);
+          });
         }
 
         var swiper = new Swiper('#' + UGC_ID, {
@@ -346,8 +344,13 @@
             nextEl: '#' + UGC_ID + '-next',
           },
           on: {
+            afterInit: function () {
+              /* snapGrid.length = total snaps = clicks needed to traverse all slides */
+              buildDots(swiper.snapGrid.length, 0);
+            },
             slideChange: function () {
-              renderDots(swiper.realIndex);
+              /* snapIndex = which snap we're currently on */
+              renderDots(swiper.snapIndex);
             }
           }
         });
