@@ -432,6 +432,187 @@ Supported variables
             </div>
           {%- endif -%}
 
+        {%- when 'lumen-faq' -%}
+          {%- liquid
+            assign lf_has_items = false
+            for i in (1..10)
+              assign lf_q = 'faq_' | append: i | append: '_title'
+              if block.settings[lf_q] != blank
+                assign lf_has_items = true
+                break
+              endif
+            endfor
+          -%}
+          {%- if lf_has_items -%}
+            <style>
+              .lumen-faq {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+              }
+              .lumen-faq__item {
+                border-top: 1px solid rgba(24, 33, 83, 0.08);
+              }
+              .lumen-faq__item:last-child {
+                border-bottom: 1px solid rgba(24, 33, 83, 0.08);
+              }
+              .lumen-faq__trigger {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+                padding: 16px 0;
+                background: none;
+                border: none;
+                cursor: pointer;
+                text-align: left;
+              }
+              .lumen-faq__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                overflow: hidden;
+              }
+              .lumen-faq__icon img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+              .lumen-faq__title {
+                flex: 1 0 0;
+                min-width: 1px;
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 1.5;
+                letter-spacing: 0;
+                text-transform: uppercase;
+                color: #182153;
+              }
+              .lumen-faq__toggle {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              .lumen-faq__toggle svg {
+                transition: transform 0.3s ease;
+              }
+              .lumen-faq__toggle .lumen-faq__minus {
+                display: none;
+              }
+              .lumen-faq__item.is-open .lumen-faq__toggle .lumen-faq__plus {
+                display: none;
+              }
+              .lumen-faq__item.is-open .lumen-faq__toggle .lumen-faq__minus {
+                display: block;
+              }
+              .lumen-faq__body-wrap {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.35s ease;
+              }
+              .lumen-faq__body-wrap.is-open {
+                grid-template-rows: 1fr;
+              }
+              .lumen-faq__body-inner {
+                overflow: hidden;
+              }
+              .lumen-faq__body {
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.6;
+                color: rgba(24, 33, 83, 0.75);
+                padding-bottom: 16px;
+                padding-left: 24px;
+                margin: 0;
+              }
+              @media screen and (min-width: 750px) {
+                .lumen-faq {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+                .lumen-faq__trigger { gap: 12px; }
+                .lumen-faq__title { font-size: 14px; }
+                .lumen-faq__body { font-size: 14px; padding-left: 28px; }
+              }
+            </style>
+
+            <div class="lumen-faq" {{ block.shopify_attributes }}>
+              {%- for i in (1..10) -%}
+                {%- assign lf_title_key = 'faq_' | append: i | append: '_title' -%}
+                {%- assign lf_text_key  = 'faq_' | append: i | append: '_text' -%}
+                {%- assign lf_icon_key  = 'faq_' | append: i | append: '_icon' -%}
+                {%- assign lf_item_id   = 'lumen-faq-' | append: block.id | append: '-' | append: i -%}
+                {%- if block.settings[lf_title_key] != blank -%}
+                  <div class="lumen-faq__item">
+                    <button class="lumen-faq__trigger" aria-expanded="false" aria-controls="{{ lf_item_id }}">
+                      {%- if block.settings[lf_icon_key] != blank -%}
+                        <span class="lumen-faq__icon" aria-hidden="true">
+                          <img src="{{ block.settings[lf_icon_key] | image_url: width: 32 }}" alt="" width="16" height="16" loading="lazy">
+                        </span>
+                      {%- endif -%}
+                      <span class="lumen-faq__title">{{ block.settings[lf_title_key] }}</span>
+                      <span class="lumen-faq__toggle" aria-hidden="true">
+                        <svg class="lumen-faq__plus" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M3.33337 7.99992H12.6667M8.00004 3.33325V12.6666" stroke="#182153" stroke-width="1.25"/>
+                        </svg>
+                        <svg class="lumen-faq__minus" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M3.33337 7.99992H12.6667" stroke="#182153" stroke-width="1.25"/>
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="lumen-faq__body-wrap" id="{{ lf_item_id }}">
+                      <div class="lumen-faq__body-inner">
+                        {%- if block.settings[lf_text_key] != blank -%}
+                          <p class="lumen-faq__body">{{ block.settings[lf_text_key] }}</p>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            <script>
+              (function () {
+                var faq = document.querySelector('[data-block-id="{{ block.id }}"] .lumen-faq');
+                if (!faq || faq._lfInit) return;
+                faq._lfInit = true;
+                var items = faq.querySelectorAll('.lumen-faq__item');
+                function close(item) {
+                  item.classList.remove('is-open');
+                  item.querySelector('.lumen-faq__body-wrap').classList.remove('is-open');
+                  item.querySelector('.lumen-faq__trigger').setAttribute('aria-expanded', 'false');
+                }
+                function open(item) {
+                  item.classList.add('is-open');
+                  item.querySelector('.lumen-faq__body-wrap').classList.add('is-open');
+                  item.querySelector('.lumen-faq__trigger').setAttribute('aria-expanded', 'true');
+                }
+                items.forEach(function (item) {
+                  item.querySelector('.lumen-faq__trigger').addEventListener('click', function () {
+                    var isOpen = item.classList.contains('is-open');
+                    items.forEach(close);
+                    if (!isOpen) open(item);
+                  });
+                });
+              })();
+            </script>
+          {%- endif -%}
+
         {%- when 'maison-content-card' -%}
           <style>
             .maison-content-card {
