@@ -876,12 +876,17 @@ Supported variables
               display: flex;
               gap: 4px;
               align-items: center;
+              flex-shrink: 0;
             }
             #{{ stat_id }} .lumen-stat__dash {
               width: 12px;
+              min-width: 12px;
               height: 2px;
+              min-height: 2px;
               border-radius: 1px;
               background: #182153;
+              flex-shrink: 0;
+              transform: translateZ(0);
             }
             #{{ stat_id }} .lumen-stat__dash--dim {
               opacity: 0.10;
