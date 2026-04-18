@@ -220,7 +220,14 @@
   <div class="lumen-ugc" {{ block.shopify_attributes }}>
     <div class="lumen-ugc__header">
       {%- if block.settings.title != blank -%}
-        <p class="lumen-ugc__title">{{ block.settings.title }}</p>
+        {%- assign ugc_title = block.settings.title | replace: '**', '|||' -%}
+        {%- assign ugc_title_parts = ugc_title | split: '|||' -%}
+        <p class="lumen-ugc__title">
+          {%- for part in ugc_title_parts -%}
+            {%- assign ugc_mod = forloop.index0 | modulo: 2 -%}
+            {%- if ugc_mod == 1 -%}<em>{{ part }}</em>{%- else -%}{{ part }}{%- endif -%}
+          {%- endfor -%}
+        </p>
       {%- endif -%}
       <div class="lumen-ugc__nav">
         <button class="lumen-ugc__nav-btn" id="{{ ugc_id }}-prev" aria-label="Previous">
@@ -344,16 +351,14 @@
             nextEl: '#' + UGC_ID + '-next',
           },
           on: {
-            afterInit: function () {
-              /* snapGrid.length = total snaps = clicks needed to traverse all slides */
-              buildDots(swiper.snapGrid.length, 0);
-            },
             slideChange: function () {
-              /* snapIndex = which snap we're currently on */
               renderDots(swiper.snapIndex);
             }
           }
         });
+
+        /* snapGrid is populated after init — build dots immediately after */
+        buildDots(swiper.snapGrid.length, 0);
 
         /* Click handler: play/pause + sound toggle */
         var currentCard = null;
@@ -376,7 +381,7 @@
           var video = card.querySelector('[data-ugc-video]');
 
           /* Lazy-load src on first play */
-          if (!video.src && video.dataset.src) {
+          if (!video.getAttribute('src') && video.dataset.src) {
             video.src = video.dataset.src;
           }
 
