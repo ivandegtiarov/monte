@@ -432,6 +432,87 @@ Supported variables
             </div>
           {%- endif -%}
 
+        {%- when 'maison-feature-list' -%}
+          {%- liquid
+            assign has_fl_items = false
+            for i in (1..7)
+              assign fl_text_key = 'feature_' | append: i | append: '_text'
+              if block.settings[fl_text_key] != blank
+                assign has_fl_items = true
+              endif
+            endfor
+          -%}
+          {%- if has_fl_items -%}
+            <style>
+              .maison-feature-list {
+                list-style: none;
+                padding: 0;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+              }
+              .maison-feature-list__item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+              }
+              .maison-feature-list__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                overflow: hidden;
+              }
+              .maison-feature-list__icon img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+              .maison-feature-list__text {
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                color: #182153;
+                line-height: 1.5;
+                flex: 1 0 0;
+                min-width: 1px;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-feature-list {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+                .maison-feature-list__item { gap: 12px; }
+                .maison-feature-list__text { font-size: 14px; }
+              }
+            </style>
+            <ul class="maison-feature-list" {{ block.shopify_attributes }}>
+              {%- for i in (1..7) -%}
+                {%- assign fl_text_key = 'feature_' | append: i | append: '_text' -%}
+                {%- assign fl_icon_key = 'feature_' | append: i | append: '_icon' -%}
+                {%- if block.settings[fl_text_key] != blank -%}
+                  <li class="maison-feature-list__item">
+                    {%- if block.settings[fl_icon_key] != blank -%}
+                      <span class="maison-feature-list__icon" aria-hidden="true">
+                        <img src="{{ block.settings[fl_icon_key] | image_url: width: 32 }}" alt="" width="16" height="16" loading="lazy">
+                      </span>
+                    {%- endif -%}
+                    <span class="maison-feature-list__text">{{ block.settings[fl_text_key] }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+
         {%- when 'maison-pay-icons' -%}
           {%- liquid
             assign has_pay_icons = false
