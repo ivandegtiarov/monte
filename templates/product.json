@@ -134,6 +134,26 @@
             "mobile_margin_top": 0,
             "mobile_margin_bottom": 0
           }
+        },
+        "maison_pay_icons_jGDRtg": {
+          "type": "maison-pay-icons",
+          "settings": {
+            "icon_1": "shopify://shop_images/Payment_Method_65.svg",
+            "icon_2": "shopify://shop_images/Payment_Method_66.svg",
+            "icon_3": "shopify://shop_images/Payment_Method_67.svg",
+            "icon_4": "shopify://shop_images/Payment_Method_68.svg",
+            "icon_5": "shopify://shop_images/Payment_Method_69.svg",
+            "icon_6": "shopify://shop_images/Payment_Method_70.svg",
+            "icon_7": "shopify://shop_images/Payment_Method_71.svg",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
         }
       },
       "block_order": [
@@ -143,7 +163,8 @@
         "maison_features_hJRyX4",
         "maison_price_7dRbXE",
         "separator",
-        "maison_bundle_d9UmU6"
+        "maison_bundle_d9UmU6",
+        "maison_pay_icons_jGDRtg"
       ],
       "settings": {
         "full_width": true,
