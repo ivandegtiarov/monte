@@ -177,6 +177,28 @@
             "mobile_margin_top": 0,
             "mobile_margin_bottom": 0
           }
+        },
+        "lumen_ugc_gkMKAb": {
+          "type": "lumen-ugc",
+          "settings": {
+            "title": "A nightly ritual, in real life",
+            "video_1": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_1": "shopify://shop_images/Placeholder01.png",
+            "video_2": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_2": "shopify://shop_images/Placeholder07.png",
+            "video_3": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_3": "shopify://shop_images/Placeholder07.png",
+            "video_4": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_4": "shopify://shop_images/Placeholder01.png",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
         }
       },
       "block_order": [
@@ -188,7 +210,8 @@
         "separator",
         "maison_bundle_d9UmU6",
         "maison_pay_icons_jGDRtg",
-        "maison_feature_list_F8icPc"
+        "maison_feature_list_F8icPc",
+        "lumen_ugc_gkMKAb"
       ],
       "settings": {
         "full_width": true,
