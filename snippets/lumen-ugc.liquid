@@ -1,6 +1,6 @@
 {%- comment -%}
   lumen-ugc: UGC video carousel block using Swiper JS.
-  Variables: block, product_form_id
+  Variables: block
 {%- endcomment -%}
 
 {%- liquid
@@ -16,6 +16,8 @@
 
 {%- if has_videos -%}
   {%- assign ugc_id = 'lumen-ugc-' | append: block.id -%}
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <style>
     .lumen-ugc {
@@ -45,9 +47,7 @@
       margin: 0;
       flex: 1;
     }
-    .lumen-ugc__title em {
-      font-style: italic;
-    }
+    .lumen-ugc__title em { font-style: italic; }
     .lumen-ugc__nav {
       display: flex;
       gap: 8px;
@@ -78,9 +78,13 @@
       color: #fff;
       display: block;
     }
+    /* Swiper container must have explicit height */
     .lumen-ugc__slider {
       width: 100%;
-      overflow: hidden;
+      height: 160px;
+    }
+    .lumen-ugc__slider .swiper-wrapper {
+      align-items: stretch;
     }
     .lumen-ugc__slide {
       width: 106px !important;
@@ -94,6 +98,7 @@
       overflow: hidden;
       background: #fbf7f3;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
     .lumen-ugc__card video {
       position: absolute;
@@ -112,6 +117,7 @@
       display: block;
       transition: opacity 0.3s;
       pointer-events: none;
+      z-index: 1;
     }
     .lumen-ugc__card.is-playing .lumen-ugc__preview {
       opacity: 0;
@@ -128,6 +134,7 @@
       justify-content: center;
       pointer-events: none;
       transition: opacity 0.2s;
+      z-index: 2;
     }
     .lumen-ugc__card.is-playing .lumen-ugc__play-btn {
       opacity: 0;
@@ -147,14 +154,19 @@
       border-radius: 999px;
       width: 24px;
       height: 24px;
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       padding: 0;
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
     }
     .lumen-ugc__card.is-playing .lumen-ugc__sound-btn {
-      display: flex;
+      opacity: 1;
+      pointer-events: auto;
     }
     .lumen-ugc__sound-btn svg {
       width: 12px;
@@ -162,6 +174,7 @@
       color: #fff;
       display: block;
     }
+    /* Dots */
     .lumen-ugc__dots {
       display: flex;
       gap: 4px;
@@ -172,9 +185,10 @@
       height: 4px;
       border-radius: 999px;
       background: #232e71;
-      transition: width 0.25s, opacity 0.25s;
-      width: 4px;
       opacity: 0.1;
+      width: 4px;
+      transition: width 0.3s ease, opacity 0.3s ease;
+      flex-shrink: 0;
     }
     .lumen-ugc__dot.is-active {
       width: 16px;
@@ -190,6 +204,7 @@
         padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
       }
       .lumen-ugc__title { font-size: 20px; }
+      .lumen-ugc__slider { height: 200px; }
       .lumen-ugc__slide {
         width: 134px !important;
         height: 200px;
@@ -197,7 +212,6 @@
       .lumen-ugc__card { border-radius: 16px; }
       .lumen-ugc__play-btn {
         border-radius: 0 16px 0 0;
-        padding: 8px;
       }
       .lumen-ugc__play-btn svg { width: 16px; height: 16px; }
     }
@@ -227,17 +241,29 @@
         {%- for i in (1..12) -%}
           {%- assign v_key = 'video_' | append: i -%}
           {%- assign p_key = 'preview_' | append: i -%}
-          {%- if block.settings[v_key] != blank -%}
+          {%- assign ugc_video = block.settings[v_key] -%}
+          {%- if ugc_video != blank -%}
+            {%- comment -%} Pick best source: prefer mp4 from sources array {%- endcomment -%}
+            {%- assign ugc_src = '' -%}
+            {%- for src in ugc_video.sources -%}
+              {%- if src.format == 'mp4' and ugc_src == '' -%}
+                {%- assign ugc_src = src.url -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if ugc_src == '' and ugc_video.sources.size > 0 -%}
+              {%- assign ugc_src = ugc_video.sources[0].url -%}
+            {%- endif -%}
+
             <div class="swiper-slide lumen-ugc__slide">
               <div class="lumen-ugc__card" data-ugc-card>
-                {%- assign ugc_video = block.settings[v_key] -%}
+
                 <video
-                  src="{{ ugc_video.sources[1].url | default: ugc_video.sources[0].url }}"
+                  data-ugc-video
                   playsinline
                   loop
                   muted
                   preload="none"
-                  data-ugc-video
+                  data-src="{{ ugc_src }}"
                 ></video>
 
                 {%- if block.settings[p_key] != blank -%}
@@ -268,6 +294,7 @@
                     <path d="M8 4L11 8M11 4L8 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                   </svg>
                 </button>
+
               </div>
             </div>
           {%- endif -%}
@@ -278,70 +305,88 @@
     <div class="lumen-ugc__dots" id="{{ ugc_id }}-dots"></div>
   </div>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
     (function () {
-      function initLumenUgc(id) {
-        var container = document.getElementById(id);
-        if (!container || container._ugcInit) return;
-        container._ugcInit = true;
+      var UGC_ID = {{ ugc_id | json }};
 
-        var dotsEl = document.getElementById(id + '-dots');
-        var totalSlides = container.querySelectorAll('.lumen-ugc__slide').length;
-        var activeIndex = 0;
+      function initLumenUgc() {
+        var sliderEl = document.getElementById(UGC_ID);
+        if (!sliderEl || sliderEl._ugcInit) return;
+        sliderEl._ugcInit = true;
 
-        function buildDots(count, active) {
-          dotsEl.innerHTML = '';
-          for (var i = 0; i < count; i++) {
-            var d = document.createElement('span');
-            d.className = 'lumen-ugc__dot' + (i === active ? ' is-active' : '');
-            dotsEl.appendChild(d);
-          }
+        var dotsEl = document.getElementById(UGC_ID + '-dots');
+        var slides = sliderEl.querySelectorAll('.lumen-ugc__slide');
+        var total = slides.length;
+
+        /* Build dots */
+        function renderDots(active) {
+          var dots = dotsEl.querySelectorAll('.lumen-ugc__dot');
+          dots.forEach(function (d, i) {
+            if (i === active) {
+              d.classList.add('is-active');
+            } else {
+              d.classList.remove('is-active');
+            }
+          });
         }
-        buildDots(totalSlides, 0);
 
-        var swiper = new Swiper('#' + id, {
+        for (var k = 0; k < total; k++) {
+          var d = document.createElement('span');
+          d.className = 'lumen-ugc__dot' + (k === 0 ? ' is-active' : '');
+          dotsEl.appendChild(d);
+        }
+
+        var swiper = new Swiper('#' + UGC_ID, {
           slidesPerView: 'auto',
           spaceBetween: 8,
           navigation: {
-            prevEl: '#' + id + '-prev',
-            nextEl: '#' + id + '-next',
+            prevEl: '#' + UGC_ID + '-prev',
+            nextEl: '#' + UGC_ID + '-next',
           },
           on: {
             slideChange: function () {
-              activeIndex = swiper.realIndex;
-              buildDots(totalSlides, activeIndex);
+              renderDots(swiper.realIndex);
             }
           }
         });
 
+        /* Click handler: play/pause + sound toggle */
         var currentCard = null;
 
-        container.addEventListener('click', function (e) {
+        sliderEl.addEventListener('click', function (e) {
+          var soundBtn = e.target.closest('[data-ugc-sound]');
           var card = e.target.closest('[data-ugc-card]');
           if (!card) return;
 
-          var soundBtn = e.target.closest('[data-ugc-sound]');
+          /* Sound toggle */
           if (soundBtn) {
-            var video = card.querySelector('[data-ugc-video]');
-            video.muted = !video.muted;
-            soundBtn.querySelector('[data-icon-sound]').style.display = video.muted ? 'none' : 'block';
-            soundBtn.querySelector('[data-icon-mute]').style.display = video.muted ? 'block' : 'none';
+            var vid = card.querySelector('[data-ugc-video]');
+            vid.muted = !vid.muted;
+            soundBtn.querySelector('[data-icon-sound]').style.display = vid.muted ? 'none' : 'block';
+            soundBtn.querySelector('[data-icon-mute]').style.display = vid.muted ? 'block' : 'none';
             return;
           }
 
+          /* Play / pause */
           var video = card.querySelector('[data-ugc-video]');
+
+          /* Lazy-load src on first play */
+          if (!video.src && video.dataset.src) {
+            video.src = video.dataset.src;
+          }
+
           if (card.classList.contains('is-playing')) {
             video.pause();
             card.classList.remove('is-playing');
             currentCard = null;
           } else {
+            /* Stop previous */
             if (currentCard && currentCard !== card) {
-              var prevVideo = currentCard.querySelector('[data-ugc-video]');
-              prevVideo.pause();
-              prevVideo.currentTime = 0;
+              var prevVid = currentCard.querySelector('[data-ugc-video]');
+              prevVid.pause();
+              prevVid.currentTime = 0;
               currentCard.classList.remove('is-playing');
             }
             card.classList.add('is-playing');
@@ -351,15 +396,12 @@
         });
       }
 
+      /* Wait for Swiper to be available */
       function tryInit() {
         if (typeof Swiper !== 'undefined') {
-          document.querySelectorAll('[id^="lumen-ugc-"]').forEach(function (el) {
-            if (el.classList.contains('lumen-ugc__slider')) {
-              initLumenUgc(el.id);
-            }
-          });
+          initLumenUgc();
         } else {
-          setTimeout(tryInit, 100);
+          setTimeout(tryInit, 50);
         }
       }
 
