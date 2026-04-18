@@ -257,6 +257,31 @@
             "mobile_margin_top": 0,
             "mobile_margin_bottom": 0
           }
+        },
+        "lumen_stat_wmiw8K": {
+          "type": "lumen-stat",
+          "settings": {
+            "stat_label_1": "Light Reduction",
+            "stat_value_1": "High Blackout",
+            "stat_filled_1": 4,
+            "stat_label_2": "Eye Comfort",
+            "stat_value_2": "Pressure-Free",
+            "stat_filled_2": 4,
+            "stat_label_3": "Stay-Put Fit",
+            "stat_value_3": "Secure Hold",
+            "stat_filled_3": 4,
+            "stat_label_4": "",
+            "stat_value_4": "",
+            "stat_filled_4": 5,
+            "stat_label_5": "",
+            "stat_value_5": "",
+            "stat_filled_5": 5,
+            "image": "shopify://shop_images/3a606cf6b7c8dd038b70cf59b00624525f31e556.png",
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
         }
       },
       "block_order": [
@@ -272,7 +297,8 @@
         "separator_t7wwf7",
         "lumen_ugc_gkMKAb",
         "maison_content_card_GTNTiX",
-        "lumen_faq_GBcUxh"
+        "lumen_faq_GBcUxh",
+        "lumen_stat_wmiw8K"
       ],
       "settings": {
         "full_width": true,
