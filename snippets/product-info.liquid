@@ -432,6 +432,9 @@ Supported variables
             </div>
           {%- endif -%}
 
+        {%- when 'lumen-ugc' -%}
+          {%- render 'lumen-ugc', block: block -%}
+
         {%- when 'maison-feature-list' -%}
           {%- liquid
             assign has_fl_items = false
