@@ -221,6 +221,42 @@
             "mobile_margin_top": 0,
             "mobile_margin_bottom": 0
           }
+        },
+        "lumen_faq_GBcUxh": {
+          "type": "lumen-faq",
+          "settings": {
+            "faq_1_icon": "shopify://shop_images/Information-Circle--Streamline-Sharp_1.svg",
+            "faq_1_title": "Materials & Fit",
+            "faq_1_text": "test data",
+            "faq_2_icon": "shopify://shop_images/Hotel-Laundry--Streamline-Sharp.svg",
+            "faq_2_title": "Care Guide",
+            "faq_2_text": "test data",
+            "faq_3_icon": "shopify://shop_images/Shipping-Transfer-Truck--Streamline-Sharp_6.svg",
+            "faq_3_title": "Shipping & Returns",
+            "faq_3_text": "test data",
+            "faq_4_title": "",
+            "faq_4_text": "",
+            "faq_5_title": "",
+            "faq_5_text": "",
+            "faq_6_title": "",
+            "faq_6_text": "",
+            "faq_7_title": "",
+            "faq_7_text": "",
+            "faq_8_title": "",
+            "faq_8_text": "",
+            "faq_9_title": "",
+            "faq_9_text": "",
+            "faq_10_title": "",
+            "faq_10_text": "",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
         }
       },
       "block_order": [
@@ -235,7 +271,8 @@
         "maison_feature_list_F8icPc",
         "separator_t7wwf7",
         "lumen_ugc_gkMKAb",
-        "maison_content_card_GTNTiX"
+        "maison_content_card_GTNTiX",
+        "lumen_faq_GBcUxh"
       ],
       "settings": {
         "full_width": true,
