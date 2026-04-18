@@ -154,6 +154,29 @@
             "mobile_margin_top": 0,
             "mobile_margin_bottom": 0
           }
+        },
+        "maison_feature_list_F8icPc": {
+          "type": "maison-feature-list",
+          "settings": {
+            "feature_1_text": "Order before 23:00 and your order gets shipped today",
+            "feature_1_icon": "shopify://shop_images/Package--Streamline-Sharp_2.svg",
+            "feature_2_text": "30-night money-back guarantee",
+            "feature_2_icon": "shopify://shop_images/Shipment-Return--Streamline-Sharp_2.svg",
+            "feature_3_text": "Delivery in 1 to 2 business days",
+            "feature_3_icon": "shopify://shop_images/Shipping-Transfer-Truck--Streamline-Sharp_5.svg",
+            "feature_4_text": "",
+            "feature_5_text": "",
+            "feature_6_text": "",
+            "feature_7_text": "",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
         }
       },
       "block_order": [
@@ -164,7 +187,8 @@
         "maison_price_7dRbXE",
         "separator",
         "maison_bundle_d9UmU6",
-        "maison_pay_icons_jGDRtg"
+        "maison_pay_icons_jGDRtg",
+        "maison_feature_list_F8icPc"
       ],
       "settings": {
         "full_width": true,
