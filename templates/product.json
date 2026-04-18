@@ -203,6 +203,24 @@
             "mobile_margin_top": 0,
             "mobile_margin_bottom": 0
           }
+        },
+        "maison_content_card_GTNTiX": {
+          "type": "maison-content-card",
+          "settings": {
+            "title": "Fall Asleep Faster. **Wake Up Rested**",
+            "body": "Monté creates a calmer sleep space by reducing stray light and wrapping your face in smooth 22-momme silk.",
+            "feature_1": "Blackout design to minimise light exposure",
+            "feature_2": "Silk-smooth feel that stays gentle on skin",
+            "feature_3": "Secure fit that stays in place through the night",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
         }
       },
       "block_order": [
@@ -216,7 +234,8 @@
         "maison_pay_icons_jGDRtg",
         "maison_feature_list_F8icPc",
         "separator_t7wwf7",
-        "lumen_ugc_gkMKAb"
+        "lumen_ugc_gkMKAb",
+        "maison_content_card_GTNTiX"
       ],
       "settings": {
         "full_width": true,
