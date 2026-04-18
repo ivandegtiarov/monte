@@ -178,6 +178,10 @@
             "mobile_margin_bottom": 0
           }
         },
+        "separator_t7wwf7": {
+          "type": "separator",
+          "settings": {}
+        },
         "lumen_ugc_gkMKAb": {
           "type": "lumen-ugc",
           "settings": {
@@ -211,6 +215,7 @@
         "maison_bundle_d9UmU6",
         "maison_pay_icons_jGDRtg",
         "maison_feature_list_F8icPc",
+        "separator_t7wwf7",
         "lumen_ugc_gkMKAb"
       ],
       "settings": {
