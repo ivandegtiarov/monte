@@ -134,14 +134,6 @@
             "mobile_margin_top": 0,
             "mobile_margin_bottom": 0
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": false
-          }
         }
       },
       "block_order": [
@@ -151,8 +143,7 @@
         "maison_features_hJRyX4",
         "maison_price_7dRbXE",
         "separator",
-        "maison_bundle_d9UmU6",
-        "description"
+        "maison_bundle_d9UmU6"
       ],
       "settings": {
         "full_width": true,
