@@ -544,8 +544,9 @@ Supported variables
                   {%- assign fk = 'feature_' | append: i -%}
                   {%- if block.settings[fk] != blank -%}
                     <li class="maison-content-card__feature">
-                      <svg class="maison-content-card__check" xmlns="http://www.w3.org/2000/svg" width="9" height="8" viewBox="0 0 9 8" fill="none" aria-hidden="true">
-                        <path d="M0.441956 3.51538L3.17633 6.24976L7.86383 0.390381" stroke="#F8F1E9" stroke-width="1.25"/>
+                      <svg class="maison-content-card__check" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="20" height="20" rx="10" fill="#232E71"/>
+                        <path d="M6.28906 10L9.02344 12.7344L13.7109 6.875" stroke="#F8F1E9" stroke-width="1.25"/>
                       </svg>
                       <span class="maison-content-card__feature-text">{{ block.settings[fk] }}</span>
                     </li>
