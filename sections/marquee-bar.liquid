@@ -50,7 +50,7 @@
 
   @keyframes marquee-scroll-{{ section.id }} {
     from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    to   { transform: translateX(calc(-100% / 6)); }
   }
 
   @media screen and (min-width: 750px) {
@@ -72,10 +72,10 @@
 {%- if items.size > 0 -%}
   <div class="marquee-bar-{{ section.id }}" role="marquee" aria-label="Announcements">
     <div class="marquee__track">
-      {%- comment %} Render items twice for seamless loop {%- endcomment %}
-      {%- for run in (1..2) -%}
+      {%- comment %} Repeat 6× so the track always overflows the viewport for seamless loop {%- endcomment %}
+      {%- for run in (1..6) -%}
         {%- for block in items -%}
-          <div class="marquee__item" {{ block.shopify_attributes }}>
+          <div class="marquee__item" {% if run == 1 %}{{ block.shopify_attributes }}{% endif %}>
             <span class="marquee__text">{{ block.settings.text }}</span>
             <span class="marquee__dot" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" fill="none">
