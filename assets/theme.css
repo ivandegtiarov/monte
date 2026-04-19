@@ -7632,13 +7632,13 @@ shopify-account::part(signed-out-avatar) {
 
 @media screen and (min-width: 1150px) {
   .product {
-    column-gap: var(--spacing-12);
+    column-gap: 40px;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .product {
-    column-gap: var(--spacing-24);
+    column-gap: 40px;
   }
 }
 
