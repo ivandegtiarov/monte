@@ -1,1 +1,618 @@
-{"sections":{"main":{"type":"main-product","blocks":{"vendor":{"type":"vendor","settings":{}},"title":{"type":"title","settings":{"heading_tag":"h4"}},"rating":{"type":"rating","settings":{"show_empty":true}},"offer_y6hRDG":{"type":"offer","settings":{"text_alignment":"start","icon_position":"aligned","icon":"picto-pin","custom_icon":"shopify:\/\/shop_images\/Check-Circle--Streamline-Sharp.svg","icon_width":20,"title":"100% Blackout for uninterrupted rest","content":"","background":"#ffffff","text_color":"#182153"}},"offer_RJUpt6":{"type":"offer","settings":{"text_alignment":"start","icon_position":"aligned","icon":"picto-pin","custom_icon":"shopify:\/\/shop_images\/Check-Circle--Streamline-Sharp.svg","icon_width":20,"title":"Gentle on skin and hair","content":"","background":"#ffffff","text_color":"#182153"}},"offer_EUHCKr":{"type":"offer","settings":{"text_alignment":"start","icon_position":"aligned","icon":"picto-pin","custom_icon":"shopify:\/\/shop_images\/Check-Circle--Streamline-Sharp.svg","icon_width":20,"title":"Pressure-free, all-night comfort","content":"","background":"#ffffff","text_color":"#182153"}},"offer_qxRai8":{"type":"offer","settings":{"text_alignment":"start","icon_position":"aligned","icon":"picto-pin","custom_icon":"shopify:\/\/shop_images\/Check-Circle--Streamline-Sharp.svg","icon_width":20,"title":"Secure fit that stays in place","content":"","background":"#ffffff","text_color":"#182153"}},"badges":{"type":"badges","settings":{}},"price":{"type":"price","settings":{"show_taxes_notice":false}},"payment_terms":{"type":"payment_terms","settings":{}},"separator":{"type":"separator","settings":{}},"description":{"type":"description","settings":{"icon":"none","icon_width":20,"collapse_content":false}},"variant_picker":{"type":"variant_picker","settings":{"hide_sold_out_variants":false,"stack_blocks":true,"selector_style":"block","swatch_selector_style":"swatch","variant_image_options":"","size_chart_page":""}},"inventory_mFQxhW":{"type":"inventory","settings":{"low_inventory_threshold":20}},"buy_buttons":{"type":"buy_buttons","settings":{"show_payment_button":false,"show_gift_card_recipient":true,"atc_button_background":"#232e71","atc_button_text_color":"#fdfbf9","payment_button_background":"","payment_button_text_color":""}}},"block_order":["vendor","title","rating","offer_y6hRDG","offer_RJUpt6","offer_EUHCKr","offer_qxRai8","badges","price","payment_terms","separator","description","variant_picker","inventory_mFQxhW","buy_buttons"],"settings":{"full_width":true,"show_fixed_add_to_cart":true,"desktop_media_width":65,"desktop_media_layout":"grid_highlight","mobile_media_size":"expanded","mobile_carousel_control":"floating_dots","enable_video_autoplay":false,"enable_video_looping":true,"enable_image_zoom":true,"max_image_zoom_level":3,"background":"#ffffff","background_gradient":"","text_color":"#182153","input_background":"rgba(0,0,0,0)","input_text_color":""}},"media_with_text_PYwfmw":{"type":"media-with-text","blocks":{"image_8pMt3h":{"type":"image","settings":{"media_width":50,"media_position":"start","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"Light Sleepers","title":"Protect your night","content":"<p>If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete. Monté creates a private pocket of darkness so you can stay settled, even when the world is not.<\/p>","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#182153","text_gradient":"","button_background":"","button_text_color":""}},"image_7NtCNe":{"type":"image","settings":{"media_width":50,"media_position":"end","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"Beauty Sleep","title":"Silk that feels gentle","content":"<p>A refined routine starts with what touches your skin for hours. 22-momme mulberry silk feels smooth and calm on the face, so you wake up looking rested, not pressed.<\/p>","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#182153","text_gradient":"","button_background":"","button_text_color":""}},"image_7xnTGt":{"type":"image","settings":{"media_width":50,"media_position":"start","text_position":"place-self-center-start text-start","icon":"none","icon_width":48,"subheading":"Quiet Luxury","title":"Make rest feel intentional","content":"<p>This is not another sleep gadget. It is a small upgrade you will use every night, turning going to bed into a calm ritual you look forward to. Minimal, elegant, and made to belong in your evening routine.<\/p>","link_text":"","link_url":"","background":"rgba(0,0,0,0)","background_gradient":"","text_color":"#182153","text_gradient":"","button_background":"","button_text_color":""}}},"block_order":["image_8pMt3h","image_7NtCNe","image_7xnTGt"],"name":"Media with text","settings":{"full_width":false,"alternate_media_position":false,"spacing":"small"}},"related-products":{"type":"related-products","settings":{"recommendations_count":6,"products":[],"full_width":true,"stack_products":true,"show_progress_bar":false,"products_per_row_mobile":"1","products_per_row_desktop":3,"subheading":"","title":"You may also like","content":"","background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","product_card_background":"","product_card_text_color":""}},"faq_fDUKfX":{"type":"faq","blocks":{"item_QpFVHD":{"type":"item","settings":{"title":"Do you ship overseas?","content":"<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.<\/p>"}},"item_LbD6Ee":{"type":"item","settings":{"title":"How long will it take to get my orders?","content":"<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.<\/p>"}},"item_B3rr3J":{"type":"item","settings":{"title":"Any question?","content":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}}},"block_order":["item_QpFVHD","item_LbD6Ee","item_B3rr3J"],"name":"FAQ","settings":{"full_width":true,"subheading":"","title":"FAQ","content":"<p>Use this text to share information about your product or shipping policies.<\/p>","team_avatar_width":160,"support_hours":"Our customer support is available Monday to Friday: 8am-8:30pm.","answer_time":"Average answer time: 24h","button_text":"","button_url":"","text_position":"center","background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","button_background":"","button_text_color":"","accordion_background":"","accordion_text_color":""}}},"order":["main","media_with_text_PYwfmw","related-products","faq_fDUKfX"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "maison_tagline_7wA46d": {
+          "type": "maison-tagline",
+          "settings": {
+            "text": "22-Momme Mulberry Silk",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "maison_product_name_3gzmYY": {
+          "type": "maison-product-name",
+          "settings": {
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "maison_rating_6TRbti": {
+          "type": "maison-rating",
+          "settings": {
+            "rating_value": "4.8",
+            "rating_count": "847",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "maison_features_hJRyX4": {
+          "type": "maison-features",
+          "settings": {
+            "feature_1": "100% Blackout for uninterrupted rest",
+            "feature_1_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "feature_2": "Gentle on skin and hair",
+            "feature_2_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "feature_3": "Pressure-free, all-night comfort",
+            "feature_3_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "feature_4": "Secure fit that stays in place",
+            "feature_4_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "maison_price_7dRbXE": {
+          "type": "maison-price",
+          "settings": {
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "maison_bundle_d9UmU6": {
+          "type": "maison-bundle",
+          "settings": {
+            "color_products": [
+              "champagne-gold-silk-sleep-mask",
+              "midnight-blue-sleep-mask-copy",
+              "monte-silk-sleep-mask",
+              "rose-noir-silk-sleep-mask"
+            ],
+            "color_label": "SELECT YOUR COLOR:",
+            "set_label": "CHOOSE YOUR SET:",
+            "set_label_default": "1 Mask",
+            "each_label": "each",
+            "row1_title": "1 Mask",
+            "row1_footer": "",
+            "bundle_2_product": "rose-noir-silk-sleep-mask",
+            "row2_title": "2 Masks",
+            "row2_badge": "Extra 10% off",
+            "row2_save": "Save 130,00 zł",
+            "row2_tab": "Most Popular",
+            "row2_footer": "+ Free Shipping",
+            "bundle_3_product": "rose-noir-silk-sleep-mask",
+            "row3_title": "3 Masks",
+            "row3_badge": "Extra 20% off",
+            "row3_save": "Save 270,00 zł",
+            "row3_tab": "Best Value",
+            "row3_footer": "+ Free Shipping",
+            "popup_title": "Choose product",
+            "popup_choose_label": "Choose",
+            "choose_color_label": "Choose Mask Color",
+            "show_stock_bar": true,
+            "stock_label": "Limited availability",
+            "stock_percentage": 30,
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "maison_pay_icons_jGDRtg": {
+          "type": "maison-pay-icons",
+          "settings": {
+            "icon_1": "shopify://shop_images/Payment_Method_65.svg",
+            "icon_2": "shopify://shop_images/Payment_Method_66.svg",
+            "icon_3": "shopify://shop_images/Payment_Method_67.svg",
+            "icon_4": "shopify://shop_images/Payment_Method_68.svg",
+            "icon_5": "shopify://shop_images/Payment_Method_69.svg",
+            "icon_6": "shopify://shop_images/Payment_Method_70.svg",
+            "icon_7": "shopify://shop_images/Payment_Method_71.svg",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "maison_feature_list_F8icPc": {
+          "type": "maison-feature-list",
+          "settings": {
+            "feature_1_text": "Order before 23:00 and your order gets shipped today",
+            "feature_1_icon": "shopify://shop_images/Package--Streamline-Sharp_2.svg",
+            "feature_2_text": "30-night money-back guarantee",
+            "feature_2_icon": "shopify://shop_images/Shipment-Return--Streamline-Sharp_2.svg",
+            "feature_3_text": "Delivery in 1 to 2 business days",
+            "feature_3_icon": "shopify://shop_images/Shipping-Transfer-Truck--Streamline-Sharp_5.svg",
+            "feature_4_text": "",
+            "feature_5_text": "",
+            "feature_6_text": "",
+            "feature_7_text": "",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "separator_t7wwf7": {
+          "type": "separator",
+          "settings": {}
+        },
+        "lumen_ugc_gkMKAb": {
+          "type": "lumen-ugc",
+          "settings": {
+            "title": "A nightly ritual, in **real life**",
+            "video_1": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_1": "shopify://shop_images/Placeholder01.png",
+            "video_2": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_2": "shopify://shop_images/Placeholder07.png",
+            "video_3": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_3": "shopify://shop_images/Placeholder07.png",
+            "video_4": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
+            "preview_4": "shopify://shop_images/Placeholder01.png",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "maison_content_card_GTNTiX": {
+          "type": "maison-content-card",
+          "settings": {
+            "title": "Fall Asleep Faster. **Wake Up Rested**",
+            "body": "Monté creates a calmer sleep space by reducing stray light and wrapping your face in smooth 22-momme silk.",
+            "feature_1": "Blackout design to minimise light exposure",
+            "feature_2": "Silk-smooth feel that stays gentle on skin",
+            "feature_3": "Secure fit that stays in place through the night",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "lumen_faq_GBcUxh": {
+          "type": "lumen-faq",
+          "settings": {
+            "faq_1_icon": "shopify://shop_images/Information-Circle--Streamline-Sharp_1.svg",
+            "faq_1_title": "Materials & Fit",
+            "faq_1_text": "test data",
+            "faq_2_icon": "shopify://shop_images/Hotel-Laundry--Streamline-Sharp.svg",
+            "faq_2_title": "Care Guide",
+            "faq_2_text": "test data",
+            "faq_3_icon": "shopify://shop_images/Shipping-Transfer-Truck--Streamline-Sharp_6.svg",
+            "faq_3_title": "Shipping & Returns",
+            "faq_3_text": "test data",
+            "faq_4_title": "",
+            "faq_4_text": "",
+            "faq_5_title": "",
+            "faq_5_text": "",
+            "faq_6_title": "",
+            "faq_6_text": "",
+            "faq_7_title": "",
+            "faq_7_text": "",
+            "faq_8_title": "",
+            "faq_8_text": "",
+            "faq_9_title": "",
+            "faq_9_text": "",
+            "faq_10_title": "",
+            "faq_10_text": "",
+            "desktop_padding_top": 0,
+            "desktop_padding_bottom": 0,
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_padding_top": 0,
+            "mobile_padding_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        },
+        "lumen_stat_wmiw8K": {
+          "type": "lumen-stat",
+          "settings": {
+            "stat_label_1": "Light Reduction",
+            "stat_value_1": "High Blackout",
+            "stat_filled_1": 5,
+            "stat_label_2": "Eye Comfort",
+            "stat_value_2": "Pressure-Free",
+            "stat_filled_2": 4,
+            "stat_label_3": "Stay-Put Fit",
+            "stat_value_3": "Secure Hold",
+            "stat_filled_3": 4,
+            "stat_label_4": "",
+            "stat_value_4": "",
+            "stat_filled_4": 5,
+            "stat_label_5": "",
+            "stat_value_5": "",
+            "stat_filled_5": 5,
+            "image": "shopify://shop_images/3a606cf6b7c8dd038b70cf59b00624525f31e556.png",
+            "desktop_margin_top": 0,
+            "desktop_margin_bottom": 0,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "maison_tagline_7wA46d",
+        "maison_product_name_3gzmYY",
+        "maison_rating_6TRbti",
+        "maison_features_hJRyX4",
+        "maison_price_7dRbXE",
+        "separator",
+        "maison_bundle_d9UmU6",
+        "maison_pay_icons_jGDRtg",
+        "maison_feature_list_F8icPc",
+        "separator_t7wwf7",
+        "lumen_ugc_gkMKAb",
+        "maison_content_card_GTNTiX",
+        "lumen_faq_GBcUxh",
+        "lumen_stat_wmiw8K"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 65,
+        "desktop_media_layout": "grid_highlight",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "#182153",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "marquee_bar": {
+      "type": "marquee-bar",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "Same-Day Dispatch"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "1–2 Business Day Delivery"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "30-Night Money-Back Guarantee"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "Free Shipping over 250 zł"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "background_color": "#232e71",
+        "text_color": "#f8f1e9",
+        "speed": 24,
+        "pause_on_hover": true
+      }
+    },
+    "stats_social_proof": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_1": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_2": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        },
+        "review_1": {
+          "type": "review_card",
+          "disabled": true,
+          "settings": {
+            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
+            "reviewer_name": "Anna K.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "stat_1": {
+          "type": "stat_row",
+          "settings": {
+            "number": "94%",
+            "label": "said the blackout felt \"complete\""
+          }
+        },
+        "stat_2": {
+          "type": "stat_row",
+          "settings": {
+            "number": "91%",
+            "label": "said it stayed in place all night"
+          }
+        },
+        "stat_3": {
+          "type": "stat_row",
+          "settings": {
+            "number": "89%",
+            "label": "said they woke up feeling more rested"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "review_1",
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "tagline": "Light Sleepers",
+        "heading": "**Protect** your night",
+        "body": "If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": false,
+        "reverse_mobile": false,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "stats_social_proof_LHaDaL": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_PnqMAr": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_item_KAbrAf": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        },
+        "review_card_wYxTgi": {
+          "type": "review_card",
+          "disabled": true,
+          "settings": {
+            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
+            "reviewer_name": "Anna K.",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_PnqMAr",
+        "feature_item_KAbrAf",
+        "review_card_wYxTgi"
+      ],
+      "settings": {
+        "tagline": "Beauty Sleep",
+        "heading": "Silk that **feels gentle**",
+        "body": "A refined routine starts with what touches your skin for hours. 22-momme mulberry silk feels smooth and calm on the face, so you wake up looking rested, not pressed.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": true,
+        "reverse_mobile": false,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "stats_social_proof_TKncbt": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_UdemYM": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_item_KdEAXA": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        },
+        "review_card_YVjJ3M": {
+          "type": "review_card",
+          "settings": {
+            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
+            "reviewer_name": "Anna K.",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_UdemYM",
+        "feature_item_KdEAXA",
+        "review_card_YVjJ3M"
+      ],
+      "settings": {
+        "tagline": "Quiet Luxury",
+        "heading": "**Make rest** feel intentional",
+        "body": "This is not another sleep gadget. It is a small upgrade you will use every night, turning going to bed into a calm ritual you look forward to. Minimal, elegant, and made to belong in your evening routine.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": false,
+        "reverse_mobile": false,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "faq_accordion": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it actually block light?",
+            "answer": "<p>Yes. The Monté sleep mask is designed with a contoured shape and blackout-grade fabric that blocks 100% of light — even in bright rooms or on early-morning flights.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I hate tight masks. Will this press on my eyes?",
+            "answer": "<p>No. The mask uses a 3D contoured shell that sits away from your eyelids entirely, so there's no pressure on your eyes — even if you're a side sleeper.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it stay in place if I move at night?",
+            "answer": "<p>Yes. The adjustable elastic band is designed to hold the mask comfortably in place through the night, whether you sleep on your back, side, or stomach.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does \"22-momme silk\" mean, and why does it matter?",
+            "answer": "<p>Momme (mm) is the weight and density measure for silk. 22mm is considered premium — it's heavier, more durable, and feels noticeably softer than lower-grade silks used in most sleep masks.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is Monté a medical product or does it \"treat\" sleep issues?",
+            "answer": "<p>Monté is not a medical device. It's a sleep accessory designed to improve the conditions for rest. If you have a sleep disorder, please consult a healthcare professional.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it good for travel and naps?",
+            "answer": "<p>Yes — it's one of the best travel companions you can pack. Lightweight, compact, and effective in any lighting environment. Works just as well on a plane, train, or couch.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I care for it?",
+            "answer": "<p>Hand wash in cool water with a gentle detergent. Lay flat to dry. Avoid machine washing or wringing to preserve the silk and shape.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if it's not right for me?",
+            "answer": "<p>We offer a 30-day return policy. If it doesn't work for you, reach out to our team and we'll sort it out — no questions asked.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8"
+      ],
+      "settings": {
+        "tagline": "Frequently Asked Questions",
+        "heading": "We know what **you're wondering**",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    }
+  },
+  "order": [
+    "main",
+    "marquee_bar",
+    "stats_social_proof",
+    "stats_social_proof_LHaDaL",
+    "stats_social_proof_TKncbt",
+    "faq_accordion"
+  ]
+}

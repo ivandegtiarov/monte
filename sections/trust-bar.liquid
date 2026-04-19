@@ -1,0 +1,239 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    padding: 0;
+  }
+
+  .trust-bar-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding: 8px 20px 32px;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__icon-wrap {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f1e9;
+    border: 1px dashed #232e71;
+    border-radius: 999px;
+    padding: 12px;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__icon-wrap img {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__icon-wrap svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__heading {
+    font-family: "PP Pangaia", serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: {{ section.settings.heading_color }};
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .trust-bar-{{ section.id }} .trust-bar__subline {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: {{ section.settings.body_color }};
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 900px) {
+    .trust-bar-{{ section.id }} {
+      padding: 20px 40px 40px;
+    }
+
+    .trust-bar-{{ section.id }} .trust-bar__inner {
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    .trust-bar-{{ section.id }} .trust-bar__item {
+      flex: 1;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .trust-bar-{{ section.id }} .trust-bar__icon-wrap {
+      padding: 16px;
+    }
+
+    .trust-bar-{{ section.id }} .trust-bar__icon-wrap img,
+    .trust-bar-{{ section.id }} .trust-bar__icon-wrap svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .trust-bar-{{ section.id }} .trust-bar__heading {
+      font-size: 20px;
+    }
+
+    .trust-bar-{{ section.id }} .trust-bar__body {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<div class="trust-bar-{{ section.id }}">
+  <div class="trust-bar__inner">
+    {%- for block in section.blocks -%}
+      <div class="trust-bar__item" {{ block.shopify_attributes }}>
+        <div class="trust-bar__icon-wrap">
+          {%- if block.settings.icon != blank -%}
+            {{
+              block.settings.icon
+              | image_url: width: 64
+              | image_tag:
+                loading: 'lazy',
+                alt: block.settings.heading | escape
+            }}
+          {%- else -%}
+            {%- case forloop.index -%}
+              {%- when 1 -%}
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 8h18v14H2V8zM20 12h5l5 5v5h-10V12z" stroke="#182153" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="7" cy="23" r="2" stroke="#182153" stroke-width="1.5"/>
+                  <circle cx="23" cy="23" r="2" stroke="#182153" stroke-width="1.5"/>
+                </svg>
+              {%- when 2 -%}
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M26 16c0 5.523-4.477 10-10 10S6 21.523 6 16 10.477 6 16 6" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M22 4l4 4-4 4M26 8H16" stroke="#182153" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 16l3 3 5-6" stroke="#182153" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {%- when 3 -%}
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="10" width="22" height="16" rx="2" stroke="#182153" stroke-width="1.5"/>
+                  <path d="M5 14h22M11 10V7a5 5 0 0110 0v3" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            {%- endcase -%}
+          {%- endif -%}
+        </div>
+        <div class="trust-bar__text">
+          {%- if block.settings.heading != blank -%}
+            <p class="trust-bar__heading">{{ block.settings.heading }}</p>
+          {%- endif -%}
+          {%- if block.settings.subline != blank -%}
+            <p class="trust-bar__subline">{{ block.settings.subline }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust Bar",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#182153"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body color",
+      "default": "#182153"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Free Shipping over 250 zł"
+        },
+        {
+          "type": "text",
+          "id": "subline",
+          "label": "Subline",
+          "default": "Taxes and duties included."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Bar",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "heading": "Free Shipping over 250 zł",
+            "subline": "Taxes and duties included."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "heading": "30-Night Money-Back Guarantee",
+            "subline": "Try it at home, return it if it's not right."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "heading": "Same-Day Dispatch",
+            "subline": "Order today, we dispatch it the same day."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

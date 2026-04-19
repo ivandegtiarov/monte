@@ -138,6 +138,893 @@ Supported variables
             </div>
           {%- endif -%}
 
+        {%- when 'maison-tagline' -%}
+          {%- if block.settings.text != blank -%}
+            <style>
+              .maison-tagline {
+                font-family: "PP Neue Montreal Mono", monospace;
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: rgba(24, 33, 83, 0.75);
+                line-height: 1.5;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-tagline {
+                  font-size: 12px;
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+              }
+            </style>
+            <p class="maison-tagline" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+          {%- endif -%}
+
+        {%- when 'maison-product-name' -%}
+          <style>
+            .maison-product-name {
+              font-family: "PP Pangaia", serif;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 1.4;
+              color: #182153;
+              margin-top: {{ block.settings.mobile_margin_top }}px;
+              margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+              padding-top: {{ block.settings.mobile_padding_top }}px;
+              padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+            }
+            .maison-product-name a {
+              color: inherit;
+              text-decoration: none;
+            }
+            @media screen and (min-width: 750px) {
+              .maison-product-name {
+                font-size: 24px;
+                margin-top: {{ block.settings.desktop_margin_top }}px;
+                margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                padding-top: {{ block.settings.desktop_padding_top }}px;
+                padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+              }
+            }
+          </style>
+          {%- if request.page_type == 'product' -%}
+            <h1 class="maison-product-name" {{ block.shopify_attributes }}>{{ product.title }}</h1>
+          {%- else -%}
+            <h2 class="maison-product-name" {{ block.shopify_attributes }}>
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h2>
+          {%- endif -%}
+
+        {%- when 'maison-rating' -%}
+          {%- if block.settings.rating_value != blank and block.settings.rating_count != blank -%}
+            <style>
+              .maison-rating {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+              }
+              .maison-rating__stars {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+              }
+              .maison-rating__text {
+                font-family: "PP Mori", sans-serif;
+                font-size: 10px;
+                font-weight: 375;
+                color: #182153;
+                line-height: 1.5;
+                margin: 0;
+                white-space: nowrap;
+              }
+              .maison-rating__text strong {
+                font-weight: 800;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-rating {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+                .maison-rating__text { font-size: 12px; }
+              }
+            </style>
+            <div class="maison-rating" {{ block.shopify_attributes }}>
+              <div class="maison-rating__stars" role="img" aria-label="{{ block.settings.rating_value }} out of 5 stars">
+                {%- for i in (1..5) -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <g clip-path="url(#clip0_maison_star_{{ i }})">
+                      <path d="M7.5 4.25L6.00049 1.25L4.5 4.25L1 4.5L3.5 7.25L2.5 10.75L6 9.25L9.5 10.75L8.5 7.25L11 4.50021L7.5 4.25Z" fill="#D9A17D" stroke="#D9A17D" stroke-miterlimit="16" stroke-linecap="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_maison_star_{{ i }}">
+                        <rect width="12" height="12" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                {%- endfor -%}
+              </div>
+              <p class="maison-rating__text">
+                Rated <strong>{{ block.settings.rating_value }}</strong>/5 based on <strong>{{ block.settings.rating_count }}</strong> reviews.
+              </p>
+            </div>
+          {%- endif -%}
+
+        {%- when 'maison-features' -%}
+          {%- assign has_features = false -%}
+          {%- for i in (1..4) -%}
+            {%- assign fkey = 'feature_' | append: i -%}
+            {%- if block.settings[fkey] != blank -%}{%- assign has_features = true -%}{%- endif -%}
+          {%- endfor -%}
+          {%- if has_features -%}
+            <style>
+              .maison-features {
+                list-style: none;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+              }
+              .maison-features__item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              }
+              .maison-features__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                background-color: #232e71;
+                border-radius: 999px;
+                color: #fff;
+              }
+              .maison-features__icon--custom {
+                background-color: transparent;
+                border-radius: 0;
+                width: 20px;
+                height: 20px;
+              }
+              .maison-features__icon--custom img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+              .maison-features__text {
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                color: #182153;
+                line-height: 1.5;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-features {
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                }
+                .maison-features__icon { width: 20px; height: 20px; }
+                .maison-features__text { font-size: 14px; }
+              }
+            </style>
+            <ul class="maison-features" {{ block.shopify_attributes }}>
+              {%- for i in (1..4) -%}
+                {%- assign fkey = 'feature_' | append: i -%}
+                {%- assign ficon = 'feature_' | append: i | append: '_icon' -%}
+                {%- if block.settings[fkey] != blank -%}
+                  <li class="maison-features__item">
+                    {%- if block.settings[ficon] != blank -%}
+                      <span class="maison-features__icon maison-features__icon--custom" aria-hidden="true">
+                        <img src="{{ block.settings[ficon] | image_url: width: 20 }}" alt="" width="20" height="20" loading="lazy">
+                      </span>
+                    {%- else -%}
+                      <span class="maison-features__icon" aria-hidden="true">
+                        {%- render 'icon' with 'checkmark', width: 10, height: 10 -%}
+                      </span>
+                    {%- endif -%}
+                    <span class="maison-features__text">{{ block.settings[fkey] }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+
+        {%- when 'maison-price' -%}
+          {%- assign maison_variant = product.selected_or_first_available_variant -%}
+          {%- if maison_variant != nil -%}
+            <style>
+              .maison-price {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+              }
+              .maison-price__compare {
+                font-family: "PP Mori", sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                color: #182153;
+                opacity: 0.5;
+                line-height: 1.5;
+                white-space: nowrap;
+                text-decoration: line-through;
+              }
+              .maison-price__sale {
+                font-family: "PP Mori", sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                color: #182153;
+                line-height: 1.5;
+                white-space: nowrap;
+              }
+              .maison-price__badge {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 24px;
+                padding: 4px 12px;
+                background-color: #2f6b57;
+                border-radius: 999px;
+                font-family: "PP Neue Montreal Mono", monospace;
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: #d9e8e1;
+                line-height: 1.5;
+                white-space: nowrap;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-price {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+                .maison-price__compare { font-size: 16px; }
+                .maison-price__sale { font-size: 18px; }
+              }
+            </style>
+            <div class="maison-price" {{ block.shopify_attributes }}>
+              {%- if maison_variant.compare_at_price > maison_variant.price -%}
+                <s class="maison-price__compare">
+                  <span class="sr-only">{{ 'product.price.regular_price' | t }}</span>
+                  {%- if settings.currency_code_enabled -%}
+                    {{- maison_variant.compare_at_price | money_with_currency -}}
+                  {%- else -%}
+                    {{- maison_variant.compare_at_price | money -}}
+                  {%- endif -%}
+                </s>
+              {%- endif -%}
+              <span class="maison-price__sale">
+                <span class="sr-only">{{ 'product.price.sale_price' | t }}</span>
+                {%- if settings.currency_code_enabled -%}
+                  {{- maison_variant.price | money_with_currency -}}
+                {%- else -%}
+                  {{- maison_variant.price | money -}}
+                {%- endif -%}
+              </span>
+              {%- if maison_variant.compare_at_price > maison_variant.price -%}
+                {%- assign maison_discount = maison_variant.compare_at_price | minus: maison_variant.price | times: 100.0 | divided_by: maison_variant.compare_at_price | round -%}
+                <span class="maison-price__badge">SAVE {{ maison_discount }}%</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+        {%- when 'lumen-faq' -%}
+          {%- liquid
+            assign lf_has_items = false
+            for i in (1..10)
+              assign lf_q = 'faq_' | append: i | append: '_title'
+              if block.settings[lf_q] != blank
+                assign lf_has_items = true
+                break
+              endif
+            endfor
+          -%}
+          {%- if lf_has_items -%}
+            <style>
+              .lumen-faq {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+              }
+              .lumen-faq__item {
+                border-top: 1px solid rgba(24, 33, 83, 0.08);
+              }
+              .lumen-faq__item:last-child {
+                border-bottom: 1px solid rgba(24, 33, 83, 0.08);
+              }
+              .lumen-faq__trigger {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+                padding: 16px 0;
+                background: none;
+                border: none;
+                cursor: pointer;
+                text-align: left;
+              }
+              .lumen-faq__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                overflow: hidden;
+              }
+              .lumen-faq__icon img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+              .lumen-faq__title {
+                flex: 1 0 0;
+                min-width: 1px;
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 1.5;
+                letter-spacing: 0;
+                text-transform: uppercase;
+                color: #182153;
+              }
+              .lumen-faq__toggle {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              .lumen-faq__toggle svg {
+                transition: transform 0.3s ease;
+              }
+              .lumen-faq__toggle .lumen-faq__minus {
+                display: none;
+              }
+              .lumen-faq__item.is-open .lumen-faq__toggle .lumen-faq__plus {
+                display: none;
+              }
+              .lumen-faq__item.is-open .lumen-faq__toggle .lumen-faq__minus {
+                display: block;
+              }
+              .lumen-faq__body-wrap {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.35s ease;
+              }
+              .lumen-faq__body-wrap.is-open {
+                grid-template-rows: 1fr;
+              }
+              .lumen-faq__body-inner {
+                overflow: hidden;
+              }
+              .lumen-faq__body {
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.6;
+                color: rgba(24, 33, 83, 0.75);
+                padding-bottom: 16px;
+                padding-left: 24px;
+                margin: 0;
+              }
+              @media screen and (min-width: 750px) {
+                .lumen-faq {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+                .lumen-faq__trigger { gap: 12px; }
+                .lumen-faq__title { font-size: 14px; }
+                .lumen-faq__body { font-size: 14px; padding-left: 28px; }
+              }
+            </style>
+
+            <div class="lumen-faq" {{ block.shopify_attributes }}>
+              {%- for i in (1..10) -%}
+                {%- assign lf_title_key = 'faq_' | append: i | append: '_title' -%}
+                {%- assign lf_text_key  = 'faq_' | append: i | append: '_text' -%}
+                {%- assign lf_icon_key  = 'faq_' | append: i | append: '_icon' -%}
+                {%- assign lf_item_id   = 'lumen-faq-' | append: block.id | append: '-' | append: i -%}
+                {%- if block.settings[lf_title_key] != blank -%}
+                  <div class="lumen-faq__item">
+                    <button class="lumen-faq__trigger" aria-expanded="false" aria-controls="{{ lf_item_id }}">
+                      {%- if block.settings[lf_icon_key] != blank -%}
+                        <span class="lumen-faq__icon" aria-hidden="true">
+                          <img src="{{ block.settings[lf_icon_key] | image_url: width: 32 }}" alt="" width="16" height="16" loading="lazy">
+                        </span>
+                      {%- endif -%}
+                      <span class="lumen-faq__title">{{ block.settings[lf_title_key] }}</span>
+                      <span class="lumen-faq__toggle" aria-hidden="true">
+                        <svg class="lumen-faq__plus" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M3.33337 7.99992H12.6667M8.00004 3.33325V12.6666" stroke="#182153" stroke-width="1.25"/>
+                        </svg>
+                        <svg class="lumen-faq__minus" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M3.33337 7.99992H12.6667" stroke="#182153" stroke-width="1.25"/>
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="lumen-faq__body-wrap" id="{{ lf_item_id }}">
+                      <div class="lumen-faq__body-inner">
+                        {%- if block.settings[lf_text_key] != blank -%}
+                          <p class="lumen-faq__body">{{ block.settings[lf_text_key] }}</p>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            <script>
+              (function () {
+                var faq = document.querySelector('[data-block-id="{{ block.id }}"] .lumen-faq');
+                if (!faq || faq._lfInit) return;
+                faq._lfInit = true;
+                var items = faq.querySelectorAll('.lumen-faq__item');
+                function close(item) {
+                  item.classList.remove('is-open');
+                  item.querySelector('.lumen-faq__body-wrap').classList.remove('is-open');
+                  item.querySelector('.lumen-faq__trigger').setAttribute('aria-expanded', 'false');
+                }
+                function open(item) {
+                  item.classList.add('is-open');
+                  item.querySelector('.lumen-faq__body-wrap').classList.add('is-open');
+                  item.querySelector('.lumen-faq__trigger').setAttribute('aria-expanded', 'true');
+                }
+                items.forEach(function (item) {
+                  item.querySelector('.lumen-faq__trigger').addEventListener('click', function () {
+                    var isOpen = item.classList.contains('is-open');
+                    items.forEach(close);
+                    if (!isOpen) open(item);
+                  });
+                });
+              })();
+            </script>
+          {%- endif -%}
+
+        {%- when 'maison-content-card' -%}
+          <style>
+            .maison-content-card {
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              background: #fdfbf9;
+              border-radius: 12px;
+              padding: 16px;
+              overflow: hidden;
+              margin-top: {{ block.settings.mobile_margin_top }}px;
+              margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+              padding-top: calc(16px + {{ block.settings.mobile_padding_top }}px);
+              padding-bottom: calc(16px + {{ block.settings.mobile_padding_bottom }}px);
+            }
+            .maison-content-card__text-block {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              width: 100%;
+            }
+            .maison-content-card__title {
+              font-family: "PP Pangaia", serif;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 1.4;
+              color: #182153;
+              margin: 0;
+            }
+            .maison-content-card__title em { font-style: italic; }
+            .maison-content-card__body {
+              font-family: "PP Mori", sans-serif;
+              font-size: 12px;
+              font-weight: 375;
+              line-height: 1.5;
+              color: rgba(24, 33, 83, 0.75);
+              margin: 0;
+            }
+            .maison-content-card__features {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              width: 100%;
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+            .maison-content-card__feature {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              width: 100%;
+            }
+            .maison-content-card__check {
+              flex-shrink: 0;
+              display: block;
+            }
+            .maison-content-card__feature-text {
+              font-family: "PP Mori", sans-serif;
+              font-size: 12px;
+              font-weight: 600;
+              line-height: 1.5;
+              color: #182153;
+              flex: 1 0 0;
+            }
+            @media screen and (min-width: 750px) {
+              .maison-content-card {
+                gap: 20px;
+                border-radius: 16px;
+                padding: 20px;
+                padding-top: calc(20px + {{ block.settings.desktop_padding_top }}px);
+                padding-bottom: calc(20px + {{ block.settings.desktop_padding_bottom }}px);
+                margin-top: {{ block.settings.desktop_margin_top }}px;
+                margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+              }
+              .maison-content-card__title { font-size: 20px; }
+              .maison-content-card__body { font-size: 14px; }
+              .maison-content-card__feature { gap: 12px; }
+              .maison-content-card__feature-text { font-size: 14px; }
+            }
+          </style>
+          <div class="maison-content-card" {{ block.shopify_attributes }}>
+            <div class="maison-content-card__text-block">
+              {%- if block.settings.title != blank -%}
+                {%- assign mcc_title = block.settings.title | replace: '**', '|||' -%}
+                {%- assign mcc_parts = mcc_title | split: '|||' -%}
+                <p class="maison-content-card__title">
+                  {%- for part in mcc_parts -%}
+                    {%- assign mcc_mod = forloop.index0 | modulo: 2 -%}
+                    {%- if mcc_mod == 1 -%}<em>{{ part }}</em>{%- else -%}{{ part }}{%- endif -%}
+                  {%- endfor -%}
+                </p>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <p class="maison-content-card__body">{{ block.settings.body }}</p>
+              {%- endif -%}
+            </div>
+            {%- liquid
+              assign mcc_has_features = false
+              for i in (1..3)
+                assign fk = 'feature_' | append: i
+                if block.settings[fk] != blank
+                  assign mcc_has_features = true
+                endif
+              endfor
+            -%}
+            {%- if mcc_has_features -%}
+              <ul class="maison-content-card__features">
+                {%- for i in (1..3) -%}
+                  {%- assign fk = 'feature_' | append: i -%}
+                  {%- if block.settings[fk] != blank -%}
+                    <li class="maison-content-card__feature">
+                      <svg class="maison-content-card__check" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="20" height="20" rx="10" fill="#232E71"/>
+                        <path d="M6.28906 10L9.02344 12.7344L13.7109 6.875" stroke="#F8F1E9" stroke-width="1.25"/>
+                      </svg>
+                      <span class="maison-content-card__feature-text">{{ block.settings[fk] }}</span>
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+
+        {%- when 'lumen-ugc' -%}
+          {%- render 'lumen-ugc', block: block -%}
+
+        {%- when 'maison-feature-list' -%}
+          {%- liquid
+            assign has_fl_items = false
+            for i in (1..7)
+              assign fl_text_key = 'feature_' | append: i | append: '_text'
+              if block.settings[fl_text_key] != blank
+                assign has_fl_items = true
+              endif
+            endfor
+          -%}
+          {%- if has_fl_items -%}
+            <style>
+              .maison-feature-list {
+                list-style: none;
+                padding: 0;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+              }
+              .maison-feature-list__item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+              }
+              .maison-feature-list__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                overflow: hidden;
+              }
+              .maison-feature-list__icon img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+              .maison-feature-list__text {
+                font-family: "PP Mori", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                color: #182153;
+                line-height: 1.5;
+                flex: 1 0 0;
+                min-width: 1px;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-feature-list {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+                .maison-feature-list__item { gap: 12px; }
+                .maison-feature-list__text { font-size: 14px; }
+              }
+            </style>
+            <ul class="maison-feature-list" {{ block.shopify_attributes }}>
+              {%- for i in (1..7) -%}
+                {%- assign fl_text_key = 'feature_' | append: i | append: '_text' -%}
+                {%- assign fl_icon_key = 'feature_' | append: i | append: '_icon' -%}
+                {%- if block.settings[fl_text_key] != blank -%}
+                  <li class="maison-feature-list__item">
+                    {%- if block.settings[fl_icon_key] != blank -%}
+                      <span class="maison-feature-list__icon" aria-hidden="true">
+                        <img src="{{ block.settings[fl_icon_key] | image_url: width: 32 }}" alt="" width="16" height="16" loading="lazy">
+                      </span>
+                    {%- endif -%}
+                    <span class="maison-feature-list__text">{{ block.settings[fl_text_key] }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+
+        {%- when 'lumen-stat' -%}
+          {%- assign stat_id = 'lumen-stat-' | append: block.id -%}
+          <style>
+            #{{ stat_id }} {
+              background-color: #fdfbf9;
+              border-radius: 12px;
+              padding: 16px;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              margin-top: {{ block.settings.mobile_margin_top }}px;
+              margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+            }
+            #{{ stat_id }} .lumen-stat__rows {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            }
+            #{{ stat_id }} .lumen-stat__row {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 8px;
+            }
+            #{{ stat_id }} .lumen-stat__label {
+              font-family: "PP Mori", sans-serif;
+              font-size: 10px;
+              font-weight: 600;
+              line-height: 1.5;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              color: #182153;
+              flex: 1;
+            }
+            #{{ stat_id }} .lumen-stat__right {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              flex-shrink: 0;
+            }
+            #{{ stat_id }} .lumen-stat__value {
+              font-family: "PP Mori", sans-serif;
+              font-size: 10px;
+              font-weight: 600;
+              line-height: 1.5;
+              text-transform: uppercase;
+              letter-spacing: 0.04em;
+              color: #182153;
+              opacity: 0.4;
+              white-space: nowrap;
+            }
+            #{{ stat_id }} .lumen-stat__meter {
+              display: flex;
+              gap: 4px;
+              align-items: center;
+              flex-shrink: 0;
+            }
+            #{{ stat_id }} .lumen-stat__dash {
+              width: 12px;
+              min-width: 12px;
+              border-top: 3px #182153 solid;
+              flex-shrink: 0;
+              transform: translateZ(0);
+            }
+            #{{ stat_id }} .lumen-stat__dash--dim {
+              opacity: 0.10;
+            }
+            #{{ stat_id }} .lumen-stat__image {
+              width: 100%;
+              height: 96px;
+              border-radius: 8px;
+              overflow: hidden;
+              flex-shrink: 0;
+            }
+            #{{ stat_id }} .lumen-stat__image img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
+            }
+            @media screen and (min-width: 750px) {
+              #{{ stat_id }} .lumen-stat__rows {
+                gap: 13px;
+              }
+              #{{ stat_id }} {
+                border-radius: 16px;
+                padding: 20px;
+                gap: 20px;
+                margin-top: {{ block.settings.desktop_margin_top }}px;
+                margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+              }
+              #{{ stat_id }} .lumen-stat__image {
+                height: 120px;
+              }
+            }
+          </style>
+
+          <div id="{{ stat_id }}" {{ block.shopify_attributes }}>
+            <div class="lumen-stat__rows">
+              {%- for i in (1..5) -%}
+                {%- assign label_key = 'stat_label_' | append: i -%}
+                {%- assign value_key = 'stat_value_' | append: i -%}
+                {%- assign filled_key = 'stat_filled_' | append: i -%}
+                {%- assign stat_label = block.settings[label_key] -%}
+                {%- assign stat_value = block.settings[value_key] -%}
+                {%- assign stat_filled = block.settings[filled_key] | default: 5 -%}
+                {%- if stat_label != blank -%}
+                  <div class="lumen-stat__row">
+                    <span class="lumen-stat__label">{{ stat_label }}</span>
+                    <div class="lumen-stat__right">
+                      {%- if stat_value != blank -%}
+                        <span class="lumen-stat__value">{{ stat_value }}</span>
+                      {%- endif -%}
+                      <div class="lumen-stat__meter">
+                        {%- for d in (1..5) -%}
+                          {%- if d <= stat_filled -%}
+                            <span class="lumen-stat__dash"></span>
+                          {%- else -%}
+                            <span class="lumen-stat__dash lumen-stat__dash--dim"></span>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            {%- if block.settings.image != blank -%}
+              <div class="lumen-stat__image">
+                <img
+                  src="{{ block.settings.image | image_url: width: 600 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  width="600"
+                  height="120"
+                  loading="lazy"
+                >
+              </div>
+            {%- endif -%}
+          </div>
+
+        {%- when 'maison-pay-icons' -%}
+          {%- liquid
+            assign has_pay_icons = false
+            for i in (1..10)
+              assign icon_key = 'icon_' | append: i
+              if block.settings[icon_key] != blank
+                assign has_pay_icons = true
+              endif
+            endfor
+          -%}
+          {%- if has_pay_icons -%}
+            <style>
+              .maison-pay-icons {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                margin-top: {{ block.settings.mobile_margin_top }}px;
+                margin-bottom: {{ block.settings.mobile_margin_bottom }}px;
+                padding-top: {{ block.settings.mobile_padding_top }}px;
+                padding-bottom: {{ block.settings.mobile_padding_bottom }}px;
+              }
+              .maison-pay-icons__badge {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 23px;
+                height: 16px;
+                border: 1px solid rgba(24, 33, 83, 0.08);
+                border-radius: 4px;
+                overflow: hidden;
+                flex-shrink: 0;
+              }
+              .maison-pay-icons__badge img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+              @media screen and (min-width: 750px) {
+                .maison-pay-icons {
+                  margin-top: {{ block.settings.desktop_margin_top }}px;
+                  margin-bottom: {{ block.settings.desktop_margin_bottom }}px;
+                  padding-top: {{ block.settings.desktop_padding_top }}px;
+                  padding-bottom: {{ block.settings.desktop_padding_bottom }}px;
+                }
+              }
+            </style>
+            <div class="maison-pay-icons" {{ block.shopify_attributes }}>
+              {%- for i in (1..10) -%}
+                {%- assign icon_key = 'icon_' | append: i -%}
+                {%- if block.settings[icon_key] != blank -%}
+                  <div class="maison-pay-icons__badge">
+                    <img src="{{ block.settings[icon_key] | image_url: width: 46 }}" alt="" width="23" height="16" loading="lazy">
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+
+        {%- when 'maison-bundle' -%}
+          {%- render 'maison-bundle', block: block, product: product, product_form_id: product_form_id -%}
+
         {%- when 'payment_terms' -%}
           <payment-terms class="product-info__payment-terms">
             {%- capture product_installment_form_id -%}{{ product_form_id }}-product-installment-form{%- endcapture -%}
