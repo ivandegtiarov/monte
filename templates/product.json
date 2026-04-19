@@ -31,11 +31,11 @@
           "settings": {
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
-            "desktop_margin_top": 0,
+            "desktop_margin_top": -15,
             "desktop_margin_bottom": 0,
             "mobile_padding_top": 0,
             "mobile_padding_bottom": 0,
-            "mobile_margin_top": 0,
+            "mobile_margin_top": -12,
             "mobile_margin_bottom": 0
           }
         },
@@ -46,11 +46,11 @@
             "rating_count": "847",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
-            "desktop_margin_top": 0,
+            "desktop_margin_top": -15,
             "desktop_margin_bottom": 0,
             "mobile_padding_top": 0,
             "mobile_padding_bottom": 0,
-            "mobile_margin_top": 0,
+            "mobile_margin_top": -12,
             "mobile_margin_bottom": 0
           }
         },
