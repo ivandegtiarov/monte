@@ -200,7 +200,11 @@ Supported variables:
 
   /* Stock bar */
   .mb-stock { display: flex; align-items: center; gap: 20px; }
-  .mb-stock__dot { width: 8px; height: 8px; border-radius: 999px; flex-shrink: 0; background: #8a2f3a; box-shadow: 0 0 0 3px rgba(138,47,58,.25); }
+  .mb-stock__dot { width: 8px; height: 8px; border-radius: 999px; flex-shrink: 0; background: #8a2f3a; box-shadow: 0 0 0 3px rgba(138,47,58,.25); animation: mb-pulse 2s ease-in-out infinite; }
+  @keyframes mb-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(138,47,58,.25); }
+    50% { box-shadow: 0 0 0 6px rgba(138,47,58,.0); }
+  }
   .mb-stock__label { font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600; color: #182153; line-height: 1.5; white-space: nowrap; }
   @media screen and (min-width: 750px) { .mb-stock__label { font-size: 14px; } }
   .mb-stock__bar { flex: 1; height: 4px; border-radius: 999px; background: rgba(24,33,83,.08); overflow: hidden; }
