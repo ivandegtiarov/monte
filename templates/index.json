@@ -50,93 +50,6 @@
         "background_gradient": "linear-gradient(127deg, rgba(66, 74, 48, 1) 11%, rgba(138, 157, 123, 1) 100%)"
       }
     },
-    "section-2": {
-      "type": "image-link-blocks",
-      "blocks": {
-        "block-1": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "Title 1",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "block-2": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "Title 2",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "block-3": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "Title 3",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "block-4": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "Title 4",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "block-5": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "Title 5",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4",
-        "block-5"
-      ],
-      "name": "Image link blocks",
-      "settings": {
-        "full_width": false,
-        "block_size": "large",
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "#1a1a1a",
-        "heading_color": "",
-        "heading_gradient": ""
-      }
-    },
     "section-5": {
       "type": "featured-collection",
       "settings": {
@@ -959,7 +872,6 @@
   },
   "order": [
     "section-1",
-    "section-2",
     "section-5",
     "section-6",
     "section-7",
