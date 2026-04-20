@@ -530,8 +530,8 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "Will it actually block light?",
-            "answer": "<p>Yes. The Monté sleep mask is designed with a contoured shape and blackout-grade fabric that blocks 100% of light — even in bright rooms or on early-morning flights.</p>"
+            "question": "Czy naprawdę blokuje światło?",
+            "answer": "<p>Tak. Monté ma rozszerzone pokrycie obejmujące oczy i górną część twarzy, eliminując światło z każdej strony. 94% klientów w ankiecie po zakupie oceniło blackout jako całkowity.</p>"
           }
         },
         "faq_2": {
