@@ -544,15 +544,15 @@
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Will it stay in place if I move at night?",
-            "answer": "<p>Yes. The adjustable elastic band is designed to hold the mask comfortably in place through the night, whether you sleep on your back, side, or stomach.</p>"
+            "question": "Czy utrzyma się na miejscu, jeśli ruszam się podczas snu?",
+            "answer": "<p>Tak. Rzep dopasowujesz raz pod swój obwód głowy i maska trzyma się przez całą noc, nawet jeśli śpisz na boku. 91% klientów potwierdziło, że nie zsunęła się ani razu.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "What does \"22-momme silk\" mean, and why does it matter?",
-            "answer": "<p>Momme (mm) is the weight and density measure for silk. 22mm is considered premium — it's heavier, more durable, and feels noticeably softer than lower-grade silks used in most sleep masks.</p>"
+            "question": "Co oznacza \"jedwab 22 momme\" i dlaczego to ważne?",
+            "answer": "<p>Momme to jednostka gęstości tkaniny jedwabnej. Im wyższa wartość, tym jedwab jest grubszy, trwalszy i bardziej miękki w dotyku. 22 momme to standard premium. Tańsze maski zazwyczaj mają 16-19 momme, co oznacza cieńszą i mniej trwałą tkaninę.</p>"
           }
         },
         "faq_5": {
