@@ -572,15 +572,15 @@
         "faq_7": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I care for it?",
-            "answer": "<p>Hand wash in cool water with a gentle detergent. Lay flat to dry. Avoid machine washing or wringing to preserve the silk and shape.</p>"
+            "question": "Jak ją pielęgnować?",
+            "answer": "<p>Pranie ręczne w zimnej wodzie (maks. 30°C) z delikatnym detergentem do jedwabiu. Susz na płasko, z dala od słońca. Po wysuszeniu możesz przywrócić puszystość żelazkiem w trybie pary od wewnętrznej strony tkaniny.</p>"
           }
         },
         "faq_8": {
           "type": "faq_item",
           "settings": {
-            "question": "What if it's not right for me?",
-            "answer": "<p>We offer a 30-day return policy. If it doesn't work for you, reach out to our team and we'll sort it out — no questions asked.</p>"
+            "question": "Co jeśli maska mi nie odpowiada?",
+            "answer": "<p>Oferujemy 30-nocną gwarancję zwrotu pieniędzy. Jeśli maska nie spełni twoich oczekiwań, odeślij ją w oryginalnym, nieużywanym stanie w ciągu 30 nocy od zakupu, a zwrócimy ci pełną kwotę. Bez pytań.</p>"
           }
         }
       },
