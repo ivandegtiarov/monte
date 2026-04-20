@@ -389,21 +389,21 @@
           "type": "stat_row",
           "settings": {
             "number": "94%",
-            "label": "said the blackout felt \"complete\""
+            "label": "oceniło blackout jako \"całkowity\""
           }
         },
         "stat_2": {
           "type": "stat_row",
           "settings": {
             "number": "91%",
-            "label": "said it stayed in place all night"
+            "label": "potwierdziło, że maska nie zsunęła się przez całą noc"
           }
         },
         "stat_3": {
           "type": "stat_row",
           "settings": {
             "number": "89%",
-            "label": "said they woke up feeling more rested"
+            "label": "obudziło się bardziej wypoczętych"
           }
         }
       },
@@ -416,10 +416,10 @@
         "stat_3"
       ],
       "settings": {
-        "tagline": "Light Sleepers",
-        "heading": "**Protect** your night",
-        "body": "If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete.",
-        "footnote": "*Based on post purchase customer survey responses.",
+        "tagline": "DLA WRAŻLIWYCH NA ŚWIATŁO",
+        "heading": "**Chroń** swoją noc",
+        "body": "Jeśli latarnia za oknem, poranne słońce albo telefon partnera wybudzają cię w nocy, twój sen nigdy nie jest pełny.",
+        "footnote": "*Na podstawie ankiet przeprowadzonych po zakupie.",
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
         "body_color": "#182153bf",
