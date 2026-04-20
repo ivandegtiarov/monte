@@ -17,28 +17,28 @@
         "message_aw4dtc": {
           "type": "message",
           "settings": {
-            "text": "1–2 Business Day Delivery",
+            "text": "Dostawa w 1–2 dni robocze",
             "url": ""
           }
         },
         "message_WjyQeB": {
           "type": "message",
           "settings": {
-            "text": "Same-Day Dispatch",
+            "text": "Wysyłka tego samego dnia",
             "url": ""
           }
         },
         "message_RViAXw": {
           "type": "message",
           "settings": {
-            "text": "Free Shipping over 250 zł",
+            "text": "Darmowa dostawa od 250 zł",
             "url": ""
           }
         },
         "message": {
           "type": "message",
           "settings": {
-            "text": "30-Night Money-Back Guarantee",
+            "text": "30-nocna gwarancja zwrotu pieniędzy",
             "url": ""
           }
         }
