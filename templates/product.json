@@ -57,13 +57,13 @@
         "maison_features_hJRyX4": {
           "type": "maison-features",
           "settings": {
-            "feature_1": "100% blackout eliminuje każde źródło światła podczas snu",
+            "feature_1": "100% blackout dla całkowitej ciemności",
             "feature_1_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
-            "feature_2": "Nie wchłania kosmetyków i nie zostawia zalamów na skórze rano",
+            "feature_2": "Nie wchłania kosmetyków, zero zalamów rano",
             "feature_2_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
-            "feature_3": "Delikatny dla rzęs i skóry, bez żadnego ucisku na oczy przez całą noc",
+            "feature_3": "Bez ucisku na oczy i rzęsy przez całą noc",
             "feature_3_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
-            "feature_4": "Rzep zamiast gumki trzyma się pewnie i nie ściska skroni",
+            "feature_4": "Rzep zamiast gumki, nie ściska skroni",
             "feature_4_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
