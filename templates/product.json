@@ -537,8 +537,8 @@
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "I hate tight masks. Will this press on my eyes?",
-            "answer": "<p>No. The mask uses a 3D contoured shell that sits away from your eyelids entirely, so there's no pressure on your eyes — even if you're a side sleeper.</p>"
+            "question": "Nienawidzę masek, które uciskają oczy. Czy ta też tak działa?",
+            "answer": "<p>Nie. Monté jest zaprojektowana z myślą o osobach, które rezygnowały z masek właśnie z powodu ucisku. Jedwabne wypełnienie unosi tkaninę nad powierzchnią oczu, więc nie ma żadnego kontaktu z gałką oczną ani rzęsami.</p>"
           }
         },
         "faq_3": {
