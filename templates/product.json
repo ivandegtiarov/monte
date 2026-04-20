@@ -15,7 +15,7 @@
         "maison_tagline_7wA46d": {
           "type": "maison-tagline",
           "settings": {
-            "text": "22-Momme Mulberry Silk",
+            "text": "Jedwab morwowy 22 momme",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
@@ -57,13 +57,13 @@
         "maison_features_hJRyX4": {
           "type": "maison-features",
           "settings": {
-            "feature_1": "100% Blackout for uninterrupted rest",
+            "feature_1": "100% blackout, blokujesz światło, melatonina robi resztę",
             "feature_1_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
-            "feature_2": "Gentle on skin and hair",
+            "feature_2": "Delikatny dla skóry i rzęs, zero zalamów rano",
             "feature_2_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
-            "feature_3": "Pressure-free, all-night comfort",
+            "feature_3": "Bez ucisku na oczy przez całą noc",
             "feature_3_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
-            "feature_4": "Secure fit that stays in place",
+            "feature_4": "Rzep zamiast gumki, nie przesuwa się, nie ściska",
             "feature_4_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
@@ -324,33 +324,33 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "text": "Same-Day Dispatch"
+            "text": "Dostawa w 1–2 dni robocze"
           }
         },
         "item_2": {
           "type": "item",
           "settings": {
-            "text": "1–2 Business Day Delivery"
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "text": "30-Night Money-Back Guarantee"
+            "text": "Wysyłka tego samego dnia"
           }
         },
         "item_4": {
           "type": "item",
           "settings": {
-            "text": "Free Shipping over 250 zł"
+            "text": "Darmowa dostawa od 250 zł"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "30-nocna gwarancja zwrotu pieniędzy"
           }
         }
       },
       "block_order": [
         "item_1",
         "item_2",
-        "item_3",
-        "item_4"
+        "item_4",
+        "item_3"
       ],
       "settings": {
         "background_color": "#232e71",
