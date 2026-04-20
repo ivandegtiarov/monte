@@ -185,10 +185,10 @@
       "settings": {
         "card_background": "#232e71",
         "logo": "shopify://shop_images/Heading.svg",
-        "newsletter_heading": "Join the Ritual",
-        "newsletter_desc": "Get 15% off your first order, plus quiet updates and new drops.",
-        "newsletter_placeholder": "Enter your email",
-        "copyright_text": "© 2026 Monté. All Rights Reserved."
+        "newsletter_heading": "DOŁĄCZ DO RYTUAŁU",
+        "newsletter_desc": "Odbierz 15% zniżki na pierwsze zamówienie i bądź pierwsza przy nowych premierach.",
+        "newsletter_placeholder": "Twój adres e-mail",
+        "copyright_text": "© 2026 Monté. Wszystkie prawa zastrzeżone."
       }
     }
   },
