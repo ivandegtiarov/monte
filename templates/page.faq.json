@@ -148,11 +148,115 @@
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
+    },
+    "faq_accordion_DLGxrB": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_4Lr4gN": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Jakie metody płatności akceptujecie?",
+            "answer": "<p>Przyjmujemy płatności przez BLIK oraz wszystkie metody dostępne w systemie Przelewy24, w tym karty płatnicze i przelewy bankowe.</p>"
+          }
+        },
+        "faq_item_4t4D6E": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Czy mogę zmienić lub anulować zamówienie po złożeniu?",
+            "answer": "<p>Tak, możesz zmienić lub anulować zamówienie w ciągu godziny od dokonania płatności. Napisz do nas na <a href=\"mailto:hello@montesleep.com\">hello@montesleep.com</a> lub skontaktuj się przez czat w prawym dolnym rogu strony. Po upływie tego czasu zamówienie trafia do realizacji i nie możemy wprowadzić zmian.</p>"
+          }
+        },
+        "faq_item_fWBkiD": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Nie otrzymałem potwierdzenia zamówienia. Co robić?",
+            "answer": "<p>Sprawdź folder spam lub oferty w swojej skrzynce. Jeśli wiadomości tam nie ma, napisz do nas na <a href=\"mailto:hello@montesleep.com\">hello@montesleep.com</a>, a sprawdzimy status Twojego zamówienia.</p>"
+          }
+        },
+        "faq_item_D7jY6W": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Mam pytanie dotyczące zamówienia. Jak się z wami skontaktować?",
+            "answer": "<p>Napisz do nas na <a href=\"mailto:hello@montesleep.com\">hello@montesleep.com</a> lub przez czat dostępny w prawym dolnym rogu strony. Odpowiadamy w ciągu 24 godzin w dni robocze.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_4Lr4gN",
+        "faq_item_4t4D6E",
+        "faq_item_fWBkiD",
+        "faq_item_D7jY6W"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "tagline": "ZAMÓWIENIA I PŁATNOŚCI",
+        "heading": "Pytania o składanie zamówień i metody płatności",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "faq_accordion_WQHQFd": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_DEeG8n": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Jaka jest wasza polityka zwrotów?",
+            "answer": "<p>Oferujemy 30-nocną gwarancję zwrotu pieniędzy. Jeśli maska nie spełni Twoich oczekiwań, możesz ją zwrócić w ciągu 30 nocy od zakupu, pod warunkiem że jest w stanie nieużywanym, nieprananym, bez śladów kosmetyków, z metkami i w oryginalnym opakowaniu.</p>"
+          }
+        },
+        "faq_item_Ybkh4L": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Jak złożyć zwrot?",
+            "answer": "<p>Przed odesłaniem maski napisz do nas na <a href=\"mailto:hello@montesleep.com\">hello@montesleep.com</a>, opisując stan produktu i powód zwrotu. Po weryfikacji wyślemy Ci kod do nadania paczki przez InPost. Koszty zwrotu pokrywamy po naszej stronie.</p>"
+          }
+        },
+        "faq_item_WYL7UJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ile czasu zajmie zwrot pieniędzy?",
+            "answer": "<p>Po otrzymaniu i weryfikacji zwróconego produktu, środki zostaną zwrócone na Twoje konto w ciągu 5-7 dni roboczych, tą samą metodą płatności, którą użyto przy zakupie.</p>"
+          }
+        },
+        "faq_item_ra6eqW": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Co jeśli paczka dotarła uszkodzona?",
+            "answer": "<p>Każda maska przed wysyłką przechodzi ręczną kontrolę jakości, więc uszkodzenia produktu po naszej stronie są wykluczone. W rzadkich przypadkach może dojść do uszkodzenia opakowania przez kuriera podczas transportu. Jeśli paczka dotarła do Ciebie w złym stanie, zrób zdjęcia opakowania i produktu zaraz po odbiorze i napisz do nas na <a href=\"mailto:hello@montesleep.com\">hello@montesleep.com</a> w ciągu 48 godzin. Zgłosimy reklamację do InPost, a Tobie wyślemy nową maskę od razu, bez czekania na rozstrzygnięcie sprawy z kurierem.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_DEeG8n",
+        "faq_item_Ybkh4L",
+        "faq_item_WYL7UJ",
+        "faq_item_ra6eqW"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "tagline": "ZWROTY I REKLAMACJE",
+        "heading": "Pytania o zwroty, wymianę i reklamacje",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
     }
   },
   "order": [
     "main",
     "faq_accordion_RwWMcF",
-    "faq_accordion_QNqDwR"
+    "faq_accordion_QNqDwR",
+    "faq_accordion_DLGxrB",
+    "faq_accordion_WQHQFd"
   ]
 }
