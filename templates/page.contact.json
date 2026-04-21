@@ -1,1 +1,45 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"contact":{"type":"contact","settings":{}}},"order":["main","contact"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "contact_pyMPNU": {
+      "type": "contact",
+      "name": "Contact form",
+      "settings": {
+        "full_width": true,
+        "subheading": "KONTAKT",
+        "title": "Jesteśmy tu dla Ciebie",
+        "content": "<p>Masz pytanie dotyczące zamówienia, produktu lub po prostu chcesz się przywitać? Napisz do nas, odpowiadamy w ciągu 24 godzin w dni robocze.</p>",
+        "text_position": "center",
+        "contact_form_size": "large",
+        "background": "#fdfbf9",
+        "background_gradient": "",
+        "text_color": "#182153",
+        "heading_color": "#182153",
+        "heading_gradient": "",
+        "contact_background": "#fbf7f3",
+        "contact_text_color": "",
+        "button_background": "#232e71",
+        "button_text_color": "#fdfbf9"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact_pyMPNU"
+  ]
+}
