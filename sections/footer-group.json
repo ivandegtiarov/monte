@@ -152,21 +152,21 @@
           "type": "nav_column",
           "settings": {
             "heading": "SKLEP",
-            "menu": "main-menu"
+            "menu": "sklep"
           }
         },
         "nav_legal": {
           "type": "nav_column",
           "settings": {
             "heading": "INFORMACJE PRAWNE",
-            "menu": "customer-account-main-menu"
+            "menu": "informacje-prawne"
           }
         },
         "nav_social": {
           "type": "nav_column",
           "settings": {
             "heading": "OBSERWUJ NAS",
-            "menu": "footer"
+            "menu": "obserwuj-nas"
           }
         }
       },
