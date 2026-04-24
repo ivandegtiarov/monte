@@ -449,6 +449,17 @@
             "title": "Mąż zasypia z telewizorem",
             "content": "<p>Mąż zasypia przy telewizorze i to był mój problem od lat. Ta maska zmieniła sytuację całkowicie. Blackout jest naprawdę dobry i nie czuję żadnego ucisku na oczy przez całą noc.</p>"
           }
+        },
+        "testimonial_AwqnpW": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Katarzyna N.",
+            "title": "Jedyna maska która nie zsuwa się",
+            "content": "<p>Próbowałam kilku i zawsze rano znajdowałam maskę gdzieś obok głowy. Rzep w tej masce naprawdę działa. Śpię na boku i rano maska jest na swoim miejscu.</p>"
+          }
         }
       },
       "block_order": [
@@ -459,7 +470,8 @@
         "testimonial_zQeKBB",
         "testimonial_d8xwRT",
         "testimonial_CLEtDD",
-        "testimonial_hec9fP"
+        "testimonial_hec9fP",
+        "testimonial_AwqnpW"
       ],
       "name": "Testimonials",
       "settings": {
