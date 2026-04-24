@@ -1,1 +1,101 @@
-{"sections":{"main":{"type":"main-page","settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "image_with_text_overlay_znJGxR": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_hh3MJW": {
+          "type": "subheading",
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_R8Y9qr": {
+          "type": "heading",
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_ThgGM4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_hh3MJW",
+        "heading_R8Y9qr",
+        "richtext_ThgGM4"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-end-start sm:text-start",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "media_with_text_myzrmG": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_N9YLQf": {
+          "type": "image",
+          "settings": {
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "NASZA MISJA",
+            "title": "Sen to nie luksus. To konieczność.",
+            "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano. Energię w ciągu dnia. Spokój, który czujesz, zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#fdfbf9",
+            "background_gradient": "",
+            "text_color": "#182153",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_N9YLQf"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_znJGxR",
+    "media_with_text_myzrmG"
+  ]
+}
