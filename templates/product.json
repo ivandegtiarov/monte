@@ -427,6 +427,17 @@
             "title": "Kupiłam sobie na urodziny",
             "content": "<p>Trochę głupio było kupować sobie samej prezent ale serio nie żałuję. Opakowanie ładne, maska miękka i teraz wieczór wygląda zupełnie inaczej.</p>"
           }
+        },
+        "testimonial_CLEtDD": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Magdalena R.",
+            "title": "W końcu krem zostaje na skórze",
+            "content": "<p>Używam dużo rzeczy przed snem i zawsze zastanawiałam się czy maska to wchłania. Tu tak się nie dzieje. Skóra rano wygląda nawilżona tak jak powinna po całej tej pielęgnacji.</p>"
+          }
         }
       },
       "block_order": [
@@ -435,7 +446,8 @@
         "testimonial_agdpf9",
         "testimonial_PXyGht",
         "testimonial_zQeKBB",
-        "testimonial_d8xwRT"
+        "testimonial_d8xwRT",
+        "testimonial_CLEtDD"
       ],
       "name": "Testimonials",
       "settings": {
