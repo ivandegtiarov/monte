@@ -548,6 +548,39 @@
             "title": "Dobra, ale trzeba wiedzieć o praniu",
             "content": "<p>Maska jest naprawdę dobra. Jedyna rzecz o której warto wiedzieć to że po praniu trzeba ją przeprasować parą żeby wróciła do miękkości. Po tym jest znowu idealna.</p>"
           }
+        },
+        "testimonial_9gNY7F": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Barbara K.",
+            "title": "Dobra, ale trzeba wiedzieć o praniu",
+            "content": "<p>Maska jest naprawdę dobra. Jedyna rzecz o której warto wiedzieć to że po praniu trzeba ją przeprasować parą żeby wróciła do miękkości. Po tym jest znowu idealna.</p>"
+          }
+        },
+        "testimonial_zxQaTW": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Izabela W.",
+            "title": "Pomogła mi zasypiać szybciej",
+            "content": "<p>Miałam problem z zasypianiem od dawna. Maska nie jest cudem ale ciemność naprawdę robi różnicę. Przestałam liczyć ile czasu zajmuje mi zaśnięcie bo po prostu zasypiam.</p>"
+          }
+        },
+        "testimonial_h33GD6": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Beata Z.",
+            "title": "Kupiłam jako prezent i sama chcę drugą",
+            "content": "<p>Kupiłam dla przyjaciółki na urodziny. Opakowanie wyglądało naprawdę ładnie. Przyjaciółka jest zachwycona i teraz sama chcę zamówić dla siebie.</p>"
+          }
         }
       },
       "block_order": [
@@ -567,7 +600,10 @@
         "testimonial_eUpFfN",
         "testimonial_ceQ6F6",
         "testimonial_RtmA46",
-        "testimonial_nYWNid"
+        "testimonial_nYWNid",
+        "testimonial_9gNY7F",
+        "testimonial_zxQaTW",
+        "testimonial_h33GD6"
       ],
       "name": "Testimonials",
       "settings": {
