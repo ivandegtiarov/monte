@@ -11,90 +11,8 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "content_width": "80ch"
-      }
-    },
-    "image_with_text_overlay_znJGxR": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "subheading_hh3MJW": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
-        "heading_R8Y9qr": {
-          "type": "heading",
-          "settings": {
-            "text": "Image with text overlay",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_ThgGM4": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_hh3MJW",
-        "heading_R8Y9qr",
-        "richtext_ThgGM4"
-      ],
-      "name": "Image with text overlay",
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-end-start sm:text-start",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
-      }
-    },
-    "rich_text_MFGaXA": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_fDTQzP": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
-        "heading_6nGgWa": {
-          "type": "heading",
-          "settings": {
-            "text": "Heading",
-            "heading_tag": "h1",
-            "text_color": "",
-            "gradient": ""
-          }
-        },
-        "richtext_WcKxQT": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna to nie obowiązek. To rytuał. Mały, codzienny akt troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.</p><p>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być najlepszy z możliwych. Nie \"wystarczająco dobry\". Najlepszy.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_fDTQzP",
-        "heading_6nGgWa",
-        "richtext_WcKxQT"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
       }
     },
     "media_with_text_myzrmG": {
@@ -108,9 +26,9 @@
             "text_position": "place-self-center-start text-start",
             "icon": "none",
             "icon_width": 48,
-            "subheading": "NASZA MISJA",
-            "title": "Sen to nie luksus. To konieczność.",
-            "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano. Energię w ciągu dnia. Spokój, który czujesz, zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>",
+            "subheading": "JAK TO SIĘ ZACZĘŁO",
+            "title": "Mały rytuał, który zmienia całą noc",
+            "content": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna to nie obowiązek. To rytuał. Mały, codzienny akt troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.</p><p>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być najlepszy z możliwych. Nie \"wystarczająco dobry\". Najlepszy.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>",
             "link_text": "",
             "link_url": "",
             "background": "#fdfbf9",
@@ -129,7 +47,7 @@
             "text_position": "place-self-center-start text-start",
             "icon": "none",
             "icon_width": 48,
-            "subheading": "W CO WIERZYMY",
+            "subheading": "NASZA MISJA",
             "title": "Sen to nie luksus. To konieczność.",
             "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano. Energię w ciągu dnia. Spokój, który czujesz, zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>",
             "link_text": "",
@@ -188,8 +106,6 @@
   },
   "order": [
     "main",
-    "image_with_text_overlay_znJGxR",
-    "rich_text_MFGaXA",
     "media_with_text_myzrmG",
     "featured_collection_hURkXM"
   ]
