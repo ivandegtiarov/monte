@@ -482,6 +482,17 @@
             "title": "Kupiłam też dla mamy",
             "content": "<p>Byłam tak zadowolona po pierwszym tygodniu że zamówiłam drugą dla mamy. Obie jesteśmy zadowolone. Mama mówi że śpi lepiej niż od lat.</p>"
           }
+        },
+        "testimonial_c4ReL9": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Agnieszka T.",
+            "title": "Zawsze mam ją w bagażu",
+            "content": "<p>Dużo podróżuję i ta maska jest teraz w moim bagażu zawsze. W samolocie szczególnie robi różnicę. Mieści się wszędzie i naprawdę pomaga zasnąć kiedy wokół jest jasno.</p>"
+          }
         }
       },
       "block_order": [
@@ -495,7 +506,8 @@
         "testimonial_hec9fP",
         "testimonial_AwqnpW",
         "testimonial_fKMVRX",
-        "testimonial_kUgnAC"
+        "testimonial_kUgnAC",
+        "testimonial_c4ReL9"
       ],
       "name": "Testimonials",
       "settings": {
