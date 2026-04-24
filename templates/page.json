@@ -80,10 +80,32 @@
             "button_background": "",
             "button_text_color": ""
           }
+        },
+        "image_ddBKnk": {
+          "type": "image",
+          "settings": {
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "W CO WIERZYMY",
+            "title": "Sen to nie luksus. To konieczność.",
+            "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano. Energię w ciągu dnia. Spokój, który czujesz, zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#fdfbf9",
+            "background_gradient": "",
+            "text_color": "#182153",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
         }
       },
       "block_order": [
-        "image_N9YLQf"
+        "image_N9YLQf",
+        "image_ddBKnk"
       ],
       "name": "Media with text",
       "settings": {
@@ -91,11 +113,84 @@
         "alternate_media_position": false,
         "spacing": "small"
       }
+    },
+    "rich_text_MFGaXA": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_fDTQzP": {
+          "type": "subheading",
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_6nGgWa": {
+          "type": "heading",
+          "settings": {
+            "text": "Heading",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_WcKxQT": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_fDTQzP",
+        "heading_6nGgWa",
+        "richtext_WcKxQT"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "featured_collection_hURkXM": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "midnight-blue-sleep-mask-copy",
+          "monte-silk-sleep-mask",
+          "champagne-gold-silk-sleep-mask",
+          "rose-noir-silk-sleep-mask"
+        ],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 4,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Twoja pierwsza noc z Monté",
+        "content": "<p>Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.</p>",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
     }
   },
   "order": [
     "main",
     "image_with_text_overlay_znJGxR",
-    "media_with_text_myzrmG"
+    "media_with_text_myzrmG",
+    "rich_text_MFGaXA",
+    "featured_collection_hURkXM"
   ]
 }
