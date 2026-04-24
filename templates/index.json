@@ -278,10 +278,10 @@
         "content": "",
         "link_url": "",
         "link_text": "View all",
-        "background": "",
+        "background": "#fdfbf9",
         "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
+        "text_color": "#182153",
+        "heading_color": "#182153",
         "heading_gradient": ""
       }
     },
