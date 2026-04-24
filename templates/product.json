@@ -493,6 +493,61 @@
             "title": "Zawsze mam ją w bagażu",
             "content": "<p>Dużo podróżuję i ta maska jest teraz w moim bagażu zawsze. W samolocie szczególnie robi różnicę. Mieści się wszędzie i naprawdę pomaga zasnąć kiedy wokół jest jasno.</p>"
           }
+        },
+        "testimonial_C6GHq4": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Dominika L.",
+            "title": "Kładzenie się spać jest przyjemne",
+            "content": "<p>Brzmi dziwnie ale odkąd mam tę maskę kładzenie się spać stało się czymś na co czekam. Jedwab jest tak miękki że po prostu chce się leżeć.</p>"
+          }
+        },
+        "testimonial_eUpFfN": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Ewelina G.",
+            "title": "Zero ucisku na oczy",
+            "content": "<p>Miałam wcześniej maskę która bolała po nocy. Serio bolała gałki oczne. Ta w ogóle nie uciska. Nie wiem jak to możliwe ale przez całą noc w ogóle jej nie czuję.</p>"
+          }
+        },
+        "testimonial_ceQ6F6": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Monika F.",
+            "title": "Po miesiącu wciąż jak nowa",
+            "content": "<p>Już miesiąc i jedwab wygląda tak samo jak po otwarciu paczki. Poprzednie maski po kilku praniach wyglądały koszmarnie. Ta po prostu trzyma jakość.</p>"
+          }
+        },
+        "testimonial_RtmA46": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sylwia H.",
+            "title": "Rzep to była dobra decyzja",
+            "content": "<p>Gumka w poprzednich maskach albo ściskała albo się rozciągała po miesiącu. Rzep dopasowuję raz i gotowe. Nie rozumiem dlaczego wszystkie maski nie mają rzepa</p>"
+          }
+        },
+        "testimonial_nYWNid": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Barbara K.",
+            "title": "Dobra, ale trzeba wiedzieć o praniu",
+            "content": "<p>Maska jest naprawdę dobra. Jedyna rzecz o której warto wiedzieć to że po praniu trzeba ją przeprasować parą żeby wróciła do miękkości. Po tym jest znowu idealna.</p>"
+          }
         }
       },
       "block_order": [
@@ -507,7 +562,12 @@
         "testimonial_AwqnpW",
         "testimonial_fKMVRX",
         "testimonial_kUgnAC",
-        "testimonial_c4ReL9"
+        "testimonial_c4ReL9",
+        "testimonial_C6GHq4",
+        "testimonial_eUpFfN",
+        "testimonial_ceQ6F6",
+        "testimonial_RtmA46",
+        "testimonial_nYWNid"
       ],
       "name": "Testimonials",
       "settings": {
