@@ -616,11 +616,11 @@
         "link_text": "",
         "background": "#fdfbf9",
         "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
+        "text_color": "#182153",
+        "heading_color": "#182153",
         "heading_gradient": "",
-        "testimonial_card_background": "",
-        "testimonial_card_text_color": ""
+        "testimonial_card_background": "#fbf7f3",
+        "testimonial_card_text_color": "#182153"
       }
     },
     "stats_social_proof": {
