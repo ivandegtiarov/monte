@@ -98,47 +98,6 @@
         "button_text_color": ""
       }
     },
-    "section-13": {
-      "type": "multiple-images-with-text",
-      "blocks": {
-        "block-1": {
-          "type": "item",
-          "settings": {
-            "image_rotation_degrees": 2,
-            "subheading": "About us",
-            "title": "Designed in New York",
-            "content": "<p>Share some content about the founders, your team and your values. Pair this text with one or multiple images to create impactful visual effect.</p>",
-            "button_url": "",
-            "button_text": ""
-          }
-        },
-        "block-2": {
-          "type": "item",
-          "settings": {
-            "image_rotation_degrees": -2,
-            "subheading": "Our products",
-            "title": "Superior design",
-            "content": "<p>Share some content abour your products and what make them unique. Pair this text with one or multiple images to create impactful visual effect.</p>",
-            "button_url": "",
-            "button_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2"
-      ],
-      "settings": {
-        "full_width": true,
-        "images_layout": "scattered",
-        "collage_images_alignment": "middle",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "button_background": "",
-        "button_text_color": ""
-      }
-    },
     "section-15": {
       "type": "feature-chart",
       "blocks": {
@@ -256,6 +215,41 @@
         "chart_true_false_color": ""
       }
     },
+    "media_with_text_pGaGmC": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_UdxEJq": {
+          "type": "image",
+          "settings": {
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "WIECZORNY RYTUAŁ",
+            "title": "Chwila, która należy wyłącznie do ciebie",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#fdfbf9",
+            "background_gradient": "",
+            "text_color": "#182153",
+            "text_gradient": "",
+            "button_background": "#232e71",
+            "button_text_color": "#182153"
+          }
+        }
+      },
+      "block_order": [
+        "image_UdxEJq"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
     "faq_accordion_mbP7Rx": {
       "type": "faq-accordion",
       "blocks": {
@@ -344,8 +338,8 @@
     "section-1",
     "section-5",
     "section-6",
-    "section-13",
     "section-15",
+    "media_with_text_pGaGmC",
     "faq_accordion_mbP7Rx"
   ]
 }
