@@ -389,17 +389,41 @@
           "settings": {
             "round_avatar": true,
             "show_rating": true,
-            "rating": 4,
+            "rating": 5,
             "author": "Karolina B.",
             "title": "Mieszkam w centrum i w końcu sypiam",
             "content": "<p>Wczesne słońce wpadało do mojego pokoju dosłownie o 5 rano. Teraz nie wiem kiedy wschodzi bo po prostu tego nie czuję. Polecam każdemu kto ma podobny problem.</p>"
+          }
+        },
+        "testimonial_PXyGht": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Zuzanna P.",
+            "title": "Mam przedłużenia i bałam się",
+            "content": "<p>Serio bałam się że maska zniszczy mi rzęsy. Ale jedwab jest tak gładki że w ogóle nie czuję żadnego tarcia. Po trzech tygodniach przedłużenia wyglądają normalnie.</p>"
+          }
+        },
+        "testimonial_zQeKBB": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Joanna M.",
+            "title": "Chłopak późno zasypia z telefonem",
+            "content": "<p>Mój chłopak scrolluje Instagrama kiedy ja już chcę spać. Światło od telefonu dosłownie nie pozwalało mi zasnąć. Teraz zakładam maskę i jest ciemno. Problem rozwiązany.</p>"
           }
         }
       },
       "block_order": [
         "testimonial_Gzpj8D",
         "testimonial_VhXdcR",
-        "testimonial_agdpf9"
+        "testimonial_agdpf9",
+        "testimonial_PXyGht",
+        "testimonial_zQeKBB"
       ],
       "name": "Testimonials",
       "settings": {
