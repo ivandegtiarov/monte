@@ -359,6 +359,66 @@
         "pause_on_hover": true
       }
     },
+    "testimonials_eU6FBb": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_Gzpj8D": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Anna B.",
+            "title": "Nareszcie wysypiam się porządnie",
+            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero zalamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
+          }
+        },
+        "testimonial_VhXdcR": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Mary U.",
+            "title": "Testimonial 2",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "testimonial_agdpf9": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Joshua A.",
+            "title": "Testimonial 3",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Gzpj8D",
+        "testimonial_VhXdcR",
+        "testimonial_agdpf9"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": false,
+        "subheading": "",
+        "title": "Testimonials",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#fdfbf9",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "",
+        "testimonial_card_text_color": ""
+      }
+    },
     "stats_social_proof": {
       "type": "stats-social-proof",
       "blocks": {
@@ -610,6 +670,7 @@
   "order": [
     "main",
     "marquee_bar",
+    "testimonials_eU6FBb",
     "stats_social_proof",
     "stats_social_proof_LHaDaL",
     "stats_social_proof_TKncbt",
