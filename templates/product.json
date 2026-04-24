@@ -416,6 +416,17 @@
             "title": "Chłopak późno zasypia z telefonem",
             "content": "<p>Mój chłopak scrolluje Instagrama kiedy ja już chcę spać. Światło od telefonu dosłownie nie pozwalało mi zasnąć. Teraz zakładam maskę i jest ciemno. Problem rozwiązany.</p>"
           }
+        },
+        "testimonial_d8xwRT": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Natalia S.",
+            "title": "Kupiłam sobie na urodziny",
+            "content": "<p>Trochę głupio było kupować sobie samej prezent ale serio nie żałuję. Opakowanie ładne, maska miękka i teraz wieczór wygląda zupełnie inaczej.</p>"
+          }
         }
       },
       "block_order": [
@@ -423,7 +434,8 @@
         "testimonial_VhXdcR",
         "testimonial_agdpf9",
         "testimonial_PXyGht",
-        "testimonial_zQeKBB"
+        "testimonial_zQeKBB",
+        "testimonial_d8xwRT"
       ],
       "name": "Testimonials",
       "settings": {
