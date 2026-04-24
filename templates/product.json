@@ -438,6 +438,17 @@
             "title": "W końcu krem zostaje na skórze",
             "content": "<p>Używam dużo rzeczy przed snem i zawsze zastanawiałam się czy maska to wchłania. Tu tak się nie dzieje. Skóra rano wygląda nawilżona tak jak powinna po całej tej pielęgnacji.</p>"
           }
+        },
+        "testimonial_hec9fP": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Aleksandra C.",
+            "title": "Mąż zasypia z telewizorem",
+            "content": "<p>Mąż zasypia przy telewizorze i to był mój problem od lat. Ta maska zmieniła sytuację całkowicie. Blackout jest naprawdę dobry i nie czuję żadnego ucisku na oczy przez całą noc.</p>"
+          }
         }
       },
       "block_order": [
@@ -447,7 +458,8 @@
         "testimonial_PXyGht",
         "testimonial_zQeKBB",
         "testimonial_d8xwRT",
-        "testimonial_CLEtDD"
+        "testimonial_CLEtDD",
+        "testimonial_hec9fP"
       ],
       "name": "Testimonials",
       "settings": {
