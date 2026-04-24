@@ -460,6 +460,28 @@
             "title": "Jedyna maska która nie zsuwa się",
             "content": "<p>Próbowałam kilku i zawsze rano znajdowałam maskę gdzieś obok głowy. Rzep w tej masce naprawdę działa. Śpię na boku i rano maska jest na swoim miejscu.</p>"
           }
+        },
+        "testimonial_fKMVRX": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Weronika D.",
+            "title": "Pielęgnacja w nocy ma sens",
+            "content": "<p>Używam retinolu i peptydów na noc i zależało mi żeby maska tego nie wchłaniała. Jedwab morwowy naprawdę inaczej się zachowuje. Zero wchłoniętego kremu, zero zalamów.</p>"
+          }
+        },
+        "testimonial_kUgnAC": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Paulina J.",
+            "title": "Kupiłam też dla mamy",
+            "content": "<p>Byłam tak zadowolona po pierwszym tygodniu że zamówiłam drugą dla mamy. Obie jesteśmy zadowolone. Mama mówi że śpi lepiej niż od lat.</p>"
+          }
         }
       },
       "block_order": [
@@ -471,7 +493,9 @@
         "testimonial_d8xwRT",
         "testimonial_CLEtDD",
         "testimonial_hec9fP",
-        "testimonial_AwqnpW"
+        "testimonial_AwqnpW",
+        "testimonial_fKMVRX",
+        "testimonial_kUgnAC"
       ],
       "name": "Testimonials",
       "settings": {
