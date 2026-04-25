@@ -359,6 +359,171 @@
         "pause_on_hover": true
       }
     },
+    "stats_social_proof": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_1": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_2": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        },
+        "review_1": {
+          "type": "review_card",
+          "disabled": true,
+          "settings": {
+            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
+            "reviewer_name": "Anna K.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "stat_1": {
+          "type": "stat_row",
+          "settings": {
+            "number": "94%",
+            "label": "oceniło blackout jako \"całkowity\""
+          }
+        },
+        "stat_2": {
+          "type": "stat_row",
+          "settings": {
+            "number": "91%",
+            "label": "potwierdziło, że maska nie zsunęła się przez całą noc"
+          }
+        },
+        "stat_3": {
+          "type": "stat_row",
+          "settings": {
+            "number": "89%",
+            "label": "obudziło się bardziej wypoczętych"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "review_1",
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "tagline": "DLA WRAŻLIWYCH NA ŚWIATŁO",
+        "heading": "**Chroń** swoją noc",
+        "body": "Jeśli latarnia za oknem, poranne słońce albo telefon partnera wybudzają cię w nocy, twój sen nigdy nie jest pełny.",
+        "footnote": "*Na podstawie ankiet przeprowadzonych po zakupie.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": false,
+        "reverse_mobile": false,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "stats_social_proof_LHaDaL": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_PnqMAr": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Nie wchłania kosmetyków, krem nawilżający zostaje na skórze, nie na masce"
+          }
+        },
+        "feature_item_KAbrAf": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Dopasowanie bez ucisku na oczy przez całą noc"
+          }
+        },
+        "review_card_wYxTgi": {
+          "type": "review_card",
+          "disabled": true,
+          "settings": {
+            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
+            "reviewer_name": "Anna K.",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_PnqMAr",
+        "feature_item_KAbrAf",
+        "review_card_wYxTgi"
+      ],
+      "settings": {
+        "tagline": "Beauty Sleep",
+        "heading": "Jedwab, który **jest delikatny**",
+        "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez zalamów i śladów na skórze.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": true,
+        "reverse_mobile": false,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "stats_social_proof_TKncbt": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_UdemYM": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_item_KdEAXA": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        },
+        "review_card_YVjJ3M": {
+          "type": "review_card",
+          "settings": {
+            "quote": "\"Nie spodziewałam się, że zrobi aż taką różnicę. Prawie nie czuć, że ją mam, nie zsuwa się i czuję, że budzę się bardziej wypoczęta.\"",
+            "reviewer_name": "Monika K.",
+            "verified_label": "Zweryfikowany kupujący"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_UdemYM",
+        "feature_item_KdEAXA",
+        "review_card_YVjJ3M"
+      ],
+      "settings": {
+        "tagline": "CICHY LUKSUS",
+        "heading": "Odpoczynek, który **ma znaczenie**",
+        "body": "Mała zmiana, po którą sięgasz każdej nocy, zamienia kładzenie się do łóżka w spokojny rytuał, na który czekasz. Minimalistyczna, elegancka, stworzona by stać się częścią twojego wieczoru.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": false,
+        "reverse_mobile": false,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
     "testimonials_eU6FBb": {
       "type": "testimonials",
       "blocks": {
@@ -549,17 +714,6 @@
             "content": "<p>Maska jest naprawdę dobra. Jedyna rzecz o której warto wiedzieć to że po praniu trzeba ją przeprasować parą żeby wróciła do miękkości. Po tym jest znowu idealna.</p>"
           }
         },
-        "testimonial_9gNY7F": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "Barbara K.",
-            "title": "Dobra, ale trzeba wiedzieć o praniu",
-            "content": "<p>Maska jest naprawdę dobra. Jedyna rzecz o której warto wiedzieć to że po praniu trzeba ją przeprasować parą żeby wróciła do miękkości. Po tym jest znowu idealna.</p>"
-          }
-        },
         "testimonial_zxQaTW": {
           "type": "testimonial",
           "settings": {
@@ -601,7 +755,6 @@
         "testimonial_ceQ6F6",
         "testimonial_RtmA46",
         "testimonial_nYWNid",
-        "testimonial_9gNY7F",
         "testimonial_zxQaTW",
         "testimonial_h33GD6"
       ],
@@ -621,171 +774,6 @@
         "heading_gradient": "",
         "testimonial_card_background": "#fbf7f3",
         "testimonial_card_text_color": "#182153"
-      }
-    },
-    "stats_social_proof": {
-      "type": "stats-social-proof",
-      "blocks": {
-        "feature_1": {
-          "type": "feature_item",
-          "disabled": true,
-          "settings": {
-            "text": "Smooth surface for a softer feel"
-          }
-        },
-        "feature_2": {
-          "type": "feature_item",
-          "disabled": true,
-          "settings": {
-            "text": "Comfortable fit without harsh pressure"
-          }
-        },
-        "review_1": {
-          "type": "review_card",
-          "disabled": true,
-          "settings": {
-            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
-            "reviewer_name": "Anna K.",
-            "verified_label": "Verified Buyer"
-          }
-        },
-        "stat_1": {
-          "type": "stat_row",
-          "settings": {
-            "number": "94%",
-            "label": "oceniło blackout jako \"całkowity\""
-          }
-        },
-        "stat_2": {
-          "type": "stat_row",
-          "settings": {
-            "number": "91%",
-            "label": "potwierdziło, że maska nie zsunęła się przez całą noc"
-          }
-        },
-        "stat_3": {
-          "type": "stat_row",
-          "settings": {
-            "number": "89%",
-            "label": "obudziło się bardziej wypoczętych"
-          }
-        }
-      },
-      "block_order": [
-        "feature_1",
-        "feature_2",
-        "review_1",
-        "stat_1",
-        "stat_2",
-        "stat_3"
-      ],
-      "settings": {
-        "tagline": "DLA WRAŻLIWYCH NA ŚWIATŁO",
-        "heading": "**Chroń** swoją noc",
-        "body": "Jeśli latarnia za oknem, poranne słońce albo telefon partnera wybudzają cię w nocy, twój sen nigdy nie jest pełny.",
-        "footnote": "*Na podstawie ankiet przeprowadzonych po zakupie.",
-        "background_color": "#fdfbf9",
-        "heading_color": "#182153",
-        "body_color": "#182153bf",
-        "reverse_desktop": false,
-        "reverse_mobile": false,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 20,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
-      }
-    },
-    "stats_social_proof_LHaDaL": {
-      "type": "stats-social-proof",
-      "blocks": {
-        "feature_item_PnqMAr": {
-          "type": "feature_item",
-          "settings": {
-            "text": "Nie wchłania kosmetyków, krem nawilżający zostaje na skórze, nie na masce"
-          }
-        },
-        "feature_item_KAbrAf": {
-          "type": "feature_item",
-          "settings": {
-            "text": "Dopasowanie bez ucisku na oczy przez całą noc"
-          }
-        },
-        "review_card_wYxTgi": {
-          "type": "review_card",
-          "disabled": true,
-          "settings": {
-            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
-            "reviewer_name": "Anna K.",
-            "verified_label": "Verified Buyer"
-          }
-        }
-      },
-      "block_order": [
-        "feature_item_PnqMAr",
-        "feature_item_KAbrAf",
-        "review_card_wYxTgi"
-      ],
-      "settings": {
-        "tagline": "Beauty Sleep",
-        "heading": "Jedwab, który **jest delikatny**",
-        "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez zalamów i śladów na skórze.",
-        "footnote": "*Based on post purchase customer survey responses.",
-        "background_color": "#fdfbf9",
-        "heading_color": "#182153",
-        "body_color": "#182153bf",
-        "reverse_desktop": true,
-        "reverse_mobile": false,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
-      }
-    },
-    "stats_social_proof_TKncbt": {
-      "type": "stats-social-proof",
-      "blocks": {
-        "feature_item_UdemYM": {
-          "type": "feature_item",
-          "disabled": true,
-          "settings": {
-            "text": "Smooth surface for a softer feel"
-          }
-        },
-        "feature_item_KdEAXA": {
-          "type": "feature_item",
-          "disabled": true,
-          "settings": {
-            "text": "Comfortable fit without harsh pressure"
-          }
-        },
-        "review_card_YVjJ3M": {
-          "type": "review_card",
-          "settings": {
-            "quote": "\"Nie spodziewałam się, że zrobi aż taką różnicę. Prawie nie czuć, że ją mam, nie zsuwa się i czuję, że budzę się bardziej wypoczęta.\"",
-            "reviewer_name": "Anna K.",
-            "verified_label": "Zweryfikowany kupujący"
-          }
-        }
-      },
-      "block_order": [
-        "feature_item_UdemYM",
-        "feature_item_KdEAXA",
-        "review_card_YVjJ3M"
-      ],
-      "settings": {
-        "tagline": "CICHY LUKSUS",
-        "heading": "Odpoczynek, który **ma znaczenie**",
-        "body": "Mała zmiana, po którą sięgasz każdej nocy, zamienia kładzenie się do łóżka w spokojny rytuał, na który czekasz. Minimalistyczna, elegancka, stworzona by stać się częścią twojego wieczoru.",
-        "footnote": "*Based on post purchase customer survey responses.",
-        "background_color": "#fdfbf9",
-        "heading_color": "#182153",
-        "body_color": "#182153bf",
-        "reverse_desktop": false,
-        "reverse_mobile": false,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 40,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
       }
     },
     "faq_accordion": {
@@ -874,10 +862,10 @@
   "order": [
     "main",
     "marquee_bar",
-    "testimonials_eU6FBb",
     "stats_social_proof",
     "stats_social_proof_LHaDaL",
     "stats_social_proof_TKncbt",
+    "testimonials_eU6FBb",
     "faq_accordion"
   ]
 }
