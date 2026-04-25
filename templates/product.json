@@ -123,7 +123,7 @@
             "popup_choose_label": "Wybierz",
             "choose_color_label": "Wybierz kolor maski",
             "show_stock_bar": true,
-            "stock_label": "Ograniczona dostępność 86% sprzedane · Zostało tylko kilka sztuk",
+            "stock_label": "Ograniczona dostępność",
             "stock_percentage": 30,
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
