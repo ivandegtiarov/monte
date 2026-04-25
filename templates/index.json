@@ -269,7 +269,7 @@
       "settings": {
         "full_width": true,
         "show_excerpt": false,
-        "show_date": true,
+        "show_date": false,
         "show_author": false,
         "show_comments_count": false,
         "show_category": false,
@@ -277,7 +277,7 @@
         "title": "Blog posts",
         "content": "",
         "link_url": "",
-        "link_text": "View all",
+        "link_text": "",
         "background": "#fdfbf9",
         "background_gradient": "",
         "text_color": "#182153",
