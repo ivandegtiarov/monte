@@ -257,7 +257,7 @@
           "type": "blog",
           "settings": {
             "blog": "news",
-            "posts_count": 3,
+            "posts_count": 4,
             "stack_items": false
           }
         }
