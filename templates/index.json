@@ -215,6 +215,43 @@
         "chart_true_false_color": ""
       }
     },
+    "stats_social_proof_i9KQdr": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_6Uzrex": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_item_bRAbUt": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_6Uzrex",
+        "feature_item_bRAbUt"
+      ],
+      "name": "Stats & Social Proof",
+      "settings": {
+        "tagline": "Light Sleepers",
+        "heading": "**Protect** your night",
+        "body": "If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153",
+        "reverse_desktop": false,
+        "reverse_mobile": false,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
     "media_with_text_pGaGmC": {
       "type": "media-with-text",
       "blocks": {
@@ -374,6 +411,7 @@
     "section-5",
     "section-6",
     "section-15",
+    "stats_social_proof_i9KQdr",
     "media_with_text_pGaGmC",
     "blog_posts_pRx46J",
     "faq_accordion_mbP7Rx"
