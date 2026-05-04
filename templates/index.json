@@ -252,39 +252,101 @@
         "padding_bottom_mobile": 32
       }
     },
-    "media_with_text_pGaGmC": {
-      "type": "media-with-text",
+    "testimonials_FQFDaQ": {
+      "type": "testimonials",
       "blocks": {
-        "image_UdxEJq": {
-          "type": "image",
+        "testimonial_MxNahy": {
+          "type": "testimonial",
           "settings": {
-            "media_width": 50,
-            "media_position": "start",
-            "text_position": "place-self-center-start text-start",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "WIECZORNY RYTUAŁ",
-            "title": "Chwila, która należy wyłącznie do ciebie",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "#fdfbf9",
-            "background_gradient": "",
-            "text_color": "#182153",
-            "text_gradient": "",
-            "button_background": "#232e71",
-            "button_text_color": "#182153"
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "John S.",
+            "title": "Testimonial 1",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "testimonial_9QqhCq": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Mary U.",
+            "title": "Testimonial 2",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "testimonial_6tEfLH": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Joshua A.",
+            "title": "Testimonial 3",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
           }
         }
       },
       "block_order": [
-        "image_UdxEJq"
+        "testimonial_MxNahy",
+        "testimonial_9QqhCq",
+        "testimonial_6tEfLH"
       ],
-      "name": "Media with text",
+      "name": "Testimonials",
       "settings": {
-        "full_width": false,
-        "alternate_media_position": false,
-        "spacing": "small"
+        "full_width": true,
+        "stack_testimonials": true,
+        "subheading": "",
+        "title": "Testimonials",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "",
+        "testimonial_card_text_color": ""
+      }
+    },
+    "stats_social_proof_TgFgh4": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_jpAgYw": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Smooth surface for a softer feel"
+          }
+        },
+        "feature_item_FUXWaX": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Comfortable fit without harsh pressure"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_jpAgYw",
+        "feature_item_FUXWaX"
+      ],
+      "name": "Stats & Social Proof",
+      "settings": {
+        "tagline": "Light Sleepers",
+        "heading": "**Protect** your night",
+        "body": "If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153",
+        "reverse_desktop": true,
+        "reverse_mobile": false,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "blog_posts_pRx46J": {
@@ -412,7 +474,8 @@
     "section-6",
     "section-15",
     "stats_social_proof_i9KQdr",
-    "media_with_text_pGaGmC",
+    "testimonials_FQFDaQ",
+    "stats_social_proof_TgFgh4",
     "blog_posts_pRx46J",
     "faq_accordion_mbP7Rx"
   ]
