@@ -881,14 +881,22 @@ Supported variables:
 
       var card  = getActiveCard();
       var r1Id  = atcBtn.getAttribute('data-r1-id');
+      var slots = card ? parseInt(card.getAttribute('data-mb-slots'), 10) : 1;
+      var isBundle = slots > 1;
+
       var items = [{ id: parseInt(r1Id, 10), quantity: 1 }];
 
-      if (card) {
-        var slots   = parseInt(card.getAttribute('data-mb-slots'), 10);
+      if (card && isBundle) {
         var choices = chosenBySlot.has(card) ? chosenBySlot.get(card) : {};
         for (var s = 2; s <= slots; s++) {
           if (choices[s]) items.push({ id: parseInt(choices[s].id, 10), quantity: 1 });
         }
+      }
+
+      if (isBundle) {
+        items.forEach(function(item) {
+          item.properties = { '_bundle': 'true' };
+        });
       }
 
       // Loading state
@@ -911,6 +919,11 @@ Supported variables:
       items.forEach(function(item, i) {
         formData.append('items[' + i + '][id]', item.id);
         formData.append('items[' + i + '][quantity]', item.quantity);
+        if (item.properties) {
+          Object.keys(item.properties).forEach(function(key) {
+            formData.append('items[' + i + '][properties][' + key + ']', item.properties[key]);
+          });
+        }
       });
       formData.set('sections', sectionsToBundle.join(','));
       formData.set('sections_url', window.location.pathname);
