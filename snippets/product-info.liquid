@@ -529,14 +529,21 @@ Supported variables
                 overflow: hidden;
               }
               .lumen-faq__body {
+                padding-bottom: 16px;
+                padding-left: 24px;
+              }
+              .lumen-faq__body,
+              .lumen-faq__body p,
+              .lumen-faq__body li {
                 font-family: "PP Mori", sans-serif;
-                font-size: 11px;
+                font-size: 10px;
                 font-weight: 400;
                 line-height: 1.6;
                 color: rgba(24, 33, 83, 0.75);
-                padding-bottom: 16px;
-                padding-left: 24px;
                 margin: 0;
+              }
+              .lumen-faq__body p + p {
+                margin-top: 8px;
               }
               @media screen and (min-width: 750px) {
                 .lumen-faq {
@@ -547,7 +554,10 @@ Supported variables
                 }
                 .lumen-faq__trigger { gap: 12px; }
                 .lumen-faq__title { font-size: 14px; }
-                .lumen-faq__body { font-size: 12px; padding-left: 28px; }
+                .lumen-faq__body { padding-left: 28px; }
+                .lumen-faq__body,
+                .lumen-faq__body p,
+                .lumen-faq__body li { font-size: 11px; }
               }
             </style>
 
@@ -578,7 +588,7 @@ Supported variables
                     <div class="lumen-faq__body-wrap" id="{{ lf_item_id }}">
                       <div class="lumen-faq__body-inner">
                         {%- if block.settings[lf_text_key] != blank -%}
-                          <p class="lumen-faq__body">{{ block.settings[lf_text_key] }}</p>
+                          <div class="lumen-faq__body">{{ block.settings[lf_text_key] }}</div>
                         {%- endif -%}
                       </div>
                     </div>
