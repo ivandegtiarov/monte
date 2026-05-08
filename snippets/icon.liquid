@@ -91,9 +91,9 @@
       </svg>
 
     {%- when 'search' -%}
-      <svg role="presentation" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 22 22">
-        <circle cx="11" cy="10" r="7" fill="none" stroke="currentColor"></circle>
-        <path d="m16 15 3 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+      <svg role="presentation" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 24 24" fill="none">
+        <path d="M1.6875 11.0625C1.6875 13.5489 2.67522 15.9335 4.43337 17.6917C6.19153 19.4497 8.5761 20.4375 11.0625 20.4375C13.5489 20.4375 15.9335 19.4497 17.6917 17.6917C19.4497 15.9335 20.4375 13.5489 20.4375 11.0625C20.4375 8.5761 19.4497 6.19153 17.6917 4.43337C15.9335 2.67522 13.5489 1.6875 11.0625 1.6875C8.5761 1.6875 6.19153 2.67522 4.43337 4.43337C2.67522 6.19153 1.6875 8.5761 1.6875 11.0625Z" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
+        <path d="M17.625 17.625L22.3125 22.3125" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
       </svg>
 
     {%- when 'cart' -%}
