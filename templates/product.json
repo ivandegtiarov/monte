@@ -77,7 +77,7 @@
         "maison_price_7dRbXE": {
           "type": "maison-price",
           "settings": {
-            "save_text": "SAVE",
+            "save_text": "oszczędzasz",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
