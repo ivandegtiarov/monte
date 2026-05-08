@@ -83,9 +83,10 @@
       </svg>
 
     {%- when 'account' -%}
-      <svg role="presentation" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 22 22">
-        <circle cx="11" cy="7" r="4" fill="none" stroke="currentColor"></circle>
-        <path d="M3.5 19c1.421-2.974 4.247-5 7.5-5s6.079 2.026 7.5 5" fill="none" stroke="currentColor" stroke-linecap="round"></path>
+      <svg role="presentation" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 24 24" fill="none">
+        <path d="M1.6875 12C1.6875 14.7351 2.774 17.3581 4.70797 19.2921C6.64193 21.226 9.26496 22.3125 12 22.3125C14.7351 22.3125 17.3581 21.226 19.2921 19.2921C21.226 17.3581 22.3125 14.7351 22.3125 12C22.3125 9.26496 21.226 6.64193 19.2921 4.70797C17.3581 2.774 14.7351 1.6875 12 1.6875C9.26496 1.6875 6.64193 2.774 4.70797 4.70797C2.774 6.64193 1.6875 9.26496 1.6875 12Z" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
+        <path d="M4.1521 18.6903C5.08529 18.1164 7.82814 16.6875 11.9999 16.6875C16.1717 16.6875 18.9147 18.1164 19.8478 18.6903" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
+        <path d="M7.78125 9.65625C7.78125 10.7751 8.22572 11.8482 9.01689 12.6394C9.80806 13.4305 10.8811 13.875 12 13.875C13.1189 13.875 14.1919 13.4305 14.9831 12.6394C15.7743 11.8482 16.2188 10.7751 16.2188 9.65625C16.2188 8.53737 15.7743 7.46431 14.9831 6.67314C14.1919 5.88197 13.1189 5.4375 12 5.4375C10.8811 5.4375 9.80806 5.88197 9.01689 6.67314C8.22572 7.46431 7.78125 8.53737 7.78125 9.65625Z" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
       </svg>
 
     {%- when 'search' -%}
@@ -95,23 +96,10 @@
       </svg>
 
     {%- when 'cart' -%}
-      {%- case settings.cart_icon -%}
-        {%- when 'shopping_basket' -%}
-          <svg role="presentation" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 22 22">
-            <path d="M11 7H3.577A2 2 0 0 0 1.64 9.497l2.051 8A2 2 0 0 0 5.63 19H16.37a2 2 0 0 0 1.937-1.503l2.052-8A2 2 0 0 0 18.422 7H11Zm0 0V1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-
-        {%- when 'tote_bag' -%}
-          <svg role="presentation" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 22 22">
-            <path d="M14.666 7.333a3.666 3.666 0 1 1-7.333 0M3.33 6.785l-.642 7.7c-.137 1.654-.206 2.48.073 3.119a2.75 2.75 0 0 0 1.21 1.314c.612.332 1.442.332 3.102.332h7.853c1.66 0 2.49 0 3.103-.332a2.75 2.75 0 0 0 1.21-1.314c.279-.638.21-1.465.072-3.12l-.642-7.7c-.118-1.423-.178-2.134-.493-2.673A2.75 2.75 0 0 0 16.99 3.02c-.563-.269-1.277-.269-2.705-.269h-6.57c-1.428 0-2.142 0-2.705.27A2.75 2.75 0 0 0 3.823 4.11c-.315.539-.374 1.25-.493 2.674Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-
-        {%- when 'shopping_cart' -%}
-          <svg role="presentation" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 22 22">
-            <path d="M9.182 18.454a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.818 0Zm7.272 0a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.819 0Z" fill="currentColor"></path>
-            <path d="M5.336 6.636H21l-3.636 8.182H6.909L4.636 3H1m8.182 15.454a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.818 0Zm7.272 0a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.819 0Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-      {%- endcase -%}
+      <svg role="presentation" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 24 24" fill="none">
+        <path d="M2.625 20.4375L4.5 3.5625H19.5L21.375 20.4375H2.625Z" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
+        <path d="M15.75 6.375C15.75 8.44607 14.071 10.125 12 10.125C9.92893 10.125 8.25 8.44607 8.25 6.375" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
+      </svg>
 
     {%- when 'quick-buy-cart' -%}
       {%- case settings.cart_icon -%}
