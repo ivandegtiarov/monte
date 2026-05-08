@@ -265,7 +265,7 @@
             "stat_value_1": "WYSOKI BLACKOUT",
             "stat_filled_1": 5,
             "stat_label_2": "Komfort oczu",
-            "stat_value_2": "Pressure-Free",
+            "stat_value_2": "Bezuciskowy",
             "stat_filled_2": 4,
             "stat_label_3": "STABILNOŚĆ",
             "stat_value_3": "PEWNE TRZYMANIE",
@@ -416,6 +416,7 @@
         "stat_3"
       ],
       "settings": {
+        "image": "shopify://shop_images/Image-2.jpg",
         "tagline": "DLA WRAŻLIWYCH NA ŚWIATŁO",
         "heading": "**Chroń** swoją noc",
         "body": "Jeśli latarnia za oknem, poranne słońce albo telefon partnera wybudzają cię w nocy, twój sen nigdy nie jest pełny.",
@@ -462,6 +463,7 @@
         "review_card_wYxTgi"
       ],
       "settings": {
+        "image": "shopify://shop_images/Image-1.jpg",
         "tagline": "Beauty Sleep",
         "heading": "Jedwab, który **jest delikatny**",
         "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez zalamów i śladów na skórze.",
@@ -497,6 +499,7 @@
         "review_card_YVjJ3M": {
           "type": "review_card",
           "settings": {
+            "product_image": "shopify://shop_images/Rectangle_177515.jpg",
             "quote": "\"Nie spodziewałam się, że zrobi aż taką różnicę. Prawie nie czuć, że ją mam, nie zsuwa się i czuję, że budzę się bardziej wypoczęta.\"",
             "reviewer_name": "Monika K.",
             "verified_label": "Zweryfikowany kupujący"
@@ -509,6 +512,7 @@
         "review_card_YVjJ3M"
       ],
       "settings": {
+        "image": "shopify://shop_images/Image.jpg",
         "tagline": "CICHY LUKSUS",
         "heading": "Odpoczynek, który **ma znaczenie**",
         "body": "Mała zmiana, po którą sięgasz każdej nocy, zamienia kładzenie się do łóżka w spokojny rytuał, na który czekasz. Minimalistyczna, elegancka, stworzona by stać się częścią twojego wieczoru.",
