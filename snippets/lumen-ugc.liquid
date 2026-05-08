@@ -7,7 +7,8 @@
   assign has_videos = false
   for i in (1..12)
     assign v_key = 'video_' | append: i
-    if block.settings[v_key] != blank
+    assign img_key = 'image_' | append: i
+    if block.settings[v_key] != blank or block.settings[img_key] != blank
       assign has_videos = true
       break
     endif
@@ -100,6 +101,17 @@
       -webkit-tap-highlight-color: transparent;
     }
     .lumen-ugc__card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .lumen-ugc__card--image {
+      cursor: default;
+    }
+    .lumen-ugc__image {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -246,7 +258,9 @@
         {%- for i in (1..12) -%}
           {%- assign v_key = 'video_' | append: i -%}
           {%- assign p_key = 'preview_' | append: i -%}
+          {%- assign img_key = 'image_' | append: i -%}
           {%- assign ugc_video = block.settings[v_key] -%}
+          {%- assign ugc_image = block.settings[img_key] -%}
           {%- if ugc_video != blank -%}
             {%- comment -%} Pick best source: prefer mp4 from sources array {%- endcomment -%}
             {%- assign ugc_src = '' -%}
@@ -299,6 +313,19 @@
                   </svg>
                 </button>
 
+              </div>
+            </div>
+          {%- elsif ugc_image != blank -%}
+            <div class="swiper-slide lumen-ugc__slide">
+              <div class="lumen-ugc__card lumen-ugc__card--image">
+                <img
+                  class="lumen-ugc__image"
+                  src="{{ ugc_image | image_url: width: 600 }}"
+                  alt="{{ ugc_image.alt | escape }}"
+                  width="300"
+                  height="400"
+                  loading="lazy"
+                >
               </div>
             </div>
           {%- endif -%}

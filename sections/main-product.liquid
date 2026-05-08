@@ -1859,18 +1859,11 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       "limit": 1,
       "settings": [
         {
-          "type": "text",
-          "id": "rating_value",
-          "label": "Rating value",
-          "default": "4.8",
-          "info": "e.g. 4.8"
-        },
-        {
-          "type": "text",
-          "id": "rating_count",
-          "label": "Review count",
-          "default": "847",
-          "info": "e.g. 847"
+          "type": "richtext",
+          "id": "rating_text",
+          "label": "Rating text",
+          "default": "<p>Rated <strong>4.8</strong>/5 based on <strong>847</strong> reviews.</p>",
+          "info": "Wrap parts in <strong> to bold them."
         },
         {
           "type": "header",
@@ -2406,8 +2399,12 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "default": "A nightly ritual, <em>in real life<\/em>"
         },
         {
+          "type": "paragraph",
+          "content": "For each slot, set a Video (with optional preview image) OR an Image only. If both are set, the video takes priority."
+        },
+        {
           "type": "header",
-          "content": "Video 1"
+          "content": "Slot 1"
         },
         {
           "type": "video",
@@ -2420,8 +2417,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 2"
+          "content": "Slot 2"
         },
         {
           "type": "video",
@@ -2434,8 +2437,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 3"
+          "content": "Slot 3"
         },
         {
           "type": "video",
@@ -2448,8 +2457,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 4"
+          "content": "Slot 4"
         },
         {
           "type": "video",
@@ -2462,8 +2477,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 5"
+          "content": "Slot 5"
         },
         {
           "type": "video",
@@ -2476,8 +2497,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 6"
+          "content": "Slot 6"
         },
         {
           "type": "video",
@@ -2490,8 +2517,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 7"
+          "content": "Slot 7"
         },
         {
           "type": "video",
@@ -2504,8 +2537,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 8"
+          "content": "Slot 8"
         },
         {
           "type": "video",
@@ -2518,8 +2557,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_8",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 9"
+          "content": "Slot 9"
         },
         {
           "type": "video",
@@ -2532,8 +2577,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 10"
+          "content": "Slot 10"
         },
         {
           "type": "video",
@@ -2546,8 +2597,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_10",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 11"
+          "content": "Slot 11"
         },
         {
           "type": "video",
@@ -2560,8 +2617,14 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "label": "Preview image"
         },
         {
+          "type": "image_picker",
+          "id": "image_11",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
+        },
+        {
           "type": "header",
-          "content": "Video 12"
+          "content": "Slot 12"
         },
         {
           "type": "video",
@@ -2572,6 +2635,12 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "type": "image_picker",
           "id": "preview_12",
           "label": "Preview image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_12",
+          "label": "Image only",
+          "info": "Used when no video is set. No play button is shown."
         },
         {
           "type": "header",
@@ -3472,6 +3541,13 @@ quick buy information in a template, that will be extracted in JS, but ensure it
         {
           "type": "paragraph",
           "content": "Displays sale price, compare-at price and discount badge automatically from the selected variant."
+        },
+        {
+          "type": "text",
+          "id": "save_text",
+          "label": "Save badge text",
+          "default": "SAVE",
+          "info": "Shown before the discount percentage on sale items."
         },
         {
           "type": "header",

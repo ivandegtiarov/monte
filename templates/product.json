@@ -42,8 +42,7 @@
         "maison_rating_6TRbti": {
           "type": "maison-rating",
           "settings": {
-            "rating_value": "4.8",
-            "rating_count": "847",
+            "rating_text": "<p>Oceniono <strong>4.8</strong>\/5 na podstawie <strong>847</strong> opinii.<\/p>",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": -15,

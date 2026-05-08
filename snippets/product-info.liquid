@@ -203,7 +203,7 @@ Supported variables
           {%- endif -%}
 
         {%- when 'maison-rating' -%}
-          {%- if block.settings.rating_value != blank and block.settings.rating_count != blank -%}
+          {%- if block.settings.rating_text != blank -%}
             <style>
               .maison-rating {
                 display: flex;
@@ -219,7 +219,8 @@ Supported variables
                 align-items: center;
                 gap: 2px;
               }
-              .maison-rating__text {
+              .maison-rating__text,
+              .maison-rating__text p {
                 font-family: "PP Mori", sans-serif;
                 font-size: 10px;
                 font-weight: 375;
@@ -242,7 +243,7 @@ Supported variables
               }
             </style>
             <div class="maison-rating" {{ block.shopify_attributes }}>
-              <div class="maison-rating__stars" role="img" aria-label="{{ block.settings.rating_value }} out of 5 stars">
+              <div class="maison-rating__stars" role="img" aria-label="5 out of 5 stars">
                 {%- for i in (1..5) -%}
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                     <g clip-path="url(#clip0_maison_star_{{ i }})">
@@ -256,9 +257,9 @@ Supported variables
                   </svg>
                 {%- endfor -%}
               </div>
-              <p class="maison-rating__text">
-                Rated <strong>{{ block.settings.rating_value }}</strong>/5 based on <strong>{{ block.settings.rating_count }}</strong> reviews.
-              </p>
+              <div class="maison-rating__text">
+                {{ block.settings.rating_text }}
+              </div>
             </div>
           {%- endif -%}
 
@@ -427,7 +428,7 @@ Supported variables
               </span>
               {%- if maison_variant.compare_at_price > maison_variant.price -%}
                 {%- assign maison_discount = maison_variant.compare_at_price | minus: maison_variant.price | times: 100.0 | divided_by: maison_variant.compare_at_price | round -%}
-                <span class="maison-price__badge">SAVE {{ maison_discount }}%</span>
+                <span class="maison-price__badge">{{ block.settings.save_text | default: 'SAVE' }} {{ maison_discount }}%</span>
               {%- endif -%}
             </div>
           {%- endif -%}
@@ -529,7 +530,7 @@ Supported variables
               }
               .lumen-faq__body {
                 font-family: "PP Mori", sans-serif;
-                font-size: 12px;
+                font-size: 11px;
                 font-weight: 400;
                 line-height: 1.6;
                 color: rgba(24, 33, 83, 0.75);
@@ -546,7 +547,7 @@ Supported variables
                 }
                 .lumen-faq__trigger { gap: 12px; }
                 .lumen-faq__title { font-size: 14px; }
-                .lumen-faq__body { font-size: 14px; padding-left: 28px; }
+                .lumen-faq__body { font-size: 12px; padding-left: 28px; }
               }
             </style>
 
