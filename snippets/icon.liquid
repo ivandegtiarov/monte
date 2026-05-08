@@ -78,8 +78,9 @@
       </svg>
 
     {%- when 'hamburger' -%}
-      <svg role="presentation" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 22 22">
-        <path d="M1 5h20M1 11h20M1 17h20" stroke="currentColor" stroke-linecap="round"></path>
+      <svg role="presentation" focusable="false" width="{{ width | default: 22 }}" height="{{ height | default: 22 }}" class="{{ class | strip }}" viewBox="0 0 24 24" fill="none">
+        <path d="M0.75 7.3125H23.25" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
+        <path d="M0.75 16.6875H23.25" stroke="currentColor" stroke-width="{{ stroke_width | default: 1.5 }}"/>
       </svg>
 
     {%- when 'account' -%}
