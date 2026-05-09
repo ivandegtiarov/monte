@@ -105,9 +105,14 @@
     {%- when 'quick-buy-cart' -%}
       {%- case settings.cart_icon -%}
         {%- when 'shopping_basket' -%}
-          <svg role="presentation" fill="none" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 16 }}" height="{{ height | default: 14 }}" class="{{ class | strip }}" viewBox="0 0 16 14">
-            <path d="M7.75 4.75H2.283a1 1 0 0 0-.97 1.244l1.574 6.25a1 1 0 0 0 .97.756h7.787a1 1 0 0 0 .97-.756l1.573-6.25a1 1 0 0 0-.97-1.244H7.75Zm0 0V1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M15.1641 11.0627H9.53906" stroke="black" stroke-width="1.5"/>
+  <path d="M12.3516 8.25V13.875" stroke="black" stroke-width="1.5"/>
+  <path d="M5.90625 21.3749V20.6714H6.60978V21.3749H5.90625Z" stroke="black" stroke-width="1.5"/>
+  <path d="M11.5312 21.3749V20.6714H12.2347V21.3749H11.5312Z" stroke="black" stroke-width="1.5"/>
+  <path d="M17.1562 16.6875H5.90625V5.4375H20.9062L17.1562 16.6875Z" stroke="black" stroke-width="1.5"/>
+  <path d="M1.6875 2.625H5.90625V5.4375" stroke="black" stroke-width="1.5"/>
+</svg>
 
         {%- when 'tote_bag' -%}
           <svg role="presentation" fill="none" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" focusable="false" width="{{ width | default: 15 }}" height="{{ height | default: 14 }}" class="{{ class | strip }}" viewBox="0 0 15 14">
