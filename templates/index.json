@@ -223,13 +223,13 @@
         "feature_item_6Uzrex": {
           "type": "feature_item",
           "settings": {
-            "text": "Smooth surface for a softer feel"
+            "text": "Nie wchłania kosmetyków, krem zostaje tam gdzie powinien"
           }
         },
         "feature_item_bRAbUt": {
           "type": "feature_item",
           "settings": {
-            "text": "Comfortable fit without harsh pressure"
+            "text": "Zero zalamów na skórze po przebudzeniu"
           }
         }
       },
@@ -239,9 +239,9 @@
       ],
       "name": "Stats & Social Proof",
       "settings": {
-        "tagline": "Light Sleepers",
-        "heading": "**Protect** your night",
-        "body": "If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete.",
+        "tagline": "BEAUTY SLEEP",
+        "heading": "Twoja skóra pracuje w nocy. Jedwab jej nie przeszkadza.",
+        "body": "Wieczorna pielęgnacja ma sens tylko wtedy, kiedy kosmetyki zostają na skórze, a nie na poduszce czy masce. Jedwab morwowy 22 momme nie wchłania kremów, nie trze o skórę i nie zostawia zalamów rano. Budzisz się tak, jak powinnaś.",
         "footnote": "*Based on post purchase customer survey responses.",
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
@@ -254,64 +254,256 @@
         "padding_bottom_mobile": 32
       }
     },
-    "testimonials_FQFDaQ": {
+    "testimonials_DTKw6V": {
       "type": "testimonials",
       "blocks": {
-        "testimonial_MxNahy": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "John S.",
-            "title": "Testimonial 1",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
-          }
-        },
-        "testimonial_9QqhCq": {
+        "testimonial_p7JwCB": {
           "type": "testimonial",
           "settings": {
             "round_avatar": true,
             "show_rating": true,
             "rating": 5,
-            "author": "Mary U.",
-            "title": "Testimonial 2",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Anna B.",
+            "title": "Nareszcie wysypiam się porządnie",
+            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero zalamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
           }
         },
-        "testimonial_6tEfLH": {
+        "testimonial_3tG4Mi": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Marta W.",
+            "title": "Zupełnie inne odczucie niż tanie maski",
+            "content": "<p>Miałam wcześniej kilka masek z allegro i to jest po prostu inne. Jedwab jest miękki w sposób którego nie da się opisać. I trzyma się przez całą noc co było moim głównym problemem.</p>"
+          }
+        },
+        "testimonial_aCxXqw": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Karolina B.",
+            "title": "Mieszkam w centrum i w końcu sypiam",
+            "content": "<p>Wczesne słońce wpadało do mojego pokoju dosłownie o 5 rano. Teraz nie wiem kiedy wschodzi bo po prostu tego nie czuję. Polecam każdemu kto ma podobny problem.</p>"
+          }
+        },
+        "testimonial_yKUUcm": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Zuzanna P.",
+            "title": "Mam przedłużenia i bałam się",
+            "content": "<p>Serio bałam się że maska zniszczy mi rzęsy. Ale jedwab jest tak gładki że w ogóle nie czuję żadnego tarcia. Po trzech tygodniach przedłużenia wyglądają normalnie.</p>"
+          }
+        },
+        "testimonial_UymQPj": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Joanna M.",
+            "title": "Chłopak późno zasypia z telefonem",
+            "content": "<p>Mój chłopak scrolluje Instagrama kiedy ja już chcę spać. Światło od telefonu dosłownie nie pozwalało mi zasnąć. Teraz zakładam maskę i jest ciemno. Problem rozwiązany.</p>"
+          }
+        },
+        "testimonial_6kKMyg": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Natalia S.",
+            "title": "Kupiłam sobie na urodziny",
+            "content": "<p>Trochę głupio było kupować sobie samej prezent ale serio nie żałuję. Opakowanie ładne, maska miękka i teraz wieczór wygląda zupełnie inaczej.</p>"
+          }
+        },
+        "testimonial_iJzrz6": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Magdalena R.",
+            "title": "W końcu krem zostaje na skórze",
+            "content": "<p>Używam dużo rzeczy przed snem i zawsze zastanawiałam się czy maska to wchłania. Tu tak się nie dzieje. Skóra rano wygląda nawilżona tak jak powinna po całej tej pielęgnacji.</p>"
+          }
+        },
+        "testimonial_gNXHFP": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Aleksandra C.",
+            "title": "Mąż zasypia z telewizorem",
+            "content": "<p>Mąż zasypia przy telewizorze i to był mój problem od lat. Ta maska zmieniła sytuację całkowicie. Blackout jest naprawdę dobry i nie czuję żadnego ucisku na oczy przez całą noc.</p>"
+          }
+        },
+        "testimonial_43Di4y": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Katarzyna N.",
+            "title": "Jedyna maska która nie zsuwa się",
+            "content": "<p>Próbowałam kilku i zawsze rano znajdowałam maskę gdzieś obok głowy. Rzep w tej masce naprawdę działa. Śpię na boku i rano maska jest na swoim miejscu.</p>"
+          }
+        },
+        "testimonial_mAxVXy": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Weronika D.",
+            "title": "Pielęgnacja w nocy ma sens",
+            "content": "<p>Używam retinolu i peptydów na noc i zależało mi żeby maska tego nie wchłaniała. Jedwab morwowy naprawdę inaczej się zachowuje. Zero wchłoniętego kremu, zero zalamów.</p>"
+          }
+        },
+        "testimonial_pY4K9Y": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Paulina J.",
+            "title": "Kupiłam też dla mamy",
+            "content": "<p>Byłam tak zadowolona po pierwszym tygodniu że zamówiłam drugą dla mamy. Obie jesteśmy zadowolone. Mama mówi że śpi lepiej niż od lat.</p>"
+          }
+        },
+        "testimonial_NcmHwY": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Agnieszka T.",
+            "title": "Zawsze mam ją w bagażu",
+            "content": "<p>Dużo podróżuję i ta maska jest teraz w moim bagażu zawsze. W samolocie szczególnie robi różnicę. Mieści się wszędzie i naprawdę pomaga zasnąć kiedy wokół jest jasno.</p>"
+          }
+        },
+        "testimonial_AD8bXz": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Dominika L.",
+            "title": "Kładzenie się spać jest przyjemne",
+            "content": "<p>Brzmi dziwnie ale odkąd mam tę maskę kładzenie się spać stało się czymś na co czekam. Jedwab jest tak miękki że po prostu chce się leżeć.</p>"
+          }
+        },
+        "testimonial_aEajDE": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Ewelina G.",
+            "title": "Zero ucisku na oczy",
+            "content": "<p>Miałam wcześniej maskę która bolała po nocy. Serio bolała gałki oczne. Ta w ogóle nie uciska. Nie wiem jak to możliwe ale przez całą noc w ogóle jej nie czuję.</p>"
+          }
+        },
+        "testimonial_UJDEbz": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Monika F.",
+            "title": "Po miesiącu wciąż jak nowa",
+            "content": "<p>Już miesiąc i jedwab wygląda tak samo jak po otwarciu paczki. Poprzednie maski po kilku praniach wyglądały koszmarnie. Ta po prostu trzyma jakość.</p>"
+          }
+        },
+        "testimonial_AxRTJG": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sylwia H.",
+            "title": "Rzep to była dobra decyzja",
+            "content": "<p>Gumka w poprzednich maskach albo ściskała albo się rozciągała po miesiącu. Rzep dopasowuję raz i gotowe. Nie rozumiem dlaczego wszystkie maski nie mają rzepa</p>"
+          }
+        },
+        "testimonial_JdeWyd": {
           "type": "testimonial",
           "settings": {
             "round_avatar": true,
             "show_rating": true,
             "rating": 4,
-            "author": "Joshua A.",
-            "title": "Testimonial 3",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Barbara K.",
+            "title": "Dobra, ale trzeba wiedzieć o praniu",
+            "content": "<p>Maska jest naprawdę dobra. Jedyna rzecz o której warto wiedzieć to że po praniu trzeba ją przeprasować parą żeby wróciła do miękkości. Po tym jest znowu idealna.</p>"
+          }
+        },
+        "testimonial_im7ec4": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Izabela W.",
+            "title": "Pomogła mi zasypiać szybciej",
+            "content": "<p>Miałam problem z zasypianiem od dawna. Maska nie jest cudem ale ciemność naprawdę robi różnicę. Przestałam liczyć ile czasu zajmuje mi zaśnięcie bo po prostu zasypiam.</p>"
+          }
+        },
+        "testimonial_zjzMR3": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Beata Z.",
+            "title": "Kupiłam jako prezent i sama chcę drugą",
+            "content": "<p>Kupiłam dla przyjaciółki na urodziny. Opakowanie wyglądało naprawdę ładnie. Przyjaciółka jest zachwycona i teraz sama chcę zamówić dla siebie.</p>"
           }
         }
       },
       "block_order": [
-        "testimonial_MxNahy",
-        "testimonial_9QqhCq",
-        "testimonial_6tEfLH"
+        "testimonial_p7JwCB",
+        "testimonial_3tG4Mi",
+        "testimonial_aCxXqw",
+        "testimonial_yKUUcm",
+        "testimonial_UymQPj",
+        "testimonial_6kKMyg",
+        "testimonial_iJzrz6",
+        "testimonial_gNXHFP",
+        "testimonial_43Di4y",
+        "testimonial_mAxVXy",
+        "testimonial_pY4K9Y",
+        "testimonial_NcmHwY",
+        "testimonial_AD8bXz",
+        "testimonial_aEajDE",
+        "testimonial_UJDEbz",
+        "testimonial_AxRTJG",
+        "testimonial_JdeWyd",
+        "testimonial_im7ec4",
+        "testimonial_zjzMR3"
       ],
       "name": "Testimonials",
       "settings": {
         "full_width": true,
-        "stack_testimonials": true,
+        "stack_testimonials": false,
         "subheading": "",
-        "title": "Testimonials",
+        "title": "Co mówią nasi klienci",
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "",
+        "background": "#fdfbf9",
         "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
+        "text_color": "#182153",
+        "heading_color": "#182153",
         "heading_gradient": "",
-        "testimonial_card_background": "",
-        "testimonial_card_text_color": ""
+        "testimonial_card_background": "#fbf7f3",
+        "testimonial_card_text_color": "#182153"
       }
     },
     "stats_social_proof_TgFgh4": {
@@ -320,13 +512,13 @@
         "feature_item_jpAgYw": {
           "type": "feature_item",
           "settings": {
-            "text": "Smooth surface for a softer feel"
+            "text": "100% blackout potwierdzony przez 94% klientów"
           }
         },
         "feature_item_FUXWaX": {
           "type": "feature_item",
           "settings": {
-            "text": "Comfortable fit without harsh pressure"
+            "text": "Jedwabne wypełnienie bez ucisku na oczy przez całą noc"
           }
         }
       },
@@ -336,10 +528,10 @@
       ],
       "name": "Stats & Social Proof",
       "settings": {
-        "tagline": "Light Sleepers",
-        "heading": "**Protect** your night",
-        "body": "If streetlights, early sun, or a late phone screen pull you out of sleep, your night never feels complete.",
-        "footnote": "*Based on post purchase customer survey responses.",
+        "tagline": "GŁĘBOKI SEN",
+        "heading": "Ciemność, której twój mózg potrzebuje każdej nocy",
+        "body": "Melatonina wydziela się tylko w ciemności. Każde źródło światła, poranne słońce, ekran telefonu, lampka w korytarzu, zakłóca ten proces i sprawia że śpisz płycej niż powinieneś. Monté eliminuje światło całkowicie, żebyś mogła spać tak jak twoje ciało naprawdę potrzebuje.",
+        "footnote": "",
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
         "body_color": "#182153",
@@ -476,7 +668,7 @@
     "section-6",
     "section-15",
     "stats_social_proof_i9KQdr",
-    "testimonials_FQFDaQ",
+    "testimonials_DTKw6V",
     "stats_social_proof_TgFgh4",
     "blog_posts_pRx46J",
     "faq_accordion_mbP7Rx"
