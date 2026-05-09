@@ -254,6 +254,43 @@
         "padding_bottom_mobile": 32
       }
     },
+    "stats_social_proof_TgFgh4": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_jpAgYw": {
+          "type": "feature_item",
+          "settings": {
+            "text": "100% blackout potwierdzony przez 94% klientów"
+          }
+        },
+        "feature_item_FUXWaX": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Jedwabne wypełnienie bez ucisku na oczy przez całą noc"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_jpAgYw",
+        "feature_item_FUXWaX"
+      ],
+      "name": "Stats & Social Proof",
+      "settings": {
+        "tagline": "GŁĘBOKI SEN",
+        "heading": "Ciemność, której twój mózg potrzebuje każdej nocy",
+        "body": "Melatonina wydziela się tylko w ciemności. Każde źródło światła, poranne słońce, ekran telefonu, lampka w korytarzu, zakłóca ten proces i sprawia że śpisz płycej niż powinieneś. Monté eliminuje światło całkowicie, żebyś mogła spać tak jak twoje ciało naprawdę potrzebuje.",
+        "footnote": "",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153",
+        "reverse_desktop": true,
+        "reverse_mobile": false,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
     "testimonials_DTKw6V": {
       "type": "testimonials",
       "blocks": {
@@ -506,43 +543,6 @@
         "testimonial_card_text_color": "#182153"
       }
     },
-    "stats_social_proof_TgFgh4": {
-      "type": "stats-social-proof",
-      "blocks": {
-        "feature_item_jpAgYw": {
-          "type": "feature_item",
-          "settings": {
-            "text": "100% blackout potwierdzony przez 94% klientów"
-          }
-        },
-        "feature_item_FUXWaX": {
-          "type": "feature_item",
-          "settings": {
-            "text": "Jedwabne wypełnienie bez ucisku na oczy przez całą noc"
-          }
-        }
-      },
-      "block_order": [
-        "feature_item_jpAgYw",
-        "feature_item_FUXWaX"
-      ],
-      "name": "Stats & Social Proof",
-      "settings": {
-        "tagline": "GŁĘBOKI SEN",
-        "heading": "Ciemność, której twój mózg potrzebuje każdej nocy",
-        "body": "Melatonina wydziela się tylko w ciemności. Każde źródło światła, poranne słońce, ekran telefonu, lampka w korytarzu, zakłóca ten proces i sprawia że śpisz płycej niż powinieneś. Monté eliminuje światło całkowicie, żebyś mogła spać tak jak twoje ciało naprawdę potrzebuje.",
-        "footnote": "",
-        "background_color": "#fdfbf9",
-        "heading_color": "#182153",
-        "body_color": "#182153",
-        "reverse_desktop": true,
-        "reverse_mobile": false,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
-      }
-    },
     "blog_posts_pRx46J": {
       "type": "blog-posts",
       "blocks": {
@@ -668,8 +668,8 @@
     "section-6",
     "section-15",
     "stats_social_proof_i9KQdr",
-    "testimonials_DTKw6V",
     "stats_social_proof_TgFgh4",
+    "testimonials_DTKw6V",
     "blog_posts_pRx46J",
     "faq_accordion_mbP7Rx"
   ]
