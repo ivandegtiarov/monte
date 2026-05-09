@@ -690,8 +690,34 @@ Supported variables:
     }
   }
 
-  // ── Init ATC price for the default selected card ──
+  // ── Init ATC price and state for the default selected card ──
   if (initialCard) updateAtcPrice(getAtcPrice(initialCard));
+  syncAtcState();
+
+  // ── Check if all required slots are filled for a card ──
+  function allSlotsFilled(card) {
+    if (!card) return true;
+    var slots = parseInt(card.getAttribute('data-mb-slots'), 10);
+    if (slots <= 1) return true;
+    var choices = chosenBySlot.has(card) ? chosenBySlot.get(card) : {};
+    for (var s = 2; s <= slots; s++) {
+      if (!choices[s]) return false;
+    }
+    return true;
+  }
+
+  // ── Update ATC disabled state based on active card slot completeness ──
+  function syncAtcState() {
+    if (!atcBtn) return;
+    var card = getActiveCard();
+    if (allSlotsFilled(card)) {
+      atcBtn.disabled = false;
+      atcBtn.removeAttribute('title');
+    } else {
+      atcBtn.disabled = true;
+      atcBtn.setAttribute('title', 'Please choose all masks before adding to cart');
+    }
+  }
 
   // ── Expand / collapse rows ──
   document.querySelectorAll('[data-mb-toggle]').forEach(function(toggle) {
@@ -788,6 +814,7 @@ Supported variables:
 
       // Update price display
       updatePrice(activeCard);
+      syncAtcState();
 
       closePopup();
     });
@@ -811,6 +838,7 @@ Supported variables:
     if (emptyRow)  emptyRow.hidden  = false;
 
     updatePrice(card);
+    syncAtcState();
   });
 
   // ── Get full bundle ATC price for a card (slots × r1Price, discount applied) ──
@@ -853,6 +881,7 @@ Supported variables:
         } else {
           updateAtcPrice(getAtcPrice(active));
         }
+        syncAtcState();
       }, 0);
     });
   });
