@@ -684,6 +684,9 @@ Supported variables:
     }
   }
 
+  // ── Init ATC price for the default selected card ──
+  if (initialCard) updateAtcPrice(getAtcPrice(initialCard));
+
   // ── Expand / collapse rows ──
   document.querySelectorAll('[data-mb-toggle]').forEach(function(toggle) {
     toggle.addEventListener('click', function() {
@@ -804,47 +807,20 @@ Supported variables:
     updatePrice(card);
   });
 
-  // ── Get total price for a card (applies per-row discount if set) ──
-  function getTotalPrice(card) {
-    var slots   = parseInt(card.getAttribute('data-mb-slots'), 10);
-    var choices = chosenBySlot.has(card) ? chosenBySlot.get(card) : {};
-    var r1Price   = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
-    var r1Compare = parseInt(mbBlock.getAttribute('data-r1-compare'), 10) || 0;
-    var totalPrice   = r1Price;
-    var totalCompare = r1Compare;
-    for (var s = 2; s <= slots; s++) {
-      if (choices[s]) { totalPrice += choices[s].price; totalCompare += choices[s].compare; }
-    }
+  // ── Get full bundle ATC price for a card (slots × r1Price, discount applied) ──
+  function getAtcPrice(card) {
+    var slots      = parseInt(card.getAttribute('data-mb-slots'), 10);
+    var r1Price    = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
+    var total      = r1Price * slots;
     var discountAttr = mbBlock.getAttribute('data-r' + slots + '-discount');
     var discountPct  = discountAttr ? parseFloat(discountAttr) : 0;
-    if (discountPct > 0) {
-      totalPrice = Math.round(totalPrice * (1 - discountPct / 100));
-    }
-    return { price: totalPrice, compare: totalCompare };
+    if (discountPct > 0) total = Math.round(total * (1 - discountPct / 100));
+    return total;
   }
 
-  // ── Update active card price display + ATC price ──
+  // ── Update ATC price only (card price display is left as Liquid-rendered per-mask price) ──
   function updatePrice(card) {
-    var slots = parseInt(card.getAttribute('data-mb-slots'), 10);
-    if (slots === 1) {
-      // Row 1 static — just sync ATC with r1 price
-      var r1Price = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
-      updateAtcPrice(r1Price);
-      return;
-    }
-    var totals    = getTotalPrice(card);
-    var priceEl   = card.querySelector('[data-mb-price]');
-    var compareEl = card.querySelector('[data-mb-compare]');
-    if (priceEl) priceEl.textContent = formatMoney(totals.price);
-    if (compareEl) {
-      if (totals.compare > totals.price) {
-        compareEl.textContent   = formatMoney(totals.compare);
-        compareEl.style.display = '';
-      } else {
-        compareEl.style.display = 'none';
-      }
-    }
-    updateAtcPrice(totals.price);
+    updateAtcPrice(getAtcPrice(card));
   }
 
   function updateAtcPrice(cents) {
@@ -869,12 +845,7 @@ Supported variables:
           var r1Price = parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0;
           updateAtcPrice(r1Price);
         } else {
-          var slots = parseInt(active.getAttribute('data-mb-slots'), 10);
-          if (slots === 1) {
-            updateAtcPrice(parseInt(mbBlock.getAttribute('data-r1-price'), 10) || 0);
-          } else {
-            updateAtcPrice(getTotalPrice(active).price);
-          }
+          updateAtcPrice(getAtcPrice(active));
         }
       }, 0);
     });
