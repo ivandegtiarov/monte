@@ -684,11 +684,6 @@ Supported variables:
     }
   }
 
-  // ── Init: update prices for all cards so discount + full bundle total show immediately ──
-  mbBlock.querySelectorAll('[data-mb-card]').forEach(function(card) {
-    updatePrice(card);
-  });
-
   // ── Expand / collapse rows ──
   document.querySelectorAll('[data-mb-toggle]').forEach(function(toggle) {
     toggle.addEventListener('click', function() {
@@ -819,7 +814,6 @@ Supported variables:
     var totalCompare = r1Compare;
     for (var s = 2; s <= slots; s++) {
       if (choices[s]) { totalPrice += choices[s].price; totalCompare += choices[s].compare; }
-      else { totalPrice += r1Price; totalCompare += r1Compare; }
     }
     var discountAttr = mbBlock.getAttribute('data-r' + slots + '-discount');
     var discountPct  = discountAttr ? parseFloat(discountAttr) : 0;
