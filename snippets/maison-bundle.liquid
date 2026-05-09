@@ -408,6 +408,9 @@ Supported variables:
     {%- comment -%} ── ROW 2: 2 Masks ── {%- endcomment -%}
     {%- if bundle_2_product != blank -%}
       {%- assign r2v = bundle_2_product.selected_or_first_available_variant -%}
+      {%- assign r2_discount = mb.row2_discount | default: 0 -%}
+      {%- assign r2_keep = 100 | minus: r2_discount -%}
+      {%- assign r2_discounted_price = r1v.price | times: r2_keep | divided_by: 100 -%}
       <div class="mb-row" data-mb-row="2">
         {%- if mb.row2_tab != blank -%}
           <div class="mb-row__tab">
@@ -432,13 +435,13 @@ Supported variables:
             <div class="mb-card__right">
               <div class="mb-card__price-row">
                 <span class="mb-card__price" data-mb-price>
-                  {%- if settings.currency_code_enabled -%}{{ r2v.price | money_with_currency }}{%- else -%}{{ r2v.price | money }}{%- endif -%}
+                  {%- if settings.currency_code_enabled -%}{{ r2_discounted_price | money_with_currency }}{%- else -%}{{ r2_discounted_price | money }}{%- endif -%}
                 </span>
                 <span class="mb-card__price-each">/ {{ mb.each_label | default: 'each' }}</span>
               </div>
-              {%- if r2v.compare_at_price > r2v.price -%}
+              {%- if r1v.price > r2_discounted_price -%}
                 <span class="mb-card__compare" data-mb-compare>
-                  {%- if settings.currency_code_enabled -%}{{ r2v.compare_at_price | money_with_currency }}{%- else -%}{{ r2v.compare_at_price | money }}{%- endif -%}
+                  {%- if settings.currency_code_enabled -%}{{ r1v.price | money_with_currency }}{%- else -%}{{ r1v.price | money }}{%- endif -%}
                 </span>
               {%- endif -%}
             </div>
@@ -485,6 +488,9 @@ Supported variables:
     {%- comment -%} ── ROW 3: 3 Masks ── {%- endcomment -%}
     {%- if bundle_3_product != blank -%}
       {%- assign r3v = bundle_3_product.selected_or_first_available_variant -%}
+      {%- assign r3_discount = mb.row3_discount | default: 0 -%}
+      {%- assign r3_keep = 100 | minus: r3_discount -%}
+      {%- assign r3_discounted_price = r1v.price | times: r3_keep | divided_by: 100 -%}
       <div class="mb-row" data-mb-row="3">
         {%- if mb.row3_tab != blank -%}
           <div class="mb-row__tab">
@@ -509,13 +515,13 @@ Supported variables:
             <div class="mb-card__right">
               <div class="mb-card__price-row">
                 <span class="mb-card__price" data-mb-price>
-                  {%- if settings.currency_code_enabled -%}{{ r3v.price | money_with_currency }}{%- else -%}{{ r3v.price | money }}{%- endif -%}
+                  {%- if settings.currency_code_enabled -%}{{ r3_discounted_price | money_with_currency }}{%- else -%}{{ r3_discounted_price | money }}{%- endif -%}
                 </span>
                 <span class="mb-card__price-each">/ {{ mb.each_label | default: 'each' }}</span>
               </div>
-              {%- if r3v.compare_at_price > r3v.price -%}
+              {%- if r1v.price > r3_discounted_price -%}
                 <span class="mb-card__compare" data-mb-compare>
-                  {%- if settings.currency_code_enabled -%}{{ r3v.compare_at_price | money_with_currency }}{%- else -%}{{ r3v.compare_at_price | money }}{%- endif -%}
+                  {%- if settings.currency_code_enabled -%}{{ r1v.price | money_with_currency }}{%- else -%}{{ r1v.price | money }}{%- endif -%}
                 </span>
               {%- endif -%}
             </div>
@@ -814,9 +820,7 @@ Supported variables:
     var total      = r1Price * slots;
     var discountAttr = mbBlock.getAttribute('data-r' + slots + '-discount');
     var discountPct  = discountAttr ? parseFloat(discountAttr) : 0;
-    console.log('[MB] slots=' + slots + ' r1Price=' + r1Price + ' discountAttr=' + discountAttr + ' discountPct=' + discountPct + ' total before=' + total);
     if (discountPct > 0) total = Math.round(total * (1 - discountPct / 100));
-    console.log('[MB] total after discount=' + total);
     return total;
   }
 
