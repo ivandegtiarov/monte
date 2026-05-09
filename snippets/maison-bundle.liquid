@@ -684,6 +684,11 @@ Supported variables:
     }
   }
 
+  // ── Init: update prices for all cards so discount + full bundle total show immediately ──
+  mbBlock.querySelectorAll('[data-mb-card]').forEach(function(card) {
+    updatePrice(card);
+  });
+
   // ── Expand / collapse rows ──
   document.querySelectorAll('[data-mb-toggle]').forEach(function(toggle) {
     toggle.addEventListener('click', function() {
