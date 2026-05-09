@@ -814,6 +814,7 @@ Supported variables:
     var totalCompare = r1Compare;
     for (var s = 2; s <= slots; s++) {
       if (choices[s]) { totalPrice += choices[s].price; totalCompare += choices[s].compare; }
+      else { totalPrice += r1Price; totalCompare += r1Compare; }
     }
     var discountAttr = mbBlock.getAttribute('data-r' + slots + '-discount');
     var discountPct  = discountAttr ? parseFloat(discountAttr) : 0;
