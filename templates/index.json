@@ -560,6 +560,7 @@
       "block_order": [
         "blog_4kjPWz"
       ],
+      "disabled": true,
       "name": "Blog posts",
       "settings": {
         "full_width": true,
