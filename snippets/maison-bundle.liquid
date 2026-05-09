@@ -327,8 +327,10 @@ Supported variables:
   data-r1-compare="{{ r1v.compare_at_price | default: 0 }}"
   data-r2-price="{{ bundle_2_product.selected_or_first_available_variant.price | default: 0 }}"
   data-r2-compare="{{ bundle_2_product.selected_or_first_available_variant.compare_at_price | default: 0 }}"
+  data-r2-discount="{{ mb.row2_discount | default: 0 }}"
   data-r3-price="{{ bundle_3_product.selected_or_first_available_variant.price | default: 0 }}"
   data-r3-compare="{{ bundle_3_product.selected_or_first_available_variant.compare_at_price | default: 0 }}"
+  data-r3-discount="{{ mb.row3_discount | default: 0 }}"
   data-currency-symbol="{{ cart.currency.symbol }}"
   data-currency-code="{{ cart.currency.iso_code }}">
 
@@ -802,7 +804,7 @@ Supported variables:
     updatePrice(card);
   });
 
-  // ── Get total price for a card ──
+  // ── Get total price for a card (applies per-row discount if set) ──
   function getTotalPrice(card) {
     var slots   = parseInt(card.getAttribute('data-mb-slots'), 10);
     var choices = chosenBySlot.has(card) ? chosenBySlot.get(card) : {};
@@ -812,6 +814,11 @@ Supported variables:
     var totalCompare = r1Compare;
     for (var s = 2; s <= slots; s++) {
       if (choices[s]) { totalPrice += choices[s].price; totalCompare += choices[s].compare; }
+    }
+    var discountAttr = mbBlock.getAttribute('data-r' + slots + '-discount');
+    var discountPct  = discountAttr ? parseFloat(discountAttr) : 0;
+    if (discountPct > 0) {
+      totalPrice = Math.round(totalPrice * (1 - discountPct / 100));
     }
     return { price: totalPrice, compare: totalCompare };
   }
