@@ -42,7 +42,7 @@
         "maison_rating_6TRbti": {
           "type": "maison-rating",
           "settings": {
-            "rating_text": "<p>Rated <strong>4.8</strong>/5 based on <strong>847</strong> reviews.</p>",
+            "rating_text": "<p>Oceniono <strong>4.8</strong>/5 | <strong>700+</strong> zadowolonych klientów</p>",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": -15,
@@ -110,13 +110,13 @@
             "bundle_2_product": "rose-noir-silk-sleep-mask",
             "row2_title": "2 Maski",
             "row2_badge": "DODATKOWE −10%",
-            "row2_save": "Oszczędzasz 130 zł",
+            "row2_save": "Oszczędzasz 126 zł",
             "row2_tab": "NAJPOPULARNIEJSZY",
             "row2_footer": "+ Darmowa dostawa",
             "bundle_3_product": "rose-noir-silk-sleep-mask",
             "row3_title": "3 Maski",
             "row3_badge": "DODATKOWE −20%",
-            "row3_save": "Oszczędzasz 270 zł",
+            "row3_save": "Oszczędzasz 258 zł",
             "row3_tab": "NAJLEPSZA CENA",
             "row3_footer": "+ Darmowa dostawa",
             "popup_title": "Wybierz produkt",
@@ -186,14 +186,11 @@
           "type": "lumen-ugc",
           "settings": {
             "title": "Ponad 700 osób już **śpi lepiej** z Monté",
-            "preview_1": "shopify://shop_images/Placeholder01.png",
-            "image_1": "shopify://shop_images/Image.jpg",
-            "video_2": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
-            "preview_2": "shopify://shop_images/Placeholder07.png",
-            "video_3": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
-            "preview_3": "shopify://shop_images/Placeholder07.png",
-            "video_4": "shopify://files/videos/lv_0_20260414114718 (1).mp4",
-            "preview_4": "shopify://shop_images/Placeholder01.png",
+            "image_1": "shopify://shop_images/UGC_2.png",
+            "image_2": "shopify://shop_images/UGC_3.png",
+            "image_3": "shopify://shop_images/UGC_4.png",
+            "image_4": "shopify://shop_images/UGC_5.png",
+            "image_5": "shopify://shop_images/UGC_1.png",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
@@ -531,17 +528,6 @@
     "testimonials_eU6FBb": {
       "type": "testimonials",
       "blocks": {
-        "testimonial_Gzpj8D": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Anna B.",
-            "title": "Nareszcie wysypiam się porządnie",
-            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero zalamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
-          }
-        },
         "testimonial_VhXdcR": {
           "type": "testimonial",
           "settings": {
@@ -562,6 +548,28 @@
             "author": "Karolina B.",
             "title": "Mieszkam w centrum i w końcu sypiam",
             "content": "<p>Wczesne słońce wpadało do mojego pokoju dosłownie o 5 rano. Teraz nie wiem kiedy wschodzi bo po prostu tego nie czuję. Polecam każdemu kto ma podobny problem.</p>"
+          }
+        },
+        "testimonial_Gzpj8D": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Anna B.",
+            "title": "Nareszcie wysypiam się porządnie",
+            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero zalamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
+          }
+        },
+        "testimonial_d8xwRT": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Natalia S.",
+            "title": "Kupiłam sobie na urodziny",
+            "content": "<p>Trochę głupio było kupować sobie samej prezent ale serio nie żałuję. Opakowanie ładne, maska miękka i teraz wieczór wygląda zupełnie inaczej.</p>"
           }
         },
         "testimonial_PXyGht": {
@@ -586,17 +594,6 @@
             "content": "<p>Mój chłopak scrolluje Instagrama kiedy ja już chcę spać. Światło od telefonu dosłownie nie pozwalało mi zasnąć. Teraz zakładam maskę i jest ciemno. Problem rozwiązany.</p>"
           }
         },
-        "testimonial_d8xwRT": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Natalia S.",
-            "title": "Kupiłam sobie na urodziny",
-            "content": "<p>Trochę głupio było kupować sobie samej prezent ale serio nie żałuję. Opakowanie ładne, maska miękka i teraz wieczór wygląda zupełnie inaczej.</p>"
-          }
-        },
         "testimonial_CLEtDD": {
           "type": "testimonial",
           "settings": {
@@ -610,6 +607,7 @@
         },
         "testimonial_hec9fP": {
           "type": "testimonial",
+          "disabled": true,
           "settings": {
             "round_avatar": true,
             "show_rating": true,
@@ -628,6 +626,17 @@
             "author": "Katarzyna N.",
             "title": "Jedyna maska która nie zsuwa się",
             "content": "<p>Próbowałam kilku i zawsze rano znajdowałam maskę gdzieś obok głowy. Rzep w tej masce naprawdę działa. Śpię na boku i rano maska jest na swoim miejscu.</p>"
+          }
+        },
+        "testimonial_c4ReL9": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Agnieszka T.",
+            "title": "Zawsze mam ją w bagażu",
+            "content": "<p>Dużo podróżuję i ta maska jest teraz w moim bagażu zawsze. W samolocie szczególnie robi różnicę. Mieści się wszędzie i naprawdę pomaga zasnąć kiedy wokół jest jasno.</p>"
           }
         },
         "testimonial_fKMVRX": {
@@ -650,17 +659,6 @@
             "author": "Paulina J.",
             "title": "Kupiłam też dla mamy",
             "content": "<p>Byłam tak zadowolona po pierwszym tygodniu że zamówiłam drugą dla mamy. Obie jesteśmy zadowolone. Mama mówi że śpi lepiej niż od lat.</p>"
-          }
-        },
-        "testimonial_c4ReL9": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Agnieszka T.",
-            "title": "Zawsze mam ją w bagażu",
-            "content": "<p>Dużo podróżuję i ta maska jest teraz w moim bagażu zawsze. W samolocie szczególnie robi różnicę. Mieści się wszędzie i naprawdę pomaga zasnąć kiedy wokół jest jasno.</p>"
           }
         },
         "testimonial_C6GHq4": {
@@ -742,18 +740,18 @@
         }
       },
       "block_order": [
-        "testimonial_Gzpj8D",
         "testimonial_VhXdcR",
         "testimonial_agdpf9",
+        "testimonial_Gzpj8D",
+        "testimonial_d8xwRT",
         "testimonial_PXyGht",
         "testimonial_zQeKBB",
-        "testimonial_d8xwRT",
         "testimonial_CLEtDD",
         "testimonial_hec9fP",
         "testimonial_AwqnpW",
+        "testimonial_c4ReL9",
         "testimonial_fKMVRX",
         "testimonial_kUgnAC",
-        "testimonial_c4ReL9",
         "testimonial_C6GHq4",
         "testimonial_eUpFfN",
         "testimonial_ceQ6F6",
