@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "page": "Page {{ page }}",
@@ -87,11 +96,13 @@
       "view_in_space": "View in your space",
       "taxes_included": "Tax included.",
       "taxes_excluded": "Tax excluded.",
-      "shipping_policy_html": "<a href=\"{{ link }}\" class=\"link\">Shipping calculated<\/a> at checkout",
+      "shipping_policy_html": "<a href=\"{{ link }}\" class=\"link\">Shipping calculated</a> at checkout",
       "size_chart": "Size chart",
       "available_colors_count": {
         "one": "{{ count }} color available",
-        "other": "{{ count }} colors available"
+        "other": "{{ count }} colors available",
+        "few": "{{ count }} colors available",
+        "many": "{{ count }} colors available"
       }
     },
     "gallery": {
@@ -120,7 +131,9 @@
     "rating_count": {
       "zero": "No reviews",
       "one": "{{ count }} review",
-      "other": "{{ count }} reviews"
+      "other": "{{ count }} reviews",
+      "few": "{{ count }} reviews",
+      "many": "{{ count }} reviews"
     },
     "inventory": {
       "in_stock": "In stock",
@@ -128,7 +141,9 @@
       "incoming_stock": "Re-stocking on {{ next_incoming_date }}",
       "low_stock_with_quantity_count": {
         "one": "Only {{count}} unit left",
-        "other": "Only {{count}} units left"
+        "other": "Only {{count}} units left",
+        "few": "Only {{ count }} items left",
+        "many": "Only {{ count }} left in stock"
       }
     },
     "store_availability": {
@@ -150,7 +165,9 @@
     "products_count": {
       "zero": "0 products",
       "one": "1 product",
-      "other": "{{ count }} products"
+      "other": "{{ count }} products",
+      "few": "{{ count }} products",
+      "many": "{{ count }} products"
     },
     "faceting": {
       "filters": "Filters",
@@ -193,7 +210,9 @@
       "count": {
         "zero": "{{ count }} comments",
         "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
+        "other": "{{ count }} comments",
+        "few": "{{ count }} comments",
+        "many": "{{ count }} comments"
       }
     }
   },
@@ -311,7 +330,9 @@
       "item_count": {
         "zero": "{{ count }} items",
         "one": "{{ count }} item",
-        "other": "{{ count }} items"
+        "other": "{{ count }} items",
+        "few": "{{ count }} items",
+        "many": "{{ count }} items"
       },
       "continue_shopping": "Continue shopping",
       "weight": "Weight",
@@ -383,7 +404,9 @@
     "results_count": {
       "zero": "0 results for \"{{ terms }}\"",
       "one": "1 result for \"{{ terms }}\"",
-      "other": "{{ count }} results for \"{{ terms }}\""
+      "other": "{{ count }} results for \"{{ terms }}\"",
+      "few": "{{ count }} results for \"{{ terms }}\"",
+      "many": "{{ count }} results for \"{{ terms }}\""
     }
   },
   "gift_card": {
@@ -433,7 +456,227 @@
       "review_count": {
         "zero": "This product has no reviews yet.",
         "one": "It has received {{ count }} review.",
-        "other": "It has received {{ count }} reviews."
+        "other": "It has received {{ count }} reviews.",
+        "few": "Has {{ count }} opinions.",
+        "many": "Has {{ count }} reviews"
+      }
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "local_pickup": {
+        "pickup_unavailable_banner_title_with_country": {
+          "few": "No locations with these products: %{country}",
+          "many": "No locations with these products: %{country}"
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "remove_items_action": {
+          "few": "remove unavailable items",
+          "many": "remove unavailable items"
+        }
+      },
+      "remote_merchandise_only": {
+        "detail_item_label": {
+          "few": "{{count}} items",
+          "many": "{{count}} items"
+        }
+      },
+      "split_delivery": {
+        "inventory_issue_banner": {
+          "heading": {
+            "cannot_be_picked_up": {
+              "few": "Cannot retrieve %{count} items",
+              "many": "Cannot retrieve %{count} items"
+            },
+            "cannot_be_shipped": {
+              "few": "Unable to send %{count} items",
+              "many": "Unable to send %{count} items"
+            }
+          },
+          "remove_item": {
+            "few": "delete item",
+            "many": "delete item"
+          },
+          "ship_separately": {
+            "few": "Send them separately",
+            "many": "Send them separately"
+          },
+          "pick_them_up_in_store": {
+            "few": "Pick them up in the store",
+            "many": "Pick them up in the store"
+          },
+          "remove_item_only": {
+            "few": "Delete items",
+            "many": "Delete items"
+          }
+        },
+        "pickup_items_count": {
+          "few": "Received %{count} item(s)",
+          "many": "Received %{count} item(s)"
+        },
+        "ship_items_count": {
+          "few": "Shipping %{count} items.",
+          "many": "Shipping %{count} items."
+        }
+      }
+    },
+    "notices": {
+      "order": {
+        "cancel_reason": {
+          "few": "Another",
+          "many": "Another"
+        }
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "few": "Search: Found %{count} results for \"%{terms}\"",
+        "many": "Search: Found %{count} results for \"%{terms}\""
+      }
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_list": {
+        "items": {
+          "few": "{{count}} items",
+          "many": "{{count}} items"
+        }
+      },
+      "order_status": {
+        "delivered_description_gift_card": {
+          "few": "Gift cards have been sent by email.",
+          "many": "Gift cards have been sent by email."
+        },
+        "gift_card_label": {
+          "few": "Gift cards",
+          "many": "Gift cards"
+        },
+        "confirmed_gift_card_additional_description": {
+          "few": "Each gift card will be sent in a separate email.",
+          "many": "Each gift card will be sent in a separate email."
+        },
+        "delivered_description_gift_card_text": {
+          "few": "Gift cards have been sent via text message.",
+          "many": "Gift cards have been sent via text message."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "few": "Each gift card will be sent in a separate text message.",
+          "many": "Each gift card will be sent in a separate text message."
+        },
+        "gift_resend_success": {
+          "few": "Gift cards re-sent",
+          "many": "Gift cards re-sent"
+        },
+        "gift_resend_failure": {
+          "few": "There was a problem resending your gift cards. Please try again or contact us.",
+          "many": "There was a problem resending your gift cards. Please try again or contact us."
+        },
+        "tracking_number": {
+          "few": "Tracking numbers",
+          "many": "Tracking numbers"
+        },
+        "gift_card_resend_button": {
+          "few": "Resend gift cards",
+          "many": "Resend gift cards"
+        }
+      }
+    },
+    "order_details": {
+      "image_gallery": {
+        "load_more_items": {
+          "few": "Load {{count}} more items",
+          "many": "Load {{count}} more items"
+        }
+      },
+      "subtotal_label_with_quantity": {
+        "few": "Subtotal · {{count}} items",
+        "many": "Subtotal · {{count}} items"
+      },
+      "discount_order_stacking": {
+        "few": "Discounts on your order",
+        "many": "Discounts on your order"
+      }
+    },
+    "B2B": {
+      "orders": {
+        "draft_order_list": {
+          "pending_tab_accessibility_label": {
+            "pending_orders": {
+              "few": "You have {{count}} pending order(s)",
+              "many": "You have {{count}} pending order(s)"
+            }
+          }
+        }
+      },
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "few": "Your payment is {{count}} days overdue",
+              "many": "Your payment is {{count}} days overdue"
+            },
+            "banner_due": {
+              "few": "Your payment is due in {{count}} days",
+              "many": "Your payment is due in {{count}} days"
+            },
+            "banner_overdue_for_single_fulfillment": {
+              "few": "Payment of {{amount}} is {{count}} days overdue. {{link}}",
+              "many": "Payment of {{amount}} is {{count}} days overdue. {{link}}"
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "banner_title": {
+        "few": "Number of errors generated: {{count}}",
+        "many": "Number of errors generated: {{count}}"
+      }
+    },
+    "payment_methods": {
+      "add_payment_method": {
+        "subscription_contracts": {
+          "more_items": {
+            "few": "{{count}} more product(s)",
+            "many": "{{count}} more product(s)"
+          },
+          "product_count": {
+            "few": "{{count}} product(s)",
+            "many": "{{count}} product(s)"
+          }
+        },
+        "updating_contracts": {
+          "few": "Updating {{count}} subscription agreements...",
+          "many": "Updating {{count}} subscription agreements..."
+        },
+        "contracts_updated": {
+          "few": "Subscription agreements updated ({{count}})",
+          "many": "Subscription agreements updated ({{count}})"
+        }
+      }
+    },
+    "ui_components": {
+      "autocompleteOptionsAvailable": {
+        "few": "Number of available positions: {{count}}",
+        "many": "Number of available positions: {{count}}"
+      },
+      "month": {
+        "few": "months",
+        "many": "months"
+      },
+      "mapClusterTitle": {
+        "few": "Cluster of {{number}} markers",
+        "many": "Cluster of {{number}} markers"
+      }
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "few": "{{count}} mins ago",
+          "many": "{{count}} mins ago"
+        }
       }
     }
   }
