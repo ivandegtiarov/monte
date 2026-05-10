@@ -468,6 +468,50 @@
         "pickup_unavailable_banner_title_with_country": {
           "few": "No locations with these products: %{country}",
           "many": "No locations with these products: %{country}"
+        },
+        "location_information": {
+          "few": "Number of locations with nearby stock: %{count}",
+          "many": "Number of locations with nearby stock: %{count}"
+        },
+        "paginator": {
+          "label": {
+            "few": "%{first} - %{last} of %{count} stores",
+            "many": "%{first} - %{last} of %{count} stores"
+          }
+        },
+        "reveal_more_label": {
+          "few": "Show %{count} more locations",
+          "many": "Show %{count} more locations"
+        },
+        "all_stores_far_away": {
+          "title_with_item": {
+            "few": "The nearest product-offering location is more than %{distance} away from %{location}",
+            "many": "The nearest product-offering location is more than %{distance} away from %{location}"
+          }
+        },
+        "location_information_far_away": {
+          "few": "Product is available in %{count} locations",
+          "many": "Product is available in %{count} locations"
+        },
+        "location_nearby": {
+          "few": "The item is available at %{count} nearby locations",
+          "many": "The item is available at %{count} nearby locations"
+        },
+        "location_nearby_short": {
+          "few": "Item available at %{count} nearby locations",
+          "many": "Item available at %{count} nearby locations"
+        },
+        "location_far_away": {
+          "few": "Item offered in %{count} locations",
+          "many": "Item offered in %{count} locations"
+        },
+        "toggle_more_locations": {
+          "few": "in %{count} more locations",
+          "many": "in %{count} more locations"
+        },
+        "pickup_unavailable_banner_title": {
+          "few": "No locations with these products",
+          "many": "No locations with these products"
         }
       },
       "merchandise_unavailable_in_buyer_location": {
@@ -746,6 +790,210 @@
         "discount_codes_removed_summary": {
           "few": "Number of deleted discount codes: %{count}",
           "many": "Number of deleted discount codes: %{count}"
+        },
+        "discount_codes_modified_summary": {
+          "few": "Number of modified discount codes: %{count}",
+          "many": "Number of modified discount codes: %{count}"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "few": "Number of deleted or modified discount codes: %{count}",
+          "many": "Number of deleted or modified discount codes: %{count}"
+        }
+      },
+      "shipping_errors": {
+        "shipping_method_not_available_generic": {
+          "few": "Some of the items in your cart cannot be shipped to the address provided. Please check the address and try again, or choose a different address.",
+          "many": "Some of the items in your cart cannot be shipped to the address provided. Please check the address and try again, or choose a different address."
+        },
+        "shipping_method_not_available_updated": {
+          "few": "The item(s) you added cannot be shipped to your location. Please remove it/them to complete your purchase or contact the store.",
+          "many": "The item(s) you added cannot be shipped to your location. Please remove it/them to complete your purchase or contact the store."
+        }
+      },
+      "processing": {
+        "wait": {
+          "medium": {
+            "few": "Your order is being processed. Estimated waiting time: %{count} minute(s).",
+            "many": "Your order is being processed. Estimated waiting time: %{count} minute(s)."
+          }
+        }
+      },
+      "thank_you": {
+        "login_reorder_link_text": {
+          "few": "also buy these products",
+          "many": "also buy these products"
+        },
+        "gift_card_confirmation_by_text_typ": {
+          "few": "You will receive an SMS with gift cards in a few minutes.",
+          "many": "You will receive an SMS with gift cards in a few minutes."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "few": "You will receive an email with your gift cards in a few minutes.",
+          "many": "You will receive an email with your gift cards in a few minutes."
+        },
+        "gift_card_email_title": {
+          "few": "Gift cards have been sent by email",
+          "many": "Gift cards have been sent by email"
+        },
+        "gift_card_text_title": {
+          "few": "Gift cards have been sent by SMS",
+          "many": "Gift cards have been sent by SMS"
+        },
+        "gift_card_resent_confirmation": {
+          "few": "Gift cards have been re-sent.",
+          "many": "Gift cards have been re-sent."
+        },
+        "gift_card_resend_failure": {
+          "few": "There was a problem resending your gift cards. Please try again or contact us.",
+          "many": "There was a problem resending your gift cards. Please try again or contact us."
+        },
+        "thank_you_unconfirmed_items_heading": {
+          "few": "Some items are not confirmed",
+          "many": "Some items are not confirmed"
+        },
+        "thank_you_unconfirmed_items_description": {
+          "few": "You haven't been charged for these",
+          "many": "You haven't been charged for these"
+        },
+        "thank_you_item_label": {
+          "few": "Items: %{count}",
+          "many": "Items: %{count}"
+        },
+        "items_fulfilled_by_store": {
+          "few": "The purchased items will come from other stores.",
+          "many": "The purchased items will come from other stores."
+        }
+      },
+      "review": {
+        "blocks": {
+          "pickup_items_at": {
+            "few": "Receive %{count} items in",
+            "many": "Receive %{count} items in"
+          },
+          "ship_items_to": {
+            "few": "Shipping %{count} items to",
+            "many": "Shipping %{count} items to"
+          }
+        }
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "added": {
+            "few": "Added %{count}",
+            "many": "Added %{count}"
+          }
+        }
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "few": "Buy %{product_name} and %{count} other item/items",
+          "many": "Buy %{product_name} and %{count} other item/items"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "few": "First %{count} payments after %{total_price}",
+            "many": "First %{count} payments after %{total_price}"
+          }
+        },
+        "recurring_total_intervals": {
+          "day": {
+            "few": "%{count} days",
+            "many": "%{count} days"
+          },
+          "week": {
+            "few": "%{count} weeks",
+            "many": "%{count} weeks"
+          },
+          "month": {
+            "few": "%{count} months",
+            "many": "%{count} months"
+          },
+          "year": {
+            "few": "%{count} years",
+            "many": "%{count} years"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "few": ", then %{count} payments of %{total_price}",
+            "many": ", then %{count} payments of %{total_price}"
+          }
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "few": "Unavailable products",
+          "many": "Unavailable products"
+        },
+        "products_not_available": {
+          "few": "These products will be removed from your cart because they are not available in your country/region.",
+          "many": "These products will be removed from your cart because they are not available in your country/region."
+        },
+        "all_products_in_cart_unavailable": {
+          "few": "These products are not available in your country/region.",
+          "many": "These products are not available in your country/region."
+        }
+      },
+      "throttle": {
+        "estimated_wait_time": {
+          "few": "Estimated waiting time: {{count}} minute(s)",
+          "many": "Estimated waiting time: {{count}} minute(s)"
+        }
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "few": "Unable to deliver %{count} items",
+            "many": "Unable to deliver %{count} items"
+          },
+          "message": {
+            "few": "These items will be removed from your cart because there are no delivery methods available for your address.",
+            "many": "These items will be removed from your cart because there are no delivery methods available for your address."
+          }
+        }
+      },
+      "pickup_point": {
+        "paginator": {
+          "header": {
+            "few": "Displaying %{first} - %{last} of %{count} items",
+            "many": "Displaying %{first} - %{last} of %{count} items"
+          },
+          "selected_pickup_point_label": {
+            "few": "%{pickup_point_index} of %{count} points",
+            "many": "%{pickup_point_index} of %{count} points"
+          },
+          "selected_page": {
+            "few": "%{first} - %{last} of %{count} points",
+            "many": "%{first} - %{last} of %{count} points"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "few": "%{count} pickup points near your location",
+          "many": "%{count} pickup points near your location"
+        },
+        "pickup_unavailable_banner_title": {
+          "few": "No pickup points available for these products",
+          "many": "No pickup points available for these products"
+        }
+      },
+      "notice_banner": {
+        "validation_errors_banner": {
+          "heading": {
+            "few": "Errors occurred ({{count}}):",
+            "many": "Errors occurred ({{count}}):"
+          },
+          "errors_in_section": {
+            "few": "Errors in the {{section}} section ({{count}})",
+            "many": "Errors in the {{section}} section ({{count}})"
+          }
+        }
+      },
+      "review_address_modal": {
+        "subtitle": {
+          "few": "This order will be shipped to the address provided by {{merchant}}. Please select a shipping address.",
+          "many": "This order will be shipped to the address provided by {{merchant}}. Please select a shipping address."
         }
       }
     },
