@@ -519,6 +519,234 @@
           "few": "Shipping %{count} items.",
           "many": "Shipping %{count} items."
         }
+      },
+      "general": {
+        "map": {
+          "cluster_title": {
+            "few": "Cluster of {{number}} markers",
+            "many": "Cluster of {{number}} markers"
+          }
+        }
+      },
+      "customer_account": {
+        "saved_address_option_description": {
+          "few": "Number of your saved addresses: {{count}}.",
+          "many": "Number of your saved addresses: {{count}}."
+        }
+      },
+      "stock": {
+        "unshippable_product": {
+          "header": {
+            "few": "Unable to deliver %{count} items",
+            "many": "Unable to deliver %{count} items"
+          },
+          "message": {
+            "few": "These items will be removed from your cart because there are no delivery methods available for your address.",
+            "many": "These items will be removed from your cart because there are no delivery methods available for your address."
+          }
+        },
+        "item_label": {
+          "few": "{{count}} items",
+          "many": "{{count}} items"
+        },
+        "unfulfillable_product": {
+          "message": {
+            "few": "Method: %{delivery_method} is no longer available for these items.",
+            "many": "Method: %{delivery_method} is no longer available for these items."
+          },
+          "default_message": {
+            "few": "The selected delivery method is no longer available for these items.",
+            "many": "The selected delivery method is no longer available for these items."
+          }
+        }
+      },
+      "order_summary": {
+        "unit_price": {
+          "per_item": {
+            "few": "%{price} per %{count} pcs.",
+            "many": "%{price} per %{count} pcs."
+          }
+        },
+        "expand_component_information": {
+          "few": "Show %{count} item(s)",
+          "many": "Show %{count} item(s)"
+        },
+        "collapse_component_information": {
+          "few": "Hide %{count} item(s)",
+          "many": "Hide %{count} item(s)"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "few": "%{count} item(s)",
+            "many": "%{count} item(s)"
+          }
+        },
+        "discount_title_stacking": {
+          "few": "Discounts",
+          "many": "Discounts"
+        },
+        "discount_order_stacking": {
+          "few": "Discounts on orders",
+          "many": "Discounts on orders"
+        },
+        "subtotal_label_with_quantity": {
+          "few": "Subtotal · items: %{count}",
+          "many": "Subtotal · items: %{count}"
+        },
+        "number_items": {
+          "few": "%{count} item(s)",
+          "many": "%{count} item(s)"
+        },
+        "view_all_items": {
+          "few": "Display all items: %{count}",
+          "many": "Display all items: %{count}"
+        },
+        "pickup_unavailable_banner_title": {
+          "few": "There are no stores available offering these products",
+          "many": "There are no stores available offering these products"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "few": "No stores with your items are available in %{country}",
+          "many": "No stores with your items are available in %{country}"
+        },
+        "discount_code_applied_count": {
+          "few": "Show %{count} discounts",
+          "many": "Show %{count} discounts"
+        }
+      },
+      "shipping": {
+        "estimated_delivery_date": {
+          "few": "Number of working days: %{count}",
+          "many": "Number of working days: %{count}"
+        },
+        "other_method": {
+          "few": "Number of other methods available: %{count} – from",
+          "many": "Number of other methods available: %{count} – from"
+        },
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "few": "for %{count} deliveries",
+            "many": "for %{count} deliveries"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "few": "every %{count} days",
+              "many": "every %{count} days"
+            },
+            "week": {
+              "few": "every %{count} week(s)",
+              "many": "every %{count} week(s)"
+            },
+            "month": {
+              "few": "every %{count} months",
+              "many": "every %{count} months"
+            },
+            "year": {
+              "few": "every %{count} years",
+              "many": "every %{count} years"
+            }
+          },
+          "first_n_order_free": {
+            "few": "First %{count} orders free",
+            "many": "First %{count} orders free"
+          },
+          "free_for_first_n_order": {
+            "few": "For the first %{count} orders",
+            "many": "For the first %{count} orders"
+          },
+          "free_shipping_cycles": {
+            "few": "Free shipping for %{count} more deliveries",
+            "many": "Free shipping for %{count} more deliveries"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "few": "Free shipping for %{count} deliveries",
+            "many": "Free shipping for %{count} deliveries"
+          },
+          "first_n_order_free_with_cycle": {
+            "few": "Free shipping for %{count} consecutive deliveries, then %{recurring_order_shipping_price}",
+            "many": "Free shipping for %{count} consecutive deliveries, then %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "few": "Free shipping for %{count} deliveries, then %{recurring_order_shipping_price}",
+            "many": "Free shipping for %{count} deliveries, then %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "few": "For %{count} consecutive deliveries, the price for each is %{shipping_price}",
+            "many": "For %{count} consecutive deliveries, the price for each is %{shipping_price}"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "few": "For %{count} consecutive deliveries, the price for each is %{shipping_price}",
+            "many": "For %{count} consecutive deliveries, the price for each is %{shipping_price}"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "few": "Free shipping for the first %{cycle}, then %{recurring_order_shipping_price}",
+            "many": "Free shipping for the first %{cycle}, then %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "few": "%{shipping_price} for %{count} subsequent deliveries (%{per_delivery_cost})",
+            "many": "%{shipping_price} for %{count} subsequent deliveries (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "few": "%{shipping_price} for %{count} deliveries (%{per_delivery_cost})",
+            "many": "%{shipping_price} for %{count} deliveries (%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "few": "%{shipping_price} for %{count} consecutive deliveries (%{per_delivery_cost}), then %{recurring_order_shipping_price}",
+            "many": "%{shipping_price} for %{count} consecutive deliveries (%{per_delivery_cost}), then %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "few": "%{shipping_price} for %{count} deliveries (%{per_delivery_cost}), then %{recurring_order_shipping_price}",
+            "many": "%{shipping_price} for %{count} deliveries (%{per_delivery_cost}), then %{recurring_order_shipping_price}"
+          }
+        },
+        "shipping_method_first_shipment_group_title": {
+          "few": "First shipments",
+          "many": "First shipments"
+        },
+        "shipping_method_recurring_shipments_group_title": {
+          "few": "Recurring shipments",
+          "many": "Recurring shipments"
+        },
+        "unbranded_description_with_fulfillment_days": {
+          "few": "Shipping within %{count} business days",
+          "many": "Shipping within %{count} business days"
+        },
+        "unbranded_description_with_fulfillment_weeks": {
+          "few": "Ships in %{count} weeks",
+          "many": "Ships in %{count} weeks"
+        }
+      },
+      "payment": {
+        "order_covered_by_gift_cards_notice": {
+          "few": "Gift cards cover the order.",
+          "many": "Gift cards cover the order."
+        },
+        "card_fields_unavailable_html": {
+          "few": "Credit and debit card payments are currently unavailable.<br><a href=\"%{current_url}\">Refresh this page</a> or use another payment method.",
+          "many": "Credit and debit card payments are currently unavailable.<br><a href=\"%{current_url}\">Refresh this page</a> or use another payment method."
+        },
+        "expired_cards_info": {
+          "few": "You have %{count} outdated cards that you can review and edit in your account.",
+          "many": "You have %{count} outdated cards that you can review and edit in your account."
+        },
+        "order_edit_banner_items_added": {
+          "few": "Added %{count}",
+          "many": "Added %{count}"
+        },
+        "crypto_payment_method": {
+          "cashback_descriptor": {
+            "few": "You will receive cashback after %{count} days",
+            "many": "You will receive cashback after %{count} days"
+          }
+        },
+        "discount_show_more_warnings": {
+          "few": "Show %{count} more",
+          "many": "Show %{count} more"
+        },
+        "discount_codes_removed_summary": {
+          "few": "Number of deleted discount codes: %{count}",
+          "many": "Number of deleted discount codes: %{count}"
+        }
       }
     },
     "notices": {
