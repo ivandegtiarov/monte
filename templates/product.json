@@ -139,12 +139,8 @@
         },
         "maison_pay_icons_jGDRtg": {
           "type": "maison-pay-icons",
+          "disabled": true,
           "settings": {
-            "icon_1": "shopify://shop_images/Payment_Method_65.svg",
-            "icon_2": "shopify://shop_images/Payment_Method_66.svg",
-            "icon_3": "shopify://shop_images/Payment_Method_67.svg",
-            "icon_4": "shopify://shop_images/Payment_Method_68.svg",
-            "icon_5": "shopify://shop_images/Payment_Method_69.svg",
             "icon_6": "shopify://shop_images/Payment_Method_70.svg",
             "icon_7": "shopify://shop_images/Payment_Method_71.svg",
             "desktop_padding_top": 0,
