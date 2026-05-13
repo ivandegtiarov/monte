@@ -906,11 +906,9 @@ Supported variables:
         }
       }
 
-      if (isBundle) {
-        items.forEach(function(item) {
-          item.properties = { '_bundle': 'true' };
-        });
-      }
+      items.forEach(function(item) {
+        item.properties = { '_bundle': 'true' };
+      });
 
       // Loading state
       var inner   = atcBtn.querySelector('[data-mb-atc-inner]');
