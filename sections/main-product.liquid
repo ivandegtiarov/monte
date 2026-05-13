@@ -59,42 +59,118 @@
 </div>
 
 {%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
+{%- assign maison_bundle_block = section.blocks | where: 'type', 'maison-bundle' | first -%}
+{%- assign sticky_trigger_block = buy_buttons_block | default: maison_bundle_block -%}
 
-{%- if section.settings.show_fixed_add_to_cart and product.available and buy_buttons_block != blank -%}
+{%- if section.settings.show_fixed_add_to_cart and product.available and sticky_trigger_block != blank -%}
   <product-rerender id="{{ product_form_id }}-sticky-bar" observe-form="{{ product_form_id }}">
     {%- if product.selected_or_first_available_variant.available -%}
-      <product-quick-add form="{{ product_form_id }}" class="product-quick-add">
-        {%- assign button_label = 'product.general.add_to_cart_button' | t -%}
+      {%- assign button_label = 'product.general.add_to_cart_button' | t -%}
+      {%- assign atc_bg = buy_buttons_block.settings.atc_button_background -%}
+      {%- assign atc_text = buy_buttons_block.settings.atc_button_text_color -%}
 
-        <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" class="sm:hidden">
-          {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: buy_buttons_block.settings.atc_button_background, text_color: buy_buttons_block.settings.atc_button_text_color, secondary: true, stretch: true, size: 'lg' -%}
-        </buy-buttons>
+      {%- if buy_buttons_block != blank -%}
+        <product-quick-add form="{{ product_form_id }}" class="product-quick-add">
+          <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" class="sm:hidden">
+            {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: atc_bg, text_color: atc_text, secondary: true, stretch: true, size: 'lg' -%}
+          </buy-buttons>
 
-        {%- assign image = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+          {%- assign image = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
 
-        <div class="product-quick-add__variant {% if image == blank %}no-image{% endif %} hidden sm:grid">
-          {%- if image != blank -%}
-            <variant-media widths="80,160" form="{{ product_form_id }}">
-              {{- image | image_url: width: image.width | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', class: 'rounded-xs' -}}
-            </variant-media>
-          {%- endif -%}
-
-          <div class="v-stack gap-0.5">
-            {%- assign vendor_block = section.blocks | where: 'type', 'vendor' -%}
-
-            {%- if vendor_block != blank -%}
-              {%- render 'vendor' with product.vendor, class: 'text-xs' -%}
+          <div class="product-quick-add__variant {% if image == blank %}no-image{% endif %} hidden sm:grid">
+            {%- if image != blank -%}
+              <variant-media widths="80,160" form="{{ product_form_id }}">
+                {{- image | image_url: width: image.width | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', class: 'rounded-xs' -}}
+              </variant-media>
             {%- endif -%}
 
-            <a href="{{ product.url }}" class="bold truncate-text">{{ product.title }}</a>
-            {%- render 'price-list', product: product, variant: product.selected_or_first_available_variant, form_id: product_form_id -%}
-          </div>
+            <div class="v-stack gap-0.5">
+              {%- assign vendor_block = section.blocks | where: 'type', 'vendor' -%}
 
-          <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" force-secondary-button>
-            {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: buy_buttons_block.settings.atc_button_background, text_color: buy_buttons_block.settings.atc_button_text_color, secondary: true -%}
-          </buy-buttons>
-        </div>
-      </product-quick-add>
+              {%- if vendor_block != blank -%}
+                {%- render 'vendor' with product.vendor, class: 'text-xs' -%}
+              {%- endif -%}
+
+              <a href="{{ product.url }}" class="bold truncate-text">{{ product.title }}</a>
+              {%- render 'price-list', product: product, variant: product.selected_or_first_available_variant, form_id: product_form_id -%}
+            </div>
+
+            <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" force-secondary-button>
+              {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: atc_bg, text_color: atc_text, secondary: true -%}
+            </buy-buttons>
+          </div>
+        </product-quick-add>
+      {%- else -%}
+        {%- comment -%} Maison bundle fallback: proxy clicks to the bundle's own ATC button {%- endcomment -%}
+        <product-quick-add form="{{ product_form_id }}" class="product-quick-add" data-mb-proxy-block="{{ maison_bundle_block.id }}">
+          <button type="button" class="button button--primary stretch w-full sm:hidden" data-mb-proxy-trigger>
+            {{- button_label -}}
+          </button>
+
+          {%- assign image = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+
+          <div class="product-quick-add__variant {% if image == blank %}no-image{% endif %} hidden sm:grid">
+            {%- if image != blank -%}
+              <variant-media widths="80,160" form="{{ product_form_id }}">
+                {{- image | image_url: width: image.width | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', class: 'rounded-xs' -}}
+              </variant-media>
+            {%- endif -%}
+
+            <div class="v-stack gap-0.5">
+              {%- assign vendor_block = section.blocks | where: 'type', 'vendor' -%}
+
+              {%- if vendor_block != blank -%}
+                {%- render 'vendor' with product.vendor, class: 'text-xs' -%}
+              {%- endif -%}
+
+              <a href="{{ product.url }}" class="bold truncate-text">{{ product.title }}</a>
+              {%- render 'price-list', product: product, variant: product.selected_or_first_available_variant, form_id: product_form_id -%}
+            </div>
+
+            <button type="button" class="button button--primary" data-mb-proxy-trigger>
+              {{- button_label -}}
+            </button>
+          </div>
+        </product-quick-add>
+
+        <script>
+          (function () {
+            var proxy = document.querySelector('[data-mb-proxy-block="{{ maison_bundle_block.id }}"]');
+            if (!proxy || proxy._mbProxyInit) return;
+            proxy._mbProxyInit = true;
+
+            function getBundleAtc() {
+              return document.querySelector('[data-mb-block] [data-mb-atc]');
+            }
+
+            function syncDisabled() {
+              var src = getBundleAtc();
+              if (!src) return;
+              proxy.querySelectorAll('[data-mb-proxy-trigger]').forEach(function (btn) {
+                btn.disabled = src.disabled;
+              });
+            }
+
+            proxy.addEventListener('click', function (e) {
+              var trigger = e.target.closest('[data-mb-proxy-trigger]');
+              if (!trigger) return;
+              e.preventDefault();
+              var src = getBundleAtc();
+              if (src) src.click();
+            });
+
+            // Keep disabled state in sync with the bundle's own ATC (slot validation)
+            syncDisabled();
+            var src = getBundleAtc();
+            if (src && 'MutationObserver' in window) {
+              new MutationObserver(syncDisabled).observe(src, {
+                attributes: true,
+                attributeFilter: ['disabled']
+              });
+            }
+          })();
+        </script>
+      {%- endif -%}
     {%- endif -%}
   </product-rerender>
 {%- endif -%}
