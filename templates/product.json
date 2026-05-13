@@ -139,10 +139,11 @@
         },
         "maison_pay_icons_jGDRtg": {
           "type": "maison-pay-icons",
-          "disabled": true,
           "settings": {
-            "icon_6": "shopify://shop_images/Payment_Method_70.svg",
-            "icon_7": "shopify://shop_images/Payment_Method_71.svg",
+            "icon_1": "shopify://shop_images/Visa.svg",
+            "icon_2": "shopify://shop_images/Mastercard.svg",
+            "icon_3": "shopify://shop_images/Przelewy24.svg",
+            "icon_4": "shopify://shop_images/Blik.svg",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
