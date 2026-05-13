@@ -295,7 +295,9 @@
         "lumen_faq_GBcUxh",
         "lumen_stat_wmiw8K"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".header-sticky-wrapper {display: block !important; opacity: 1 !important; z-index: 999 !important;}"
+      ],
       "settings": {
         "full_width": true,
         "show_fixed_add_to_cart": true,
