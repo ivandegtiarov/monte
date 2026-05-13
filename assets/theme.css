@@ -3127,7 +3127,7 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 }
 
 .product-quick-add {
-  z-index: 2;
+  z-index: 999;
   visibility: visible;
   opacity: 1 !important;
   width: 100%;
