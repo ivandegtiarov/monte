@@ -3127,15 +3127,15 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 }
 
 .product-quick-add {
-  z-index: 999;
-  visibility: visible;
-  opacity: 1 !important;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
   width: 100%;
   padding: 1.25rem;
   transition: visibility .15s ease-in, opacity .15s ease-in, transform .15s ease-in;
   position: fixed;
   bottom: 0;
-  transform: translateY(0) !important;
+  transform: translateY(10px);
 }
 
 .product-quick-add:not(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
