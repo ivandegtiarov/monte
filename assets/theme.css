@@ -3128,7 +3128,7 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 
 .product-quick-add {
   z-index: 2;
-  visibility: hidden;
+  visibility: visible;
   opacity: 1 !important;
   width: 100%;
   padding: 1.25rem;
