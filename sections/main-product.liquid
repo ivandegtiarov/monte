@@ -101,8 +101,13 @@
           </div>
         </product-quick-add>
       {%- else -%}
-        {%- comment -%} Maison bundle fallback: proxy clicks to the bundle's own ATC button {%- endcomment -%}
-        <product-quick-add form="{{ product_form_id }}" class="product-quick-add" data-mb-proxy-block="{{ maison_bundle_block.id }}">
+        {%- comment -%}
+          Maison bundle fallback: there's no real product form on the page (the bundle uses its
+          own /cart/add.js call), so we can't rely on <product-quick-add>'s IntersectionObserver
+          which expects a layout-having form element. We render a plain wrapper and run our own
+          observer against the bundle wrapper instead.
+        {%- endcomment -%}
+        <div class="product-quick-add" data-mb-sticky data-mb-proxy-block="{{ maison_bundle_block.id }}">
           <button type="button" class="button button--primary stretch w-full sm:hidden" data-mb-proxy-trigger>
             {{- button_label -}}
           </button>
@@ -131,27 +136,26 @@
               {{- button_label -}}
             </button>
           </div>
-        </product-quick-add>
+        </div>
 
         <script>
           (function () {
-            var proxy = document.querySelector('[data-mb-proxy-block="{{ maison_bundle_block.id }}"]');
-            if (!proxy || proxy._mbProxyInit) return;
-            proxy._mbProxyInit = true;
+            var sticky = document.querySelector('[data-mb-proxy-block="{{ maison_bundle_block.id }}"]');
+            if (!sticky || sticky._mbProxyInit) return;
+            sticky._mbProxyInit = true;
 
             function getBundleAtc() {
               return document.querySelector('[data-mb-block] [data-mb-atc]');
             }
-
-            function syncDisabled() {
-              var src = getBundleAtc();
-              if (!src) return;
-              proxy.querySelectorAll('[data-mb-proxy-trigger]').forEach(function (btn) {
-                btn.disabled = src.disabled;
-              });
+            function getBundleWrapper() {
+              return document.querySelector('[data-mb-block]');
+            }
+            function getFooter() {
+              return document.querySelector('.footer');
             }
 
-            proxy.addEventListener('click', function (e) {
+            // ── Proxy click → bundle ATC ──
+            sticky.addEventListener('click', function (e) {
               var trigger = e.target.closest('[data-mb-proxy-trigger]');
               if (!trigger) return;
               e.preventDefault();
@@ -159,15 +163,48 @@
               if (src) src.click();
             });
 
-            // Keep disabled state in sync with the bundle's own ATC (slot validation)
+            // ── Mirror disabled state from the bundle ATC (slot validation) ──
+            function syncDisabled() {
+              var src = getBundleAtc();
+              if (!src) return;
+              sticky.querySelectorAll('[data-mb-proxy-trigger]').forEach(function (btn) {
+                btn.disabled = src.disabled;
+              });
+            }
             syncDisabled();
-            var src = getBundleAtc();
-            if (src && 'MutationObserver' in window) {
-              new MutationObserver(syncDisabled).observe(src, {
+            var srcBtn = getBundleAtc();
+            if (srcBtn && 'MutationObserver' in window) {
+              new MutationObserver(syncDisabled).observe(srcBtn, {
                 attributes: true,
                 attributeFilter: ['disabled']
               });
             }
+
+            // ── Visibility: show after bundle wrapper scrolls out of view, hide near footer ──
+            var bundleEl = getBundleWrapper();
+            var footerEl = getFooter();
+            if (!bundleEl) return;
+
+            var bundlePassed = false;
+            var footerReached = false;
+
+            function update() {
+              sticky.classList.toggle('is-visible', bundlePassed && !footerReached);
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.target === bundleEl) {
+                  bundlePassed = entry.boundingClientRect.bottom < 0;
+                }
+                if (footerEl && entry.target === footerEl) {
+                  footerReached = entry.isIntersecting;
+                }
+              });
+              update();
+            });
+            io.observe(bundleEl);
+            if (footerEl) io.observe(footerEl);
           })();
         </script>
       {%- endif -%}
