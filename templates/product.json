@@ -297,7 +297,7 @@
       ],
       "settings": {
         "full_width": true,
-        "show_fixed_add_to_cart": false,
+        "show_fixed_add_to_cart": true,
         "desktop_media_width": 65,
         "desktop_media_layout": "grid_highlight",
         "mobile_media_size": "expanded",
