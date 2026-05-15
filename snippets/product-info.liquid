@@ -1000,8 +1000,8 @@ Supported variables
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 23px;
-                height: 16px;
+                width: 35px;
+                height: 24px;
                 border: 1px solid rgba(24, 33, 83, 0.08);
                 border-radius: 4px;
                 overflow: hidden;
@@ -1026,7 +1026,7 @@ Supported variables
                 {%- assign icon_key = 'icon_' | append: i -%}
                 {%- if block.settings[icon_key] != blank -%}
                   <div class="maison-pay-icons__badge">
-                    <img src="{{ block.settings[icon_key] | image_url: width: 46 }}" alt="" width="23" height="16" loading="lazy">
+                    <img src="{{ block.settings[icon_key] | image_url: width: 70 }}" alt="" width="35" height="24" loading="lazy">
                   </div>
                 {%- endif -%}
               {%- endfor -%}
