@@ -42,7 +42,7 @@
         "maison_rating_6TRbti": {
           "type": "maison-rating",
           "settings": {
-            "rating_text": "<p>Oceniono <strong>4.8</strong>/5 | <strong>700+</strong> zadowolonych klientów</p>",
+            "rating_text": "<p>Rated <strong>4.8</strong>/5 based on <strong>847</strong> reviews.</p>",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": -15,
@@ -77,7 +77,7 @@
         "maison_price_7dRbXE": {
           "type": "maison-price",
           "settings": {
-            "save_text": "oszczędzasz",
+            "save_text": "SAVE",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
@@ -111,14 +111,14 @@
             "row2_title": "2 Maski",
             "row2_badge": "DODATKOWE −10%",
             "row2_save": "Oszczędzasz 126 zł",
-            "row2_discount": 10,
+            "row2_discount": 0,
             "row2_tab": "NAJPOPULARNIEJSZY",
             "row2_footer": "+ Darmowa dostawa",
             "bundle_3_product": "rose-noir-silk-sleep-mask",
             "row3_title": "3 Maski",
             "row3_badge": "DODATKOWE −20%",
             "row3_save": "Oszczędzasz 258 zł",
-            "row3_discount": 20,
+            "row3_discount": 0,
             "row3_tab": "NAJLEPSZA CENA",
             "row3_footer": "+ Darmowa dostawa",
             "popup_title": "Wybierz produkt",
@@ -140,10 +140,10 @@
         "maison_pay_icons_jGDRtg": {
           "type": "maison-pay-icons",
           "settings": {
-            "icon_1": "shopify://shop_images/Visa.svg",
-            "icon_2": "shopify://shop_images/Mastercard.svg",
-            "icon_3": "shopify://shop_images/Przelewy24.svg",
-            "icon_4": "shopify://shop_images/Blik.svg",
+            "icon_1": "shopify://shop_images/Visa_Logo_1.svg",
+            "icon_2": "shopify://shop_images/Mastercard_Logo_1.svg",
+            "icon_3": "shopify://shop_images/Przelewy24_1.svg",
+            "icon_4": "shopify://shop_images/Blik_1.svg",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
@@ -185,11 +185,6 @@
           "type": "lumen-ugc",
           "settings": {
             "title": "Ponad 700 osób już **śpi lepiej** z Monté",
-            "image_1": "shopify://shop_images/UGC_2.png",
-            "image_2": "shopify://shop_images/UGC_3.png",
-            "image_3": "shopify://shop_images/UGC_4.png",
-            "image_4": "shopify://shop_images/UGC_5.png",
-            "image_5": "shopify://shop_images/UGC_1.png",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
             "desktop_margin_top": 0,
