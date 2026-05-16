@@ -49,7 +49,6 @@
         "message_RViAXw",
         "message"
       ],
-      "disabled": true,
       "settings": {
         "enable_sticky": false,
         "show_on_homepage_only": false,
@@ -65,7 +64,6 @@
     },
     "header": {
       "type": "header",
-      "disabled": true,
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
