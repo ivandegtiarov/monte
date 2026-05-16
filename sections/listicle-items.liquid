@@ -363,11 +363,15 @@
             {%- if block.settings.fact_content != blank -%}
               <div class="listicle-item__fact">
                 <div class="listicle-item__fact-header">
-                  <svg class="listicle-item__fact-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M10 3C7.79 3 6 4.79 6 7c0 1.38.7 2.59 1.75 3.32.39.27.62.65.71 1.06L8.6 12h2.8l.14-1.62c.09-.41.32-.79.71-1.06C13.3 9.59 14 8.38 14 7c0-2.21-1.79-4-4-4z" stroke="#182153" stroke-width="1.3" stroke-linejoin="round"/>
-                    <path d="M8.5 12v2c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-2M8.5 15h3" stroke="#182153" stroke-width="1.3" stroke-linecap="round"/>
-                    <path d="M10 3V2M5 5l-.7-.7M15 5l.7-.7M3 9H2M18 9h-1" stroke="#182153" stroke-width="1.3" stroke-linecap="round"/>
-                  </svg>
+                  {%- if block.settings.fact_icon != blank -%}
+                    {{- block.settings.fact_icon | image_url: width: 40 | image_tag: class: 'listicle-item__fact-icon', loading: 'lazy', alt: '' -}}
+                  {%- else -%}
+                    <svg class="listicle-item__fact-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M10 3C7.79 3 6 4.79 6 7c0 1.38.7 2.59 1.75 3.32.39.27.62.65.71 1.06L8.6 12h2.8l.14-1.62c.09-.41.32-.79.71-1.06C13.3 9.59 14 8.38 14 7c0-2.21-1.79-4-4-4z" stroke="#182153" stroke-width="1.3" stroke-linejoin="round"/>
+                      <path d="M8.5 12v2c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-2M8.5 15h3" stroke="#182153" stroke-width="1.3" stroke-linecap="round"/>
+                      <path d="M10 3V2M5 5l-.7-.7M15 5l.7-.7M3 9H2M18 9h-1" stroke="#182153" stroke-width="1.3" stroke-linecap="round"/>
+                    </svg>
+                  {%- endif -%}
                   <span class="listicle-item__fact-label">{{ block.settings.fact_label | default: 'FAKT' | escape }}</span>
                 </div>
                 <div class="listicle-item__fact-text">{{ block.settings.fact_content }}</div>
@@ -496,15 +500,21 @@
           "content": "Fact box"
         },
         {
+          "type": "image_picker",
+          "id": "fact_icon",
+          "label": "Icon",
+          "info": "Recommended: 20×20px SVG or PNG. Defaults to lightbulb if empty."
+        },
+        {
           "type": "text",
           "id": "fact_label",
-          "label": "Fact label",
+          "label": "Label",
           "default": "FAKT"
         },
         {
           "type": "richtext",
           "id": "fact_content",
-          "label": "Fact content"
+          "label": "Content"
         },
         {
           "type": "header",
