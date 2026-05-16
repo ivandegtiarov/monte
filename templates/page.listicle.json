@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-listicle",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "title": "First item",
+            "content": "<p>Describe this item. Add enough detail to be useful and engaging for the reader.</p>",
+            "image_position": "start"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "title": "Second item",
+            "content": "<p>Describe this item. Add enough detail to be useful and engaging for the reader.</p>",
+            "image_position": "end"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "title": "Third item",
+            "content": "<p>Describe this item. Add enough detail to be useful and engaging for the reader.</p>",
+            "image_position": "start"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3"],
+      "settings": {
+        "tagline": "EDITORIAL",
+        "title": "Listicle title",
+        "content_width": "1100px"
+      }
+    }
+  },
+  "order": ["main"]
+}
