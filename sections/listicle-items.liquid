@@ -1,0 +1,561 @@
+{%- render 'section-spacing-collapsing' -%}
+
+<style>
+  #shopify-section-{{ section.id }} .listicle-items {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  /* Item row */
+  #shopify-section-{{ section.id }} .listicle-item {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(24, 33, 83, 0.1);
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item:last-child {
+    border-bottom: none;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item--image-right {
+    flex-direction: row-reverse;
+  }
+
+  /* Image column */
+  #shopify-section-{{ section.id }} .listicle-item__image-col {
+    flex-shrink: 0;
+    padding-block: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__image {
+    width: 500px;
+    max-width: 100%;
+    aspect-ratio: 1;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Content column */
+  #shopify-section-{{ section.id }} .listicle-item__content-col {
+    flex: 1;
+    min-width: 0;
+    padding: 40px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* Number badge */
+  #shopify-section-{{ section.id }} .listicle-item__number {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: #f8f1e9;
+    border: 1px dashed #232e71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #182153;
+    font-style: normal;
+  }
+
+  /* Title */
+  #shopify-section-{{ section.id }} .listicle-item__title {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #182153;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__title em {
+    font-style: italic;
+  }
+
+  /* Body text */
+  #shopify-section-{{ section.id }} .listicle-item__body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__body p {
+    margin-block-end: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__body p + p {
+    margin-block-start: 1em;
+  }
+
+  /* Closing text */
+  #shopify-section-{{ section.id }} .listicle-item__closing {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__closing p {
+    margin: 0;
+  }
+
+  /* Fact box */
+  #shopify-section-{{ section.id }} .listicle-item__fact {
+    background: #fbf7f3;
+    border: 1px dashed #232e71;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__fact-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__fact-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__fact-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #182153;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__fact-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__fact-text p {
+    margin: 0;
+  }
+
+  /* CTA button */
+  #shopify-section-{{ section.id }} .listicle-item__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #232e71;
+    color: #fdfbf9;
+    height: 52px;
+    border-radius: 999px;
+    padding-inline: 32px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__button:hover {
+    opacity: 0.9;
+  }
+
+  /* Testimonial */
+  #shopify-section-{{ section.id }} .listicle-item__testimonial {
+    background: #fbf7f3;
+    border: 1px dashed #232e71;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__testimonial-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__testimonial-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__testimonial-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__stars {
+    display: flex;
+    gap: 2px;
+    color: #d9a17d;
+    font-size: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__testimonial-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__reviewer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__reviewer-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #182153;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__reviewer-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__verified {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__verified-badge {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #010d6e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__verified-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #182153;
+    white-space: nowrap;
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 899px) {
+    #shopify-section-{{ section.id }} .listicle-item,
+    #shopify-section-{{ section.id }} .listicle-item--image-right {
+      flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-item__image-col {
+      padding-block: 0;
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-item__image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-item__content-col {
+      padding: 24px 0;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-item__number {
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-item__title {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<div {% render 'section-properties' %}>
+  <div class="listicle-items container">
+    {%- for block in section.blocks -%}
+      {%- assign number_label = forloop.index | prepend: '0' | slice: -2, 2 -%}
+
+      <div
+        class="listicle-item{% if block.settings.image_position == 'end' %} listicle-item--image-right{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        {%- if block.settings.image != blank -%}
+          <div class="listicle-item__image-col">
+            <div class="listicle-item__image">
+              {{-
+                block.settings.image
+                | image_url: width: block.settings.image.width
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: '(max-width: 899px) 100vw, 500px',
+                  widths: '400,600,800,1000,1200',
+                  alt: block.settings.image.alt | escape
+              -}}
+            </div>
+          </div>
+        {%- endif -%}
+
+        <div class="listicle-item__content-col">
+          <div class="listicle-item__content">
+
+            <div class="listicle-item__number">{{ number_label }}</div>
+
+            {%- if block.settings.title != blank -%}
+              <h2 class="listicle-item__title">
+                {{- block.settings.title | remove: '<p>' | remove: '</p>' -}}
+              </h2>
+            {%- endif -%}
+
+            {%- if block.settings.body != blank -%}
+              <div class="listicle-item__body">{{ block.settings.body }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.fact_content != blank -%}
+              <div class="listicle-item__fact">
+                <div class="listicle-item__fact-header">
+                  <svg class="listicle-item__fact-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M10 3C7.79 3 6 4.79 6 7c0 1.38.7 2.59 1.75 3.32.39.27.62.65.71 1.06L8.6 12h2.8l.14-1.62c.09-.41.32-.79.71-1.06C13.3 9.59 14 8.38 14 7c0-2.21-1.79-4-4-4z" stroke="#182153" stroke-width="1.3" stroke-linejoin="round"/>
+                    <path d="M8.5 12v2c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-2M8.5 15h3" stroke="#182153" stroke-width="1.3" stroke-linecap="round"/>
+                    <path d="M10 3V2M5 5l-.7-.7M15 5l.7-.7M3 9H2M18 9h-1" stroke="#182153" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                  <span class="listicle-item__fact-label">{{ block.settings.fact_label | default: 'FAKT' | escape }}</span>
+                </div>
+                <div class="listicle-item__fact-text">{{ block.settings.fact_content }}</div>
+              </div>
+            {%- endif -%}
+
+            {%- if block.settings.closing_text != blank -%}
+              <div class="listicle-item__closing">{{ block.settings.closing_text }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.testimonial_text != blank -%}
+              <div class="listicle-item__testimonial">
+                {%- if block.settings.testimonial_photo != blank -%}
+                  <div class="listicle-item__testimonial-photo">
+                    {{- block.settings.testimonial_photo | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' -}}
+                  </div>
+                {%- endif -%}
+                <div class="listicle-item__testimonial-body">
+                  <div class="listicle-item__stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                  </div>
+                  <p class="listicle-item__testimonial-text">{{ block.settings.testimonial_text | escape }}</p>
+                  <div class="listicle-item__reviewer">
+                    {%- if block.settings.testimonial_reviewer != blank -%}
+                      <span class="listicle-item__reviewer-name">{{ block.settings.testimonial_reviewer | escape }}</span>
+                    {%- endif -%}
+                    {%- if block.settings.testimonial_verified -%}
+                      <div class="listicle-item__reviewer-dot"></div>
+                      <div class="listicle-item__verified">
+                        <div class="listicle-item__verified-badge" aria-hidden="true">
+                          <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 3l2 2 4-4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </div>
+                        <span class="listicle-item__verified-label">Verified Buyer</span>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+
+            {%- if block.settings.button_label != blank -%}
+              {%- if block.settings.button_url != blank -%}
+                <a href="{{ block.settings.button_url }}" class="listicle-item__button">
+                  {{- block.settings.button_label | escape -}}
+                </a>
+              {%- else -%}
+                <button type="button" class="listicle-item__button">
+                  {{- block.settings.button_label | escape -}}
+                </button>
+              {%- endif -%}
+            {%- endif -%}
+
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Items",
+  "class": "shopify-section--listicle-items",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image position (desktop)",
+          "options": [
+            { "value": "start", "label": "Left" },
+            { "value": "end", "label": "Right" }
+          ],
+          "default": "start"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "info": "Use italic for styled words"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body text"
+        },
+        {
+          "type": "header",
+          "content": "Fact box"
+        },
+        {
+          "type": "text",
+          "id": "fact_label",
+          "label": "Fact label",
+          "default": "FAKT"
+        },
+        {
+          "type": "richtext",
+          "id": "fact_content",
+          "label": "Fact content"
+        },
+        {
+          "type": "header",
+          "content": "Closing text"
+        },
+        {
+          "type": "richtext",
+          "id": "closing_text",
+          "label": "Closing text"
+        },
+        {
+          "type": "header",
+          "content": "Testimonial"
+        },
+        {
+          "type": "image_picker",
+          "id": "testimonial_photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_text",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_reviewer",
+          "label": "Reviewer name"
+        },
+        {
+          "type": "checkbox",
+          "id": "testimonial_verified",
+          "label": "Show verified badge",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "CTA button"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Items",
+      "blocks": [
+        { "type": "item" },
+        { "type": "item" },
+        { "type": "item" }
+      ]
+    }
+  ]
+}
+{% endschema %}
