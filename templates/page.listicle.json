@@ -30,7 +30,7 @@
         "social_proof_image_1": "shopify://shop_images/UGC_2.png",
         "social_proof_image_2": "shopify://shop_images/UGC_3.png",
         "social_proof_image_3": "shopify://shop_images/UGC_5.png",
-        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
+        "social_proof_text": "<p>Dołącz do 700+ kobiet, które<br/>wybrały Monté</p>",
         "tagline": "",
         "title": "<p>Twój retinol <em>nie powinien</em><br/>kończyć na poduszce</p>",
         "intro": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej. Oto 5 rzeczy, które dzieją się z twoją skórą między północą a poranem.</p>",
@@ -198,7 +198,7 @@
         "social_proof_image_1": "shopify://shop_images/UGC_2.png",
         "social_proof_image_2": "shopify://shop_images/UGC_3.png",
         "social_proof_image_3": "shopify://shop_images/UGC_5.png",
-        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
+        "social_proof_text": "<p>Dołącz do 700+ kobiet, które<br/>wybrały Monté</p>",
         "title": "<p>Twój krem zasługuje<br/>na uczciwą noc</p>",
         "body": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>",
         "feature_1_title": "100% Jedwab morwowy",
@@ -211,7 +211,7 @@
         "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 40,
-        "padding_top_mobile": 32,
+        "padding_top_mobile": 0,
         "padding_bottom_mobile": 32
       }
     },
