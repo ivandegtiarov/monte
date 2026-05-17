@@ -111,6 +111,10 @@
     margin: 0;
   }
 
+  #shopify-section-{{ section.id }} .listicle-pcta__social-text p {
+    margin: 0;
+  }
+
   /* Title + body */
   #shopify-section-{{ section.id }} .listicle-pcta__title-group {
     display: flex;
@@ -292,7 +296,7 @@
             </div>
           {%- endif -%}
           {%- if section.settings.social_proof_text != blank -%}
-            <p class="listicle-pcta__social-text">{{ section.settings.social_proof_text | escape }}</p>
+            <div class="listicle-pcta__social-text">{{ section.settings.social_proof_text }}</div>
           {%- endif -%}
         </div>
       {%- endif -%}
@@ -393,10 +397,10 @@
       "label": "Avatar 3"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "social_proof_text",
       "label": "Social proof text",
-      "default": "Dołącz do 700+ kobiet, które wybrały Monté"
+      "default": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>"
     },
     {
       "type": "header",

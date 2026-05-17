@@ -85,6 +85,10 @@
     white-space: nowrap;
   }
 
+  #shopify-section-{{ section.id }} .listicle-intro__social-text p {
+    margin: 0;
+  }
+
   /* Title group */
   #shopify-section-{{ section.id }} .listicle-intro__title-group {
     display: flex;
@@ -185,7 +189,7 @@
               {%- endif -%}
 
               {%- if section.settings.social_proof_text != blank -%}
-                <p class="listicle-intro__social-text">{{ section.settings.social_proof_text | escape }}</p>
+                <div class="listicle-intro__social-text">{{ section.settings.social_proof_text }}</div>
               {%- endif -%}
             </div>
           {%- endif -%}
@@ -263,7 +267,7 @@
       "label": "Avatar 3"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "social_proof_text",
       "label": "Social proof text"
     },
