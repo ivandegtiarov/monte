@@ -16,6 +16,13 @@
         "subtitle": "Powstaliśmy z przekonania, że noc zasługuje na coś wyjątkowego."
       }
     },
+    "about_story": {
+      "type": "about-story",
+      "settings": {
+        "tagline": "JAK TO SIĘ ZACZĘŁO",
+        "title": "Mały rytuał, który zmienia całą noc"
+      }
+    },
     "media_with_text_myzrmG": {
       "type": "media-with-text",
       "blocks": {
@@ -109,6 +116,7 @@
   },
   "order": [
     "about_hero",
+    "about_story",
     "media_with_text_myzrmG",
     "featured_collection_hURkXM"
   ]
