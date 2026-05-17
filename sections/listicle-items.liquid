@@ -1,6 +1,10 @@
 {%- render 'section-spacing-collapsing' -%}
 
 <style>
+  #shopify-section-{{ section.id }} {
+    background-color: #ffffff;
+  }
+
   #shopify-section-{{ section.id }} .listicle-items {
     max-width: 1200px;
     margin-inline: auto;
@@ -10,11 +14,6 @@
   #shopify-section-{{ section.id }} .listicle-item {
     display: flex;
     align-items: flex-start;
-    border-bottom: 1px solid rgba(24, 33, 83, 0.1);
-  }
-
-  #shopify-section-{{ section.id }} .listicle-item:last-child {
-    border-bottom: none;
   }
 
   #shopify-section-{{ section.id }} .listicle-item--image-right {
