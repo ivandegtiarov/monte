@@ -13,33 +13,23 @@
       "type": "about-hero",
       "settings": {
         "title": "O marce",
-        "subtitle": "Powstaliśmy z przekonania, że noc zasługuje na coś wyjątkowego.",
-        "padding_top": 64,
-        "padding_bottom": 40
+        "subtitle": "Powstaliśmy z przekonania, że noc zasługuje na coś wyjątkowego."
       }
     },
     "about_story": {
       "type": "about-story",
       "settings": {
-        "image": "shopify://shop_images/Hand_and_Mask.png",
-        "image_position": "start",
         "tagline": "JAK TO SIĘ ZACZĘŁO",
-        "title": "Mały rytuał, który zmienia całą noc",
-        "content": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna może być czymś więcej niż obowiązkiem. Małym, codziennym aktem troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.</p><p>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być po prostu najlepszy z możliwych.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>",
-        "padding_top": 40,
-        "padding_bottom": 20
+        "title": "Mały rytuał, który zmienia całą noc"
       }
     },
     "about_mission": {
       "type": "about-story",
       "settings": {
-        "image": "shopify://shop_images/1234_Masks.png",
         "image_position": "end",
         "tagline": "NASZA MISJA",
         "title": "Sen to nie luksus. To konieczność.",
-        "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano, energię w ciągu dnia i spokój, który czujesz zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>",
-        "padding_top": 40,
-        "padding_bottom": 20
+        "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano, energię w ciągu dnia i spokój, który czujesz zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>"
       }
     },
     "about_products": {
@@ -49,7 +39,6 @@
           "type": "product_card",
           "settings": {
             "product": "champagne-gold-silk-sleep-mask",
-            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -57,7 +46,6 @@
           "type": "product_card",
           "settings": {
             "product": "classic-black-sleep-mask",
-            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -65,7 +53,6 @@
           "type": "product_card",
           "settings": {
             "product": "midnight-blue-silk-sleep-mask",
-            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -73,22 +60,139 @@
           "type": "product_card",
           "settings": {
             "product": "rose-noir-silk-sleep-mask",
-            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         }
       },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4"
-      ],
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
       "settings": {
         "title": "Twoja pierwsza noc z Monté",
-        "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc."
+      }
+    },
+    "media_with_text_myzrmG": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_N9YLQf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Hand_and_Mask.png",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "JAK TO SIĘ ZACZĘŁO",
+            "title": "Mały rytuał, który zmienia całą noc",
+            "content": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna może być czymś więcej niż obowiązkiem. Małym, codziennym aktem troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.<br/><br/>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być po prostu najlepszy z możliwych.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#fdfbf9",
+            "background_gradient": "",
+            "text_color": "#182153",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "image_ddBKnk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1234_Masks.png",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "NASZA MISJA",
+            "title": "Sen to nie luksus. To konieczność.",
+            "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano, energię w ciągu dnia i spokój, który czujesz zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#fdfbf9",
+            "background_gradient": "",
+            "text_color": "#182153",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_N9YLQf",
+        "image_ddBKnk"
+      ],
+      "name": "Media with text",
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "featured_collection_hURkXM": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "blocks": {
+        "ov_1": {
+          "type": "product_override",
+          "settings": {
+            "product": "champagne-gold-silk-sleep-mask",
+            "custom_name": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "ov_2": {
+          "type": "product_override",
+          "settings": {
+            "product": "classic-black-sleep-mask",
+            "custom_name": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "ov_3": {
+          "type": "product_override",
+          "settings": {
+            "product": "midnight-blue-silk-sleep-mask",
+            "custom_name": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "ov_4": {
+          "type": "product_override",
+          "settings": {
+            "product": "rose-noir-silk-sleep-mask",
+            "custom_name": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        }
+      },
+      "block_order": ["ov_1", "ov_2", "ov_3", "ov_4"],
+      "settings": {
+        "collection": "",
+        "products": [
+          "classic-black-sleep-mask",
+          "midnight-blue-silk-sleep-mask",
+          "champagne-gold-silk-sleep-mask",
+          "rose-noir-silk-sleep-mask"
+        ],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 4,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Twoja pierwsza noc z Monté",
+        "content": "<p>Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.</p>",
+        "link_url": "",
+        "link_text": "",
+        "background": "#fdfbf9",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
       }
     }
   },
@@ -96,6 +200,8 @@
     "about_hero",
     "about_story",
     "about_mission",
-    "about_products"
+    "about_products",
+    "media_with_text_myzrmG",
+    "featured_collection_hURkXM"
   ]
 }

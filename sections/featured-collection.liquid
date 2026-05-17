@@ -76,25 +76,39 @@
     transform: none !important;
   }
 
-  /* Section header — centered, max 600px */
+  /* Section header — left aligned */
   #shopify-section-{{ section.id }} section-header {
-    text-align: center !important;
-    justify-content: center !important;
-    justify-items: center !important;
-    max-width: 600px !important;
-    margin-inline: auto !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    justify-items: start !important;
   }
 
   #shopify-section-{{ section.id }} section-header .h2 {
     font-size: 32px !important;
     color: #182153 !important;
-    text-align: center !important;
+    text-align: left !important;
   }
 
   #shopify-section-{{ section.id }} section-header .prose {
-    text-align: center !important;
+    text-align: left !important;
     color: rgba(24, 33, 83, 0.75) !important;
     font-size: 16px !important;
+  }
+
+  /* Tagline */
+  #shopify-section-{{ section.id }} .fc-monte-tagline {
+    font-family: "PP Neue Montreal Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(24, 33, 83, 0.75);
+    margin: 0;
+    padding: 0 12px 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Badge */
@@ -272,7 +286,20 @@
   {%- assign fc_products = section.settings.products | default: section.settings.collection.products -%}
   {
     {%- for product in fc_products limit: section.settings.products_count -%}
-      "{{ product.handle | escape }}": "{{ product.selected_or_first_available_variant.id }}"{% unless forloop.last %},{% endunless %}
+      {%- assign ov_tagline = '' -%}
+      {%- assign ov_name = '' -%}
+      {%- for block in section.blocks -%}
+        {%- if block.settings.product.handle == product.handle -%}
+          {%- assign ov_tagline = block.settings.tagline -%}
+          {%- assign ov_name = block.settings.custom_name -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      "{{ product.handle | escape }}": {
+        "variantId": "{{ product.selected_or_first_available_variant.id }}",
+        "tagline": {{ ov_tagline | json }},
+        "customName": {{ ov_name | json }}
+      }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   }
 </script>
@@ -297,8 +324,26 @@
         if (!figure || figure.querySelector('.fc-monte-add')) return;
 
         var handle = card.getAttribute('handle');
-        var variantId = variantsMap[handle];
+        var data = variantsMap[handle] || {};
+        var variantId = data.variantId;
         if (!variantId) return;
+
+        /* Custom name override */
+        if (data.customName) {
+          var titleLink = card.querySelector('.product-card__title a');
+          if (titleLink) titleLink.textContent = data.customName;
+        }
+
+        /* Tagline */
+        if (data.tagline) {
+          var info = card.querySelector('.product-card__info');
+          if (info && !info.querySelector('.fc-monte-tagline')) {
+            var taglineEl = document.createElement('p');
+            taglineEl.className = 'fc-monte-tagline';
+            taglineEl.textContent = data.tagline;
+            info.appendChild(taglineEl);
+          }
+        }
 
         var btn = document.createElement('button');
         btn.type = 'button';
@@ -511,6 +556,31 @@
       "type": "color",
       "id": "product_card_text_color",
       "label": "Product card text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_override",
+      "name": "Product override",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "custom_name",
+          "label": "Custom name",
+          "info": "Overrides the product title on the card. Leave blank to keep the original."
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "100% Jedwab morwowy 22 momme"
+        }
+      ]
     }
   ],
   "presets": [
