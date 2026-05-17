@@ -23,6 +23,14 @@
         "title": "Mały rytuał, który zmienia całą noc"
       }
     },
+    "about_mission": {
+      "type": "about-story",
+      "settings": {
+        "tagline": "NASZA MISJA",
+        "title": "Sen to nie luksus. To konieczność.",
+        "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano, energię w ciągu dnia i spokój, który czujesz zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>"
+      }
+    },
     "media_with_text_myzrmG": {
       "type": "media-with-text",
       "blocks": {
@@ -117,6 +125,7 @@
   "order": [
     "about_hero",
     "about_story",
+    "about_mission",
     "media_with_text_myzrmG",
     "featured_collection_hURkXM"
   ]

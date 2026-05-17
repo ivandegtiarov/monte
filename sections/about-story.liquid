@@ -111,6 +111,10 @@
     margin-block-start: 1em;
   }
 
+  #shopify-section-{{ section.id }} .about-story__inner--image-end {
+    flex-direction: row-reverse;
+  }
+
   /* Mobile */
   @media screen and (max-width: 899px) {
     #shopify-section-{{ section.id }} .about-story {
@@ -141,7 +145,7 @@
 </style>
 
 <div class="about-story">
-  <div class="about-story__inner">
+  <div class="about-story__inner{% if section.settings.image_position == 'end' %} about-story__inner--image-end{% endif %}">
 
     <div class="about-story__image-col">
       {%- if section.settings.image != blank -%}
@@ -195,6 +199,16 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        { "value": "start", "label": "Left" },
+        { "value": "end", "label": "Right" }
+      ],
+      "default": "start"
     },
     {
       "type": "text",
