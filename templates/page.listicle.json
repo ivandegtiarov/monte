@@ -186,7 +186,7 @@
       ],
       "settings": {
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 60,
+        "padding_bottom_desktop": 0,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 48
       }
@@ -195,7 +195,7 @@
       "type": "listicle-product-cta",
       "settings": {
         "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
-        "title": "<p>Twój krem zasługuje<br>na uczciwą noc</p>",
+        "title": "<p>Twój krem zasługuje<br/>na uczciwą noc</p>",
         "body": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>",
         "feature_1_title": "100% Jedwab morwowy",
         "feature_1_desc": "Nie wchłania kosmetyków. Krem zostaje tam, gdzie go nałożyłaś.",
@@ -205,10 +205,10 @@
         "feature_3_desc": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc.",
         "button_label": "Sprawdź dostępność",
         "button_url": "",
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     },
     "listicle_footer": {
