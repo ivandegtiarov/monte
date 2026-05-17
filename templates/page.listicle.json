@@ -12,10 +12,11 @@
     "listicle_header": {
       "type": "listicle-header",
       "settings": {
-        "logo_max_width": 120,
-        "logo_mobile_max_width": 80,
+        "logo": "shopify://shop_images/Logo_Monte_Black.svg",
+        "logo_max_width": 135,
+        "logo_mobile_max_width": 90,
         "button_label": "Sprawdź dostępność",
-        "button_url": "",
+        "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
         "background_color": "#fdfbf9"
       }
     },
