@@ -1,4 +1,9 @@
 <style>
+  .shopify-section--header,
+  .shopify-section--announcement-bar {
+    display: none !important;
+  }
+
   #shopify-section-{{ section.id }} .listicle-nav {
     background: {{ section.settings.background_color | default: '#fdfbf9' }};
     padding-block: 20px;
