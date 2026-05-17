@@ -1,0 +1,84 @@
+<style>
+  #shopify-section-{{ section.id }} .about-hero {
+    background: linear-gradient(to bottom, #f8f1e9, #ffffff);
+    padding-block-start: 64px;
+    padding-block-end: 40px;
+    padding-inline: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .about-hero__title {
+    font-family: var(--heading-font-family);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #182153;
+    max-width: 800px;
+    margin: 0 0 20px;
+  }
+
+  #shopify-section-{{ section.id }} .about-hero__subtitle {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+    max-width: 600px;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .about-hero {
+      padding-block-start: 48px;
+      padding-block-end: 32px;
+      padding-inline: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .about-hero__title {
+      font-size: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .about-hero__subtitle {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<div class="about-hero">
+  {%- if section.settings.title != blank -%}
+    <h1 class="about-hero__title">{{ section.settings.title | escape }}</h1>
+  {%- endif -%}
+  {%- if section.settings.subtitle != blank -%}
+    <p class="about-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "About – Hero",
+  "class": "shopify-section--about-hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "O marce"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Powstaliśmy z przekonania, że noc zasługuje na coś wyjątkowego."
+    }
+  ],
+  "presets": [
+    {
+      "name": "About – Hero"
+    }
+  ]
+}
+{% endschema %}
