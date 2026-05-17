@@ -1,0 +1,540 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      --padding-top: {{ section.settings.padding_top_mobile }}px;
+      --padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-pcta__social-text {
+      white-space: normal;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta {
+    background: linear-gradient(to bottom, #ffffff, #f8f1e9);
+    padding-block: var(--padding-top) var(--padding-bottom);
+    padding-inline: 80px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* Image column */
+  #shopify-section-{{ section.id }} .listicle-pcta__image-col {
+    flex: 1 0 0;
+    min-width: 0;
+    height: 640px;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #e8e0d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Content column */
+  #shopify-section-{{ section.id }} .listicle-pcta__content-col {
+    flex-shrink: 0;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* Header: social proof + title + body */
+  #shopify-section-{{ section.id }} .listicle-pcta__header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Social proof */
+  #shopify-section-{{ section.id }} .listicle-pcta__social-proof {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__avatars {
+    display: flex;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__avatar:not(:first-child) {
+    margin-inline-start: -6px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__social-text {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    white-space: nowrap;
+    margin: 0;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__social-text p {
+    margin: 0;
+  }
+
+  /* Title + body */
+  #shopify-section-{{ section.id }} .listicle-pcta__title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__title {
+    font-family: var(--heading-font-family);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #182153;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__body {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+    margin: 0;
+  }
+
+  /* Feature list */
+  #shopify-section-{{ section.id }} .listicle-pcta__features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__feature {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__feature-icon {
+    width: 44px;
+    height: 44px;
+    background: #f8f1e9;
+    border: 1px dashed #232e71;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__feature-text {
+    display: flex;
+    flex: 1 0 0;
+    min-width: 0;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__feature-title {
+    font-family: var(--heading-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #182153;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__feature-desc {
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+    margin: 0;
+  }
+
+  /* Button */
+  #shopify-section-{{ section.id }} .listicle-pcta__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #232e71;
+    color: #fdfbf9;
+    height: 52px;
+    border-radius: 999px;
+    padding-inline: 32px;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__button:hover {
+    opacity: 0.9;
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 899px) {
+    #shopify-section-{{ section.id }} .listicle-pcta {
+      flex-direction: column;
+      padding-inline: 20px;
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-pcta__image-col {
+      width: 100%;
+      height: 360px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-pcta__content-col {
+      width: 100%;
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-pcta__title {
+      font-size: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-pcta__body {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<div class="listicle-pcta">
+
+  {%- if section.settings.image != blank -%}
+    <div class="listicle-pcta__image-col">
+      {{-
+        section.settings.image
+        | image_url: width: section.settings.image.width
+        | image_tag:
+          class: 'listicle-pcta__image',
+          loading: 'lazy',
+          sizes: '(max-width: 899px) 100vw, 640px',
+          widths: '400,600,800,1000,1280',
+          alt: section.settings.image.alt | escape
+      -}}
+    </div>
+  {%- elsif section.settings.image == blank -%}
+    <div class="listicle-pcta__image-col">
+      <div class="listicle-pcta__image-placeholder">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="listicle-pcta__content-col">
+
+    <div class="listicle-pcta__header">
+
+      {%- if section.settings.social_proof_text != blank
+        or section.settings.social_proof_image_1 != blank
+        or section.settings.social_proof_image_2 != blank
+        or section.settings.social_proof_image_3 != blank -%}
+        <div class="listicle-pcta__social-proof">
+          {%- if section.settings.social_proof_image_1 != blank
+            or section.settings.social_proof_image_2 != blank
+            or section.settings.social_proof_image_3 != blank -%}
+            <div class="listicle-pcta__avatars">
+              {%- if section.settings.social_proof_image_1 != blank -%}
+                <div class="listicle-pcta__avatar">
+                  {{- section.settings.social_proof_image_1 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                </div>
+              {%- endif -%}
+              {%- if section.settings.social_proof_image_2 != blank -%}
+                <div class="listicle-pcta__avatar">
+                  {{- section.settings.social_proof_image_2 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                </div>
+              {%- endif -%}
+              {%- if section.settings.social_proof_image_3 != blank -%}
+                <div class="listicle-pcta__avatar">
+                  {{- section.settings.social_proof_image_3 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.social_proof_text != blank -%}
+            <div class="listicle-pcta__social-text">{{ section.settings.social_proof_text }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="listicle-pcta__title-group">
+        {%- if section.settings.title != blank -%}
+          <h2 class="listicle-pcta__title">{{ section.settings.title | remove: '<p>' | remove: '</p>' }}</h2>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <p class="listicle-pcta__body">{{ section.settings.body | remove: '<p>' | remove: '</p>' }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- liquid
+      assign has_features = false
+      for i in (1..3)
+        assign title_key = 'feature_' | append: i | append: '_title'
+        if section.settings[title_key] != blank
+          assign has_features = true
+        endif
+      endfor
+    -%}
+
+    {%- if has_features -%}
+      <div class="listicle-pcta__features">
+        {%- for i in (1..3) -%}
+          {%- assign title_key = 'feature_' | append: i | append: '_title' -%}
+          {%- assign desc_key = 'feature_' | append: i | append: '_desc' -%}
+          {%- assign feat_title = section.settings[title_key] -%}
+          {%- assign feat_desc = section.settings[desc_key] -%}
+          {%- if feat_title != blank -%}
+            <div class="listicle-pcta__feature">
+              <div class="listicle-pcta__feature-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 10.5L8 14.5L16 6.5" stroke="#182153" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="listicle-pcta__feature-text">
+                <p class="listicle-pcta__feature-title">{{ feat_title | escape }}</p>
+                {%- if feat_desc != blank -%}
+                  <p class="listicle-pcta__feature-desc">{{ feat_desc | escape }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      {%- if section.settings.button_url != blank -%}
+        <a href="{{ section.settings.button_url }}" class="listicle-pcta__button">
+          {{- section.settings.button_label | escape -}}
+        </a>
+      {%- else -%}
+        <button type="button" class="listicle-pcta__button">
+          {{- section.settings.button_label | escape -}}
+        </button>
+      {%- endif -%}
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Product CTA",
+  "class": "shopify-section--listicle-product-cta",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product image"
+    },
+    {
+      "type": "header",
+      "content": "Social proof"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_proof_image_1",
+      "label": "Avatar 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_proof_image_2",
+      "label": "Avatar 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_proof_image_3",
+      "label": "Avatar 3"
+    },
+    {
+      "type": "richtext",
+      "id": "social_proof_text",
+      "label": "Social proof text",
+      "default": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Twój krem zasługuje<br>na uczciwą noc</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_title",
+      "label": "Title",
+      "default": "100% Jedwab morwowy"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_desc",
+      "label": "Description",
+      "default": "Nie wchłania kosmetyków. Krem zostaje tam, gdzie go nałożyłaś."
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_title",
+      "label": "Title",
+      "default": "Pełny blackout"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_desc",
+      "label": "Description",
+      "default": "100% ciemności przez całą noc. Melatonina, regeneracja, wyniki."
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_title",
+      "label": "Title",
+      "default": "Rzep premium regulowany"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_desc",
+      "label": "Description",
+      "default": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Sprawdź dostępność"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Product CTA"
+    }
+  ]
+}
+{% endschema %}

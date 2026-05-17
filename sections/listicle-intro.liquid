@@ -1,0 +1,412 @@
+{%- render 'section-spacing-collapsing' -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --listicle-intro-max-width: {{ section.settings.content_width }};
+    --padding-top: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      --padding-top: {{ section.settings.padding_top_mobile }}px;
+      --padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-intro__social-text {
+      white-space: normal;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro {
+    max-width: var(--listicle-intro-max-width);
+    margin-inline: auto;
+    padding-block-start: var(--padding-top);
+    padding-block-end: var(--padding-bottom);
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+
+  /* Header */
+  #shopify-section-{{ section.id }} .listicle-intro__header {
+    max-width: 800px;
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* Social proof */
+  #shopify-section-{{ section.id }} .listicle-intro__social-proof {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__avatars {
+    display: flex;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__avatar:not(:first-child) {
+    margin-inline-start: -6px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__social-text {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__social-text p {
+    margin: 0;
+  }
+
+  /* Title group */
+  #shopify-section-{{ section.id }} .listicle-intro__title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__title-group .prose {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__title {
+    font-family: var(--heading-font-family);
+    max-width: 760px;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__title em {
+    font-style: italic;
+  }
+
+  /* Hero image */
+  #shopify-section-{{ section.id }} .listicle-intro__hero {
+    width: 600px;
+    max-width: 100%;
+    height: 320px;
+    border-radius: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Body */
+  #shopify-section-{{ section.id }} .listicle-intro__body {
+    max-width: 600px;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__conclusion {
+    font-weight: 600;
+  }
+</style>
+
+<div {% render 'section-properties', full_width: true %}>
+  <div class="listicle-intro container">
+    <div class="listicle-intro__wrapper">
+
+      {%- liquid
+        assign has_social = false
+        if section.settings.social_proof_text != blank or section.settings.social_proof_image_1 != blank or section.settings.social_proof_image_2 != blank or section.settings.social_proof_image_3 != blank
+          assign has_social = true
+        endif
+        assign has_title_group = false
+        if section.settings.tagline != blank or section.settings.title != blank or section.settings.intro != blank
+          assign has_title_group = true
+        endif
+      -%}
+
+      {%- if has_social or has_title_group -%}
+        <div class="listicle-intro__header">
+
+          {%- if has_social -%}
+            <div class="listicle-intro__social-proof">
+              {%- if section.settings.social_proof_image_1 != blank
+                or section.settings.social_proof_image_2 != blank
+                or section.settings.social_proof_image_3 != blank -%}
+                <div class="listicle-intro__avatars">
+                  {%- if section.settings.social_proof_image_1 != blank -%}
+                    <div class="listicle-intro__avatar">
+                      {{- section.settings.social_proof_image_1 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                    </div>
+                  {%- endif -%}
+                  {%- if section.settings.social_proof_image_2 != blank -%}
+                    <div class="listicle-intro__avatar">
+                      {{- section.settings.social_proof_image_2 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                    </div>
+                  {%- endif -%}
+                  {%- if section.settings.social_proof_image_3 != blank -%}
+                    <div class="listicle-intro__avatar">
+                      {{- section.settings.social_proof_image_3 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if section.settings.social_proof_text != blank -%}
+                <div class="listicle-intro__social-text">{{ section.settings.social_proof_text }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- if has_title_group -%}
+            <div class="listicle-intro__title-group">
+              {%- if section.settings.tagline != blank -%}
+                <p class="subheading">{{ section.settings.tagline | escape }}</p>
+              {%- endif -%}
+
+              {%- if section.settings.title != blank -%}
+                <h1 class="listicle-intro__title h2">{{ section.settings.title | remove: '<p>' | remove: '</p>' }}</h1>
+              {%- endif -%}
+
+              {%- if section.settings.intro != blank -%}
+                <div class="prose text-subdued">{{ section.settings.intro }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.hero_image != blank -%}
+        <div class="listicle-intro__hero">
+          {{-
+            section.settings.hero_image
+            | image_url: width: section.settings.hero_image.width
+            | image_tag:
+              loading: 'lazy',
+              sizes: '(max-width: 699px) 100vw, 600px',
+              widths: '400,600,800,1000,1200',
+              alt: section.settings.hero_image.alt | escape
+          -}}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.body_content != blank or section.settings.body_conclusion != blank -%}
+        <div class="listicle-intro__body">
+          {%- if section.settings.body_content != blank -%}
+            <div class="prose text-subdued">{{ section.settings.body_content }}</div>
+          {%- endif -%}
+          {%- if section.settings.body_conclusion != blank -%}
+            <div class="listicle-intro__conclusion prose">{{ section.settings.body_conclusion }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Intro",
+  "class": "shopify-section--listicle-intro",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Social proof"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_proof_image_1",
+      "label": "Avatar 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_proof_image_2",
+      "label": "Avatar 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_proof_image_3",
+      "label": "Avatar 3"
+    },
+    {
+      "type": "richtext",
+      "id": "social_proof_text",
+      "label": "Social proof text"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "info": "Use italic formatting for styled words"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro text"
+    },
+    {
+      "type": "header",
+      "content": "Hero image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "header",
+      "content": "Body text"
+    },
+    {
+      "type": "richtext",
+      "id": "body_content",
+      "label": "Body content"
+    },
+    {
+      "type": "richtext",
+      "id": "body_conclusion",
+      "label": "Body conclusion",
+      "info": "Displayed below body content in semibold"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content width",
+      "options": [
+        { "value": "900px", "label": "Narrow" },
+        { "value": "1100px", "label": "Medium" },
+        { "value": "1300px", "label": "Wide" }
+      ],
+      "default": "1100px"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Intro",
+      "settings": {
+        "tagline": "EDITORIAL",
+        "title": "<p>Page title</p>"
+      }
+    }
+  ]
+}
+{% endschema %}

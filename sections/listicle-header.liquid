@@ -1,0 +1,255 @@
+<style>
+  .shopify-section--header,
+  .shopify-section--announcement-bar,
+  .shopify-section--trust-bar,
+  .shopify-section--monte-footer {
+    display: none !important;
+  }
+
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      --padding-top: {{ section.settings.padding_top_mobile }}px;
+      --padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .listicle-nav {
+    background: {{ section.settings.background_color | default: '#fdfbf9' }};
+    padding-block-start: var(--padding-top);
+    padding-block-end: var(--padding-bottom);
+    display: flex;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-nav__inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1360px;
+    height: 40px;
+    padding-inline: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-nav__left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-nav__logo {
+    width: var(--listicle-logo-width);
+    height: var(--listicle-logo-height);
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-nav__right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-nav__button {
+    background: #232e71;
+    color: #fdfbf9;
+    padding-inline: 24px;
+    height: 40px;
+    border-radius: 999px;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-nav__button:hover {
+    opacity: 0.9;
+  }
+
+  {%- if section.settings.logo != blank -%}
+    #shopify-section-{{ section.id }} {
+      --listicle-logo-width: {{ section.settings.logo_mobile_max_width }}px;
+      --listicle-logo-height: {{ section.settings.logo_mobile_max_width | divided_by: section.settings.logo.aspect_ratio | round }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} {
+        --listicle-logo-width: {{ section.settings.logo_max_width }}px;
+        --listicle-logo-height: {{ section.settings.logo_max_width | divided_by: section.settings.logo.aspect_ratio | round }}px;
+      }
+    }
+  {%- endif -%}
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .listicle-nav__inner {
+      padding-inline: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-nav__button {
+      font-size: 12px;
+      padding-inline: 16px;
+      height: 36px;
+    }
+  }
+</style>
+
+<div class="listicle-nav">
+  <div class="listicle-nav__inner">
+    <div class="listicle-nav__left">
+      {%- if section.settings.logo != blank -%}
+        {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
+        {%- capture sizes -%}(max-width: 749px) {{ section.settings.logo_mobile_max_width }}px, {{ section.settings.logo_max_width }}px{%- endcapture -%}
+        {%- capture widths -%}{{ section.settings.logo_mobile_max_width }}, {{ section.settings.logo_mobile_max_width | times: 2 | at_most: section.settings.logo.width }}, {{ section.settings.logo_max_width }}, {{ section.settings.logo_max_width | times: 2 | at_most: section.settings.logo.width }}{%- endcapture -%}
+        {{-
+          section.settings.logo
+          | image_url: width: section.settings.logo.width
+          | image_tag:
+            class: 'listicle-nav__logo',
+            alt: logo_alt,
+            loading: 'eager',
+            sizes: sizes,
+            widths: widths
+        -}}
+      {%- endif -%}
+    </div>
+
+    <div class="listicle-nav__right">
+      {%- if section.settings.button_label != blank -%}
+        {%- if section.settings.button_url != blank -%}
+          <a href="{{ section.settings.button_url }}" class="listicle-nav__button">
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- else -%}
+          <button type="button" class="listicle-nav__button">
+            {{- section.settings.button_label | escape -}}
+          </button>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Header",
+  "class": "shopify-section--listicle-header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 40,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "label": "Image width",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "logo_mobile_max_width",
+      "min": 25,
+      "max": 170,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile image width",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Sprawdź dostępność"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Header"
+    }
+  ]
+}
+{% endschema %}
