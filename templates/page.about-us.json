@@ -19,10 +19,8 @@
     "about_story": {
       "type": "about-story",
       "settings": {
-        "image_position": "start",
         "tagline": "JAK TO SIĘ ZACZĘŁO",
-        "title": "Mały rytuał, który zmienia całą noc",
-        "content": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna może być czymś więcej niż obowiązkiem. Małym, codziennym aktem troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.</p><p>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być po prostu najlepszy z możliwych.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>"
+        "title": "Mały rytuał, który zmienia całą noc"
       }
     },
     "about_mission": {
@@ -32,6 +30,44 @@
         "tagline": "NASZA MISJA",
         "title": "Sen to nie luksus. To konieczność.",
         "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano, energię w ciągu dnia i spokój, który czujesz zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>"
+      }
+    },
+    "about_products": {
+      "type": "about-products",
+      "blocks": {
+        "card_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "champagne-gold-silk-sleep-mask",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "card_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "classic-black-sleep-mask",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "card_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "midnight-blue-silk-sleep-mask",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "card_4": {
+          "type": "product_card",
+          "settings": {
+            "product": "rose-noir-silk-sleep-mask",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "settings": {
+        "title": "Twoja pierwsza noc z Monté",
+        "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc."
       }
     },
     "media_with_text_myzrmG": {
@@ -129,6 +165,7 @@
     "about_hero",
     "about_story",
     "about_mission",
+    "about_products",
     "media_with_text_myzrmG",
     "featured_collection_hURkXM"
   ]
