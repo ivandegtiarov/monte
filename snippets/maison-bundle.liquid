@@ -200,15 +200,15 @@ Supported variables:
   @keyframes mb-spin { to { transform: rotate(360deg); } }
 
   /* Stock bar */
-  .mb-stock { display: flex; align-items: center; gap: 20px; }
+  .mb-stock { display: flex; flex-direction: column; gap: 8px; }
+  .mb-stock__top { display: flex; align-items: center; gap: 12px; }
   .mb-stock__dot { width: 8px; height: 8px; border-radius: 999px; flex-shrink: 0; background: #8a2f3a; box-shadow: 0 0 0 3px rgba(138,47,58,.25); animation: mb-pulse 2s ease-in-out infinite; }
   @keyframes mb-pulse {
     0%, 100% { box-shadow: 0 0 0 3px rgba(138,47,58,.25); }
     50% { box-shadow: 0 0 0 6px rgba(138,47,58,.0); }
   }
-  .mb-stock__label { font-family: "PP Mori", sans-serif; font-size: 12px; font-weight: 600; color: #182153; line-height: 1.5; white-space: nowrap; }
-  @media screen and (min-width: 750px) { .mb-stock__label { font-size: 14px; } }
-  .mb-stock__bar { flex: 1; height: 4px; border-radius: 999px; background: rgba(24,33,83,.08); overflow: hidden; }
+  .mb-stock__label { font-family: "PP Mori", sans-serif; font-size: 14px; font-weight: 600; color: #182153; line-height: 1.5; }
+  .mb-stock__bar { width: 100%; height: 4px; border-radius: 999px; background: rgba(24,33,83,.08); overflow: hidden; }
   .mb-stock__fill { height: 100%; border-radius: 999px; background: #8a2f3a; }
 
   /* ── Popup overlay ── */
@@ -586,17 +586,6 @@ Supported variables:
     {%- endif -%}
   </div>
 
-  {%- comment -%} ── STOCK BAR ── {%- endcomment -%}
-  {%- if mb.show_stock_bar -%}
-    <div class="mb-stock">
-      <div class="mb-stock__dot"></div>
-      <span class="mb-stock__label">{{ mb.stock_label | default: 'Limited availability' }}</span>
-      <div class="mb-stock__bar">
-        <div class="mb-stock__fill" style="width: {{ mb.stock_percentage | default: 30 }}%;"></div>
-      </div>
-    </div>
-  {%- endif -%}
-
   {%- comment -%} ── ATC BUTTON ── {%- endcomment -%}
   <button class="mb-atc" data-mb-atc
     data-r1-id="{{ r1v.id }}"
@@ -618,6 +607,19 @@ Supported variables:
       </svg>
     </span>
   </button>
+
+  {%- comment -%} ── STOCK BAR ── {%- endcomment -%}
+  {%- if mb.show_stock_bar -%}
+    <div class="mb-stock">
+      <div class="mb-stock__top">
+        <div class="mb-stock__dot"></div>
+        <span class="mb-stock__label">{{ mb.stock_label | default: 'Limited availability' }}</span>
+      </div>
+      <div class="mb-stock__bar">
+        <div class="mb-stock__fill" style="width: {{ mb.stock_percentage | default: 30 }}%;"></div>
+      </div>
+    </div>
+  {%- endif -%}
 
 </div>
 
