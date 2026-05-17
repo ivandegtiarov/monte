@@ -61,21 +61,20 @@
     border-radius: 16px;
     overflow: hidden;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
   }
 
   #shopify-section-{{ section.id }} .about-products__card-img {
-    position: absolute;
-    inset: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
     transition: transform 0.45s ease;
     transform-origin: center;
   }
 
   #shopify-section-{{ section.id }} .about-products__card:hover .about-products__card-img {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   /* Badge */
@@ -213,7 +212,7 @@
     }
 
     #shopify-section-{{ section.id }} .about-products__card-media {
-      height: 240px;
+      height: 200px;
     }
 
     #shopify-section-{{ section.id }} .about-products__title {
@@ -294,7 +293,13 @@
 
             <div class="about-products__card-info">
               <div class="about-products__card-row">
-                <p class="about-products__card-name">{{ product.title | escape }}</p>
+                <p class="about-products__card-name">
+                  {%- if block.settings.custom_title != blank -%}
+                    {{- block.settings.custom_title | escape -}}
+                  {%- else -%}
+                    {{- product.title | escape -}}
+                  {%- endif -%}
+                </p>
                 <div class="about-products__prices">
                   {%- if product.compare_at_price > product.price -%}
                     <s class="about-products__price-old">{{ product.compare_at_price | money }}</s>
@@ -397,6 +402,12 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom name",
+          "info": "Overrides the product title. Leave blank to use the product name."
         },
         {
           "type": "text",
