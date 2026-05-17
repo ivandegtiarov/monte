@@ -90,7 +90,7 @@
           "type": "product_card",
           "settings": {
             "product": "champagne-gold-silk-sleep-mask",
-            "custom_title": "",
+            "custom_title": "Champagne Gold",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -98,7 +98,7 @@
           "type": "product_card",
           "settings": {
             "product": "classic-black-sleep-mask",
-            "custom_title": "",
+            "custom_title": "Classic Black",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -106,7 +106,7 @@
           "type": "product_card",
           "settings": {
             "product": "midnight-blue-silk-sleep-mask",
-            "custom_title": "",
+            "custom_title": "Midnight Blue",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -114,7 +114,7 @@
           "type": "product_card",
           "settings": {
             "product": "rose-noir-silk-sleep-mask",
-            "custom_title": "",
+            "custom_title": "Rose Noir",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         }
@@ -130,7 +130,9 @@
         "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.",
         "header_alignment": "left",
         "padding_top": 64,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "section-6": {
