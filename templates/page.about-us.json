@@ -19,8 +19,10 @@
     "about_story": {
       "type": "about-story",
       "settings": {
+        "image_position": "start",
         "tagline": "JAK TO SIĘ ZACZĘŁO",
-        "title": "Mały rytuał, który zmienia całą noc"
+        "title": "Mały rytuał, który zmienia całą noc",
+        "content": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna może być czymś więcej niż obowiązkiem. Małym, codziennym aktem troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.</p><p>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być po prostu najlepszy z możliwych.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>"
       }
     },
     "about_mission": {
@@ -39,6 +41,7 @@
           "type": "product_card",
           "settings": {
             "product": "champagne-gold-silk-sleep-mask",
+            "custom_title": "Champagne Gold",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -46,6 +49,7 @@
           "type": "product_card",
           "settings": {
             "product": "classic-black-sleep-mask",
+            "custom_title": "Classic Black",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -53,6 +57,7 @@
           "type": "product_card",
           "settings": {
             "product": "midnight-blue-silk-sleep-mask",
+            "custom_title": "Midnight Blue",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -60,11 +65,17 @@
           "type": "product_card",
           "settings": {
             "product": "rose-noir-silk-sleep-mask",
+            "custom_title": "Rose Noir",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         }
       },
-      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
       "settings": {
         "title": "Twoja pierwsza noc z Monté",
         "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc."
