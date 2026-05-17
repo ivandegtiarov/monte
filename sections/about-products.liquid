@@ -17,7 +17,8 @@
   #shopify-section-{{ section.id }} .about-products__header {
     max-width: 600px;
     width: 100%;
-    text-align: center;
+    text-align: {{ section.settings.header_alignment }};
+    align-self: {% if section.settings.header_alignment == 'left' %}flex-start{% elsif section.settings.header_alignment == 'right' %}flex-end{% else %}center{% endif %};
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -454,6 +455,17 @@
       "id": "subtitle",
       "label": "Subtitle",
       "default": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc."
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
     },
     {
       "type": "header",
