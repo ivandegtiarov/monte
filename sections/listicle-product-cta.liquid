@@ -31,7 +31,7 @@
 
   /* Image column */
   #shopify-section-{{ section.id }} .listicle-pcta__image-col {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     min-width: 0;
     max-width: 640px;
     height: 640px;
@@ -233,9 +233,11 @@
     }
 
     #shopify-section-{{ section.id }} .listicle-pcta__image-col {
+      flex: none;
       width: 100%;
       max-width: 100%;
-      height: 360px;
+      aspect-ratio: 1;
+      height: auto;
     }
 
     #shopify-section-{{ section.id }} .listicle-pcta__content-col {
@@ -422,9 +424,13 @@
 </div>
 
 {%- if section.settings.button_label != blank -%}
+  {%- assign sticky_url = section.settings.sticky_button_url -%}
+  {%- if sticky_url == blank -%}
+    {%- assign sticky_url = section.settings.button_url -%}
+  {%- endif -%}
   <div id="listicle-sticky-cta-{{ section.id }}" class="listicle-sticky-cta" aria-hidden="true">
-    {%- if section.settings.button_url != blank -%}
-      <a href="{{ section.settings.button_url }}" class="listicle-sticky-cta__button">
+    {%- if sticky_url != blank -%}
+      <a href="{{ sticky_url }}" class="listicle-sticky-cta__button">
         {{- section.settings.button_label | escape -}}
       </a>
     {%- else -%}
@@ -600,6 +606,16 @@
       "type": "url",
       "id": "button_url",
       "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Sticky CTA — Mobile"
+    },
+    {
+      "type": "url",
+      "id": "sticky_button_url",
+      "label": "Sticky button link",
+      "info": "Окреме посилання для sticky кнопки на мобільному. Якщо порожньо — використовується Button link"
     },
     {
       "type": "header",
