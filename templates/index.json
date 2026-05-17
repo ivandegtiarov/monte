@@ -54,6 +54,7 @@
     },
     "section-5": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "",
         "products": [
@@ -80,6 +81,55 @@
         "heading_gradient": "",
         "product_card_background": "",
         "product_card_text_color": "#182153"
+      }
+    },
+    "about_products_A9dfTP": {
+      "type": "about-products",
+      "blocks": {
+        "product_card_eeYgpe": {
+          "type": "product_card",
+          "settings": {
+            "product": "champagne-gold-silk-sleep-mask",
+            "custom_title": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "product_card_VwARjH": {
+          "type": "product_card",
+          "settings": {
+            "product": "classic-black-sleep-mask",
+            "custom_title": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "product_card_fyygRD": {
+          "type": "product_card",
+          "settings": {
+            "product": "midnight-blue-silk-sleep-mask",
+            "custom_title": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        },
+        "product_card_QJnp4Y": {
+          "type": "product_card",
+          "settings": {
+            "product": "rose-noir-silk-sleep-mask",
+            "custom_title": "",
+            "tagline": "100% Jedwab morwowy 22 momme"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_eeYgpe",
+        "product_card_VwARjH",
+        "product_card_fyygRD",
+        "product_card_QJnp4Y"
+      ],
+      "settings": {
+        "title": "Twoja pierwsza noc z Monté",
+        "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "section-6": {
@@ -668,6 +718,7 @@
   "order": [
     "section-1",
     "section-5",
+    "about_products_A9dfTP",
     "section-6",
     "section-15",
     "stats_social_proof_i9KQdr",

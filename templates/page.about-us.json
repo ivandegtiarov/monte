@@ -13,14 +13,20 @@
       "type": "about-hero",
       "settings": {
         "title": "O marce",
-        "subtitle": "Powstaliśmy z przekonania, że noc zasługuje na coś wyjątkowego."
+        "subtitle": "Powstaliśmy z przekonania, że noc zasługuje na coś wyjątkowego.",
+        "padding_top": 64,
+        "padding_bottom": 40
       }
     },
     "about_story": {
       "type": "about-story",
       "settings": {
+        "image_position": "start",
         "tagline": "JAK TO SIĘ ZACZĘŁO",
-        "title": "Mały rytuał, który zmienia całą noc"
+        "title": "Mały rytuał, który zmienia całą noc",
+        "content": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna może być czymś więcej niż obowiązkiem. Małym, codziennym aktem troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.</p><p>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być po prostu najlepszy z możliwych.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>",
+        "padding_top": 40,
+        "padding_bottom": 20
       }
     },
     "about_mission": {
@@ -29,7 +35,9 @@
         "image_position": "end",
         "tagline": "NASZA MISJA",
         "title": "Sen to nie luksus. To konieczność.",
-        "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano, energię w ciągu dnia i spokój, który czujesz zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>"
+        "content": "<p>Żyjemy w świecie, który nagradza bycie zajętym. Który traktuje zmęczenie jak odznakę honoru. Monté stoi po drugiej stronie.</p><p>Wierzymy, że dobrze przespana noc zmienia wszystko. Wygląd skóry rano, energię w ciągu dnia i spokój, który czujesz zanim jeszcze zaczniesz.</p><p>Dlatego każdy detal Monté jest zaprojektowany z jedną myślą: żebyś obudziła się lepiej, niż zasnęłaś.</p>",
+        "padding_top": 40,
+        "padding_bottom": 20
       }
     },
     "about_products": {
@@ -39,6 +47,7 @@
           "type": "product_card",
           "settings": {
             "product": "champagne-gold-silk-sleep-mask",
+            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -46,6 +55,7 @@
           "type": "product_card",
           "settings": {
             "product": "classic-black-sleep-mask",
+            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -53,6 +63,7 @@
           "type": "product_card",
           "settings": {
             "product": "midnight-blue-silk-sleep-mask",
+            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         },
@@ -60,14 +71,22 @@
           "type": "product_card",
           "settings": {
             "product": "rose-noir-silk-sleep-mask",
+            "custom_title": "",
             "tagline": "100% Jedwab morwowy 22 momme"
           }
         }
       },
-      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
       "settings": {
         "title": "Twoja pierwsza noc z Monté",
-        "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc."
+        "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "media_with_text_myzrmG": {
@@ -131,7 +150,6 @@
     },
     "featured_collection_hURkXM": {
       "type": "featured-collection",
-      "name": "Featured collection",
       "blocks": {
         "ov_1": {
           "type": "product_override",
@@ -166,7 +184,13 @@
           }
         }
       },
-      "block_order": ["ov_1", "ov_2", "ov_3", "ov_4"],
+      "block_order": [
+        "ov_1",
+        "ov_2",
+        "ov_3",
+        "ov_4"
+      ],
+      "name": "Featured collection",
       "settings": {
         "collection": "",
         "products": [
