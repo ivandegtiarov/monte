@@ -194,6 +194,10 @@
     "listicle_product_cta": {
       "type": "listicle-product-cta",
       "settings": {
+        "image": "shopify://shop_images/4M.jpg",
+        "social_proof_image_1": "shopify://shop_images/UGC_2.png",
+        "social_proof_image_2": "shopify://shop_images/UGC_3.png",
+        "social_proof_image_3": "shopify://shop_images/UGC_5.png",
         "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
         "title": "<p>Twój krem zasługuje<br/>na uczciwą noc</p>",
         "body": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>",
@@ -204,7 +208,7 @@
         "feature_3_title": "Rzep premium regulowany",
         "feature_3_desc": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc.",
         "button_label": "Sprawdź dostępność",
-        "button_url": "",
+        "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 40,
         "padding_top_mobile": 0,
@@ -215,14 +219,14 @@
       "type": "listicle-footer",
       "settings": {
         "link_1_label": "Polityka prywatności",
-        "link_1_url": "",
+        "link_1_url": "shopify://policies/privacy-policy",
         "link_2_label": "Regulamin sklepu",
-        "link_2_url": "",
+        "link_2_url": "shopify://policies/terms-of-service",
         "link_3_label": "Polityka wysyłki",
-        "link_3_url": "",
+        "link_3_url": "shopify://policies/shipping-policy",
         "link_4_label": "Polityka zwrotów",
-        "link_4_url": "",
-        "copyright_text": ""
+        "link_4_url": "shopify://policies/refund-policy",
+        "copyright_text": "© 2026 Monté. Wszystkie prawa zastrzeżone."
       }
     }
   },
