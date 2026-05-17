@@ -128,7 +128,8 @@
       "settings": {
         "title": "Twoja pierwsza noc z Monté",
         "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.",
-        "padding_top": 40,
+        "header_alignment": "left",
+        "padding_top": 64,
         "padding_bottom": 40
       }
     },
