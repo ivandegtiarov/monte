@@ -3,11 +3,26 @@
 <style>
   #shopify-section-{{ section.id }} {
     --listicle-intro-max-width: {{ section.settings.content_width }};
+    --padding-top: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      --padding-top: {{ section.settings.padding_top_mobile }}px;
+      --padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-intro__social-text {
+      white-space: normal;
+    }
   }
 
   #shopify-section-{{ section.id }} .listicle-intro {
     max-width: var(--listicle-intro-max-width);
     margin-inline: auto;
+    padding-block-start: var(--padding-top);
+    padding-block-end: var(--padding-bottom);
   }
 
   #shopify-section-{{ section.id }} .listicle-intro__wrapper {
@@ -332,27 +347,51 @@
     },
     {
       "type": "header",
-      "content": "Padding"
+      "content": "Spacing — Desktop"
     },
     {
       "type": "range",
-      "id": "padding_top",
+      "id": "padding_top_desktop",
       "label": "Top padding",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 4,
       "unit": "px",
       "default": 64
     },
     {
       "type": "range",
-      "id": "padding_bottom",
+      "id": "padding_bottom_desktop",
       "label": "Bottom padding",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 4,
       "unit": "px",
       "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     }
   ],
   "presets": [

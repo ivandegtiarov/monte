@@ -1,7 +1,23 @@
 <style>
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      --padding-top: {{ section.settings.padding_top_mobile }}px;
+      --padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-pcta__social-text {
+      white-space: normal;
+    }
+  }
+
   #shopify-section-{{ section.id }} .listicle-pcta {
     background: linear-gradient(to bottom, #ffffff, #f8f1e9);
-    padding-block: 80px;
+    padding-block: var(--padding-top) var(--padding-bottom);
     padding-inline: 80px;
     display: flex;
     gap: 40px;
@@ -198,7 +214,6 @@
   @media screen and (max-width: 899px) {
     #shopify-section-{{ section.id }} .listicle-pcta {
       flex-direction: column;
-      padding-block: 48px;
       padding-inline: 20px;
       gap: 32px;
     }
@@ -461,6 +476,54 @@
       "type": "url",
       "id": "button_url",
       "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 48
     }
   ],
   "presets": [
