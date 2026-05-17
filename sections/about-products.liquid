@@ -332,81 +332,15 @@
     </div>
   {%- endif -%}
 
-  {%- if section.blocks.size > 0 -%}
-    <div class="about-products__bundle-bar" id="bundle-bar-{{ section.id }}" aria-live="polite">
-      <span class="about-products__bundle-bar-text">
-        Wybierz <strong>2 maski</strong> → oszczędzasz <strong>10%</strong> &nbsp;|&nbsp; <strong>3 maski</strong> → oszczędzasz <strong>20%</strong>
-      </span>
-    </div>
-  {%- endif -%}
 </div>
-
-<style>
-  #shopify-section-{{ section.id }} .about-products__bundle-bar {
-    width: 100%;
-    text-align: center;
-    padding: 12px 20px;
-    background: #f8f1e9;
-    border-radius: 999px;
-    font-family: var(--text-font-family);
-    font-size: 13px;
-    line-height: 1.5;
-    color: #182153;
-    transition: background 0.3s ease;
-  }
-
-  #shopify-section-{{ section.id }} .about-products__bundle-bar--active {
-    background: #d9e8e1;
-  }
-
-  #shopify-section-{{ section.id }} .about-products__bundle-bar strong {
-    font-weight: 600;
-  }
-</style>
 
 <script>
   (function () {
-    var sectionEl  = document.getElementById('shopify-section-{{ section.id }}');
-    var bundleBar  = document.getElementById('bundle-bar-{{ section.id }}');
+    var sectionEl = document.getElementById('shopify-section-{{ section.id }}');
     if (!sectionEl) return;
 
     var SVG_PLUS  = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 3.5V16.5M3.5 10H16.5" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/></svg>';
     var SVG_CHECK = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10.5L8 14.5L16 6.5" stroke="#2f6b57" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
-    /* Count bundle-tagged items currently in cart */
-    function getBundleCount() {
-      return fetch(window.Shopify.routes.root + 'cart.js', { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
-        .then(function (r) { return r.json(); })
-        .then(function (cart) {
-          var count = 0;
-          (cart.items || []).forEach(function (item) {
-            if (item.properties && item.properties['_bundle'] === 'true') count += item.quantity;
-          });
-          return count;
-        });
-    }
-
-    /* Update the bundle progress bar text */
-    function updateBundleBar(count) {
-      if (!bundleBar) return;
-      var text = bundleBar.querySelector('.about-products__bundle-bar-text');
-      if (!text) return;
-      bundleBar.classList.remove('about-products__bundle-bar--active');
-      if (count === 0) {
-        text.innerHTML = 'Wybierz <strong>2 maski</strong> → oszczędzasz <strong>10%</strong> &nbsp;|&nbsp; <strong>3 maski</strong> → oszczędzasz <strong>20%</strong>';
-      } else if (count === 1) {
-        text.innerHTML = 'Dodano 1 maskę — dodaj jeszcze <strong>1</strong>, aby oszczędzić <strong>10%</strong>';
-      } else if (count === 2) {
-        bundleBar.classList.add('about-products__bundle-bar--active');
-        text.innerHTML = '✓ Masz 2 maski — oszczędzasz <strong>10%</strong>! Dodaj jeszcze <strong>1</strong> po <strong>20%</strong>';
-      } else {
-        bundleBar.classList.add('about-products__bundle-bar--active');
-        text.innerHTML = '✓ Masz ' + count + ' maski — oszczędzasz <strong>20%</strong>!';
-      }
-    }
-
-    /* Initialise bar on load */
-    getBundleCount().then(updateBundleBar);
 
     sectionEl.querySelectorAll('.about-products__add').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
@@ -468,13 +402,7 @@
                   detail: { baseEvent: 'variant:add', cart: cartContent }
                 }));
 
-                /* Count bundle items and update bar */
-                var count = 0;
-                (cartContent.items || []).forEach(function (item) {
-                  if (item.properties && item.properties['_bundle'] === 'true') count += item.quantity;
-                });
-                updateBundleBar(count);
-              });
+                          });
           })
           .catch(function (err) {
             console.error('About Products ATC error:', err);
