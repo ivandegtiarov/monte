@@ -34,16 +34,17 @@
         "tagline": "",
         "title": "<p>Twój retinol <em>nie powinien</em><br/>kończyć na poduszce</p>",
         "intro": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej. Oto 5 rzeczy, które dzieją się z twoją skórą między północą a poranem.</p>",
+        "hero_image": "shopify://shop_images/Hero_image.jpg",
         "body_content": "<p>Twoja rutyna jest dobrze skonstruowana. Niacynamid od retinolu odróżniasz na pamięć, składy czytasz zanim coś trafi do koszyka. Krem pod oczy za 200 zł kupujesz bez wahania, bo efekty są warte ceny.</p><p>A jednak rano widzisz to samo. Suchość, załamy, skórę, która nie wygląda na w pełni zregenerowaną. Nie ma w tym nic z twoją rutyną. Chodzi o to, co dzieje się po niej, przez 8 godzin, kiedy śpisz.</p>",
         "body_conclusion": "<p>Oto 5 konkretnych mechanizmów, które niwelują efekty tego, co robisz wieczorem.</p>",
         "content_width": "1100px",
         "background": "",
         "background_gradient": "linear-gradient(180deg, rgba(248, 241, 233, 1), rgba(255, 255, 255, 1) 100%)",
         "text_color": "",
-        "padding_top_desktop": 64,
-        "padding_bottom_desktop": 40,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 32
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     },
     "listicle_items": {
