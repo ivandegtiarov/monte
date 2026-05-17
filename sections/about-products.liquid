@@ -332,42 +332,159 @@
     </div>
   {%- endif -%}
 
+  {%- if section.blocks.size > 0 -%}
+    <div class="about-products__bundle-bar" id="bundle-bar-{{ section.id }}" aria-live="polite">
+      <span class="about-products__bundle-bar-text">
+        Wybierz <strong>2 maski</strong> → oszczędzasz <strong>10%</strong> &nbsp;|&nbsp; <strong>3 maski</strong> → oszczędzasz <strong>20%</strong>
+      </span>
+    </div>
+  {%- endif -%}
 </div>
+
+<style>
+  #shopify-section-{{ section.id }} .about-products__bundle-bar {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    background: #f8f1e9;
+    border-radius: 999px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    line-height: 1.5;
+    color: #182153;
+    transition: background 0.3s ease;
+  }
+
+  #shopify-section-{{ section.id }} .about-products__bundle-bar--active {
+    background: #d9e8e1;
+  }
+
+  #shopify-section-{{ section.id }} .about-products__bundle-bar strong {
+    font-weight: 600;
+  }
+</style>
 
 <script>
   (function () {
-    var section = document.getElementById('shopify-section-{{ section.id }}');
-    if (!section) return;
+    var sectionEl  = document.getElementById('shopify-section-{{ section.id }}');
+    var bundleBar  = document.getElementById('bundle-bar-{{ section.id }}');
+    if (!sectionEl) return;
 
-    section.querySelectorAll('.about-products__add').forEach(function (btn) {
+    var SVG_PLUS  = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 3.5V16.5M3.5 10H16.5" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    var SVG_CHECK = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10.5L8 14.5L16 6.5" stroke="#2f6b57" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    /* Count bundle-tagged items currently in cart */
+    function getBundleCount() {
+      return fetch(window.Shopify.routes.root + 'cart.js', { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then(function (r) { return r.json(); })
+        .then(function (cart) {
+          var count = 0;
+          (cart.items || []).forEach(function (item) {
+            if (item.properties && item.properties['_bundle'] === 'true') count += item.quantity;
+          });
+          return count;
+        });
+    }
+
+    /* Update the bundle progress bar text */
+    function updateBundleBar(count) {
+      if (!bundleBar) return;
+      var text = bundleBar.querySelector('.about-products__bundle-bar-text');
+      if (!text) return;
+      bundleBar.classList.remove('about-products__bundle-bar--active');
+      if (count === 0) {
+        text.innerHTML = 'Wybierz <strong>2 maski</strong> → oszczędzasz <strong>10%</strong> &nbsp;|&nbsp; <strong>3 maski</strong> → oszczędzasz <strong>20%</strong>';
+      } else if (count === 1) {
+        text.innerHTML = 'Dodano 1 maskę — dodaj jeszcze <strong>1</strong>, aby oszczędzić <strong>10%</strong>';
+      } else if (count === 2) {
+        bundleBar.classList.add('about-products__bundle-bar--active');
+        text.innerHTML = '✓ Masz 2 maski — oszczędzasz <strong>10%</strong>! Dodaj jeszcze <strong>1</strong> po <strong>20%</strong>';
+      } else {
+        bundleBar.classList.add('about-products__bundle-bar--active');
+        text.innerHTML = '✓ Masz ' + count + ' maski — oszczędzasz <strong>20%</strong>!';
+      }
+    }
+
+    /* Initialise bar on load */
+    getBundleCount().then(updateBundleBar);
+
+    sectionEl.querySelectorAll('.about-products__add').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
 
         var variantId = btn.dataset.variantId;
-        if (!variantId) return;
+        if (!variantId || btn.disabled) return;
 
         btn.disabled = true;
         btn.style.opacity = '0.4';
 
-        fetch('/cart/add.js', {
+        /* Collect sections for cart drawer (matches maison-bundle pattern) */
+        var sectionsToBundle = ['variant-added'];
+        document.documentElement.dispatchEvent(new CustomEvent('cart:prepare-bundled-sections', {
+          bubbles: true,
+          detail: { sections: sectionsToBundle }
+        }));
+
+        /* Build FormData with _bundle property (matches maison-bundle) */
+        var formData = new FormData();
+        formData.append('items[0][id]', variantId);
+        formData.append('items[0][quantity]', '1');
+        formData.append('items[0][properties][_bundle]', 'true');
+        formData.set('sections', sectionsToBundle.join(','));
+        formData.set('sections_url', window.location.pathname);
+
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-          body: JSON.stringify({ items: [{ id: Number(variantId), quantity: 1 }] })
+          headers: { 'X-Requested-With': 'XMLHttpRequest' },
+          body: formData
         })
-          .then(function (r) { return r.json(); })
-          .then(function () {
-            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10.5L8 14.5L16 6.5" stroke="#2f6b57" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+          .then(function (result) {
+            if (!result.ok) {
+              document.dispatchEvent(new CustomEvent('cart:refresh'));
+              return;
+            }
+
+            btn.innerHTML = SVG_CHECK;
             btn.style.opacity = '1';
-            document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+            /* Fetch updated cart and dispatch events to open cart drawer */
+            return fetch(window.Shopify.routes.root + 'cart.js', { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+              .then(function (r) { return r.json(); })
+              .then(function (cartContent) {
+                cartContent['sections'] = result.data['sections'];
+
+                btn.dispatchEvent(new CustomEvent('variant:add', {
+                  bubbles: true,
+                  detail: {
+                    items: result.data.hasOwnProperty('items') ? result.data['items'] : [result.data],
+                    cart: cartContent
+                  }
+                }));
+
+                document.documentElement.dispatchEvent(new CustomEvent('cart:change', {
+                  bubbles: true,
+                  detail: { baseEvent: 'variant:add', cart: cartContent }
+                }));
+
+                /* Count bundle items and update bar */
+                var count = 0;
+                (cartContent.items || []).forEach(function (item) {
+                  if (item.properties && item.properties['_bundle'] === 'true') count += item.quantity;
+                });
+                updateBundleBar(count);
+              });
+          })
+          .catch(function (err) {
+            console.error('About Products ATC error:', err);
+            btn.style.opacity = '1';
+          })
+          .finally(function () {
             setTimeout(function () {
-              btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 3.5V16.5M3.5 10H16.5" stroke="#182153" stroke-width="1.5" stroke-linecap="round"/></svg>';
+              btn.innerHTML = SVG_PLUS;
               btn.disabled = false;
             }, 2000);
-          })
-          .catch(function () {
-            btn.style.opacity = '1';
-            btn.disabled = false;
           });
       });
     });
