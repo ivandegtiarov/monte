@@ -125,9 +125,11 @@
         "item_5": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-4_b3f65160-dfaf-4695-b435-45a3e6207a33.jpg",
             "image_position": "start",
             "title": "<p>Twój krem pod oczy <em>znika</em> w pierwszej godzinie</p>",
             "body": "<p>Krem pod oczy to najdroższy gram w twojej rutynie. Małe tubki za 100–300 zł, używane co wieczór. Skóra wokół oczu jest najcieńsza na twarzy, najsuchsza i najbardziej spragniona aktywnych składników, peptydów, kofeiny, retinolu zamkniętego w lipidach.</p><p>I właśnie ten produkt, najcenniejszy, najtechniczniejszy, kontakt z poduszką absorbuje najszybciej. Cienka, sucha skóra szybko oddaje wilgoć. Krem przenika częściowo do skóry, ale spora część wraca do otoczenia: do powietrza, do dłoni przy poprawianiu poduszki, do tkaniny.</p>",
+            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
             "fact_label": "FAKT",
             "fact_content": "<p>Po godzinie kontaktu z bawełnianą poszewką zostaje na twarzy ułamek tego, co zaaplikowałaś. Pozostała część albo wyparowała, albo migrowała do tkaniny. Płacisz pełną cenę za produkt, dostajesz fragment efektu.</p>",
             "closing_text": "<p>Jeśli jest jedna część twojej rutyny, która zasługuje na ochronę, to właśnie ta. Bariera z gładkiego, niewchłanialnego materiału między kremem pod oczy a poduszką to różnica między działającym kremem a kremem, który \"podobno działa, ale nie widzę różnicy\".</p>",
@@ -141,6 +143,7 @@
         "item_6": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-5.jpg",
             "image_position": "start",
             "title": "<p>Jedwab, który <em>chroni</em> twoją pielęgnację</p>",
             "body": "<p>Monté to maska do spania ze 100% jedwabiu morwowego klasy 6A, 22 momme. Jedwab naturalnie nie wchłania kosmetyków, krem zostaje tam, gdzie go nałożyłaś. Gładka powierzchnia eliminuje tarcie. Pełny blackout odcina każde źródło światła w 100%.</p><p>Regulowany rzep premium dopasowuje maskę do twojego obwodu głowy. Jest tak zaprojektowany, żeby nie zaczepiać o włosy przy zakładaniu ani zdejmowaniu. Żadnej gumki, żadnego ucisku na skronie, żadnych śladów rano.</p>",
@@ -151,12 +154,13 @@
             "testimonial_reviewer": "",
             "testimonial_verified": true,
             "button_label": "Sprawdź dostępność",
-            "button_url": ""
+            "button_url": "shopify://products/midnight-blue-silk-sleep-mask"
           }
         },
         "item_7": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-6.jpg",
             "image_position": "start",
             "title": "<p>Kobiety, które śpią z Monté, nie wyobrażają sobie powrotu do <em>bawełny</em></p>",
             "body": "<p>Po 30 nocach z Monté 94% klientek oceniło blackout jako całkowity. 91% potwierdziło, że maska nie zsunęła się ani razu przez całą noc. 89% obudziło się bardziej wypoczęte już w pierwszym tygodniu.</p>",
@@ -167,7 +171,7 @@
             "testimonial_reviewer": "Monika K.",
             "testimonial_verified": true,
             "button_label": "Sprawdź dostępność",
-            "button_url": ""
+            "button_url": "shopify://products/midnight-blue-silk-sleep-mask"
           }
         }
       },
