@@ -41,10 +41,10 @@
         "background": "",
         "background_gradient": "linear-gradient(180deg, rgba(248, 241, 233, 1), rgba(255, 255, 255, 1) 100%)",
         "text_color": "",
-        "padding_top_desktop": 64,
-        "padding_bottom_desktop": 40,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 32
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     },
     "listicle_items": {
