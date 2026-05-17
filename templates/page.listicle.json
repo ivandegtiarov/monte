@@ -188,6 +188,9 @@
       "type": "listicle-product-cta",
       "settings": {
         "image": "shopify://shop_images/4M.jpg",
+        "social_proof_image_1": "shopify://shop_images/UGC_2.png",
+        "social_proof_image_2": "shopify://shop_images/UGC_3.png",
+        "social_proof_image_3": "shopify://shop_images/UGC_5.png",
         "social_proof_text": "Dołącz do 700+ kobiet, które wybrały Monté",
         "title": "<p>Twój krem zasługuje<br/>na uczciwą noc</p>",
         "body": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>",
