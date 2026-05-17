@@ -12,7 +12,10 @@
     "listicle_header": {
       "type": "listicle-header",
       "settings": {
+        "logo_max_width": 120,
+        "logo_mobile_max_width": 80,
         "button_label": "Sprawdź dostępność",
+        "button_url": "",
         "background_color": "#fdfbf9"
       }
     },
@@ -26,18 +29,11 @@
         "body_content": "<p>Twoja rutyna jest dobrze skonstruowana. Niacynamid od retinolu odróżniasz na pamięć, składy czytasz zanim coś trafi do koszyka. Krem pod oczy za 200 zł kupujesz bez wahania, bo efekty są warte ceny.</p><p>A jednak rano widzisz to samo. Suchość, załamy, skórę, która nie wygląda na w pełni zregenerowaną. Nie ma w tym nic z twoją rutyną. Chodzi o to, co dzieje się po niej, przez 8 godzin, kiedy śpisz.</p>",
         "body_conclusion": "<p>Oto 5 konkretnych mechanizmów, które niwelują efekty tego, co robisz wieczorem.</p>",
         "content_width": "1100px",
+        "background": "",
         "background_gradient": "linear-gradient(to bottom, #f8f1e9, #ffffff)",
+        "text_color": "",
         "padding_top": 64,
         "padding_bottom": 40
-      }
-    },
-    "listicle_footer": {
-      "type": "listicle-footer",
-      "settings": {
-        "link_1_label": "Polityka prywatności",
-        "link_2_label": "Regulamin sklepu",
-        "link_3_label": "Polityka wysyłki",
-        "link_4_label": "Polityka zwrotów"
       }
     },
     "listicle_items": {
@@ -51,7 +47,12 @@
             "body": "<p>Bawełna jest tkaniną chłonną, używamy jej do ręczników, ścierek, waty. To dokładnie ta sama właściwość, która sprawia, że twoja poszewka działa jak gąbka dla wszystkiego, co nakładasz wieczorem na twarz.</p><p>Krem nawilżający, retinol, serum z peptydami, krem pod oczy, w pierwszych godzinach po położeniu się do łóżka tkanina poduszki wciąga znaczną część aktywnych składników. Twoja skóra dostaje fragment tego, za co zapłaciłaś.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Olej, woda i tłuszcze przechodzą do tkaniny w pierwszych 2–3 godzinach kontaktu. Większość kosmetyków z rutyny wieczornej to mieszanki olejów i emulsji wodno-tłuszczowych. Bawełna ich nie zatrzymuje na powierzchni, wchłania je wgłąb.</p>",
-            "closing_text": "<p>To dlatego po jednym tygodniu nieprania poszewki twoja skóra wygląda gorzej, nie lepiej. Tkanina jest pełna twoich własnych kosmetyków, które utleniły się i przekształciły w substancje, które wracają na twoją twarz każdej nocy.</p>"
+            "closing_text": "<p>To dlatego po jednym tygodniu nieprania poszewki twoja skóra wygląda gorzej, nie lepiej. Tkanina jest pełna twoich własnych kosmetyków, które utleniły się i przekształciły w substancje, które wracają na twoją twarz każdej nocy.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_2": {
@@ -62,7 +63,12 @@
             "body": "<p>Przeciętna kobieta zmienia pozycję podczas snu 30–40 razy. Za każdym razem twoja twarz przesuwa się po poduszce. Bawełna ma teksturę, szorstką w mikroskopie, nawet jeśli wydaje się gładka.</p><p>Skóra wokół oczu ma grubość 0,3–0,5 mm. To 4 razy mniej niż skóra na policzkach. Każde tarcie tej cienkiej, delikatnej tkanki o szorstką powierzchnię to mikro-urazy, które kumulują się przez lata.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Dermatolodzy nazywają to \"sleep wrinkles\", zmarszczki snu. W przeciwieństwie do zmarszczek mimicznych i zmarszczek wieku, zmarszczki snu są mechaniczne. Powstają od fizycznego nacisku i tarcia. Są w 100% do uniknięcia.</p>",
-            "closing_text": "<p>Najlepszy retinol świata nie cofnie szkody, którą tej samej nocy wywoła ci powierzchnia poduszki. Jeśli inwestujesz w skuteczne aktywne składniki, ale zostawiasz twarz na 8 godzin w warunkach, które niszczą skórę, pracujesz przeciwko sobie.</p>"
+            "closing_text": "<p>Najlepszy retinol świata nie cofnie szkody, którą tej samej nocy wywoła ci powierzchnia poduszki. Jeśli inwestujesz w skuteczne aktywne składniki, ale zostawiasz twarz na 8 godzin w warunkach, które niszczą skórę, pracujesz przeciwko sobie.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_3": {
@@ -73,7 +79,12 @@
             "body": "<p>Większość ludzi nie śpi w jednej pozycji równomiernie. 60–70% z nas to \"side sleepers\", śpimy głównie na jednym boku, z preferowaną stroną. Twoja prawa lub lewa strona twarzy spędza w kontakcie z poduszką setki godzin więcej rocznie niż druga.</p><p>Spójrz w lustro uważnie. Zauważ głębszą bruzdę nosowo-wargową po jednej stronie. Załamy pod jednym okiem, których nie ma pod drugim. Lekko niżej opadającą powiekę. To nie jest twoja wyobraźnia.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Plastyczni chirurdzy nazywają to \"sleep wrinkle pattern\" i potrafią z dużą dokładnością powiedzieć, na której stronie śpisz, oglądając twoją twarz. Asymetria narasta z każdym dziesięcioleciem.</p>",
-            "closing_text": "<p>Pozycji snu nie zmienisz, większość ludzi nie kontroluje, jak śpi. Ale możesz zmienić to, na czym śpi twoja twarz.</p>"
+            "closing_text": "<p>Pozycji snu nie zmienisz, większość ludzi nie kontroluje, jak śpi. Ale możesz zmienić to, na czym śpi twoja twarz.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_4": {
@@ -84,7 +95,12 @@
             "body": "<p>Latarnia za oknem. Ekran telefonu partnera o 23:30. Czerwona lampka routera. Słońce, które o 4:30 nad ranem w czerwcu wpada w szczelinę między zasłonami. Każde z tych źródeł hamuje produkcję melatoniny, hormonu, który nie tylko wprowadza cię w sen, ale też uruchamia nocną regenerację skóry.</p><p>Skóra naprawia się głównie w fazie głębokiego snu, między 23:00 a 3:00. W tym czasie organizm uwalnia hormon wzrostu, intensywnie syntetyzuje kolagen i wymienia uszkodzone komórki. Wszystko to wymaga jednego warunku: ciemności.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Już niewielka ilość światła, nawet przez zamknięte powieki, wystarczy, by mózg odebrał sygnał \"to nie jest noc\" i zmniejszył produkcję melatoniny. Twoje serum z 30 składnikami aktywnymi nie zadziała w pełni, jeśli sypialnia nie jest w 100% ciemna.</p>",
-            "closing_text": "<p>Zasłony zaciemniające pomagają, ale rzadko dają 100%. Jedyne rozwiązanie, które odcina każde źródło światła w 100% i jest niezależne od reszty pokoju, to maska na oczy.</p>"
+            "closing_text": "<p>Zasłony zaciemniające pomagają, ale rzadko dają 100%. Jedyne rozwiązanie, które odcina każde źródło światła w 100% i jest niezależne od reszty pokoju, to maska na oczy.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_5": {
@@ -95,7 +111,12 @@
             "body": "<p>Krem pod oczy to najdroższy gram w twojej rutynie. Małe tubki za 100–300 zł, używane co wieczór. Skóra wokół oczu jest najcieńsza na twarzy, najsuchsza i najbardziej spragniona aktywnych składników, peptydów, kofeiny, retinolu zamkniętego w lipidach.</p><p>I właśnie ten produkt, najcenniejszy, najtechniczniejszy, kontakt z poduszką absorbuje najszybciej. Cienka, sucha skóra szybko oddaje wilgoć. Krem przenika częściowo do skóry, ale spora część wraca do otoczenia: do powietrza, do dłoni przy poprawianiu poduszki, do tkaniny.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Po godzinie kontaktu z bawełnianą poszewką zostaje na twarzy ułamek tego, co zaaplikowałaś. Pozostała część albo wyparowała, albo migrowała do tkaniny. Płacisz pełną cenę za produkt, dostajesz fragment efektu.</p>",
-            "closing_text": "<p>Jeśli jest jedna część twojej rutyny, która zasługuje na ochronę, to właśnie ta. Bariera z gładkiego, niewchłanialnego materiału między kremem pod oczy a poduszką to różnica między działającym kremem a kremem, który \"podobno działa, ale nie widzę różnicy\".</p>"
+            "closing_text": "<p>Jeśli jest jedna część twojej rutyny, która zasługuje na ochronę, to właśnie ta. Bariera z gładkiego, niewchłanialnego materiału między kremem pod oczy a poduszką to różnica między działającym kremem a kremem, który \"podobno działa, ale nie widzę różnicy\".</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_6": {
@@ -104,7 +125,14 @@
             "image_position": "start",
             "title": "<p>Jedwab, który <em>chroni</em> twoją pielęgnację</p>",
             "body": "<p>Monté to maska do spania ze 100% jedwabiu morwowego klasy 6A, 22 momme. Jedwab naturalnie nie wchłania kosmetyków, krem zostaje tam, gdzie go nałożyłaś. Gładka powierzchnia eliminuje tarcie. Pełny blackout odcina każde źródło światła w 100%.</p><p>Regulowany rzep premium dopasowuje maskę do twojego obwodu głowy. Jest tak zaprojektowany, żeby nie zaczepiać o włosy przy zakładaniu ani zdejmowaniu. Żadnej gumki, żadnego ucisku na skronie, żadnych śladów rano.</p>",
-            "button_label": "Sprawdź dostępność"
+            "fact_label": "FAKT",
+            "fact_content": "",
+            "closing_text": "",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "Sprawdź dostępność",
+            "button_url": ""
           }
         },
         "item_7": {
@@ -113,10 +141,14 @@
             "image_position": "start",
             "title": "<p>Kobiety, które śpią z Monté, nie wyobrażają sobie powrotu do <em>bawełny</em></p>",
             "body": "<p>Po 30 nocach z Monté 94% klientek oceniło blackout jako całkowity. 91% potwierdziło, że maska nie zsunęła się ani razu przez całą noc. 89% obudziło się bardziej wypoczęte już w pierwszym tygodniu.</p>",
+            "fact_label": "FAKT",
+            "fact_content": "",
+            "closing_text": "",
             "testimonial_text": "Nie spodziewałam się, że zrobi aż taką różnicę. Prawie nie czuć, że ją mam, nie zsuwa się i czuję, że budzę się bardziej wypoczęta.",
             "testimonial_reviewer": "Monika K.",
             "testimonial_verified": true,
-            "button_label": "Sprawdź dostępność"
+            "button_label": "Sprawdź dostępność",
+            "button_url": ""
           }
         }
       },
@@ -137,14 +169,32 @@
     "listicle_product_cta": {
       "type": "listicle-product-cta",
       "settings": {
+        "image": "shopify://shop_images/4M.jpg",
         "social_proof_text": "Dołącz do 700+ kobiet, które wybrały Monté",
+        "title": "<p>Twój krem zasługuje<br/>na uczciwą noc</p>",
+        "body": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>",
         "feature_1_title": "100% Jedwab morwowy",
         "feature_1_desc": "Nie wchłania kosmetyków. Krem zostaje tam, gdzie go nałożyłaś.",
         "feature_2_title": "Pełny blackout",
         "feature_2_desc": "100% ciemności przez całą noc. Melatonina, regeneracja, wyniki.",
         "feature_3_title": "Rzep premium regulowany",
         "feature_3_desc": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc.",
-        "button_label": "Sprawdź dostępność"
+        "button_label": "Sprawdź dostępność",
+        "button_url": ""
+      }
+    },
+    "listicle_footer": {
+      "type": "listicle-footer",
+      "settings": {
+        "link_1_label": "Polityka prywatności",
+        "link_1_url": "",
+        "link_2_label": "Regulamin sklepu",
+        "link_2_url": "",
+        "link_3_label": "Polityka wysyłki",
+        "link_3_url": "",
+        "link_4_label": "Polityka zwrotów",
+        "link_4_url": "",
+        "copyright_text": ""
       }
     }
   },
