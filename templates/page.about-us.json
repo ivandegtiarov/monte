@@ -21,6 +21,7 @@
     "about_story": {
       "type": "about-story",
       "settings": {
+        "image": "shopify://shop_images/Hand_and_Mask.png",
         "image_position": "start",
         "tagline": "JAK TO SIĘ ZACZĘŁO",
         "title": "Mały rytuał, który zmienia całą noc",
@@ -32,6 +33,7 @@
     "about_mission": {
       "type": "about-story",
       "settings": {
+        "image": "shopify://shop_images/1234_Masks.png",
         "image_position": "end",
         "tagline": "NASZA MISJA",
         "title": "Sen to nie luksus. To konieczność.",
