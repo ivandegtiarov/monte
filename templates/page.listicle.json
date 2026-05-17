@@ -53,9 +53,11 @@
         "item_1": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image_5b05cb15-c5a4-47cd-8ca1-9cb590c460e5.jpg",
             "image_position": "start",
             "title": "<p>Twoja bawełniana poszewka <em>wchłania</em> twoje kosmetyki</p>",
             "body": "<p>Bawełna jest tkaniną chłonną, używamy jej do ręczników, ścierek, waty. To dokładnie ta sama właściwość, która sprawia, że twoja poszewka działa jak gąbka dla wszystkiego, co nakładasz wieczorem na twarz.</p><p>Krem nawilżający, retinol, serum z peptydami, krem pod oczy, w pierwszych godzinach po położeniu się do łóżka tkanina poduszki wciąga znaczną część aktywnych składników. Twoja skóra dostaje fragment tego, za co zapłaciłaś.</p>",
+            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
             "fact_label": "FAKT",
             "fact_content": "<p>Olej, woda i tłuszcze przechodzą do tkaniny w pierwszych 2–3 godzinach kontaktu. Większość kosmetyków z rutyny wieczornej to mieszanki olejów i emulsji wodno-tłuszczowych. Bawełna ich nie zatrzymuje na powierzchni, wchłania je wgłąb.</p>",
             "closing_text": "<p>To dlatego po jednym tygodniu nieprania poszewki twoja skóra wygląda gorzej, nie lepiej. Tkanina jest pełna twoich własnych kosmetyków, które utleniły się i przekształciły w substancje, które wracają na twoją twarz każdej nocy.</p>",
@@ -69,9 +71,11 @@
         "item_2": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-1_3c4c3196-4a4b-4e20-ac3d-3047c329aca6.jpg",
             "image_position": "start",
             "title": "<p>8 godzin <em>nieustannego</em> tarcia to nie jest neutralne dla skóry</p>",
             "body": "<p>Przeciętna kobieta zmienia pozycję podczas snu 30–40 razy. Za każdym razem twoja twarz przesuwa się po poduszce. Bawełna ma teksturę, szorstką w mikroskopie, nawet jeśli wydaje się gładka.</p><p>Skóra wokół oczu ma grubość 0,3–0,5 mm. To 4 razy mniej niż skóra na policzkach. Każde tarcie tej cienkiej, delikatnej tkanki o szorstką powierzchnię to mikro-urazy, które kumulują się przez lata.</p>",
+            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
             "fact_label": "FAKT",
             "fact_content": "<p>Dermatolodzy nazywają to \"sleep wrinkles\", zmarszczki snu. W przeciwieństwie do zmarszczek mimicznych i zmarszczek wieku, zmarszczki snu są mechaniczne. Powstają od fizycznego nacisku i tarcia. Są w 100% do uniknięcia.</p>",
             "closing_text": "<p>Najlepszy retinol świata nie cofnie szkody, którą tej samej nocy wywoła ci powierzchnia poduszki. Jeśli inwestujesz w skuteczne aktywne składniki, ale zostawiasz twarz na 8 godzin w warunkach, które niszczą skórę, pracujesz przeciwko sobie.</p>",
@@ -85,9 +89,11 @@
         "item_3": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-2_c229d5db-6a20-4794-a4a3-0e6c8ee17156.jpg",
             "image_position": "start",
             "title": "<p>Spanie na boku to asymetryczna kompresja przez całe życie</p>",
             "body": "<p>Większość ludzi nie śpi w jednej pozycji równomiernie. 60–70% z nas to \"side sleepers\", śpimy głównie na jednym boku, z preferowaną stroną. Twoja prawa lub lewa strona twarzy spędza w kontakcie z poduszką setki godzin więcej rocznie niż druga.</p><p>Spójrz w lustro uważnie. Zauważ głębszą bruzdę nosowo-wargową po jednej stronie. Załamy pod jednym okiem, których nie ma pod drugim. Lekko niżej opadającą powiekę. To nie jest twoja wyobraźnia.</p>",
+            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
             "fact_label": "FAKT",
             "fact_content": "<p>Plastyczni chirurdzy nazywają to \"sleep wrinkle pattern\" i potrafią z dużą dokładnością powiedzieć, na której stronie śpisz, oglądając twoją twarz. Asymetria narasta z każdym dziesięcioleciem.</p>",
             "closing_text": "<p>Pozycji snu nie zmienisz, większość ludzi nie kontroluje, jak śpi. Ale możesz zmienić to, na czym śpi twoja twarz.</p>",
@@ -101,9 +107,11 @@
         "item_4": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-3.jpg",
             "image_position": "start",
             "title": "<p>Twoja sypialnia nie jest tak <em>ciemna</em>, jak myślisz</p>",
-            "body": "<p>Latarnia za oknem. Ekran telefonu partnera o 23:30. Czerwona lampka routera. Słońce, które o 4:30 nad ranem w czerwcu wpada w szczelinę między zasłonami. Każde z tych źródeł hamuje produkcję melatoniny, hormonu, który nie tylko wprowadza cię w sen, ale też uruchamia nocną regenerację skóry.</p><p>Skóra naprawia się głównie w fazie głębokiego snu, między 23:00 a 3:00. W tym czasie organizm uwalnia hormon wzrostu, intensywnie syntetyzuje kolagen i wymienia uszkodzone komórki. Wszystko to wymaga jednego warunku: ciemności.</p>",
+            "body": "<p>Latarnia za oknem. Ekran telefonu partnera o 23:30. Zielona lampka routera. Słońce, które o 4:30 nad ranem w czerwcu wpada w szczelinę między zasłonami. Każde z tych źródeł hamuje produkcję melatoniny, hormonu, który nie tylko wprowadza cię w sen, ale też uruchamia nocną regenerację skóry.</p><p>Skóra naprawia się głównie w fazie głębokiego snu, między 23:00 a 3:00. W tym czasie organizm uwalnia hormon wzrostu, intensywnie syntetyzuje kolagen i wymienia uszkodzone komórki. Wszystko to wymaga jednego warunku: ciemności.</p>",
+            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
             "fact_label": "FAKT",
             "fact_content": "<p>Już niewielka ilość światła, nawet przez zamknięte powieki, wystarczy, by mózg odebrał sygnał \"to nie jest noc\" i zmniejszył produkcję melatoniny. Twoje serum z 30 składnikami aktywnymi nie zadziała w pełni, jeśli sypialnia nie jest w 100% ciemna.</p>",
             "closing_text": "<p>Zasłony zaciemniające pomagają, ale rzadko dają 100%. Jedyne rozwiązanie, które odcina każde źródło światła w 100% i jest niezależne od reszty pokoju, to maska na oczy.</p>",
