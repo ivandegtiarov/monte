@@ -226,7 +226,11 @@
         "link_3_url": "shopify://policies/shipping-policy",
         "link_4_label": "Polityka zwrotów",
         "link_4_url": "shopify://policies/refund-policy",
-        "copyright_text": "© 2026 Monté. Wszystkie prawa zastrzeżone."
+        "copyright_text": "© 2026 Monté. Wszystkie prawa zastrzeżone.",
+        "payment_logo_1": "shopify://shop_images/Visa_Logo_1.svg",
+        "payment_logo_2": "shopify://shop_images/Mastercard_Logo_1.svg",
+        "payment_logo_3": "shopify://shop_images/Przelewy24_1.svg",
+        "payment_logo_4": "shopify://shop_images/Blik_1.svg"
       }
     }
   },
