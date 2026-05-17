@@ -1,8 +1,13 @@
 <style>
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
   #shopify-section-{{ section.id }} .about-story {
     background: #ffffff;
-    padding-block-start: 40px;
-    padding-block-end: 20px;
+    padding-block-start: var(--padding-top);
+    padding-block-end: var(--padding-bottom);
     padding-inline: 40px;
     display: flex;
     align-items: center;
@@ -227,6 +232,30 @@
       "id": "content",
       "label": "Content",
       "default": "<p>Wiesz, jak to jest, kiedy dzień w końcu się kończy.</p><p>Kiedy zamykasz ostatnią aplikację, odkładasz telefon i masz chwilę tylko dla siebie. Ta chwila jest rzadka. I zasługuje na coś wyjątkowego.</p><p>Monté powstało z przekonania, że wieczorna rutyna może być czymś więcej niż obowiązkiem. Małym, codziennym aktem troski o siebie, który zamienia zwykłe kładzenie się do łóżka w coś, na co czekasz.</p><p>Zaczęliśmy od jedwabiu morwowego, bo wierzyliśmy, że materiał, który dotyka twojej twarzy przez całą noc, powinien być po prostu najlepszy z możliwych.</p><p>I tak powstała maska, która nie tylko pomaga spać. Sprawia, że chcesz iść spać.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 20
     }
   ],
   "presets": [

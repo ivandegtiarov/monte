@@ -1,7 +1,12 @@
 <style>
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
   #shopify-section-{{ section.id }} .about-products {
     background: linear-gradient(to bottom, #ffffff, #fdfbf9);
-    padding: 40px;
+    padding: var(--padding-top) 40px var(--padding-bottom);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -202,7 +207,7 @@
   /* Mobile */
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .about-products {
-      padding: 32px 20px;
+      padding-inline: 20px;
       gap: 28px;
     }
 
@@ -436,6 +441,30 @@
       "id": "subtitle",
       "label": "Subtitle",
       "default": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc."
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
     }
   ],
   "blocks": [
