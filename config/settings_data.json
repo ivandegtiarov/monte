@@ -85,11 +85,6 @@
         "disabled": true,
         "settings": {}
       },
-      "5061257265103808445": {
-        "type": "shopify://apps/r-terms-conditions/blocks/embed-block/471882a9-9b1b-4918-8943-6c66b60c94ea",
-        "disabled": false,
-        "settings": {}
-      },
       "6159598353363395418": {
         "type": "shopify://apps/google-youtube/blocks/store_widget/14ec7bd0-ac77-49a9-9417-90752398bdff",
         "disabled": true,
@@ -122,6 +117,11 @@
       },
       "12439146293631897289": {
         "type": "shopify://apps/blockify-fraud-filter/blocks/app_embed/2e3e0ba5-0e70-447a-9ec5-3bf76b5ef12e",
+        "disabled": true,
+        "settings": {}
+      },
+      "5061257265103808445": {
+        "type": "shopify://apps/r-terms-conditions/blocks/embed-block/471882a9-9b1b-4918-8943-6c66b60c94ea",
         "disabled": true,
         "settings": {}
       }
