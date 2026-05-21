@@ -1,0 +1,520 @@
+<style>
+  #shopify-section-{{ section.id }} .lc-hero {
+    background: linear-gradient(to top, #ffffff, #f8f1e9);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 64px 40px 40px;
+    width: 100%;
+    max-width: 1360px;
+    margin-inline: auto;
+  }
+
+  /* ── Left column ── */
+  #shopify-section-{{ section.id }} .lc-hero__content {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  /* Social proof pill */
+  #shopify-section-{{ section.id }} .lc-hero__social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #eee7e0;
+    border-radius: 999px;
+    padding: 4px 16px 4px 8px;
+    align-self: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__avatars {
+    display: flex;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #eee7e0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__avatar:not(:first-child) {
+    margin-inline-start: -6px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__social-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__rating-num,
+  #shopify-section-{{ section.id }} .lc-hero__social-count {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  /* Heading group */
+  #shopify-section-{{ section.id }} .lc-hero__heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__title {
+    font-family: var(--heading-font-family);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #182153;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__title em {
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__subtitle {
+    font-family: var(--heading-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #d9a17d;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__subtitle p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__body {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+    margin: 0;
+    max-width: 600px;
+  }
+
+  /* CTA area */
+  #shopify-section-{{ section.id }} .lc-hero__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__button {
+    background: {{ section.settings.button_color | default: '#232e71' }};
+    color: #fdfbf9;
+    width: 480px;
+    max-width: 100%;
+    height: 52px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding-inline: 32px;
+    transition: opacity 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__button:hover {
+    opacity: 0.88;
+  }
+
+  /* Feature list */
+  #shopify-section-{{ section.id }} .lc-hero__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__check {
+    width: 20px;
+    height: 20px;
+    background: #232e71;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__feature-label {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    white-space: nowrap;
+  }
+
+  /* ── Right column: image ── */
+  #shopify-section-{{ section.id }} .lc-hero__media {
+    flex: 1 0 0;
+    min-width: 0;
+    height: 660px;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .lc-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Mobile ── */
+  @media screen and (max-width: 899px) {
+    #shopify-section-{{ section.id }} .lc-hero__inner {
+      flex-direction: column-reverse;
+      padding: 32px 20px 40px;
+      gap: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-hero__title {
+      font-size: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-hero__subtitle {
+      font-size: 17px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-hero__body {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-hero__heading-group {
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .lc-hero__button {
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .lc-hero__media {
+      width: 100%;
+      height: 340px;
+    }
+  }
+</style>
+
+<div class="lc-hero">
+  <div class="lc-hero__inner">
+
+    {%- comment -%} ── LEFT CONTENT ── {%- endcomment -%}
+    <div class="lc-hero__content">
+
+      {%- comment -%} Social proof pill {%- endcomment -%}
+      {%- liquid
+        assign has_avatars = false
+        if section.settings.avatar_1 != blank or section.settings.avatar_2 != blank or section.settings.avatar_3 != blank
+          assign has_avatars = true
+        endif
+        assign has_social = false
+        if has_avatars or section.settings.social_proof_text != blank
+          assign has_social = true
+        endif
+      -%}
+
+      {%- if has_social -%}
+        <div class="lc-hero__social-pill" data-reveal-item>
+          {%- if has_avatars -%}
+            <div class="lc-hero__avatars">
+              {%- if section.settings.avatar_1 != blank -%}
+                <div class="lc-hero__avatar">
+                  {{- section.settings.avatar_1 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                </div>
+              {%- endif -%}
+              {%- if section.settings.avatar_2 != blank -%}
+                <div class="lc-hero__avatar">
+                  {{- section.settings.avatar_2 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                </div>
+              {%- endif -%}
+              {%- if section.settings.avatar_3 != blank -%}
+                <div class="lc-hero__avatar">
+                  {{- section.settings.avatar_3 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+          <div class="lc-hero__social-meta">
+            <div class="lc-hero__rating-row">
+              <div class="lc-hero__stars" aria-hidden="true">
+                {%- for i in (1..5) -%}
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 1L7.34 4.26L10.91 4.56L8.25 6.87L9.09 10.35L6 8.49L2.91 10.35L3.75 6.87L1.09 4.56L4.66 4.26L6 1Z" fill="#D9A17D"/>
+                  </svg>
+                {%- endfor -%}
+              </div>
+              {%- if section.settings.rating != blank -%}
+                <span class="lc-hero__rating-num">{{ section.settings.rating | escape }}</span>
+              {%- endif -%}
+            </div>
+            {%- if section.settings.social_proof_text != blank -%}
+              <p class="lc-hero__social-count">{{ section.settings.social_proof_text | escape }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Heading group {%- endcomment -%}
+      <div class="lc-hero__heading-group" data-reveal-item style="--reveal-delay: 100ms">
+        {%- if section.settings.title != blank -%}
+          <h1 class="lc-hero__title">
+            {{- section.settings.title | remove: '<p>' | remove: '</p>' -}}
+          </h1>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <div class="lc-hero__subtitle">{{ section.settings.subtitle }}</div>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <p class="lc-hero__body">{{ section.settings.body | escape }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} CTA + features {%- endcomment -%}
+      <div class="lc-hero__cta" data-reveal-item style="--reveal-delay: 200ms">
+        {%- if section.settings.button_label != blank -%}
+          {%- if section.settings.button_url != blank -%}
+            <a href="{{ section.settings.button_url }}" class="lc-hero__button">
+              {{- section.settings.button_label | escape -}}
+            </a>
+          {%- else -%}
+            <button type="button" class="lc-hero__button">
+              {{- section.settings.button_label | escape -}}
+            </button>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- liquid
+          assign has_features = false
+          if section.settings.feature_1 != blank or section.settings.feature_2 != blank or section.settings.feature_3 != blank
+            assign has_features = true
+          endif
+        -%}
+        {%- if has_features -%}
+          <div class="lc-hero__features">
+            {%- for i in (1..3) -%}
+              {%- liquid
+                case i
+                  when 1
+                    assign feat = section.settings.feature_1
+                  when 2
+                    assign feat = section.settings.feature_2
+                  when 3
+                    assign feat = section.settings.feature_3
+                endcase
+              -%}
+              {%- if feat != blank -%}
+                <div class="lc-hero__feature">
+                  <div class="lc-hero__check" aria-hidden="true">
+                    <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 4L4 7L10 1" stroke="#fdfbf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="lc-hero__feature-label">{{ feat | escape }}</span>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+    {%- comment -%} ── RIGHT IMAGE ── {%- endcomment -%}
+    {%- if section.settings.hero_image != blank -%}
+      <div class="lc-hero__media" data-reveal-item style="--reveal-delay: 50ms">
+        {{-
+          section.settings.hero_image
+          | image_url: width: 900
+          | image_tag:
+            loading: 'eager',
+            fetchpriority: 'high',
+            sizes: '(max-width: 899px) 100vw, 50vw',
+            widths: '400,600,800,900,1200',
+            alt: section.settings.hero_image.alt | default: shop.name | escape
+        -}}
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Hero",
+  "class": "shopify-section--listicle-hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Social proof"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_1",
+      "label": "Avatar 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_2",
+      "label": "Avatar 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_3",
+      "label": "Avatar 3"
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Rating",
+      "default": "4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "social_proof_text",
+      "label": "Social proof text",
+      "default": "Zaufało nam ponad 700+ osób"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "info": "Use italic formatting for styled words",
+      "default": "<p><em>6 Powodów</em>, Dla Których Kobiety z Dobrą Rutyną Noszą Jedwabną Maskę do Spania</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>(Twój krem pod oczy za 200 zł pracuje na połowę wartości.<br>Oto dlaczego, i jak to zmienić dziś wieczorem.)</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Twoja rutyna jest przemyślana. Wiesz, co robi każdy krok, co znaczą składniki na etykiecie i dlaczego tania alternatywa po prostu nie ma sensu. A rano wciąż widzisz to samo."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Sprawdź dostępność"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#232e71"
+    },
+    {
+      "type": "header",
+      "content": "Features"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature 1",
+      "default": "30-nocna gwarancja zwrotu"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature 2",
+      "default": "Wysyłka tego samego dnia"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature 3",
+      "default": "Dostawa InPost"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Hero"
+    }
+  ]
+}
+{% endschema %}

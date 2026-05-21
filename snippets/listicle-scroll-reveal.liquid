@@ -1,0 +1,67 @@
+<style>
+  /*
+   * Listicle scroll-reveal animations
+   * Activated only when JS adds .listicle-reveal-ready to <html>.
+   * Matches the theme's reveal-items style: fade + translateY(20px).
+   */
+
+  @media (prefers-reduced-motion: no-preference) {
+    html.listicle-reveal-ready [data-reveal-item] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity  0.5s ease,
+        transform 0.5s ease;
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    html.listicle-reveal-ready [data-reveal-item].is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Bail if reduced motion is preferred */
+  if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+
+  /* Mark the page as ready — CSS hidden states kick in */
+  document.documentElement.classList.add('listicle-reveal-ready');
+
+  /* Observe all current and future [data-reveal-item] elements */
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-revealed');
+      observer.unobserve(entry.target); /* one-shot: animate once */
+    });
+  }, {
+    rootMargin: '0px 0px -60px 0px', /* trigger 60px before edge — like theme's -50px margin */
+    threshold: 0
+  });
+
+  /* Observe elements already in DOM */
+  function observeAll() {
+    document.querySelectorAll('[data-reveal-item]').forEach(function (el) {
+      /* If already in viewport on load — reveal without animation delay */
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        /* Short timeout so CSS transition is registered first */
+        setTimeout(function () { el.classList.add('is-revealed'); }, 50);
+      } else {
+        observer.observe(el);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeAll);
+  } else {
+    observeAll();
+  }
+})();
+</script>

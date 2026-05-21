@@ -306,7 +306,7 @@
   <div class="listicle-pcta__inner">
 
     {%- if section.settings.image != blank -%}
-      <div class="listicle-pcta__image-col">
+      <div class="listicle-pcta__image-col" data-reveal-item>
         {{-
           section.settings.image
           | image_url: width: section.settings.image.width
@@ -328,7 +328,7 @@
 
     <div class="listicle-pcta__content-col">
 
-      <div class="listicle-pcta__header">
+      <div class="listicle-pcta__header" data-reveal-item style="--reveal-delay: 100ms">
 
         {%- if section.settings.social_proof_text != blank
           or section.settings.social_proof_image_1 != blank
@@ -383,7 +383,7 @@
       -%}
 
       {%- if has_features -%}
-        <div class="listicle-pcta__features">
+        <div class="listicle-pcta__features" data-reveal-item style="--reveal-delay: 200ms">
           {%- for i in (1..3) -%}
             {%- assign title_key = 'feature_' | append: i | append: '_title' -%}
             {%- assign desc_key = 'feature_' | append: i | append: '_desc' -%}

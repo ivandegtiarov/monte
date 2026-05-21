@@ -1,0 +1,350 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann {
+    background: {{ section.settings.background_color | default: '#232e71' }};
+    padding-block: 8px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    transition: filter 0.2s;
+  }
+
+  a#shopify-section-{{ section.id }} .lc-ann,
+  #shopify-section-{{ section.id }} a.lc-ann {
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} a.lc-ann:hover {
+    filter: brightness(1.1);
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding-inline: 48px;
+    min-height: 27px;
+  }
+
+  /* Desktop: text-group displays inline (siblings with timer in the row) */
+  #shopify-section-{{ section.id }} .lc-ann__text-group {
+    display: contents;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__label {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.text_color | default: '#f8f1e9' }};
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__text {
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.text_color | default: '#f8f1e9' }};
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__timer {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__pill {
+    background: #fdfbf9;
+    color: #182153;
+    height: 24px;
+    min-width: 38px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'PP Neue Montreal Mono', 'SF Mono', 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    /* prevent layout shift as digits change */
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .lc-ann {
+      padding-block: 10px;
+    }
+
+    /* Two-column row: text-group left, timer right */
+    #shopify-section-{{ section.id }} .lc-ann__inner {
+      padding-inline: 16px;
+      gap: 8px;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Override display:contents — become a real flex column on mobile */
+    #shopify-section-{{ section.id }} .lc-ann__text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1 0 0;
+      min-width: 0;
+    }
+
+    #shopify-section-{{ section.id }} .lc-ann__label {
+      font-size: 14px;
+      font-weight: 600;
+      white-space: normal;
+    }
+
+    #shopify-section-{{ section.id }} .lc-ann__text {
+      font-size: 12px;
+      font-weight: 375;
+      text-align: left;
+      white-space: normal;
+    }
+
+    /* Timer stays in a compact row on the right */
+    #shopify-section-{{ section.id }} .lc-ann__timer {
+      flex-shrink: 0;
+    }
+
+    /* Slightly smaller pills on mobile */
+    #shopify-section-{{ section.id }} .lc-ann__pill {
+      font-size: 10px;
+      min-width: unset;
+    }
+  }
+</style>
+
+{%- assign ann_url = section.settings.link_url -%}
+{%- if ann_url != blank -%}
+  <a class="lc-ann" href="{{ ann_url }}" aria-label="{{ section.settings.label | escape }}">
+{%- else -%}
+  <div class="lc-ann">
+{%- endif -%}
+  <div class="lc-ann__inner">
+    <div class="lc-ann__text-group">
+      {%- if section.settings.label != blank -%}
+        <p class="lc-ann__label">{{ section.settings.label | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.offer_text != blank -%}
+        <p class="lc-ann__text">{{ section.settings.offer_text | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="lc-ann__timer" aria-live="polite" aria-label="Odliczanie do końca oferty">
+      <span class="lc-ann__pill" id="lc-ann-h-{{ section.id }}">--g</span>
+      <span class="lc-ann__pill" id="lc-ann-m-{{ section.id }}">--m</span>
+      <span class="lc-ann__pill" id="lc-ann-s-{{ section.id }}">--s</span>
+    </div>
+  </div>
+{%- if ann_url != blank -%}
+  </a>
+{%- else -%}
+  </div>
+{%- endif -%}
+
+<script>
+(function () {
+  'use strict';
+
+  var hEl = document.getElementById('lc-ann-h-{{ section.id }}');
+  var mEl = document.getElementById('lc-ann-m-{{ section.id }}');
+  var sEl = document.getElementById('lc-ann-s-{{ section.id }}');
+
+  if (!hEl || !mEl || !sEl) return;
+
+  function pad(n) {
+    return n < 10 ? '0' + n : '' + n;
+  }
+
+  /* Returns seconds remaining until local midnight.
+     Naturally persists through page refresh — always
+     derived from wall-clock time, never from a stored counter. */
+  function secondsUntilMidnight() {
+    var now = new Date();
+    var midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);          // next midnight (local)
+    return Math.max(0, Math.floor((midnight - now) / 1000));
+  }
+
+  function render(total) {
+    var h = Math.floor(total / 3600);
+    var m = Math.floor((total % 3600) / 60);
+    var s = total % 60;
+    hEl.textContent = pad(h) + 'g';
+    mEl.textContent = pad(m) + 'm';
+    sEl.textContent = pad(s) + 's';
+  }
+
+  function tick() {
+    var remaining = secondsUntilMidnight();
+    render(remaining);
+
+    /* Schedule next tick precisely on the next whole second
+       so the display stays in sync with wall-clock time
+       even after the tab was backgrounded / throttled. */
+    var delay = 1000 - (Date.now() % 1000);
+    setTimeout(tick, delay);
+  }
+
+  tick();
+})();
+</script>
+
+<script>
+/* ── Suppress Klaviyo popups on this page only ──────────────────────────────
+   This section (listicle-announcement) is included only on page.listicle-new-offer,
+   so the suppressor runs exclusively on that page.
+
+   Strategy:
+   1. Hide via CSS immediately (fastest — before any JS runs)
+   2. MutationObserver removes popup nodes as Klaviyo injects them
+   3. Override klaviyo.openForm so popups never open even if Klaviyo re-tries
+   ─────────────────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  /* 1. Inject a <style> that hides Klaviyo popup overlays immediately.
+        We target fixed-position wrappers only; embedded forms are unaffected. */
+  var style = document.createElement('style');
+  style.textContent = [
+    /* Klaviyo's outer popup shell */
+    '[data-testid="klaviyo-form-overlay"]',
+    '.klaviyo-form-overlay',
+    /* Shadow host / web-component wrappers Klaviyo may use */
+    'klaviyo-onsite-form',
+    /* Generic: any fixed-pos div injected by Klaviyo */
+    'body > div[id^="klaviyo-form-"]',
+    'body > div[class*="needsclick"]',
+  ].join(',') + ' { display: none !important; }';
+  document.head.appendChild(style);
+
+  /* 2. MutationObserver — remove nodes as they are added to <body>. */
+  function isKlaviyoPopup(node) {
+    if (node.nodeType !== 1) return false;
+    var id  = node.id  || '';
+    var cls = typeof node.className === 'string' ? node.className : '';
+    var tag = node.tagName ? node.tagName.toLowerCase() : '';
+
+    /* Matches: id="klaviyo-form-XXXX", class="klaviyo-form ...", <klaviyo-onsite-form> */
+    if (id.indexOf('klaviyo-form') === 0) return true;
+    if (cls.indexOf('klaviyo-form') !== -1) return true;
+    if (tag === 'klaviyo-onsite-form') return true;
+    if (cls.indexOf('needsclick') !== -1 && node.parentElement === document.body) return true;
+
+    return false;
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (m) {
+      m.addedNodes.forEach(function (node) {
+        if (isKlaviyoPopup(node)) {
+          node.remove();
+        }
+      });
+    });
+  });
+
+  /* Start watching as early as possible */
+  if (document.body) {
+    observer.observe(document.body, { childList: true });
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      observer.observe(document.body, { childList: true });
+    });
+  }
+
+  /* 3. Override Klaviyo's JS API so it never opens a popup even if it retries.
+        We proxy window.klaviyo once it becomes available. */
+  var _klaviyoProxy = null;
+  Object.defineProperty(window, 'klaviyo', {
+    configurable: true,
+    get: function () { return _klaviyoProxy; },
+    set: function (obj) {
+      if (!obj) { _klaviyoProxy = obj; return; }
+      /* Wrap openForm / show so popups silently no-op */
+      ['openForm', 'show', 'showModal'].forEach(function (method) {
+        if (typeof obj[method] === 'function') {
+          obj[method] = function () {};
+        }
+      });
+      _klaviyoProxy = obj;
+    }
+  });
+
+})();
+</script>
+
+{%- render 'listicle-scroll-reveal' -%}
+
+{% schema %}
+{
+  "name": "Listicle – Announcement",
+  "class": "shopify-section--listicle-announcement",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Oferta specjalna:"
+    },
+    {
+      "type": "text",
+      "id": "offer_text",
+      "label": "Offer text",
+      "default": "Kup 1 maskę, drugą otrzymasz 30% taniej"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "URL posylki",
+      "info": "Klik na będzkolwiek w banerze przejdzie do tego adresu. Zostaw puste, żeby wyłączyć."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#232e71"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#f8f1e9"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Announcement"
+    }
+  ]
+}
+{% endschema %}

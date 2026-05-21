@@ -102,6 +102,20 @@
     font-style: italic;
   }
 
+  /* Subtitle */
+  #shopify-section-{{ section.id }} .listicle-item__subtitle {
+    font-family: var(--heading-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #d9a17d;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__subtitle p {
+    margin: 0;
+  }
+
   /* Body text */
   #shopify-section-{{ section.id }} .listicle-item__body {
     font-family: var(--text-font-family);
@@ -337,6 +351,7 @@
 
       <div
         class="listicle-item{% if block.settings.image_position == 'end' %} listicle-item--image-right{% endif %}"
+        data-reveal-item
         {{ block.shopify_attributes }}
       >
         {%- if block.settings.image != blank -%}
@@ -364,6 +379,10 @@
               <h2 class="listicle-item__title">
                 {{- block.settings.title | remove: '<p>' | remove: '</p>' -}}
               </h2>
+            {%- endif -%}
+
+            {%- if block.settings.subtitle != blank -%}
+              <div class="listicle-item__subtitle">{{ block.settings.subtitle }}</div>
             {%- endif -%}
 
             {%- if block.settings.body != blank -%}
@@ -523,6 +542,12 @@
           "id": "title",
           "label": "Title",
           "info": "Use italic for styled words"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "info": "Displayed below title in accent color (#d9a17d). E.g. (Bawełna wchłania to, co nakładasz. Jedwab nie.)"
         },
         {
           "type": "richtext",

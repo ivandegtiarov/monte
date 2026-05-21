@@ -1,0 +1,451 @@
+<style>
+  #shopify-section-{{ section.id }} .ldc {
+    background: {{ section.settings.background_color | default: '#232e71' }};
+    padding: {{ section.settings.padding_top_desktop | default: 40 }}px {{ section.settings.padding_h_desktop | default: 80 }}px {{ section.settings.padding_bottom_desktop | default: 80 }}px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1360px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  /* ── Left column ── */
+  #shopify-section-{{ section.id }} .ldc__content {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  /* Heading group */
+  #shopify-section-{{ section.id }} .ldc__heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__title {
+    font-family: var(--heading-font-family);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fdfbf9;
+    margin: 0;
+    max-width: 600px;
+    word-break: break-word;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__title em {
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__title p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__subtitle {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    font-weight: 375;
+    line-height: 1.5;
+    color: #fdfbf9;
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__subtitle p {
+    margin: 0;
+    font-family: var(--text-font-family);
+    font-weight: 375;
+  }
+
+  /* Feature list */
+  #shopify-section-{{ section.id }} .ldc__features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__feature {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__feature-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: #50598e;
+    border: 1px dashed #fdfbf9;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__feature-icon svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__feature-text {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__feature-title {
+    font-family: var(--heading-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #fdfbf9;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__feature-desc {
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    font-weight: 375;
+    line-height: 1.5;
+    color: #fdfbf9;
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  /* Button */
+  #shopify-section-{{ section.id }} .ldc__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    height: 52px;
+    width: 480px;
+    max-width: 100%;
+    padding: 16px 32px;
+    background: #fdfbf9;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__button-label {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* ── Right column ── */
+  #shopify-section-{{ section.id }} .ldc__image-wrap {
+    flex: 1 0 0;
+    min-width: 0;
+    height: 620px;
+    background: #50598e;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Mobile ── */
+  @media screen and (max-width: 899px) {
+    #shopify-section-{{ section.id }} .ldc {
+      padding: {{ section.settings.padding_top_mobile | default: 40 }}px 20px {{ section.settings.padding_bottom_mobile | default: 60 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ldc__inner {
+      flex-direction: column-reverse;
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .ldc__image-wrap {
+      width: 100%;
+      height: 340px;
+      flex: none;
+    }
+
+    #shopify-section-{{ section.id }} .ldc__content {
+      width: 100%;
+      flex: none;
+    }
+
+    #shopify-section-{{ section.id }} .ldc__title {
+      font-size: 28px;
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .ldc__button {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="ldc">
+  <div class="ldc__inner">
+  {%- comment -%} Left: content {%- endcomment -%}
+  <div class="ldc__content" data-reveal-item>
+
+    {%- comment -%} Heading group {%- endcomment -%}
+    <div class="ldc__heading-group">
+      {%- if section.settings.title != blank -%}
+        <div class="ldc__title">{{ section.settings.title }}</div>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <div class="ldc__subtitle">{{ section.settings.subtitle }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Feature list {%- endcomment -%}
+    <div class="ldc__features">
+      {%- for i in (1..3) -%}
+        {%- assign title_key = 'feature_' | append: i | append: '_title' -%}
+        {%- assign desc_key  = 'feature_' | append: i | append: '_desc' -%}
+        {%- if section.settings[title_key] != blank -%}
+          <div class="ldc__feature">
+            <div class="ldc__feature-icon">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 10.5L7.5 15L17 5" stroke="#fdfbf9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="ldc__feature-text">
+              <p class="ldc__feature-title">{{ section.settings[title_key] }}</p>
+              {%- if section.settings[desc_key] != blank -%}
+                <p class="ldc__feature-desc">{{ section.settings[desc_key] }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} CTA button {%- endcomment -%}
+    {%- if section.settings.button_label != blank -%}
+      {%- if section.settings.button_url != blank -%}
+        <a href="{{ section.settings.button_url }}" class="ldc__button">
+          <span class="ldc__button-label">{{ section.settings.button_label }}</span>
+        </a>
+      {%- else -%}
+        <a href="#" class="ldc__button">
+          <span class="ldc__button-label">{{ section.settings.button_label }}</span>
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+  </div>
+
+  {%- comment -%} Right: product image {%- endcomment -%}
+  <div class="ldc__image-wrap" data-reveal-item style="--reveal-delay: 120ms">
+    {%- if section.settings.product_image != blank -%}
+      {{-
+        section.settings.product_image
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          sizes: '(max-width: 899px) 100vw, 50vw',
+          widths: '600,900,1200',
+          alt: section.settings.product_image.alt
+      -}}
+    {%- endif -%}
+  </div>
+  </div><!-- /.ldc__inner -->
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Dark CTA",
+  "class": "shopify-section--listicle-dark-cta",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Zacznij budzić się ze skórą, na którą <em>tyle wieczorów</em> pracowałaś</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Sześć mechanizmów. Jedna maska. Twoja pielęgnacja przestaje tracić 8 godzin na poszewkę i zaczyna je wygrywać.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_title",
+      "label": "Title",
+      "default": "Jedwab nie wchłania kosmetyków"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_desc",
+      "label": "Description",
+      "default": "Krem, retinol, serum zostają na twarzy przez całą noc. Nie na poszewce."
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_title",
+      "label": "Title",
+      "default": "Pełny blackout, pełna regeneracja"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_desc",
+      "label": "Description",
+      "default": "Mózg dostaje sygnał ciemności. Melatonina, kolagen, naprawa komórkowa. W końcu bez przeszkód."
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_title",
+      "label": "Title",
+      "default": "Rzep premium, zero kompromisów"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_desc",
+      "label": "Description",
+      "default": "Nie zaczepia o włosy. Nie uciska skroni. Trzyma się przez całą noc, nawet śpiąc na boku."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Sprawdź dostępność"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#232e71"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_h_desktop",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Dark CTA"
+    }
+  ]
+}
+{% endschema %}
