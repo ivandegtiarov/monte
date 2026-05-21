@@ -1,0 +1,182 @@
+<style>
+  #shopify-section-{{ section.id }} .lc-editorial {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: {{ section.settings.padding_top_desktop }}px 40px {{ section.settings.padding_bottom_desktop }}px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .lc-editorial__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-editorial__block {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-editorial__block p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-editorial__block--light {
+    font-weight: 400;
+    color: rgba(24, 33, 83, 0.75);
+  }
+
+  #shopify-section-{{ section.id }} .lc-editorial__block--bold {
+    font-weight: 600;
+    color: #182153;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .lc-editorial {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-inline: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-editorial__block {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<div class="lc-editorial">
+  <div class="lc-editorial__inner">
+    {%- for block in section.blocks -%}
+      {%- if block.settings.content != blank -%}
+        <div
+          class="lc-editorial__block lc-editorial__block--{{ block.settings.style | default: 'light' }}"
+          {{ block.shopify_attributes }}
+        >
+          {{- block.settings.content -}}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Editorial",
+  "class": "shopify-section--listicle-editorial",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            { "value": "light", "label": "Light (subdued)" },
+            { "value": "bold",  "label": "Bold (dark)" }
+          ],
+          "default": "light"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Editorial",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "style": "light",
+            "content": "<p>Jeśli wieczorna rutyna kosztuje cię ponad 200 zł miesięcznie i rano wciąż widzisz suchą skórę i załamy pod oczami, nie jesteś sama.</p><p>Może myślałaś, że to kwestia produktów. Zmieniłaś retinol na droższy, doczytałaś składy, dokupiłaś kwas hialuronowy do wieczornej rutyny.</p><p>I efekty?</p><p>Lepsze. Na chwilę.</p><p>Rano: ta sama sucha skóra, te same załamy, twarz, która nie wygląda na w pełni zregenerowaną.</p><p>Ani dyscyplina, ani jakość produktów nie są problemem. Chodzi o 8 godzin, które dzieją się po twojej rutynie, i o to, co z twoją pielęgnacją robi twoja poduszka.</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "style": "bold",
+            "content": "<p>Co by się zmieniło, gdyby to, co nakładasz wieczorem, zostało na twojej twarzy przez całą noc, a nie na poszewce?</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "style": "light",
+            "content": "<p>700+ kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin.</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "style": "bold",
+            "content": "<p>Oto 6 powodów, dla których nie wyobrażają sobie snu bez jedwabnej maski Monté.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
