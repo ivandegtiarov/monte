@@ -236,8 +236,8 @@
             "testimonial_text": "",
             "testimonial_reviewer": "",
             "testimonial_verified": true,
-            "button_label": "",
-            "button_url": ""
+            "button_label": "Sprawdź dostępność",
+            "button_url": "shopify://products/midnight-blue-silk-sleep-mask"
           }
         },
         "item_cta": {
