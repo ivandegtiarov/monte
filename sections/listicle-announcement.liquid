@@ -11,6 +11,17 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    text-decoration: none;
+    transition: filter 0.2s;
+  }
+
+  a#shopify-section-{{ section.id }} .lc-ann,
+  #shopify-section-{{ section.id }} a.lc-ann {
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} a.lc-ann:hover {
+    filter: brightness(1.1);
   }
 
   #shopify-section-{{ section.id }} .lc-ann__inner {
@@ -123,7 +134,12 @@
   }
 </style>
 
-<div class="lc-ann">
+{%- assign ann_url = section.settings.link_url -%}
+{%- if ann_url != blank -%}
+  <a class="lc-ann" href="{{ ann_url }}" aria-label="{{ section.settings.label | escape }}">
+{%- else -%}
+  <div class="lc-ann">
+{%- endif -%}
   <div class="lc-ann__inner">
     <div class="lc-ann__text-group">
       {%- if section.settings.label != blank -%}
@@ -140,7 +156,11 @@
       <span class="lc-ann__pill" id="lc-ann-s-{{ section.id }}">--s</span>
     </div>
   </div>
-</div>
+{%- if ann_url != blank -%}
+  </a>
+{%- else -%}
+  </div>
+{%- endif -%}
 
 <script>
 (function () {
@@ -291,6 +311,16 @@
       "id": "offer_text",
       "label": "Offer text",
       "default": "Kup 1 maskę, drugą otrzymasz 30% taniej"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "URL posylki",
+      "info": "Klik na będzkolwiek w banerze przejdzie do tego adresu. Zostaw puste, żeby wyłączyć."
     },
     {
       "type": "header",
