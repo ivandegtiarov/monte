@@ -22,7 +22,7 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
   }
 
@@ -223,9 +223,13 @@
   /* ── Mobile ── */
   @media screen and (max-width: 899px) {
     #shopify-section-{{ section.id }} .lc-hero__inner {
-      flex-direction: column-reverse;
-      padding: 32px 20px 40px;
+      flex-direction: column;
+      padding: 20px 20px 40px;
       gap: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-hero__content {
+      gap: 12px;
     }
 
     #shopify-section-{{ section.id }} .lc-hero__title {
