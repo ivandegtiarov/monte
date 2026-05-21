@@ -72,6 +72,20 @@
             "style": "light"
           }
         },
+        "text_Q9yGjD": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Może myślałaś, że to kwestia produktów. Zmieniłaś retinol na droższy, doczytałaś składy, dokupiłaś kwas hialuronowy do wieczornej rutyny.</p>",
+            "style": "light"
+          }
+        },
+        "text_GkxG33": {
+          "type": "text",
+          "settings": {
+            "content": "<p>I efekty?</p>",
+            "style": "light"
+          }
+        },
         "text_2": {
           "type": "text",
           "settings": {
@@ -96,6 +110,8 @@
       },
       "block_order": [
         "text_1",
+        "text_Q9yGjD",
+        "text_GkxG33",
         "text_2",
         "text_3",
         "text_4"
