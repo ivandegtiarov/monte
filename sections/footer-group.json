@@ -50,19 +50,6 @@
         "body_color": "#182153"
       }
     },
-    "custom_html_wzXYTa": {
-      "type": "custom-html",
-      "name": "Custom HTML",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "html": "<div class=\"klaviyo-form-XsGu2h\"></div>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -183,7 +170,6 @@
   },
   "order": [
     "trust_bar",
-    "custom_html_wzXYTa",
     "footer",
     "monte_footer"
   ]
