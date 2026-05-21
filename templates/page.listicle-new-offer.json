@@ -25,6 +25,21 @@
         "text_color": "#f8f1e9"
       }
     },
+    "listicle_hero": {
+      "type": "listicle-hero",
+      "settings": {
+        "rating": "4.8/5",
+        "social_proof_text": "Zaufało nam ponad 700+ osób",
+        "title": "<p><em>6 Powodów</em>, Dla Których Kobiety z Dobrą Rutyną Noszą Jedwabną Maskę do Spania</p>",
+        "subtitle": "<p>(Twój krem pod oczy za 200 zł pracuje na połowę wartości.<br>Oto dlaczego, i jak to zmienić dziś wieczorem.)</p>",
+        "body": "Twoja rutyna jest przemyślana. Wiesz, co robi każdy krok, co znaczą składniki na etykiecie i dlaczego tania alternatywa po prostu nie ma sensu. A rano wciąż widzisz to samo.",
+        "button_label": "Sprawdź dostępność",
+        "button_color": "#232e71",
+        "feature_1": "30-nocna gwarancja zwrotu",
+        "feature_2": "Wysyłka tego samego dnia",
+        "feature_3": "Dostawa InPost"
+      }
+    },
     "listicle_intro": {
       "type": "listicle-intro",
       "settings": {
@@ -160,6 +175,7 @@
   "order": [
     "listicle_header",
     "listicle_announcement",
+    "listicle_hero",
     "listicle_intro",
     "listicle_items",
     "listicle_product_cta",
