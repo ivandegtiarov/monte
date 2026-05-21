@@ -243,6 +243,24 @@
         "arch_height_mobile": 28
       }
     },
+    "listicle_dark_cta": {
+      "type": "listicle-dark-cta",
+      "settings": {
+        "title": "<p>Zacznij budzić się ze skórą, na którą <em>tyle wieczorów</em> pracowałaś</p>",
+        "subtitle": "<p>Sześć mechanizmów. Jedna maska. Twoja pielęgnacja przestaje tracić 8 godzin na poszewkę i zaczyna je wygrywać.</p>",
+        "feature_1_title": "Jedwab nie wchłania kosmetyków",
+        "feature_1_desc": "Krem, retinol, serum zostają na twarzy przez całą noc. Nie na poszewce.",
+        "feature_2_title": "Pełny blackout, pełna regeneracja",
+        "feature_2_desc": "Mózg dostaje sygnał ciemności. Melatonina, kolagen, naprawa komórkowa. W końcu bez przeszkód.",
+        "feature_3_title": "Rzep premium, zero kompromisów",
+        "feature_3_desc": "Nie zaczepia o włosy. Nie uciska skroni. Trzyma się przez całą noc, nawet śpiąc na boku.",
+        "button_label": "Sprawdź dostępność",
+        "background_color": "#232e71",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 80,
+        "padding_h_desktop": 80
+      }
+    },
     "listicle_product_cta": {
       "type": "listicle-product-cta",
       "settings": {
@@ -275,6 +293,7 @@
     "listicle_items",
     "listicle_reviews",
     "listicle_divider",
+    "listicle_dark_cta",
     "listicle_product_cta",
     "listicle_footer"
   ]
