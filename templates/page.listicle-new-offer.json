@@ -322,7 +322,10 @@
         "review_4"
       ],
       "settings": {
-        "rating": "4.8/5",
+        "avatar_1": "shopify://shop_images/UGC_2.png",
+        "avatar_2": "shopify://shop_images/UGC_3.png",
+        "avatar_3": "shopify://shop_images/UGC_5.png",
+        "rating": "Oceniono 4.8/5",
         "social_proof_text": "Zaufało nam ponad 700+ osób",
         "title": "<p>Po co tracić kolejną noc, w której twoje kosmetyki <em>pracują na połowę wartości?</em></p>",
         "subtitle": "<p>Ponad 700 kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin. To jeden krok wieczorem.</p>",
