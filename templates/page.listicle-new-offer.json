@@ -262,23 +262,6 @@
             "button_label": "Sprawdź dostępność",
             "button_url": ""
           }
-        },
-        "item_testimonial": {
-          "type": "item",
-          "settings": {
-            "image_position": "start",
-            "title": "<p>Co mówią klientki</p>",
-            "subtitle": "",
-            "body": "<p>Social proof.</p>",
-            "fact_label": "FAKT",
-            "fact_content": "",
-            "closing_text": "",
-            "testimonial_text": "Opinia klientki.",
-            "testimonial_reviewer": "Imię K.",
-            "testimonial_verified": true,
-            "button_label": "Sprawdź dostępność",
-            "button_url": ""
-          }
         }
       },
       "block_order": [
@@ -287,8 +270,7 @@
         "item_3",
         "item_4",
         "item_5",
-        "item_cta",
-        "item_testimonial"
+        "item_cta"
       ],
       "settings": {
         "padding_top_desktop": 0,
