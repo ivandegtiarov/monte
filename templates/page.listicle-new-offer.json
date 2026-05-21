@@ -191,6 +191,7 @@
         "item_3": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-3.jpg",
             "image_position": "start",
             "title": "<p>Pełna ciemność uruchamia regenerację skóry, której żaden krem nie zastąpi</p>",
             "subtitle": "<p>(Twoja sypialnia jest jaśniejsza niż myślisz. I to blokuje efekty twojej rutyny)</p>",
