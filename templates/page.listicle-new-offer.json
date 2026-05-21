@@ -234,6 +234,15 @@
         "padding_bottom_desktop": 80
       }
     },
+    "listicle_divider": {
+      "type": "listicle-divider",
+      "settings": {
+        "background_color": "#f8f1e9",
+        "arch_color": "#232e71",
+        "arch_height": 20,
+        "arch_height_mobile": 28
+      }
+    },
     "listicle_product_cta": {
       "type": "listicle-product-cta",
       "settings": {
@@ -265,6 +274,7 @@
     "listicle_intro",
     "listicle_items",
     "listicle_reviews",
+    "listicle_divider",
     "listicle_product_cta",
     "listicle_footer"
   ]
