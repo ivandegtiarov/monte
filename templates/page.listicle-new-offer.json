@@ -390,6 +390,47 @@
         "payment_logo_3": "shopify://shop_images/Przelewy24.svg",
         "payment_logo_4": "shopify://shop_images/Blik_1.svg"
       }
+    },
+    "marquee_bar_8Fycb7": {
+      "type": "marquee-bar",
+      "blocks": {
+        "item_6CwVrK": {
+          "type": "item",
+          "settings": {
+            "text": "Dostawa w 1–2 dni robocze"
+          }
+        },
+        "item_Nxcd77": {
+          "type": "item",
+          "settings": {
+            "text": "Wysyłka tego samego dnia"
+          }
+        },
+        "item_7Yfb4M": {
+          "type": "item",
+          "settings": {
+            "text": "Darmowa dostawa od 250 zł"
+          }
+        },
+        "item_egqmAb": {
+          "type": "item",
+          "settings": {
+            "text": "30-nocna gwarancja zwrotu pieniędzy"
+          }
+        }
+      },
+      "block_order": [
+        "item_6CwVrK",
+        "item_Nxcd77",
+        "item_7Yfb4M",
+        "item_egqmAb"
+      ],
+      "settings": {
+        "background_color": "#232e71",
+        "text_color": "#f8f1e9",
+        "speed": 24,
+        "pause_on_hover": true
+      }
     }
   },
   "order": [
@@ -402,6 +443,7 @@
     "listicle_reviews",
     "listicle_divider",
     "listicle_dark_cta",
+    "marquee_bar_8Fycb7",
     "listicle_footer"
   ]
 }
