@@ -172,6 +172,7 @@
         "item_2": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Hero_image.jpg",
             "image_position": "start",
             "title": "<p>Zmarszczki snu przestają się tworzyć. To jedyny rodzaj zmarszczek, który możesz zatrzymać.</p>",
             "subtitle": "<p>(Dermatolodzy mają na nie osobną nazwę. Powstają z tarcia, nie z upływu czasu)</p>",
