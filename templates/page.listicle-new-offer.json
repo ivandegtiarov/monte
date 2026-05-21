@@ -153,6 +153,7 @@
         "item_1": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-2.jpg",
             "image_position": "start",
             "title": "<p>Twoje kosmetyki zostają na twarzy. Przez całą noc.</p>",
             "subtitle": "<p>(Bawełna wchłania to, co nakładasz. Jedwab nie)</p>",
