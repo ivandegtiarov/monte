@@ -1,0 +1,192 @@
+<style>
+  #shopify-section-{{ section.id }} .lc-ann {
+    background: {{ section.settings.background_color | default: '#232e71' }};
+    padding-block: 8px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding-inline: 48px;
+    min-height: 27px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__label {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.text_color | default: '#f8f1e9' }};
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__text {
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.text_color | default: '#f8f1e9' }};
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__timer {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-ann__pill {
+    background: #fdfbf9;
+    color: #182153;
+    height: 24px;
+    min-width: 38px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'PP Neue Montreal Mono', 'SF Mono', 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    /* prevent layout shift as digits change */
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .lc-ann__inner {
+      padding-inline: 16px;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #shopify-section-{{ section.id }} .lc-ann__label {
+      font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-ann__text {
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="lc-ann">
+  <div class="lc-ann__inner">
+    {%- if section.settings.label != blank -%}
+      <p class="lc-ann__label">{{ section.settings.label | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.offer_text != blank -%}
+      <p class="lc-ann__text">{{ section.settings.offer_text | escape }}</p>
+    {%- endif -%}
+
+    <div class="lc-ann__timer" aria-live="polite" aria-label="Odliczanie do końca oferty">
+      <span class="lc-ann__pill" id="lc-ann-h-{{ section.id }}">--g</span>
+      <span class="lc-ann__pill" id="lc-ann-m-{{ section.id }}">--m</span>
+      <span class="lc-ann__pill" id="lc-ann-s-{{ section.id }}">--s</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var hEl = document.getElementById('lc-ann-h-{{ section.id }}');
+  var mEl = document.getElementById('lc-ann-m-{{ section.id }}');
+  var sEl = document.getElementById('lc-ann-s-{{ section.id }}');
+
+  if (!hEl || !mEl || !sEl) return;
+
+  function pad(n) {
+    return n < 10 ? '0' + n : '' + n;
+  }
+
+  /* Returns seconds remaining until local midnight.
+     Naturally persists through page refresh — always
+     derived from wall-clock time, never from a stored counter. */
+  function secondsUntilMidnight() {
+    var now = new Date();
+    var midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);          // next midnight (local)
+    return Math.max(0, Math.floor((midnight - now) / 1000));
+  }
+
+  function render(total) {
+    var h = Math.floor(total / 3600);
+    var m = Math.floor((total % 3600) / 60);
+    var s = total % 60;
+    hEl.textContent = pad(h) + 'g';
+    mEl.textContent = pad(m) + 'm';
+    sEl.textContent = pad(s) + 's';
+  }
+
+  function tick() {
+    var remaining = secondsUntilMidnight();
+    render(remaining);
+
+    /* Schedule next tick precisely on the next whole second
+       so the display stays in sync with wall-clock time
+       even after the tab was backgrounded / throttled. */
+    var delay = 1000 - (Date.now() % 1000);
+    setTimeout(tick, delay);
+  }
+
+  tick();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Listicle – Announcement",
+  "class": "shopify-section--listicle-announcement",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Oferta specjalna:"
+    },
+    {
+      "type": "text",
+      "id": "offer_text",
+      "label": "Offer text",
+      "default": "Kup 1 maskę, drugą otrzymasz 30% taniej"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#232e71"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#f8f1e9"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Announcement"
+    }
+  ]
+}
+{% endschema %}

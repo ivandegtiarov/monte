@@ -16,6 +16,15 @@
         "background_color": "#fdfbf9"
       }
     },
+    "listicle_announcement": {
+      "type": "listicle-announcement",
+      "settings": {
+        "label": "Oferta specjalna:",
+        "offer_text": "Kup 1 maskę, drugą otrzymasz 30% taniej",
+        "background_color": "#232e71",
+        "text_color": "#f8f1e9"
+      }
+    },
     "listicle_intro": {
       "type": "listicle-intro",
       "settings": {
@@ -150,6 +159,7 @@
   },
   "order": [
     "listicle_header",
+    "listicle_announcement",
     "listicle_intro",
     "listicle_items",
     "listicle_product_cta",
