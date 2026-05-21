@@ -225,6 +225,7 @@
         "item_5": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Navy_Product_Image_3.jpg",
             "image_position": "start",
             "title": "<p>Co sprawia, że Monté działa tam, gdzie zwykła maska zawodzi</p>",
             "subtitle": "<p>(Tanie maski do spania są z poliestru lub nylonu)</p>",
