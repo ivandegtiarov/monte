@@ -12,14 +12,23 @@
     "listicle_header": {
       "type": "listicle-header",
       "settings": {
+        "logo_max_width": 120,
+        "logo_mobile_max_width": 80,
         "button_label": "Sprawdź dostępność",
-        "background_color": "#fdfbf9"
+        "button_url": "",
+        "background_color": "#fdfbf9",
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
       }
     },
     "listicle_sticky_cta": {
       "type": "listicle-sticky-cta",
       "settings": {
         "button_label": "Sprawdź dostępność",
+        "button_url": "",
+        "side_text": "",
         "background_color": "#232e71"
       }
     },
@@ -41,6 +50,7 @@
         "subtitle": "<p>(Twój krem pod oczy za 200 zł pracuje na połowę wartości.<br>Oto dlaczego, i jak to zmienić dziś wieczorem.)</p>",
         "body": "Twoja rutyna jest przemyślana. Wiesz, co robi każdy krok, co znaczą składniki na etykiecie i dlaczego tania alternatywa po prostu nie ma sensu. A rano wciąż widzisz to samo.",
         "button_label": "Sprawdź dostępność",
+        "button_url": "",
         "button_color": "#232e71",
         "feature_1": "30-nocna gwarancja zwrotu",
         "feature_2": "Wysyłka tego samego dnia",
@@ -53,36 +63,43 @@
         "text_1": {
           "type": "text",
           "settings": {
-            "style": "light",
-            "content": "<p>Jeśli wieczorna rutyna kosztuje cię ponad 200 zł miesięcznie i rano wciąż widzisz suchą skórę i załamy pod oczami, nie jesteś sama.</p><p>Może myślałaś, że to kwestia produktów. Zmieniłaś retinol na droższy, doczytałaś składy, dokupiłaś kwas hialuronowy do wieczornej rutyny.</p><p>I efekty?</p><p>Lepsze. Na chwilę.</p><p>Rano: ta sama sucha skóra, te same załamy, twarz, która nie wygląda na w pełni zregenerowaną.</p><p>Ani dyscyplina, ani jakość produktów nie są problemem. Chodzi o 8 godzin, które dzieją się po twojej rutynie, i o to, co z twoją pielęgnacją robi twoja poduszka.</p>"
+            "content": "<p>Jeśli wieczorna rutyna kosztuje cię ponad 200 zł miesięcznie i rano wciąż widzisz suchą skórę i załamy pod oczami, nie jesteś sama.</p><p>Może myślałaś, że to kwestia produktów. Zmieniłaś retinol na droższy, doczytałaś składy, dokupiłaś kwas hialuronowy do wieczornej rutyny.</p><p>I efekty?</p><p>Lepsze. Na chwilę.</p><p>Rano: ta sama sucha skóra, te same załamy, twarz, która nie wygląda na w pełni zregenerowaną.</p><p>Ani dyscyplina, ani jakość produktów nie są problemem. Chodzi o 8 godzin, które dzieją się po twojej rutynie, i o to, co z twoją pielęgnacją robi twoja poduszka.</p>",
+            "style": "light"
           }
         },
         "text_2": {
           "type": "text",
           "settings": {
-            "style": "bold",
-            "content": "<p>Co by się zmieniło, gdyby to, co nakładasz wieczorem, zostało na twojej twarzy przez całą noc, a nie na poszewce?</p>"
+            "content": "<p>Co by się zmieniło, gdyby to, co nakładasz wieczorem, zostało na twojej twarzy przez całą noc, a nie na poszewce?</p>",
+            "style": "bold"
           }
         },
         "text_3": {
           "type": "text",
           "settings": {
-            "style": "light",
-            "content": "<p>700+ kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin.</p>"
+            "content": "<p>700+ kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin.</p>",
+            "style": "light"
           }
         },
         "text_4": {
           "type": "text",
           "settings": {
-            "style": "bold",
-            "content": "<p>Oto 6 powodów, dla których nie wyobrażają sobie snu bez jedwabnej maski Monté.</p>"
+            "content": "<p>Oto 6 powodów, dla których nie wyobrażają sobie snu bez jedwabnej maski Monté.</p>",
+            "style": "bold"
           }
         }
       },
-      "block_order": ["text_1", "text_2", "text_3", "text_4"],
+      "block_order": [
+        "text_1",
+        "text_2",
+        "text_3",
+        "text_4"
+      ],
       "settings": {
         "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "listicle_intro": {
@@ -95,9 +112,13 @@
         "body_content": "<p>Treść intro.</p>",
         "body_conclusion": "<p>Podsumowanie intro.</p>",
         "content_width": "1100px",
+        "background": "",
         "background_gradient": "linear-gradient(to bottom, #f8f1e9, #ffffff)",
+        "text_color": "",
         "padding_top_desktop": 64,
-        "padding_bottom_desktop": 40
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 32
       }
     },
     "listicle_items": {
@@ -108,10 +129,16 @@
           "settings": {
             "image_position": "start",
             "title": "<p>Punkt 1</p>",
+            "subtitle": "",
             "body": "<p>Treść punktu 1.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Fakt do punktu 1.</p>",
-            "closing_text": "<p>Podsumowanie punktu 1.</p>"
+            "closing_text": "<p>Podsumowanie punktu 1.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_2": {
@@ -119,10 +146,16 @@
           "settings": {
             "image_position": "start",
             "title": "<p>Punkt 2</p>",
+            "subtitle": "",
             "body": "<p>Treść punktu 2.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Fakt do punktu 2.</p>",
-            "closing_text": "<p>Podsumowanie punktu 2.</p>"
+            "closing_text": "<p>Podsumowanie punktu 2.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_3": {
@@ -130,10 +163,16 @@
           "settings": {
             "image_position": "start",
             "title": "<p>Punkt 3</p>",
+            "subtitle": "",
             "body": "<p>Treść punktu 3.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Fakt do punktu 3.</p>",
-            "closing_text": "<p>Podsumowanie punktu 3.</p>"
+            "closing_text": "<p>Podsumowanie punktu 3.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_4": {
@@ -141,10 +180,16 @@
           "settings": {
             "image_position": "start",
             "title": "<p>Punkt 4</p>",
+            "subtitle": "",
             "body": "<p>Treść punktu 4.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Fakt do punktu 4.</p>",
-            "closing_text": "<p>Podsumowanie punktu 4.</p>"
+            "closing_text": "<p>Podsumowanie punktu 4.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_5": {
@@ -152,10 +197,16 @@
           "settings": {
             "image_position": "start",
             "title": "<p>Punkt 5</p>",
+            "subtitle": "",
             "body": "<p>Treść punktu 5.</p>",
             "fact_label": "FAKT",
             "fact_content": "<p>Fakt do punktu 5.</p>",
-            "closing_text": "<p>Podsumowanie punktu 5.</p>"
+            "closing_text": "<p>Podsumowanie punktu 5.</p>",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_cta": {
@@ -163,8 +214,16 @@
           "settings": {
             "image_position": "start",
             "title": "<p>Produkt</p>",
+            "subtitle": "",
             "body": "<p>Opis produktu.</p>",
-            "button_label": "Sprawdź dostępność"
+            "fact_label": "FAKT",
+            "fact_content": "",
+            "closing_text": "",
+            "testimonial_text": "",
+            "testimonial_reviewer": "",
+            "testimonial_verified": true,
+            "button_label": "Sprawdź dostępność",
+            "button_url": ""
           }
         },
         "item_testimonial": {
@@ -172,11 +231,16 @@
           "settings": {
             "image_position": "start",
             "title": "<p>Co mówią klientki</p>",
+            "subtitle": "",
             "body": "<p>Social proof.</p>",
+            "fact_label": "FAKT",
+            "fact_content": "",
+            "closing_text": "",
             "testimonial_text": "Opinia klientki.",
             "testimonial_reviewer": "Imię K.",
             "testimonial_verified": true,
-            "button_label": "Sprawdź dostępność"
+            "button_label": "Sprawdź dostępność",
+            "button_url": ""
           }
         }
       },
@@ -191,7 +255,9 @@
       ],
       "settings": {
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 60
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 48
       }
     },
     "listicle_reviews": {
@@ -230,7 +296,12 @@
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3", "review_4"],
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4"
+      ],
       "settings": {
         "rating": "4.8/5",
         "social_proof_text": "Zaufało nam ponad 700+ osób",
@@ -238,7 +309,9 @@
         "subtitle": "<p>Ponad 700 kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin. To jeden krok wieczorem.</p>",
         "verified_label": "Zweryfikowany zakup",
         "padding_top_desktop": 40,
-        "padding_bottom_desktop": 80
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 60
       }
     },
     "listicle_divider": {
@@ -262,32 +335,47 @@
         "feature_3_title": "Rzep premium, zero kompromisów",
         "feature_3_desc": "Nie zaczepia o włosy. Nie uciska skroni. Trzyma się przez całą noc, nawet śpiąc na boku.",
         "button_label": "Sprawdź dostępność",
+        "button_url": "",
         "background_color": "#232e71",
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 80,
-        "padding_h_desktop": 80
+        "padding_h_desktop": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 60
       }
     },
     "listicle_product_cta": {
       "type": "listicle-product-cta",
       "settings": {
         "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
+        "title": "<p>Twój krem zasługuje<br>na uczciwą noc</p>",
+        "body": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>",
         "feature_1_title": "100% Jedwab morwowy",
         "feature_1_desc": "Nie wchłania kosmetyków. Krem zostaje tam, gdzie go nałożyłaś.",
         "feature_2_title": "Pełny blackout",
         "feature_2_desc": "100% ciemności przez całą noc. Melatonina, regeneracja, wyniki.",
         "feature_3_title": "Rzep premium regulowany",
         "feature_3_desc": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc.",
-        "button_label": "Sprawdź dostępność"
+        "button_label": "Sprawdź dostępność",
+        "button_url": "",
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
       }
     },
     "listicle_footer": {
       "type": "listicle-footer",
       "settings": {
         "link_1_label": "Polityka prywatności",
+        "link_1_url": "",
         "link_2_label": "Regulamin sklepu",
+        "link_2_url": "",
         "link_3_label": "Polityka wysyłki",
-        "link_4_label": "Polityka zwrotów"
+        "link_3_url": "",
+        "link_4_label": "Polityka zwrotów",
+        "link_4_url": "",
+        "copyright_text": ""
       }
     }
   },
