@@ -16,6 +16,11 @@
     min-height: 27px;
   }
 
+  /* Desktop: text-group displays inline (siblings with timer in the row) */
+  #shopify-section-{{ section.id }} .lc-ann__text-group {
+    display: contents;
+  }
+
   #shopify-section-{{ section.id }} .lc-ann__label {
     font-family: var(--text-font-family);
     font-size: 18px;
@@ -64,33 +69,64 @@
   }
 
   @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .lc-ann {
+      padding-block: 10px;
+    }
+
+    /* Two-column row: text-group left, timer right */
     #shopify-section-{{ section.id }} .lc-ann__inner {
       padding-inline: 16px;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Override display:contents — become a real flex column on mobile */
+    #shopify-section-{{ section.id }} .lc-ann__text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1 0 0;
+      min-width: 0;
     }
 
     #shopify-section-{{ section.id }} .lc-ann__label {
       font-size: 14px;
+      font-weight: 600;
+      white-space: normal;
     }
 
     #shopify-section-{{ section.id }} .lc-ann__text {
-      font-size: 13px;
-      text-align: center;
+      font-size: 12px;
+      font-weight: 375;
+      text-align: left;
+      white-space: normal;
+    }
+
+    /* Timer stays in a compact row on the right */
+    #shopify-section-{{ section.id }} .lc-ann__timer {
+      flex-shrink: 0;
+    }
+
+    /* Slightly smaller pills on mobile */
+    #shopify-section-{{ section.id }} .lc-ann__pill {
+      font-size: 10px;
+      min-width: unset;
     }
   }
 </style>
 
 <div class="lc-ann">
   <div class="lc-ann__inner">
-    {%- if section.settings.label != blank -%}
-      <p class="lc-ann__label">{{ section.settings.label | escape }}</p>
-    {%- endif -%}
-
-    {%- if section.settings.offer_text != blank -%}
-      <p class="lc-ann__text">{{ section.settings.offer_text | escape }}</p>
-    {%- endif -%}
+    <div class="lc-ann__text-group">
+      {%- if section.settings.label != blank -%}
+        <p class="lc-ann__label">{{ section.settings.label | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.offer_text != blank -%}
+        <p class="lc-ann__text">{{ section.settings.offer_text | escape }}</p>
+      {%- endif -%}
+    </div>
 
     <div class="lc-ann__timer" aria-live="polite" aria-label="Odliczanie do końca oferty">
       <span class="lc-ann__pill" id="lc-ann-h-{{ section.id }}">--g</span>
