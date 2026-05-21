@@ -248,10 +248,11 @@
         "item_cta": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-6.jpg",
             "image_position": "start",
-            "title": "<p>Produkt</p>",
-            "subtitle": "",
-            "body": "<p>Opis produktu.</p>",
+            "title": "<p>Kobiety, które śpią z Monté, nie wyobrażają sobie powrotu do bawełny</p>",
+            "subtitle": "<p>(Ponad 700 kobiet. Jedna zmiana, która naprawiła to, czego nowe produkty nie naprawiły)</p>",
+            "body": "<p>Przez lata ich rutyna miała bogaty początek i gwałtowne urwanie się.<br/><br/>Oczyszczanie, tonik, serum, krem pod oczy. I sen na bawełnianej poszewce, która przez całą noc pracowała przeciwko temu, co nałożyły.<br/><br/>Jedna zmiana to naprawiła.<br/><br/>94% oceniło blackout jako całkowity. 91% potwierdziło, że maska nie zsunęła się ani razu przez całą noc. 89% obudziło się bardziej wypoczętych już w pierwszym tygodniu.<br/><br/>Pielęgnacja zaczęła pracować przez całe 8 godzin, bo przestała tracić je na bawełnianą poszewkę.</p>",
             "fact_label": "FAKT",
             "fact_content": "",
             "closing_text": "",
