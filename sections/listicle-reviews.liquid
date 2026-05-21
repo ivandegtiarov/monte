@@ -260,7 +260,7 @@
 <div class="lc-reviews">
 
   {%- comment -%} ── HEADER ── {%- endcomment -%}
-  <div class="lc-reviews__header">
+  <div class="lc-reviews__header" data-reveal-item>
 
     {%- liquid
       assign has_avatars = false
@@ -326,7 +326,8 @@
   {%- if section.blocks.size > 0 -%}
     <div class="lc-reviews__grid">
       {%- for block in section.blocks -%}
-        <div class="lc-reviews__card" {{ block.shopify_attributes }}>
+        {%- assign card_delay = forloop.index0 | times: 80 -%}
+        <div class="lc-reviews__card" data-reveal-item style="--reveal-delay: {{ card_delay }}ms" {{ block.shopify_attributes }}>
           <div class="lc-reviews__card-inner">
 
             {%- if block.settings.image != blank -%}

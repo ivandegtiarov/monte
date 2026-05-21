@@ -12,6 +12,7 @@
 
     #shopify-section-{{ section.id }} .listicle-pcta__social-text {
       white-space: normal;
+      font-size: 12px;
     }
   }
 
@@ -19,6 +20,11 @@
     background: linear-gradient(to bottom, #ffffff, #f8f1e9);
     padding-block: var(--padding-top) var(--padding-bottom);
     padding-inline: 80px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-pcta__inner {
+    max-width: 1280px;
+    margin-inline: auto;
     display: flex;
     gap: 40px;
     align-items: center;
@@ -26,10 +32,11 @@
 
   /* Image column */
   #shopify-section-{{ section.id }} .listicle-pcta__image-col {
-    flex: 1 0 0;
+    flex: 1 1 auto;
     min-width: 0;
+    max-width: 640px;
     height: 640px;
-    border-radius: 32px;
+    border-radius: 24px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -218,14 +225,20 @@
   /* Mobile */
   @media screen and (max-width: 899px) {
     #shopify-section-{{ section.id }} .listicle-pcta {
-      flex-direction: column;
       padding-inline: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-pcta__inner {
+      flex-direction: column;
       gap: 32px;
     }
 
     #shopify-section-{{ section.id }} .listicle-pcta__image-col {
+      flex: none;
       width: 100%;
-      height: 360px;
+      max-width: 100%;
+      aspect-ratio: 1;
+      height: auto;
     }
 
     #shopify-section-{{ section.id }} .listicle-pcta__content-col {
@@ -241,127 +254,240 @@
       font-size: 16px;
     }
   }
+
+  /* Sticky CTA — mobile only */
+  .listicle-sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: #ffffff;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .listicle-sticky-cta.is-visible {
+    transform: translateY(0);
+  }
+
+  @media screen and (max-width: 899px) {
+    .listicle-sticky-cta {
+      display: block;
+    }
+  }
+
+  .listicle-sticky-cta__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #232e71;
+    color: #fdfbf9;
+    height: 44px;
+    border-radius: 999px;
+    width: 100%;
+    font-family: var(--text-font-family);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .listicle-sticky-cta__button:hover {
+    opacity: 0.9;
+  }
 </style>
 
 <div class="listicle-pcta">
+  <div class="listicle-pcta__inner">
 
-  {%- if section.settings.image != blank -%}
-    <div class="listicle-pcta__image-col">
-      {{-
-        section.settings.image
-        | image_url: width: section.settings.image.width
-        | image_tag:
-          class: 'listicle-pcta__image',
-          loading: 'lazy',
-          sizes: '(max-width: 899px) 100vw, 640px',
-          widths: '400,600,800,1000,1280',
-          alt: section.settings.image.alt | escape
-      -}}
-    </div>
-  {%- elsif section.settings.image == blank -%}
-    <div class="listicle-pcta__image-col">
-      <div class="listicle-pcta__image-placeholder">
-        {{ 'image' | placeholder_svg_tag }}
+    {%- if section.settings.image != blank -%}
+      <div class="listicle-pcta__image-col" data-reveal-item>
+        {{-
+          section.settings.image
+          | image_url: width: section.settings.image.width
+          | image_tag:
+            class: 'listicle-pcta__image',
+            loading: 'lazy',
+            sizes: '(max-width: 899px) 100vw, 640px',
+            widths: '400,600,800,1000,1280',
+            alt: section.settings.image.alt | escape
+        -}}
       </div>
-    </div>
-  {%- endif -%}
+    {%- elsif section.settings.image == blank -%}
+      <div class="listicle-pcta__image-col">
+        <div class="listicle-pcta__image-placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      </div>
+    {%- endif -%}
 
-  <div class="listicle-pcta__content-col">
+    <div class="listicle-pcta__content-col">
 
-    <div class="listicle-pcta__header">
+      <div class="listicle-pcta__header" data-reveal-item style="--reveal-delay: 100ms">
 
-      {%- if section.settings.social_proof_text != blank
-        or section.settings.social_proof_image_1 != blank
-        or section.settings.social_proof_image_2 != blank
-        or section.settings.social_proof_image_3 != blank -%}
-        <div class="listicle-pcta__social-proof">
-          {%- if section.settings.social_proof_image_1 != blank
-            or section.settings.social_proof_image_2 != blank
-            or section.settings.social_proof_image_3 != blank -%}
-            <div class="listicle-pcta__avatars">
-              {%- if section.settings.social_proof_image_1 != blank -%}
-                <div class="listicle-pcta__avatar">
-                  {{- section.settings.social_proof_image_1 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
-                </div>
-              {%- endif -%}
-              {%- if section.settings.social_proof_image_2 != blank -%}
-                <div class="listicle-pcta__avatar">
-                  {{- section.settings.social_proof_image_2 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
-                </div>
-              {%- endif -%}
-              {%- if section.settings.social_proof_image_3 != blank -%}
-                <div class="listicle-pcta__avatar">
-                  {{- section.settings.social_proof_image_3 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
-                </div>
-              {%- endif -%}
-            </div>
+        {%- if section.settings.social_proof_text != blank
+          or section.settings.social_proof_image_1 != blank
+          or section.settings.social_proof_image_2 != blank
+          or section.settings.social_proof_image_3 != blank -%}
+          <div class="listicle-pcta__social-proof">
+            {%- if section.settings.social_proof_image_1 != blank
+              or section.settings.social_proof_image_2 != blank
+              or section.settings.social_proof_image_3 != blank -%}
+              <div class="listicle-pcta__avatars">
+                {%- if section.settings.social_proof_image_1 != blank -%}
+                  <div class="listicle-pcta__avatar">
+                    {{- section.settings.social_proof_image_1 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.social_proof_image_2 != blank -%}
+                  <div class="listicle-pcta__avatar">
+                    {{- section.settings.social_proof_image_2 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.social_proof_image_3 != blank -%}
+                  <div class="listicle-pcta__avatar">
+                    {{- section.settings.social_proof_image_3 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            {%- if section.settings.social_proof_text != blank -%}
+              <div class="listicle-pcta__social-text">{{ section.settings.social_proof_text }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        <div class="listicle-pcta__title-group">
+          {%- if section.settings.title != blank -%}
+            <h2 class="listicle-pcta__title">{{ section.settings.title | remove: '<p>' | remove: '</p>' }}</h2>
           {%- endif -%}
-          {%- if section.settings.social_proof_text != blank -%}
-            <div class="listicle-pcta__social-text">{{ section.settings.social_proof_text }}</div>
+          {%- if section.settings.body != blank -%}
+            <p class="listicle-pcta__body">{{ section.settings.body | remove: '<p>' | remove: '</p>' }}</p>
           {%- endif -%}
+        </div>
+      </div>
+
+      {%- liquid
+        assign has_features = false
+        for i in (1..3)
+          assign title_key = 'feature_' | append: i | append: '_title'
+          if section.settings[title_key] != blank
+            assign has_features = true
+          endif
+        endfor
+      -%}
+
+      {%- if has_features -%}
+        <div class="listicle-pcta__features" data-reveal-item style="--reveal-delay: 200ms">
+          {%- for i in (1..3) -%}
+            {%- assign title_key = 'feature_' | append: i | append: '_title' -%}
+            {%- assign desc_key = 'feature_' | append: i | append: '_desc' -%}
+            {%- assign feat_title = section.settings[title_key] -%}
+            {%- assign feat_desc = section.settings[desc_key] -%}
+            {%- if feat_title != blank -%}
+              <div class="listicle-pcta__feature">
+                <div class="listicle-pcta__feature-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 10.5L8 14.5L16 6.5" stroke="#182153" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="listicle-pcta__feature-text">
+                  <p class="listicle-pcta__feature-title">{{ feat_title | escape }}</p>
+                  {%- if feat_desc != blank -%}
+                    <p class="listicle-pcta__feature-desc">{{ feat_desc | escape }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
       {%- endif -%}
 
-      <div class="listicle-pcta__title-group">
-        {%- if section.settings.title != blank -%}
-          <h2 class="listicle-pcta__title">{{ section.settings.title | remove: '<p>' | remove: '</p>' }}</h2>
+      {%- if section.settings.button_label != blank -%}
+        {%- if section.settings.button_url != blank -%}
+          <a href="{{ section.settings.button_url }}" class="listicle-pcta__button">
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- else -%}
+          <button type="button" class="listicle-pcta__button">
+            {{- section.settings.button_label | escape -}}
+          </button>
         {%- endif -%}
-        {%- if section.settings.body != blank -%}
-          <p class="listicle-pcta__body">{{ section.settings.body | remove: '<p>' | remove: '</p>' }}</p>
-        {%- endif -%}
-      </div>
-    </div>
-
-    {%- liquid
-      assign has_features = false
-      for i in (1..3)
-        assign title_key = 'feature_' | append: i | append: '_title'
-        if section.settings[title_key] != blank
-          assign has_features = true
-        endif
-      endfor
-    -%}
-
-    {%- if has_features -%}
-      <div class="listicle-pcta__features">
-        {%- for i in (1..3) -%}
-          {%- assign title_key = 'feature_' | append: i | append: '_title' -%}
-          {%- assign desc_key = 'feature_' | append: i | append: '_desc' -%}
-          {%- assign feat_title = section.settings[title_key] -%}
-          {%- assign feat_desc = section.settings[desc_key] -%}
-          {%- if feat_title != blank -%}
-            <div class="listicle-pcta__feature">
-              <div class="listicle-pcta__feature-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 10.5L8 14.5L16 6.5" stroke="#182153" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="listicle-pcta__feature-text">
-                <p class="listicle-pcta__feature-title">{{ feat_title | escape }}</p>
-                {%- if feat_desc != blank -%}
-                  <p class="listicle-pcta__feature-desc">{{ feat_desc | escape }}</p>
-                {%- endif -%}
-              </div>
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
-
-    {%- if section.settings.button_label != blank -%}
-      {%- if section.settings.button_url != blank -%}
-        <a href="{{ section.settings.button_url }}" class="listicle-pcta__button">
-          {{- section.settings.button_label | escape -}}
-        </a>
-      {%- else -%}
-        <button type="button" class="listicle-pcta__button">
-          {{- section.settings.button_label | escape -}}
-        </button>
       {%- endif -%}
-    {%- endif -%}
 
+    </div>
   </div>
 </div>
+
+{%- if section.settings.button_label != blank -%}
+  {%- assign sticky_url = section.settings.sticky_button_url -%}
+  {%- if sticky_url == blank -%}
+    {%- assign sticky_url = section.settings.button_url -%}
+  {%- endif -%}
+  <div id="listicle-sticky-cta-{{ section.id }}" class="listicle-sticky-cta" aria-hidden="true">
+    {%- if sticky_url != blank -%}
+      <a href="{{ sticky_url }}" class="listicle-sticky-cta__button">
+        {{- section.settings.button_label | escape -}}
+      </a>
+    {%- else -%}
+      <button type="button" class="listicle-sticky-cta__button">
+        {{- section.settings.button_label | escape -}}
+      </button>
+    {%- endif -%}
+  </div>
+
+  <script>
+  (function() {
+    var stickyCta = document.getElementById('listicle-sticky-cta-{{ section.id }}');
+    if (!stickyCta) return;
+
+    function update() {
+      if (window.innerWidth > 899) {
+        stickyCta.classList.remove('is-visible');
+        return;
+      }
+
+      var itemsSection = document.querySelector('.shopify-section--listicle-items');
+      if (!itemsSection) return;
+
+      var items = itemsSection.querySelectorAll('.listicle-item');
+      if (!items.length) return;
+
+      var firstItem = items[0];
+      var sixthItem = items.length >= 6 ? items[5] : null;
+
+      var firstBottom = firstItem.getBoundingClientRect().bottom;
+      var pastFirst = firstBottom < 0;
+
+      var show = pastFirst;
+
+      if (show && sixthItem) {
+        var sixthTop = sixthItem.getBoundingClientRect().top;
+        if (sixthTop <= window.innerHeight) {
+          show = false;
+        }
+      }
+
+      if (show) {
+        stickyCta.classList.add('is-visible');
+        stickyCta.setAttribute('aria-hidden', 'false');
+      } else {
+        stickyCta.classList.remove('is-visible');
+        stickyCta.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  })();
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
@@ -481,6 +607,16 @@
       "type": "url",
       "id": "button_url",
       "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Sticky CTA — Mobile"
+    },
+    {
+      "type": "url",
+      "id": "sticky_button_url",
+      "label": "Sticky button link",
+      "info": "Separate link for the sticky button on mobile. If empty, Button link is used."
     },
     {
       "type": "header",

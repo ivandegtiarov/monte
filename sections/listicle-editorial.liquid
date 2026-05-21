@@ -54,8 +54,11 @@
   <div class="lc-editorial__inner">
     {%- for block in section.blocks -%}
       {%- if block.settings.content != blank -%}
+        {%- assign reveal_delay = forloop.index0 | times: 100 -%}
         <div
           class="lc-editorial__block lc-editorial__block--{{ block.settings.style | default: 'light' }}"
+          data-reveal-item
+          style="--reveal-delay: {{ reveal_delay }}ms"
           {{ block.shopify_attributes }}
         >
           {{- block.settings.content -}}

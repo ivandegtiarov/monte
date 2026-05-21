@@ -273,7 +273,7 @@
       -%}
 
       {%- if has_social -%}
-        <div class="lc-hero__social-pill">
+        <div class="lc-hero__social-pill" data-reveal-item>
           {%- if has_avatars -%}
             <div class="lc-hero__avatars">
               {%- if section.settings.avatar_1 != blank -%}
@@ -314,7 +314,7 @@
       {%- endif -%}
 
       {%- comment -%} Heading group {%- endcomment -%}
-      <div class="lc-hero__heading-group">
+      <div class="lc-hero__heading-group" data-reveal-item style="--reveal-delay: 100ms">
         {%- if section.settings.title != blank -%}
           <h1 class="lc-hero__title">
             {{- section.settings.title | remove: '<p>' | remove: '</p>' -}}
@@ -329,7 +329,7 @@
       </div>
 
       {%- comment -%} CTA + features {%- endcomment -%}
-      <div class="lc-hero__cta">
+      <div class="lc-hero__cta" data-reveal-item style="--reveal-delay: 200ms">
         {%- if section.settings.button_label != blank -%}
           {%- if section.settings.button_url != blank -%}
             <a href="{{ section.settings.button_url }}" class="lc-hero__button">
@@ -380,7 +380,7 @@
 
     {%- comment -%} ── RIGHT IMAGE ── {%- endcomment -%}
     {%- if section.settings.hero_image != blank -%}
-      <div class="lc-hero__media">
+      <div class="lc-hero__media" data-reveal-item style="--reveal-delay: 50ms">
         {{-
           section.settings.hero_image
           | image_url: width: 900

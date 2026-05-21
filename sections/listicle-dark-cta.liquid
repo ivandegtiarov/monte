@@ -200,7 +200,7 @@
 
 <div class="ldc">
   {%- comment -%} Left: content {%- endcomment -%}
-  <div class="ldc__content">
+  <div class="ldc__content" data-reveal-item>
 
     {%- comment -%} Heading group {%- endcomment -%}
     <div class="ldc__heading-group">
@@ -251,7 +251,7 @@
   </div>
 
   {%- comment -%} Right: product image {%- endcomment -%}
-  <div class="ldc__image-wrap">
+  <div class="ldc__image-wrap" data-reveal-item style="--reveal-delay: 120ms">
     {%- if section.settings.product_image != blank -%}
       {{-
         section.settings.product_image
