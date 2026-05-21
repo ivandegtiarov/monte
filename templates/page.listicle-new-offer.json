@@ -86,6 +86,27 @@
             "style": "light"
           }
         },
+        "text_zxDbb4": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Lepsze. Na chwilę.</p>",
+            "style": "light"
+          }
+        },
+        "text_bHetHK": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Rano: ta sama sucha skóra, te same załamy, twarz, która nie wygląda na w pełni zregenerowaną.</p>",
+            "style": "light"
+          }
+        },
+        "text_kjXYzh": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Ani dyscyplina, ani jakość produktów nie są problemem. Chodzi o 8 godzin, które dzieją się po twojej rutynie, i o to, co z twoją pielęgnacją robi twoja poduszka.</p>",
+            "style": "light"
+          }
+        },
         "text_2": {
           "type": "text",
           "settings": {
@@ -112,6 +133,9 @@
         "text_1",
         "text_Q9yGjD",
         "text_GkxG33",
+        "text_zxDbb4",
+        "text_bHetHK",
+        "text_kjXYzh",
         "text_2",
         "text_3",
         "text_4"
