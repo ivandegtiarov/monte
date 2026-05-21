@@ -252,6 +252,7 @@
         "review_1": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC_3.png",
             "quote": "<p>\"W końcu krem zostaje na skórze. Wcześniej zawsze zastanawiałam się, czy coś w ogóle wchłania. Rano skóra wygląda nawilżona tak, jak powinna.\"</p>",
             "name": "Magdalena R.",
             "verified": true
@@ -260,6 +261,7 @@
         "review_2": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC_2.png",
             "quote": "<p>\"Używam retinolu i peptydów na noc. Zależało mi, żeby maska tego nie wchłaniała. Jedwab naprawdę inaczej się zachowuje. Zero wchłoniętego kremu, zero załamów.\"</p>",
             "name": "Weronika D.",
             "verified": true
@@ -268,6 +270,7 @@
         "review_3": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC_5.png",
             "quote": "<p>\"Nigdy nie myślałam, że maska do spania coś zmieni w mojej rutynie. Po dwóch tygodniach wróciłam po drugą, dla siostry.\"</p>",
             "name": "Kamila J.",
             "verified": true
@@ -276,6 +279,7 @@
         "review_4": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC_1.png",
             "quote": "<p>\"Skończyłam szukać droższego kremu pod oczy. Te, które mam, w końcu działają. Po pierwszej nocy wiedziałam, że to zostaje.\"</p>",
             "name": "Joanna W.",
             "verified": true
