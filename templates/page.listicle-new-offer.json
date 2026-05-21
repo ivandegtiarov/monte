@@ -15,7 +15,7 @@
         "logo_max_width": 120,
         "logo_mobile_max_width": 80,
         "button_label": "Sprawdź dostępność",
-        "button_url": "",
+        "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
         "background_color": "#fdfbf9",
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 20,
