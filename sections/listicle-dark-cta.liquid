@@ -1,12 +1,18 @@
 <style>
   #shopify-section-{{ section.id }} .ldc {
     background: {{ section.settings.background_color | default: '#232e71' }};
-    display: flex;
-    align-items: center;
-    gap: 40px;
     padding: {{ section.settings.padding_top_desktop | default: 40 }}px {{ section.settings.padding_h_desktop | default: 80 }}px {{ section.settings.padding_bottom_desktop | default: 80 }}px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .ldc__inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1360px;
+    margin-inline: auto;
+    width: 100%;
   }
 
   /* ── Left column ── */
@@ -171,8 +177,11 @@
   /* ── Mobile ── */
   @media screen and (max-width: 899px) {
     #shopify-section-{{ section.id }} .ldc {
-      flex-direction: column-reverse;
       padding: {{ section.settings.padding_top_mobile | default: 40 }}px 20px {{ section.settings.padding_bottom_mobile | default: 60 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .ldc__inner {
+      flex-direction: column-reverse;
       gap: 32px;
     }
 
@@ -199,6 +208,7 @@
 </style>
 
 <div class="ldc">
+  <div class="ldc__inner">
   {%- comment -%} Left: content {%- endcomment -%}
   <div class="ldc__content" data-reveal-item>
 
@@ -264,6 +274,7 @@
       -}}
     {%- endif -%}
   </div>
+  </div><!-- /.ldc__inner -->
 </div>
 
 {% schema %}
