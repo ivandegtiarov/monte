@@ -243,6 +243,7 @@
         "item_cta": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image-6.jpg",
             "image_position": "start",
             "title": "<p>Kobiety, które śpią z Monté, nie wyobrażają sobie powrotu do bawełny</p>",
             "subtitle": "<p>(Ponad 700 kobiet. Jedna zmiana, która naprawiła to, czego nowe produkty nie naprawiły)</p>",
@@ -256,23 +257,6 @@
             "button_label": "Sprawdź dostępność",
             "button_url": "shopify://products/midnight-blue-silk-sleep-mask"
           }
-        },
-        "item_testimonial": {
-          "type": "item",
-          "settings": {
-            "image_position": "start",
-            "title": "<p>Co mówią klientki</p>",
-            "subtitle": "",
-            "body": "<p>Social proof.</p>",
-            "fact_label": "FAKT",
-            "fact_content": "",
-            "closing_text": "",
-            "testimonial_text": "Opinia klientki.",
-            "testimonial_reviewer": "Imię K.",
-            "testimonial_verified": true,
-            "button_label": "Sprawdź dostępność",
-            "button_url": ""
-          }
         }
       },
       "block_order": [
@@ -281,8 +265,7 @@
         "item_3",
         "item_4",
         "item_5",
-        "item_cta",
-        "item_testimonial"
+        "item_cta"
       ],
       "settings": {
         "padding_top_desktop": 0,
