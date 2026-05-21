@@ -12,24 +12,14 @@
     "listicle_header": {
       "type": "listicle-header",
       "settings": {
-        "logo": "shopify://shop_images/Logo_Monte_Black.svg",
-        "logo_max_width": 135,
-        "logo_mobile_max_width": 90,
         "button_label": "Sprawdź dostępność",
-        "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
-        "background_color": "#fdfbf9",
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 20
+        "background_color": "#fdfbf9"
       }
     },
     "listicle_sticky_cta": {
       "type": "listicle-sticky-cta",
       "settings": {
         "button_label": "Sprawdź dostępność",
-        "button_url": "",
-        "side_text": "",
         "background_color": "#232e71"
       }
     },
@@ -37,8 +27,7 @@
       "type": "listicle-announcement",
       "settings": {
         "label": "Oferta specjalna:",
-        "offer_text": "Kup 2 maski i oszczędź 20% na każdej",
-        "link_url": "shopify://products/midnight-blue-silk-sleep-mask",
+        "offer_text": "Kup 1 maskę, drugą otrzymasz 30% taniej",
         "background_color": "#232e71",
         "text_color": "#f8f1e9"
       }
@@ -46,21 +35,16 @@
     "listicle_hero": {
       "type": "listicle-hero",
       "settings": {
-        "avatar_1": "shopify://shop_images/UGC_2.png",
-        "avatar_2": "shopify://shop_images/UGC_3.png",
-        "avatar_3": "shopify://shop_images/UGC_5.png",
         "rating": "4.8/5",
         "social_proof_text": "Zaufało nam ponad 700+ osób",
         "title": "<p><em>6 Powodów</em>, Dla Których Kobiety z Dobrą Rutyną Noszą Jedwabną Maskę do Spania</p>",
-        "subtitle": "<p>(Twój krem pod oczy za 200 zł pracuje na połowę wartości. Oto dlaczego, i jak to zmienić dziś wieczorem.)</p>",
+        "subtitle": "<p>(Twój krem pod oczy za 200 zł pracuje na połowę wartości.<br>Oto dlaczego, i jak to zmienić dziś wieczorem.)</p>",
         "body": "Twoja rutyna jest przemyślana. Wiesz, co robi każdy krok, co znaczą składniki na etykiecie i dlaczego tania alternatywa po prostu nie ma sensu. A rano wciąż widzisz to samo.",
         "button_label": "Sprawdź dostępność",
-        "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
         "button_color": "#232e71",
         "feature_1": "30-nocna gwarancja zwrotu",
         "feature_2": "Wysyłka tego samego dnia",
-        "feature_3": "Dostawa InPost",
-        "hero_image": "shopify://shop_images/Hero_Listicle_2.jpg"
+        "feature_3": "Dostawa InPost"
       }
     },
     "listicle_editorial": {
@@ -69,83 +53,51 @@
         "text_1": {
           "type": "text",
           "settings": {
-            "content": "<p>Jeśli wieczorna rutyna kosztuje cię ponad 200 zł miesięcznie i rano wciąż widzisz suchą skórę i załamy pod oczami, nie jesteś sama.</p>",
-            "style": "light"
-          }
-        },
-        "text_Q9yGjD": {
-          "type": "text",
-          "settings": {
-            "content": "<p>Może myślałaś, że to kwestia produktów. Zmieniłaś retinol na droższy, doczytałaś składy, dokupiłaś kwas hialuronowy do wieczornej rutyny.</p>",
-            "style": "light"
-          }
-        },
-        "text_GkxG33": {
-          "type": "text",
-          "settings": {
-            "content": "<p>I efekty?</p>",
-            "style": "light"
-          }
-        },
-        "text_zxDbb4": {
-          "type": "text",
-          "settings": {
-            "content": "<p>Lepsze. Na chwilę.</p>",
-            "style": "light"
-          }
-        },
-        "text_bHetHK": {
-          "type": "text",
-          "settings": {
-            "content": "<p>Rano: ta sama sucha skóra, te same załamy, twarz, która nie wygląda na w pełni zregenerowaną.</p>",
-            "style": "light"
-          }
-        },
-        "text_kjXYzh": {
-          "type": "text",
-          "settings": {
-            "content": "<p>Ani dyscyplina, ani jakość produktów nie są problemem. Chodzi o 8 godzin, które dzieją się po twojej rutynie, i o to, co z twoją pielęgnacją robi twoja poduszka.</p>",
-            "style": "light"
+            "style": "light",
+            "content": "<p>Jeśli wieczorna rutyna kosztuje cię ponad 200 zł miesięcznie i rano wciąż widzisz suchą skórę i załamy pod oczami, nie jesteś sama.</p><p>Może myślałaś, że to kwestia produktów. Zmieniłaś retinol na droższy, doczytałaś składy, dokupiłaś kwas hialuronowy do wieczornej rutyny.</p><p>I efekty?</p><p>Lepsze. Na chwilę.</p><p>Rano: ta sama sucha skóra, te same załamy, twarz, która nie wygląda na w pełni zregenerowaną.</p><p>Ani dyscyplina, ani jakość produktów nie są problemem. Chodzi o 8 godzin, które dzieją się po twojej rutynie, i o to, co z twoją pielęgnacją robi twoja poduszka.</p>"
           }
         },
         "text_2": {
           "type": "text",
           "settings": {
-            "content": "<p>Co by się zmieniło, gdyby to, co nakładasz wieczorem, zostało na twojej twarzy przez całą noc, a nie na poszewce?</p>",
-            "style": "bold"
+            "style": "bold",
+            "content": "<p>Co by się zmieniło, gdyby to, co nakładasz wieczorem, zostało na twojej twarzy przez całą noc, a nie na poszewce?</p>"
           }
         },
         "text_3": {
           "type": "text",
           "settings": {
-            "content": "<p>700+ kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin.</p>",
-            "style": "light"
+            "style": "light",
+            "content": "<p>700+ kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin.</p>"
           }
         },
         "text_4": {
           "type": "text",
           "settings": {
-            "content": "<p>Oto 6 powodów, dla których nie wyobrażają sobie snu bez jedwabnej maski Monté.</p>",
-            "style": "bold"
+            "style": "bold",
+            "content": "<p>Oto 6 powodów, dla których nie wyobrażają sobie snu bez jedwabnej maski Monté.</p>"
           }
         }
       },
-      "block_order": [
-        "text_1",
-        "text_Q9yGjD",
-        "text_GkxG33",
-        "text_zxDbb4",
-        "text_bHetHK",
-        "text_kjXYzh",
-        "text_2",
-        "text_3",
-        "text_4"
-      ],
+      "block_order": ["text_1", "text_2", "text_3", "text_4"],
       "settings": {
         "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
+        "padding_bottom_desktop": 40
+      }
+    },
+    "listicle_intro": {
+      "type": "listicle-intro",
+      "settings": {
+        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
+        "tagline": "EDITORIAL",
+        "title": "<p>Tytuł nowej oferty</p>",
+        "intro": "<p>Intro nowej oferty.</p>",
+        "body_content": "<p>Treść intro.</p>",
+        "body_conclusion": "<p>Podsumowanie intro.</p>",
+        "content_width": "1100px",
+        "background_gradient": "linear-gradient(to bottom, #f8f1e9, #ffffff)",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 40
       }
     },
     "listicle_items": {
@@ -154,114 +106,77 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Image-2.jpg",
             "image_position": "start",
-            "title": "<p>Twoje kosmetyki zostają na twarzy. Przez całą noc.</p>",
-            "subtitle": "<p>(Bawełna wchłania to, co nakładasz. Jedwab nie)</p>",
-            "body": "<p>Twoja poszewka jest tkaniną chłonną.<br/><br/>Ta sama właściwość, która sprawia, że bawełniany ręcznik szybko wysycha, działa co noc przeciwko twojemu kremowi. Retinol za 180 zł, który nałożyłaś z precyzją, w ciągu pierwszych godzin snu migruje do tkaniny poduszki. Nie w głąb skóry.<br/><br/>Krem pod oczy, najdroższy gram w twojej rutynie, znika podobnie. Twoja skóra dostaje ułamek tego, za co zapłaciłaś.<br/><br/>Winny jest materiał, na którym spędzasz 8 godzin każdej nocy.</p>",
-            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
+            "title": "<p>Punkt 1</p>",
+            "body": "<p>Treść punktu 1.</p>",
             "fact_label": "FAKT",
-            "fact_content": "<p>Po tygodniu użytkowania bawełniana poszewka jest przesiąknięta resztkami kosmetyków, które utleniły się i wracają na twoją twarz każdej nocy.</p>",
-            "closing_text": "<p>Jedwab morwowy ma naturalnie gładką, zbitą strukturę włókna. Nie pochłania kosmetyków. To, co naniesiesz wieczorem, zostaje na twarzy rano.</p>",
-            "testimonial_text": "",
-            "testimonial_reviewer": "",
-            "testimonial_verified": true,
-            "button_label": "",
-            "button_url": ""
+            "fact_content": "<p>Fakt do punktu 1.</p>",
+            "closing_text": "<p>Podsumowanie punktu 1.</p>"
           }
         },
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Hero_image.jpg",
             "image_position": "start",
-            "title": "<p>Zmarszczki snu przestają się tworzyć. To jedyny rodzaj zmarszczek, który możesz zatrzymać.</p>",
-            "subtitle": "<p>(Dermatolodzy mają na nie osobną nazwę. Powstają z tarcia, nie z upływu czasu)</p>",
-            "body": "<p>Nie leżysz nieruchomo przez 8 godzin. Zmieniasz pozycję średnio 30-40 razy w ciągu nocy. Za każdym razem twoja twarz przesuwa się po poszewce.<br/><br/>Skóra wokół oczu ma zaledwie 0,3-0,5 mm grubości. Cztery razy mniej niż skóra na policzku. Każde tarcie tej cienkiej tkanki to mikrouszkodzenie, które nie boli. Widać je dopiero po latach.<br/><br/>Dermatolodzy nazywają to sleep wrinkles. Zmarszczki snu. Mechaniczne, nie z upływu czasu.<br/><br/>W odróżnieniu od zmarszczek mimicznych, te możesz wyeliminować fizycznie. Bez procedur. Zmieniając tylko to, z czym twoja twarz ma kontakt przez całą noc.</p>",
-            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
+            "title": "<p>Punkt 2</p>",
+            "body": "<p>Treść punktu 2.</p>",
             "fact_label": "FAKT",
-            "fact_content": "<p>Sleep wrinkles narastają asymetrycznie, głębiej po stronie, na której częściej śpisz. Chirurdzy plastyczni rozpoznają, na którym boku śpisz, patrząc na twarz.</p>",
-            "closing_text": "",
-            "testimonial_text": "",
-            "testimonial_reviewer": "",
-            "testimonial_verified": true,
-            "button_label": "",
-            "button_url": ""
+            "fact_content": "<p>Fakt do punktu 2.</p>",
+            "closing_text": "<p>Podsumowanie punktu 2.</p>"
           }
         },
         "item_3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Image-3.jpg",
             "image_position": "start",
-            "title": "<p>Pełna ciemność uruchamia regenerację skóry, której żaden krem nie zastąpi</p>",
-            "subtitle": "<p>(Twoja sypialnia jest jaśniejsza niż myślisz. I to blokuje efekty twojej rutyny)</p>",
-            "body": "<p>Latarnia za oknem. Zielona lampka routera, ekran telefonu partnera o 23:30. Każde z tych źródeł wystarczy, żeby mózg wyhamował produkcję melatoniny i spłycił sen.<br/><br/>I właśnie wtedy twoja skóra przestaje się regenerować tak, jak powinna.<br/><br/>Skóra naprawia się głównie między 23:00 a 3:00, w fazie głębokiego snu. Ten czas to synteza kolagenu, wymiana uszkodzonych komórek i intensywna naprawa na poziomie komórkowym. Wszystko to potrzebuje jednego: pełnej ciemności.</p>",
-            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
+            "title": "<p>Punkt 3</p>",
+            "body": "<p>Treść punktu 3.</p>",
             "fact_label": "FAKT",
-            "fact_content": "<p>Twoje serum z 30 składnikami aktywnymi nie zadziała w pełni, jeśli sypialnia nie jest w 100% ciemna.</p>",
-            "closing_text": "<p>Zasłony zaciemniające pomagają, ale rzadko dają 100% blackoutu. Maska dopasowana do twarzy odcina każde źródło światła niezależnie od reszty pokoju. Twoje serum dostaje środowisko, na które zasłużyło.</p>",
-            "testimonial_text": "",
-            "testimonial_reviewer": "",
-            "testimonial_verified": true,
-            "button_label": "",
-            "button_url": ""
+            "fact_content": "<p>Fakt do punktu 3.</p>",
+            "closing_text": "<p>Podsumowanie punktu 3.</p>"
           }
         },
         "item_4": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/UGC_2.png",
             "image_position": "start",
-            "title": "<p>Budzisz się z twarzą, która wygląda jak po naprawdę przespanej nocy</p>",
-            "subtitle": "<p>(Klientki Monté przestają szukać efektów w nowych produktach. Zaczynają je widzieć w lustrze rano)</p>",
-            "body": "<p>Jakość snu zmienia kolor cery, napięcie skóry i to, jak wyglądasz o 7 rano, nawet jeśli wstajesz po 6 godzinach.<br/><br/>Kobiety, które zaczęły spać z Monté, nie zmieniły produktów ani rutyny.<br/><br/>A rano? Wyglądają inaczej.<br/><br/>Skóra nawilżona tak, jak po dobrze zadziałanym kremie. Krem pod oczy wciąż tam, gdzie go nałożyłaś. Załamy płytsze.<br/><br/>Stare składniki w końcu mogą pracować przez całe 8 godzin. Tyle wystarczy.</p>",
-            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
+            "title": "<p>Punkt 4</p>",
+            "body": "<p>Treść punktu 4.</p>",
             "fact_label": "FAKT",
-            "fact_content": "<p>89% klientek Monté obudziło się bardziej wypoczętych już w pierwszym tygodniu użytkowania.</p>",
-            "closing_text": "",
-            "testimonial_text": "",
-            "testimonial_reviewer": "",
-            "testimonial_verified": true,
-            "button_label": "",
-            "button_url": ""
+            "fact_content": "<p>Fakt do punktu 4.</p>",
+            "closing_text": "<p>Podsumowanie punktu 4.</p>"
           }
         },
         "item_5": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Navy_Product_Image_3.jpg",
             "image_position": "start",
-            "title": "<p>Co sprawia, że Monté działa tam, gdzie zwykła maska zawodzi</p>",
-            "subtitle": "<p>(Tanie maski do spania są z poliestru lub nylonu)</p>",
-            "body": "<p>Nie oddychają. Wchłaniają kosmetyki podobnie jak bawełna. Gumka z czasem traci elastyczność i uciska skroń.<br/><br/>Kupujesz maskę, żeby chronić pielęgnację. Taka maska sprawia, że problem zostaje.<br/><br/>Monté jest z jedwabiu morwowego klasy 6A, 22 momme. Klasa 6A to najdłuższe i najczystsze włókna produkowane przez hodowlę jedwabników. 22 momme to gęstość, która przekłada się na trwałość i zachowanie właściwości po latach codziennego użytkowania.<br/><br/>Certyfikat OEKO-TEX Standard 100 potwierdza brak substancji szkodliwych. Ważne, bo maska spędza 8 godzin w kontakcie z twoją twarzą.<br/><br/>Regulowany rzep premium trzyma maskę przez całą noc bez ucisku na skronie. Jest zaprojektowany tak, żeby nie zaczepiać o włosy przy zakładaniu ani zdejmowaniu. Zero śladów rano.<br/><br/>Dwie minuty każdego wieczoru. Zakładasz maskę. Twoja pielęgnacja pracuje przez całe 8 godzin.</p>",
-            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
+            "title": "<p>Punkt 5</p>",
+            "body": "<p>Treść punktu 5.</p>",
             "fact_label": "FAKT",
-            "fact_content": "",
-            "closing_text": "",
-            "testimonial_text": "",
-            "testimonial_reviewer": "",
-            "testimonial_verified": true,
-            "button_label": "Sprawdź dostępność",
-            "button_url": "shopify://products/midnight-blue-silk-sleep-mask"
+            "fact_content": "<p>Fakt do punktu 5.</p>",
+            "closing_text": "<p>Podsumowanie punktu 5.</p>"
           }
         },
         "item_cta": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Image-6.jpg",
             "image_position": "start",
-            "title": "<p>Kobiety, które śpią z Monté, nie wyobrażają sobie powrotu do bawełny</p>",
-            "subtitle": "<p>(Ponad 700 kobiet. Jedna zmiana, która naprawiła to, czego nowe produkty nie naprawiły)</p>",
-            "body": "<p>Przez lata ich rutyna miała bogaty początek i gwałtowne urwanie się.<br/><br/>Oczyszczanie, tonik, serum, krem pod oczy. I sen na bawełnianej poszewce, która przez całą noc pracowała przeciwko temu, co nałożyły.<br/><br/>Jedna zmiana to naprawiła.<br/><br/>94% oceniło blackout jako całkowity. 91% potwierdziło, że maska nie zsunęła się ani razu przez całą noc. 89% obudziło się bardziej wypoczętych już w pierwszym tygodniu.<br/><br/>Pielęgnacja zaczęła pracować przez całe 8 godzin, bo przestała tracić je na bawełnianą poszewkę.</p>",
-            "fact_label": "FAKT",
-            "fact_content": "",
-            "closing_text": "",
-            "testimonial_text": "",
-            "testimonial_reviewer": "",
+            "title": "<p>Produkt</p>",
+            "body": "<p>Opis produktu.</p>",
+            "button_label": "Sprawdź dostępność"
+          }
+        },
+        "item_testimonial": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Co mówią klientki</p>",
+            "body": "<p>Social proof.</p>",
+            "testimonial_text": "Opinia klientki.",
+            "testimonial_reviewer": "Imię K.",
             "testimonial_verified": true,
-            "button_label": "Sprawdź dostępność",
-            "button_url": "shopify://products/midnight-blue-silk-sleep-mask"
+            "button_label": "Sprawdź dostępność"
           }
         }
       },
@@ -271,13 +186,12 @@
         "item_3",
         "item_4",
         "item_5",
-        "item_cta"
+        "item_cta",
+        "item_testimonial"
       ],
       "settings": {
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 60,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
+        "padding_bottom_desktop": 60
       }
     },
     "listicle_reviews": {
@@ -286,7 +200,6 @@
         "review_1": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/UGC_3.png",
             "quote": "<p>\"W końcu krem zostaje na skórze. Wcześniej zawsze zastanawiałam się, czy coś w ogóle wchłania. Rano skóra wygląda nawilżona tak, jak powinna.\"</p>",
             "name": "Magdalena R.",
             "verified": true
@@ -295,7 +208,6 @@
         "review_2": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/UGC_2.png",
             "quote": "<p>\"Używam retinolu i peptydów na noc. Zależało mi, żeby maska tego nie wchłaniała. Jedwab naprawdę inaczej się zachowuje. Zero wchłoniętego kremu, zero załamów.\"</p>",
             "name": "Weronika D.",
             "verified": true
@@ -304,7 +216,6 @@
         "review_3": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/UGC_5.png",
             "quote": "<p>\"Nigdy nie myślałam, że maska do spania coś zmieni w mojej rutynie. Po dwóch tygodniach wróciłam po drugą, dla siostry.\"</p>",
             "name": "Kamila J.",
             "verified": true
@@ -313,38 +224,26 @@
         "review_4": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/UGC_1.png",
             "quote": "<p>\"Skończyłam szukać droższego kremu pod oczy. Te, które mam, w końcu działają. Po pierwszej nocy wiedziałam, że to zostaje.\"</p>",
             "name": "Joanna W.",
             "verified": true
           }
         }
       },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3",
-        "review_4"
-      ],
+      "block_order": ["review_1", "review_2", "review_3", "review_4"],
       "settings": {
-        "avatar_1": "shopify://shop_images/UGC_2.png",
-        "avatar_2": "shopify://shop_images/UGC_3.png",
-        "avatar_3": "shopify://shop_images/UGC_5.png",
         "rating": "4.8/5",
         "social_proof_text": "Zaufało nam ponad 700+ osób",
         "title": "<p>Po co tracić kolejną noc, w której twoje kosmetyki <em>pracują na połowę wartości?</em></p>",
         "subtitle": "<p>Ponad 700 kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin. To jeden krok wieczorem.</p>",
         "verified_label": "Zweryfikowany zakup",
         "padding_top_desktop": 40,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 60
+        "padding_bottom_desktop": 80
       }
     },
     "listicle_divider": {
       "type": "listicle-divider",
       "settings": {
-        "illustration": "shopify://shop_images/SVG.svg",
         "background_color": "#f8f1e9",
         "arch_color": "#232e71",
         "arch_height": 20,
@@ -363,32 +262,32 @@
         "feature_3_title": "Rzep premium, zero kompromisów",
         "feature_3_desc": "Nie zaczepia o włosy. Nie uciska skroni. Trzyma się przez całą noc, nawet śpiąc na boku.",
         "button_label": "Sprawdź dostępność",
-        "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
-        "product_image": "shopify://shop_images/4M.jpg",
         "background_color": "#232e71",
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 80,
-        "padding_h_desktop": 80,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 60
+        "padding_h_desktop": 80
+      }
+    },
+    "listicle_product_cta": {
+      "type": "listicle-product-cta",
+      "settings": {
+        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
+        "feature_1_title": "100% Jedwab morwowy",
+        "feature_1_desc": "Nie wchłania kosmetyków. Krem zostaje tam, gdzie go nałożyłaś.",
+        "feature_2_title": "Pełny blackout",
+        "feature_2_desc": "100% ciemności przez całą noc. Melatonina, regeneracja, wyniki.",
+        "feature_3_title": "Rzep premium regulowany",
+        "feature_3_desc": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc.",
+        "button_label": "Sprawdź dostępność"
       }
     },
     "listicle_footer": {
       "type": "listicle-footer",
       "settings": {
         "link_1_label": "Polityka prywatności",
-        "link_1_url": "shopify://policies/privacy-policy",
         "link_2_label": "Regulamin sklepu",
-        "link_2_url": "shopify://policies/terms-of-service",
         "link_3_label": "Polityka wysyłki",
-        "link_3_url": "shopify://policies/shipping-policy",
-        "link_4_label": "Polityka zwrotów",
-        "link_4_url": "shopify://policies/refund-policy",
-        "copyright_text": "© 2026 Monté. Wszystkie prawa zastrzeżone.",
-        "payment_logo_1": "shopify://shop_images/Visa_Logo_1.svg",
-        "payment_logo_2": "shopify://shop_images/Mastercard_Logo_1.svg",
-        "payment_logo_3": "shopify://shop_images/Przelewy24.svg",
-        "payment_logo_4": "shopify://shop_images/Blik_1.svg"
+        "link_4_label": "Polityka zwrotów"
       }
     }
   },
@@ -398,10 +297,12 @@
     "listicle_announcement",
     "listicle_hero",
     "listicle_editorial",
+    "listicle_intro",
     "listicle_items",
     "listicle_reviews",
     "listicle_divider",
     "listicle_dark_cta",
+    "listicle_product_cta",
     "listicle_footer"
   ]
 }
