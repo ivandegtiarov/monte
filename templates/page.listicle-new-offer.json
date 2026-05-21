@@ -1,0 +1,158 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "listicle_header": {
+      "type": "listicle-header",
+      "settings": {
+        "button_label": "Sprawdź dostępność",
+        "background_color": "#fdfbf9"
+      }
+    },
+    "listicle_intro": {
+      "type": "listicle-intro",
+      "settings": {
+        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
+        "tagline": "EDITORIAL",
+        "title": "<p>Tytuł nowej oferty</p>",
+        "intro": "<p>Intro nowej oferty.</p>",
+        "body_content": "<p>Treść intro.</p>",
+        "body_conclusion": "<p>Podsumowanie intro.</p>",
+        "content_width": "1100px",
+        "background_gradient": "linear-gradient(to bottom, #f8f1e9, #ffffff)",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "listicle_items": {
+      "type": "listicle-items",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Punkt 1</p>",
+            "body": "<p>Treść punktu 1.</p>",
+            "fact_label": "FAKT",
+            "fact_content": "<p>Fakt do punktu 1.</p>",
+            "closing_text": "<p>Podsumowanie punktu 1.</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Punkt 2</p>",
+            "body": "<p>Treść punktu 2.</p>",
+            "fact_label": "FAKT",
+            "fact_content": "<p>Fakt do punktu 2.</p>",
+            "closing_text": "<p>Podsumowanie punktu 2.</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Punkt 3</p>",
+            "body": "<p>Treść punktu 3.</p>",
+            "fact_label": "FAKT",
+            "fact_content": "<p>Fakt do punktu 3.</p>",
+            "closing_text": "<p>Podsumowanie punktu 3.</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Punkt 4</p>",
+            "body": "<p>Treść punktu 4.</p>",
+            "fact_label": "FAKT",
+            "fact_content": "<p>Fakt do punktu 4.</p>",
+            "closing_text": "<p>Podsumowanie punktu 4.</p>"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Punkt 5</p>",
+            "body": "<p>Treść punktu 5.</p>",
+            "fact_label": "FAKT",
+            "fact_content": "<p>Fakt do punktu 5.</p>",
+            "closing_text": "<p>Podsumowanie punktu 5.</p>"
+          }
+        },
+        "item_cta": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Produkt</p>",
+            "body": "<p>Opis produktu.</p>",
+            "button_label": "Sprawdź dostępność"
+          }
+        },
+        "item_testimonial": {
+          "type": "item",
+          "settings": {
+            "image_position": "start",
+            "title": "<p>Co mówią klientki</p>",
+            "body": "<p>Social proof.</p>",
+            "testimonial_text": "Opinia klientki.",
+            "testimonial_reviewer": "Imię K.",
+            "testimonial_verified": true,
+            "button_label": "Sprawdź dostępność"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_cta",
+        "item_testimonial"
+      ],
+      "settings": {
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "listicle_product_cta": {
+      "type": "listicle-product-cta",
+      "settings": {
+        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
+        "feature_1_title": "100% Jedwab morwowy",
+        "feature_1_desc": "Nie wchłania kosmetyków. Krem zostaje tam, gdzie go nałożyłaś.",
+        "feature_2_title": "Pełny blackout",
+        "feature_2_desc": "100% ciemności przez całą noc. Melatonina, regeneracja, wyniki.",
+        "feature_3_title": "Rzep premium regulowany",
+        "feature_3_desc": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc.",
+        "button_label": "Sprawdź dostępność"
+      }
+    },
+    "listicle_footer": {
+      "type": "listicle-footer",
+      "settings": {
+        "link_1_label": "Polityka prywatności",
+        "link_2_label": "Regulamin sklepu",
+        "link_3_label": "Polityka wysyłki",
+        "link_4_label": "Polityka zwrotów"
+      }
+    }
+  },
+  "order": [
+    "listicle_header",
+    "listicle_intro",
+    "listicle_items",
+    "listicle_product_cta",
+    "listicle_footer"
+  ]
+}
