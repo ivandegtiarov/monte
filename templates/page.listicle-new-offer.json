@@ -37,7 +37,7 @@
       "settings": {
         "label": "Oferta specjalna:",
         "offer_text": "Kup 1 maskę, drugą otrzymasz 30% taniej",
-        "link_url": "",
+        "link_url": "shopify://products/midnight-blue-silk-sleep-mask",
         "background_color": "#232e71",
         "text_color": "#f8f1e9"
       }
@@ -362,7 +362,7 @@
         "feature_3_title": "Rzep premium, zero kompromisów",
         "feature_3_desc": "Nie zaczepia o włosy. Nie uciska skroni. Trzyma się przez całą noc, nawet śpiąc na boku.",
         "button_label": "Sprawdź dostępność",
-        "button_url": "",
+        "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
         "product_image": "shopify://shop_images/4M.jpg",
         "background_color": "#232e71",
         "padding_top_desktop": 40,
