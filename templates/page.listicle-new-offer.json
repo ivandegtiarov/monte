@@ -319,6 +319,7 @@
     "listicle_divider": {
       "type": "listicle-divider",
       "settings": {
+        "illustration": "shopify://shop_images/SVG.svg",
         "background_color": "#f8f1e9",
         "arch_color": "#232e71",
         "arch_height": 20,
@@ -344,27 +345,6 @@
         "padding_h_desktop": 80,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 60
-      }
-    },
-    "listicle_product_cta": {
-      "type": "listicle-product-cta",
-      "settings": {
-        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
-        "title": "<p>Twój krem zasługuje<br>na uczciwą noc</p>",
-        "body": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej.</p>",
-        "feature_1_title": "100% Jedwab morwowy",
-        "feature_1_desc": "Nie wchłania kosmetyków. Krem zostaje tam, gdzie go nałożyłaś.",
-        "feature_2_title": "Pełny blackout",
-        "feature_2_desc": "100% ciemności przez całą noc. Melatonina, regeneracja, wyniki.",
-        "feature_3_title": "Rzep premium regulowany",
-        "feature_3_desc": "Zero ucisku, zero zaczepiania o włosy. Trzyma się całą noc.",
-        "button_label": "Sprawdź dostępność",
-        "button_url": "",
-        "sticky_button_url": "",
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48
       }
     },
     "listicle_footer": {
@@ -393,7 +373,6 @@
     "listicle_reviews",
     "listicle_divider",
     "listicle_dark_cta",
-    "listicle_product_cta",
     "listicle_footer"
   ]
 }
