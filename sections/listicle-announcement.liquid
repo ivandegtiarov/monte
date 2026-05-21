@@ -190,6 +190,90 @@
 })();
 </script>
 
+<script>
+/* ── Suppress Klaviyo popups on this page only ──────────────────────────────
+   This section (listicle-announcement) is included only on page.listicle-new-offer,
+   so the suppressor runs exclusively on that page.
+
+   Strategy:
+   1. Hide via CSS immediately (fastest — before any JS runs)
+   2. MutationObserver removes popup nodes as Klaviyo injects them
+   3. Override klaviyo.openForm so popups never open even if Klaviyo re-tries
+   ─────────────────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  /* 1. Inject a <style> that hides Klaviyo popup overlays immediately.
+        We target fixed-position wrappers only; embedded forms are unaffected. */
+  var style = document.createElement('style');
+  style.textContent = [
+    /* Klaviyo's outer popup shell */
+    '[data-testid="klaviyo-form-overlay"]',
+    '.klaviyo-form-overlay',
+    /* Shadow host / web-component wrappers Klaviyo may use */
+    'klaviyo-onsite-form',
+    /* Generic: any fixed-pos div injected by Klaviyo */
+    'body > div[id^="klaviyo-form-"]',
+    'body > div[class*="needsclick"]',
+  ].join(',') + ' { display: none !important; }';
+  document.head.appendChild(style);
+
+  /* 2. MutationObserver — remove nodes as they are added to <body>. */
+  function isKlaviyoPopup(node) {
+    if (node.nodeType !== 1) return false;
+    var id  = node.id  || '';
+    var cls = typeof node.className === 'string' ? node.className : '';
+    var tag = node.tagName ? node.tagName.toLowerCase() : '';
+
+    /* Matches: id="klaviyo-form-XXXX", class="klaviyo-form ...", <klaviyo-onsite-form> */
+    if (id.indexOf('klaviyo-form') === 0) return true;
+    if (cls.indexOf('klaviyo-form') !== -1) return true;
+    if (tag === 'klaviyo-onsite-form') return true;
+    if (cls.indexOf('needsclick') !== -1 && node.parentElement === document.body) return true;
+
+    return false;
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (m) {
+      m.addedNodes.forEach(function (node) {
+        if (isKlaviyoPopup(node)) {
+          node.remove();
+        }
+      });
+    });
+  });
+
+  /* Start watching as early as possible */
+  if (document.body) {
+    observer.observe(document.body, { childList: true });
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      observer.observe(document.body, { childList: true });
+    });
+  }
+
+  /* 3. Override Klaviyo's JS API so it never opens a popup even if it retries.
+        We proxy window.klaviyo once it becomes available. */
+  var _klaviyoProxy = null;
+  Object.defineProperty(window, 'klaviyo', {
+    configurable: true,
+    get: function () { return _klaviyoProxy; },
+    set: function (obj) {
+      if (!obj) { _klaviyoProxy = obj; return; }
+      /* Wrap openForm / show so popups silently no-op */
+      ['openForm', 'show', 'showModal'].forEach(function (method) {
+        if (typeof obj[method] === 'function') {
+          obj[method] = function () {};
+        }
+      });
+      _klaviyoProxy = obj;
+    }
+  });
+
+})();
+</script>
+
 {% schema %}
 {
   "name": "Listicle – Announcement",
