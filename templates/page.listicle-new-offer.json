@@ -29,7 +29,7 @@
       "settings": {
         "button_label": "Sprawdź dostępność",
         "button_url": "shopify://products/midnight-blue-silk-sleep-mask",
-        "side_text": "",
+        "side_text": "Test",
         "background_color": "#232e71"
       }
     },
