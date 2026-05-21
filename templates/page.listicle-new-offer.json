@@ -45,6 +45,9 @@
     "listicle_hero": {
       "type": "listicle-hero",
       "settings": {
+        "avatar_1": "shopify://shop_images/UGC_2.png",
+        "avatar_2": "shopify://shop_images/UGC_3.png",
+        "avatar_3": "shopify://shop_images/UGC_5.png",
         "rating": "4.8/5",
         "social_proof_text": "Zaufało nam ponad 700+ osób",
         "title": "<p><em>6 Powodów</em>, Dla Których Kobiety z Dobrą Rutyną Noszą Jedwabną Maskę do Spania</p>",
@@ -56,7 +59,7 @@
         "feature_1": "30-nocna gwarancja zwrotu",
         "feature_2": "Wysyłka tego samego dnia",
         "feature_3": "Dostawa InPost",
-        "hero_image": "shopify://shop_images/Image-5.jpg"
+        "hero_image": "shopify://shop_images/Hero_Listicle_2.jpg"
       }
     },
     "listicle_editorial": {
@@ -101,25 +104,6 @@
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 40,
         "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
-      }
-    },
-    "listicle_intro": {
-      "type": "listicle-intro",
-      "settings": {
-        "social_proof_text": "<p>Dołącz do 700+ kobiet, które wybrały Monté</p>",
-        "tagline": "EDITORIAL",
-        "title": "<p>Tytuł nowej oferty</p>",
-        "intro": "<p>Intro nowej oferty.</p>",
-        "body_content": "<p>Treść intro.</p>",
-        "body_conclusion": "<p>Podsumowanie intro.</p>",
-        "content_width": "1100px",
-        "background": "",
-        "background_gradient": "linear-gradient(to bottom, #f8f1e9, #ffffff)",
-        "text_color": "",
-        "padding_top_desktop": 64,
-        "padding_bottom_desktop": 40,
-        "padding_top_mobile": 48,
         "padding_bottom_mobile": 32
       }
     },
@@ -369,7 +353,6 @@
     "listicle_announcement",
     "listicle_hero",
     "listicle_editorial",
-    "listicle_intro",
     "listicle_items",
     "listicle_reviews",
     "listicle_divider",
