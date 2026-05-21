@@ -68,7 +68,7 @@
         "text_1": {
           "type": "text",
           "settings": {
-            "content": "<p>Jeśli wieczorna rutyna kosztuje cię ponad 200 zł miesięcznie i rano wciąż widzisz suchą skórę i załamy pod oczami, nie jesteś sama.</p><p>Może myślałaś, że to kwestia produktów. Zmieniłaś retinol na droższy, doczytałaś składy, dokupiłaś kwas hialuronowy do wieczornej rutyny.</p><p>I efekty?</p><p>Lepsze. Na chwilę.</p><p>Rano: ta sama sucha skóra, te same załamy, twarz, która nie wygląda na w pełni zregenerowaną.</p><p>Ani dyscyplina, ani jakość produktów nie są problemem. Chodzi o 8 godzin, które dzieją się po twojej rutynie, i o to, co z twoją pielęgnacją robi twoja poduszka.</p>",
+            "content": "<p>Jeśli wieczorna rutyna kosztuje cię ponad 200 zł miesięcznie i rano wciąż widzisz suchą skórę i załamy pod oczami, nie jesteś sama.</p>",
             "style": "light"
           }
         },
