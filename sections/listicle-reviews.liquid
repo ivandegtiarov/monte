@@ -1,0 +1,566 @@
+<style>
+  #shopify-section-{{ section.id }} .lc-reviews {
+    background: linear-gradient(to bottom, #ffffff, #f8f1e9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: {{ section.settings.padding_top_desktop }}px 80px {{ section.settings.padding_bottom_desktop }}px;
+    width: 100%;
+  }
+
+  /* ── Header ── */
+  #shopify-section-{{ section.id }} .lc-reviews__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  /* Social proof pill */
+  #shopify-section-{{ section.id }} .lc-reviews__social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f1e9;
+    border-radius: 999px;
+    padding: 4px 16px 4px 8px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__avatars {
+    display: flex;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #f8f1e9;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__avatar:not(:first-child) {
+    margin-inline-start: -6px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__social-meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__stars-sm {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__rating-num,
+  #shopify-section-{{ section.id }} .lc-reviews__social-count {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  /* Heading */
+  #shopify-section-{{ section.id }} .lc-reviews__title {
+    font-family: var(--heading-font-family);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #182153;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__title em {
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__subtitle {
+    font-family: var(--text-font-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__subtitle p {
+    margin: 0;
+  }
+
+  /* ── Cards grid ── */
+  #shopify-section-{{ section.id }} .lc-reviews__grid {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  /* Card */
+  #shopify-section-{{ section.id }} .lc-reviews__card {
+    flex: 1 0 0;
+    min-width: 0;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.10), 0 1px 2px rgba(16, 24, 40, 0.06);
+    display: flex;
+    flex-direction: column;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__card-inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Stars (card) */
+  #shopify-section-{{ section.id }} .lc-reviews__card-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  /* Quote */
+  #shopify-section-{{ section.id }} .lc-reviews__card-quote {
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(24, 33, 83, 0.75);
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__card-quote p {
+    margin: 0;
+  }
+
+  /* Reviewer row */
+  #shopify-section-{{ section.id }} .lc-reviews__card-reviewer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__card-name {
+    font-family: var(--text-font-family);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__verified {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__verified-badge {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #010d6e;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .lc-reviews__verified-label {
+    font-family: var(--text-font-family);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    white-space: nowrap;
+  }
+
+  /* ── Mobile ── */
+  @media screen and (max-width: 899px) {
+    #shopify-section-{{ section.id }} .lc-reviews {
+      padding: {{ section.settings.padding_top_mobile }}px 20px {{ section.settings.padding_bottom_mobile }}px;
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-reviews__title {
+      font-size: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-reviews__subtitle {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-reviews__grid {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .lc-reviews__card {
+      flex: 1 1 calc(50% - 8px);
+      min-width: calc(50% - 8px);
+    }
+  }
+
+  @media screen and (max-width: 499px) {
+    #shopify-section-{{ section.id }} .lc-reviews__card {
+      flex: 1 1 100%;
+      min-width: 100%;
+    }
+  }
+</style>
+
+<div class="lc-reviews">
+
+  {%- comment -%} ── HEADER ── {%- endcomment -%}
+  <div class="lc-reviews__header">
+
+    {%- liquid
+      assign has_avatars = false
+      if section.settings.avatar_1 != blank or section.settings.avatar_2 != blank or section.settings.avatar_3 != blank
+        assign has_avatars = true
+      endif
+    -%}
+
+    {%- if has_avatars or section.settings.social_proof_text != blank -%}
+      <div class="lc-reviews__social-pill">
+        {%- if has_avatars -%}
+          <div class="lc-reviews__avatars">
+            {%- if section.settings.avatar_1 != blank -%}
+              <div class="lc-reviews__avatar">
+                {{- section.settings.avatar_1 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+              </div>
+            {%- endif -%}
+            {%- if section.settings.avatar_2 != blank -%}
+              <div class="lc-reviews__avatar">
+                {{- section.settings.avatar_2 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+              </div>
+            {%- endif -%}
+            {%- if section.settings.avatar_3 != blank -%}
+              <div class="lc-reviews__avatar">
+                {{- section.settings.avatar_3 | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        <div class="lc-reviews__social-meta">
+          <div class="lc-reviews__rating-row">
+            <div class="lc-reviews__stars-sm" aria-hidden="true">
+              {%- for i in (1..5) -%}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 1L7.34 4.26L10.91 4.56L8.25 6.87L9.09 10.35L6 8.49L2.91 10.35L3.75 6.87L1.09 4.56L4.66 4.26L6 1Z" fill="#D9A17D"/>
+                </svg>
+              {%- endfor -%}
+            </div>
+            {%- if section.settings.rating != blank -%}
+              <span class="lc-reviews__rating-num">{{ section.settings.rating | escape }}</span>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.social_proof_text != blank -%}
+            <p class="lc-reviews__social-count">{{ section.settings.social_proof_text | escape }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.title != blank -%}
+      <h2 class="lc-reviews__title">
+        {{- section.settings.title | remove: '<p>' | remove: '</p>' -}}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.subtitle != blank -%}
+      <div class="lc-reviews__subtitle">{{ section.settings.subtitle }}</div>
+    {%- endif -%}
+
+  </div>
+
+  {%- comment -%} ── CARDS ── {%- endcomment -%}
+  {%- if section.blocks.size > 0 -%}
+    <div class="lc-reviews__grid">
+      {%- for block in section.blocks -%}
+        <div class="lc-reviews__card" {{ block.shopify_attributes }}>
+          <div class="lc-reviews__card-inner">
+
+            {%- if block.settings.image != blank -%}
+              <div class="lc-reviews__card-image">
+                {{-
+                  block.settings.image
+                  | image_url: width: 600
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '(max-width: 499px) 100vw, (max-width: 899px) 50vw, 25vw',
+                    widths: '300,400,600,800',
+                    alt: block.settings.image.alt | default: block.settings.name | escape
+                -}}
+              </div>
+            {%- endif -%}
+
+            <div class="lc-reviews__card-body">
+              <div class="lc-reviews__card-stars" aria-label="5 out of 5 stars">
+                {%- for i in (1..5) -%}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M8 1.33L9.79 5.68L14.55 6.08L11 9.16L12.12 13.8L8 11.32L3.88 13.8L5 9.16L1.45 6.08L6.21 5.68L8 1.33Z" fill="#D9A17D"/>
+                  </svg>
+                {%- endfor -%}
+              </div>
+
+              {%- if block.settings.quote != blank -%}
+                <div class="lc-reviews__card-quote">{{ block.settings.quote }}</div>
+              {%- endif -%}
+
+              {%- if block.settings.name != blank -%}
+                <div class="lc-reviews__card-reviewer">
+                  <span class="lc-reviews__card-name">{{ block.settings.name | escape }}</span>
+                  {%- if block.settings.verified -%}
+                    <div class="lc-reviews__verified">
+                      <div class="lc-reviews__verified-badge" aria-hidden="true">
+                        <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 3l2 2 4-4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <span class="lc-reviews__verified-label">{{ section.settings.verified_label | default: 'Zweryfikowany zakup' | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Listicle – Reviews",
+  "class": "shopify-section--listicle-reviews",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Social proof pill"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_1",
+      "label": "Avatar 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_2",
+      "label": "Avatar 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_3",
+      "label": "Avatar 3"
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Rating",
+      "default": "4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "social_proof_text",
+      "label": "Social proof text",
+      "default": "Zaufało nam ponad 700+ osób"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "info": "Use italic formatting for styled words",
+      "default": "<p>Po co tracić kolejną noc, w której twoje kosmetyki <em>pracują na połowę wartości?</em></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Ponad 700 kobiet odkryło już, co dzieje się ze skórą, gdy pielęgnacja pracuje przez całe 8 godzin. To jeden krok wieczorem.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Labels"
+    },
+    {
+      "type": "text",
+      "id": "verified_label",
+      "label": "Verified badge label",
+      "default": "Zweryfikowany zakup"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer name"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Show verified badge",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle – Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "quote": "<p>\"W końcu krem zostaje na skórze. Wcześniej zawsze zastanawiałam się, czy coś w ogóle wchłania. Rano skóra wygląda nawilżona tak, jak powinna.\"</p>",
+            "name": "Magdalena R.",
+            "verified": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "<p>\"Używam retinolu i peptydów na noc. Zależało mi, żeby maska tego nie wchłaniała. Jedwab naprawdę inaczej się zachowuje. Zero wchłoniętego kremu, zero załamów.\"</p>",
+            "name": "Weronika D.",
+            "verified": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "<p>\"Nigdy nie myślałam, że maska do spania coś zmieni w mojej rutynie. Po dwóch tygodniach wróciłam po drugą, dla siostry.\"</p>",
+            "name": "Kamila J.",
+            "verified": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "<p>\"Skończyłam szukać droższego kremu pod oczy. Te, które mam, w końcu działają. Po pierwszej nocy wiedziałam, że to zostaje.\"</p>",
+            "name": "Joanna W.",
+            "verified": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
