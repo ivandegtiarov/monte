@@ -3077,11 +3077,11 @@ var MediaCarousel = class extends ScrollCarousel {
   }
   _onMediaSettled(event) {
     const media = event.detail.slide;
-    this.items.filter((item) => ["video", "external_video", "model"].includes(item.getAttribute("data-media-type"))).forEach((item) => item.firstElementChild.pause());
+    this.items.filter((item) => item !== media && ["video", "external_video", "model"].includes(item.getAttribute("data-media-type"))).forEach((item) => item.firstElementChild.pause());
     switch (media.getAttribute("data-media-type")) {
       case "external_video":
       case "video":
-        if (this.hasAttribute("autoplay")) {
+        if (this.hasAttribute("autoplay") && !media.firstElementChild.playing) {
           media.firstElementChild.play();
         }
         break;
