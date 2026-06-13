@@ -110,9 +110,9 @@
         "disabled": true,
         "settings": {}
       },
-      "8669066016853369741": {
-        "type": "shopify://apps/hotjar-install/blocks/global/2903e4ea-7615-463e-8b60-582f487dac4f",
-        "disabled": true,
+      "consentmo-gdpr-4fbe573f-a377-4fea-9801-3ee0858cae41": {
+        "type": "shopify://apps/consentmo-gdpr/blocks/gdpr_cookie_consent/4fbe573f-a377-4fea-9801-3ee0858cae41",
+        "disabled": false,
         "settings": {}
       }
     }
