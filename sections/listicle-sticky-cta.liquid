@@ -1,5 +1,4 @@
 <style>
-  /* ── Only rendered on mobile ── */
   #lsc-bar-{{ section.id }} {
     display: none;
   }
@@ -12,12 +11,12 @@
       left: 0;
       right: 0;
       z-index: 200;
-      background: {{ section.settings.background_color | default: '#232e71' }};
+      background: #ffffff;
+      border-top: 1px solid rgba(24, 33, 83, 0.2);
       padding: 12px 20px;
       padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-      box-shadow: 0 -4px 24px rgba(20, 26, 63, 0.25);
+      box-shadow: 0px -8px 30px 0px rgba(45, 38, 34, 0.07);
 
-      /* Hidden by default — slide up when active */
       transform: translateY(110%);
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: transform;
@@ -27,75 +26,45 @@
       transform: translateY(0);
     }
 
-    #lsc-bar-{{ section.id }} .lsc-bar__inner {
+    #lsc-bar-{{ section.id }} .lsc-bar__button {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-    }
-
-    #lsc-bar-{{ section.id }} .lsc-bar__text {
-      font-family: var(--text-font-family);
-      font-size: 13px;
-      line-height: 1.4;
-      color: rgba(253, 251, 249, 0.75);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      flex-shrink: 1;
-      min-width: 0;
-    }
-
-    #lsc-bar-{{ section.id }} .lsc-bar__button {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
       height: 44px;
-      padding-inline: 24px;
-      background: #fdfbf9;
-      color: #182153;
+      background: #232e71;
+      color: #fdfbf9;
       border-radius: 999px;
       border: none;
       cursor: pointer;
       font-family: var(--text-font-family);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
+      line-height: 1.5;
       text-transform: uppercase;
-      letter-spacing: 0.02em;
       text-decoration: none;
-      white-space: nowrap;
       transition: opacity 0.2s;
+      white-space: nowrap;
     }
 
     #lsc-bar-{{ section.id }} .lsc-bar__button:hover {
       opacity: 0.9;
     }
-
-    /* If no side text — button takes full width */
-    #lsc-bar-{{ section.id }} .lsc-bar__inner--full .lsc-bar__button {
-      width: 100%;
-    }
   }
 </style>
 
 <div id="lsc-bar-{{ section.id }}" role="region" aria-label="Sticky CTA" aria-hidden="true">
-  <div class="lsc-bar__inner{% if section.settings.side_text == blank %} lsc-bar__inner--full{% endif %}">
-    {%- if section.settings.side_text != blank -%}
-      <span class="lsc-bar__text">{{ section.settings.side_text | escape }}</span>
+  {%- if section.settings.button_label != blank -%}
+    {%- if section.settings.button_url != blank -%}
+      <a href="{{ section.settings.button_url }}" class="lsc-bar__button">
+        {{- section.settings.button_label | escape -}}
+      </a>
+    {%- else -%}
+      <button type="button" class="lsc-bar__button">
+        {{- section.settings.button_label | escape -}}
+      </button>
     {%- endif -%}
-    {%- if section.settings.button_label != blank -%}
-      {%- if section.settings.button_url != blank -%}
-        <a href="{{ section.settings.button_url }}" class="lsc-bar__button">
-          {{- section.settings.button_label | escape -}}
-        </a>
-      {%- else -%}
-        <button type="button" class="lsc-bar__button">
-          {{- section.settings.button_label | escape -}}
-        </button>
-      {%- endif -%}
-    {%- endif -%}
-  </div>
+  {%- endif -%}
 </div>
 
 <script>
@@ -105,52 +74,45 @@
   var barEl = document.getElementById('lsc-bar-{{ section.id }}');
   if (!barEl) return;
 
-  /* Only activate on mobile — matches CSS breakpoint */
   if (window.matchMedia('(min-width: 900px)').matches) return;
 
-  /* Find the listicle-items section and its items */
   var itemsSection = document.querySelector('.shopify-section--listicle-items');
   if (!itemsSection) return;
 
   var items = itemsSection.querySelectorAll('.listicle-item');
-  var item1  = items[0];   /* first item  — bar appears  */
-  var item5  = items[4];   /* fifth item  — bar hides    */
+  var triggerItem = items[1];   /* 2nd item — bar appears when scrolled past */
+  var hideItem    = items[items.length - 1]; /* last item — bar hides */
 
-  if (!item1) return;
+  if (!triggerItem) return;
 
-  var state = { item1Active: false, item5Active: false };
+  var state = { triggerActive: false, hideActive: false };
 
   function update() {
-    var shouldShow = state.item1Active && !state.item5Active;
+    var shouldShow = state.triggerActive && !state.hideActive;
     barEl.classList.toggle('lsc-bar--visible', shouldShow);
     barEl.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
   }
 
-  /* item1: active once it has entered the viewport (or scrolled above it) */
-  var obs1 = new IntersectionObserver(function (entries) {
+  /* Appears once the 2nd item has entered or been scrolled past */
+  var obsTrigger = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      /*
-       * isIntersecting = currently in viewport
-       * boundingClientRect.top < 0 = scrolled above viewport (past it)
-       * Either condition means "item1 has been reached"
-       */
-      state.item1Active = entry.isIntersecting || entry.boundingClientRect.top < 0;
+      state.triggerActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
       update();
     });
   }, { threshold: 0 });
 
-  obs1.observe(item1);
+  obsTrigger.observe(triggerItem);
 
-  /* item5: active once it has entered the viewport (or scrolled above it) */
-  if (item5) {
-    var obs5 = new IntersectionObserver(function (entries) {
+  /* Hides once the last item has entered or been scrolled past */
+  if (hideItem && hideItem !== triggerItem) {
+    var obsHide = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        state.item5Active = entry.isIntersecting || entry.boundingClientRect.top < 0;
+        state.hideActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
         update();
       });
     }, { threshold: 0 });
 
-    obs5.observe(item5);
+    obsHide.observe(hideItem);
   }
 })();
 </script>
@@ -165,24 +127,12 @@
       "type": "text",
       "id": "button_label",
       "label": "Button label",
-      "default": "Sprawdź dostępność"
+      "default": "Sprawdź dostępność →"
     },
     {
       "type": "url",
       "id": "button_url",
       "label": "Button URL"
-    },
-    {
-      "type": "text",
-      "id": "side_text",
-      "label": "Side text (optional)",
-      "info": "Short text shown to the left of the button. Leave empty for full-width button."
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#232e71"
     }
   ],
   "presets": [

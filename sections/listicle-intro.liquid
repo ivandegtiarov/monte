@@ -145,6 +145,29 @@
   #shopify-section-{{ section.id }} .listicle-intro__conclusion {
     font-weight: 600;
   }
+
+  /* Reading time */
+  #shopify-section-{{ section.id }} .listicle-intro__reading-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__reading-time-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-intro__reading-time-text {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #182153;
+    white-space: nowrap;
+    margin: 0;
+  }
 </style>
 
 <div {% render 'section-properties', full_width: true %}>
@@ -207,6 +230,16 @@
 
               {%- if section.settings.intro != blank -%}
                 <div class="prose text-subdued">{{ section.settings.intro }}</div>
+              {%- endif -%}
+
+              {%- if section.settings.reading_time_text != blank -%}
+                <div class="listicle-intro__reading-time">
+                  <svg class="listicle-intro__reading-time-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="10" cy="10" r="8.5" stroke="#182153" stroke-width="1.5"/>
+                    <path d="M10 5.5V10L13 12.5" stroke="#182153" stroke-width="1.5" stroke-linecap="square"/>
+                  </svg>
+                  <p class="listicle-intro__reading-time-text">{{ section.settings.reading_time_text | escape }}</p>
+                </div>
               {%- endif -%}
             </div>
           {%- endif -%}
@@ -291,6 +324,12 @@
       "type": "richtext",
       "id": "intro",
       "label": "Intro text"
+    },
+    {
+      "type": "text",
+      "id": "reading_time_text",
+      "label": "Reading time",
+      "placeholder": "czas czytania - 4 min"
     },
     {
       "type": "header",
