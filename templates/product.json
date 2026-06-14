@@ -358,6 +358,53 @@
         "pause_on_hover": true
       }
     },
+    "stats_social_proof_LHaDaL": {
+      "type": "stats-social-proof",
+      "blocks": {
+        "feature_item_PnqMAr": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Nie wchłania kosmetyków, krem nawilżający zostaje na skórze, nie na masce"
+          }
+        },
+        "feature_item_KAbrAf": {
+          "type": "feature_item",
+          "settings": {
+            "text": "Dopasowanie bez ucisku na oczy przez całą noc"
+          }
+        },
+        "review_card_wYxTgi": {
+          "type": "review_card",
+          "disabled": true,
+          "settings": {
+            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
+            "reviewer_name": "Anna K.",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_PnqMAr",
+        "feature_item_KAbrAf",
+        "review_card_wYxTgi"
+      ],
+      "settings": {
+        "image": "{{ product.metafields.custom.mask_preview.value }}",
+        "tagline": "Beauty Sleep",
+        "heading": "Jedwab, który **jest delikatny**",
+        "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez zalamów i śladów na skórze.",
+        "footnote": "*Based on post purchase customer survey responses.",
+        "background_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "body_color": "#182153bf",
+        "reverse_desktop": false,
+        "reverse_mobile": false,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
     "stats_social_proof": {
       "type": "stats-social-proof",
       "blocks": {
@@ -423,56 +470,9 @@
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
         "body_color": "#182153bf",
-        "reverse_desktop": false,
-        "reverse_mobile": false,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 20,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
-      }
-    },
-    "stats_social_proof_LHaDaL": {
-      "type": "stats-social-proof",
-      "blocks": {
-        "feature_item_PnqMAr": {
-          "type": "feature_item",
-          "settings": {
-            "text": "Nie wchłania kosmetyków, krem nawilżający zostaje na skórze, nie na masce"
-          }
-        },
-        "feature_item_KAbrAf": {
-          "type": "feature_item",
-          "settings": {
-            "text": "Dopasowanie bez ucisku na oczy przez całą noc"
-          }
-        },
-        "review_card_wYxTgi": {
-          "type": "review_card",
-          "disabled": true,
-          "settings": {
-            "quote": "I did not expect it to make such a difference. It feels weightless, stays in place, and my nights feel calmer.",
-            "reviewer_name": "Anna K.",
-            "verified_label": "Verified Buyer"
-          }
-        }
-      },
-      "block_order": [
-        "feature_item_PnqMAr",
-        "feature_item_KAbrAf",
-        "review_card_wYxTgi"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/monte-silk-sleep-mask-midnight-blue-studio-side-profile-earring.jpg",
-        "tagline": "Beauty Sleep",
-        "heading": "Jedwab, który **jest delikatny**",
-        "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez zalamów i śladów na skórze.",
-        "footnote": "*Based on post purchase customer survey responses.",
-        "background_color": "#fdfbf9",
-        "heading_color": "#182153",
-        "body_color": "#182153bf",
         "reverse_desktop": true,
         "reverse_mobile": false,
-        "padding_top_desktop": 20,
+        "padding_top_desktop": 40,
         "padding_bottom_desktop": 20,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
@@ -511,7 +511,7 @@
         "review_card_YVjJ3M"
       ],
       "settings": {
-        "image": "shopify://shop_images/monte-silk-sleep-mask-midnight-blue-studio-front-both-hands.jpg",
+        "image": "shopify://shop_images/monte-silk-sleep-mask-midnight-blue-studio-three-quarter-profile.jpg",
         "tagline": "CICHY LUKSUS",
         "heading": "Odpoczynek, który **ma znaczenie**",
         "body": "Mała zmiana, po którą sięgasz każdej nocy, zamienia kładzenie się do łóżka w spokojny rytuał, na który czekasz. Minimalistyczna, elegancka, stworzona by stać się częścią twojego wieczoru.",
@@ -877,8 +877,8 @@
   "order": [
     "main",
     "marquee_bar",
-    "stats_social_proof",
     "stats_social_proof_LHaDaL",
+    "stats_social_proof",
     "stats_social_proof_TKncbt",
     "testimonials_eU6FBb",
     "1777526803097e4acf",
