@@ -55,12 +55,21 @@
         "search_menu": "",
         "search_menu_show_title": true
       }
+    },
+    "listicle_sticky_cta_ccqPbQ": {
+      "type": "listicle-sticky-cta",
+      "name": "Listicle – Sticky CTA",
+      "settings": {
+        "button_label": "Sprawdź dostępność →",
+        "button_url": ""
+      }
     }
   },
   "order": [
     "newsletter-popup",
     "privacy-banner",
     "cart-drawer",
-    "search-drawer"
+    "search-drawer",
+    "listicle_sticky_cta_ccqPbQ"
   ]
 }
