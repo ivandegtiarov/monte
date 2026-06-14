@@ -144,10 +144,9 @@
             "title": "<p>Maska, która zostaje na miejscu przez całą noc</p>",
             "subtitle": "",
             "body": "<p>Budzisz się w środku nocy, a maska leży gdzieś obok poduszki?<br/><br/>Znamy to.<br/><br/>Zamiast gumki, która się rozciąga i niszczy włosy, Monté ma miękki, regulowany rzep.<br/><br/>Dostosujesz go do swojej głowy raz i maska nie rusza się przez całą noc.<br/><br/>Nawet jeśli jesteś niespokojną śpiącą.</p>",
-            "fact_icon": "shopify://shop_images/Lightbulb-On--Streamline-Sharp.svg",
-            "fact_label": "FAKT",
-            "fact_content": "<p>Po godzinie kontaktu z bawełnianą poszewką zostaje na twarzy ułamek tego, co zaaplikowałaś. Pozostała część albo wyparowała, albo migrowała do tkaniny. Płacisz pełną cenę za produkt, dostajesz fragment efektu.</p>",
-            "closing_text": "<p>Jeśli jest jedna część twojej rutyny, która zasługuje na ochronę, to właśnie ta. Bariera z gładkiego, niewchłanialnego materiału między kremem pod oczy a poduszką to różnica między działającym kremem a kremem, który \"podobno działa, ale nie widzę różnicy\".</p>",
+            "fact_label": "",
+            "fact_content": "",
+            "closing_text": "",
             "testimonial_text": "",
             "testimonial_reviewer": "",
             "testimonial_verified": true,
@@ -158,19 +157,20 @@
         "item_6": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/Image23.jpg",
             "video_url": "",
             "image_position": "start",
-            "title": "<p>Jedwab, który <em>chroni</em> twoją pielęgnację</p>",
+            "title": "<p>Dobre dla włosów - bez mechanicznego uszkadzania</p>",
             "subtitle": "",
-            "body": "<p>Monté to maska do spania ze 100% jedwabiu morwowego klasy 6A, 22 momme. Jedwab naturalnie nie wchłania kosmetyków, krem zostaje tam, gdzie go nałożyłaś. Gładka powierzchnia eliminuje tarcie. Pełny blackout odcina każde źródło światła w 100%.</p><p>Regulowany rzep premium dopasowuje maskę do twojego obwodu głowy. Jest tak zaprojektowany, żeby nie zaczepiać o włosy przy zakładaniu ani zdejmowaniu. Żadnej gumki, żadnego ucisku na skronie, żadnych śladów rano.</p>",
+            "body": "<p>Klasyczne gumki w maskach do snu to cichy wróg Twoich włosów. Tarcie, naciąganie, łamanie - szczególnie jeśli śpisz aktywnie.<br/><br/>Jedwab Monté jest naturalnie gładki. Rzep nie zaplata się we włosy. <br/><br/>Budzisz się z włosami takimi, z jakimi zasnęłaś.</p>",
             "fact_label": "FAKT",
             "fact_content": "",
             "closing_text": "",
             "testimonial_text": "",
             "testimonial_reviewer": "",
             "testimonial_verified": true,
-            "button_label": "Sprawdź dostępność",
-            "button_url": "shopify://products/midnight-blue-silk-sleep-mask"
+            "button_label": "",
+            "button_url": ""
           }
         },
         "item_7": {
