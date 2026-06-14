@@ -218,27 +218,36 @@
     },
     "listicle_offer_cta_hYL7UU": {
       "type": "listicle-offer-cta",
+      "blocks": {
+        "card_NBDJwL": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "123",
+            "heading": "213",
+            "subtext": "<p>123</p>",
+            "feature_1": "123",
+            "feature_2": "213",
+            "feature_3": "123",
+            "feature_4": "",
+            "button_label": "",
+            "button_url": "",
+            "trust_1": "",
+            "trust_2": "",
+            "trust_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_NBDJwL"
+      ],
       "name": "Listicle – Offer CTA",
       "settings": {
-        "eyebrow": "Kup 1 maskę, drugą otrzymasz 20% taniej",
-        "heading": "Specjalna oferta - tylko teraz",
-        "subtext": "",
-        "image": "shopify://shop_images/4M.jpg",
-        "feature_1": "Nie wchłania kosmetyków, zero załamów rano",
-        "feature_2": "Bez ucisku na oczy i rzęsy przez całą noc",
-        "feature_3": "Rzep zamiast gumki, nie ściska skroni",
-        "feature_4": "100% blackout dla całkowitej ciemności",
-        "button_label": "Sprawdź dostępność",
-        "button_url": "",
-        "trust_1": "Bezpieczna płatność za pomocą BLIK",
-        "trust_2": "30-nocna gwarancja zwrotu pieniędzy",
-        "trust_3": "Dostawa kurierem InPost w 1–2 dni robocze",
         "background": "",
         "background_gradient": "",
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 80,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 60
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     },
     "listicle_footer": {
