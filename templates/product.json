@@ -389,7 +389,7 @@
         "review_card_wYxTgi"
       ],
       "settings": {
-        "image": "shopify://shop_images/monte-silk-sleep-mask-midnight-blue-studio-front-both-hands.jpg",
+        "image": "{{ product.metafields.custom.mask_preview.value }}",
         "tagline": "Beauty Sleep",
         "heading": "Jedwab, który **jest delikatny**",
         "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez zalamów i śladów na skórze.",
