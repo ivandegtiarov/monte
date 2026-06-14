@@ -215,18 +215,26 @@
         "card_NBDJwL": {
           "type": "card",
           "settings": {
-            "eyebrow": "123",
-            "heading": "213",
-            "subtext": "<p>123</p>",
-            "feature_1": "123",
-            "feature_2": "213",
-            "feature_3": "123",
-            "feature_4": "",
-            "button_label": "",
-            "button_url": "",
-            "trust_1": "",
-            "trust_2": "",
-            "trust_3": ""
+            "eyebrow": "Kup 1 maskę, drugą otrzymasz 20% taniej",
+            "heading": "Specjalna oferta - tylko teraz",
+            "subtext": "<p>Bo dobry sen i skuteczna pielęgnacja nie powinny być kompromisem.</p>",
+            "image": "shopify://shop_images/4M.jpg",
+            "feature_1_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "feature_1": "Nie wchłania kosmetyków, zero załamów rano",
+            "feature_2_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "feature_2": "Bez ucisku na oczy i rzęsy przez całą noc",
+            "feature_3_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "feature_3": "Rzep zamiast gumki, nie ściska skroni",
+            "feature_4_icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
+            "feature_4": "100% blackout dla całkowitej ciemności",
+            "button_label": "Sprawdź dostępność",
+            "button_url": "shopify://products/classic-black-sleep-mask",
+            "trust_1_icon": "shopify://shop_images/Shield-Check--Streamline-Sharp.svg",
+            "trust_1": "Bezpieczna płatność za pomocą BLIK",
+            "trust_2_icon": "shopify://shop_images/Shipment-Return--Streamline-Sharp_2.svg",
+            "trust_2": "30-nocna gwarancja zwrotu pieniędzy",
+            "trust_3_icon": "shopify://shop_images/Shipping-Transfer-Truck--Streamline-Sharp_6.svg",
+            "trust_3": "Dostawa kurierem InPost w 1–2 dni robocze"
           }
         }
       },
