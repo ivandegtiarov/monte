@@ -45,6 +45,7 @@
         "tagline": "",
         "title": "<p>Twój retinol <em>nie powinien</em><br/>kończyć na poduszce</p>",
         "intro": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej. Oto 5 rzeczy, które dzieją się z twoją skórą między północą a poranem.</p>",
+        "reading_time_text": "Czas czytania - 4 min",
         "hero_image": "shopify://shop_images/Hero_image.jpg",
         "body_content": "<p>Twoja rutyna jest dobrze skonstruowana. Niacynamid od retinolu odróżniasz na pamięć, składy czytasz zanim coś trafi do koszyka. Krem pod oczy za 200 zł kupujesz bez wahania, bo efekty są warte ceny.</p><p>A jednak rano widzisz to samo. Suchość, załamy, skórę, która nie wygląda na w pełni zregenerowaną. Nie ma w tym nic z twoją rutyną. Chodzi o to, co dzieje się po niej, przez 8 godzin, kiedy śpisz.</p>",
         "body_conclusion": "<p>Oto 5 konkretnych mechanizmów, które niwelują efekty tego, co robisz wieczorem.</p>",
@@ -65,6 +66,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Image_5b05cb15-c5a4-47cd-8ca1-9cb590c460e5.jpg",
+            "video_url": "",
             "image_position": "start",
             "title": "<p>Twoja bawełniana poszewka <em>wchłania</em> twoje kosmetyki</p>",
             "subtitle": "",
@@ -83,6 +85,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Image-1_3c4c3196-4a4b-4e20-ac3d-3047c329aca6.jpg",
+            "video_url": "",
             "image_position": "start",
             "title": "<p>8 godzin <em>nieustannego</em> tarcia to nie jest neutralne dla skóry</p>",
             "subtitle": "",
@@ -102,6 +105,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Image-2_c229d5db-6a20-4794-a4a3-0e6c8ee17156.jpg",
+            "video_url": "",
             "image_position": "start",
             "title": "<p>Spanie na boku to asymetryczna kompresja przez całe życie</p>",
             "subtitle": "",
@@ -121,6 +125,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Image-3.jpg",
+            "video_url": "",
             "image_position": "start",
             "title": "<p>Twoja sypialnia nie jest tak <em>ciemna</em>, jak myślisz</p>",
             "subtitle": "",
@@ -140,6 +145,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Image-4_b3f65160-dfaf-4695-b435-45a3e6207a33.jpg",
+            "video_url": "",
             "image_position": "start",
             "title": "<p>Twój krem pod oczy <em>znika</em> w pierwszej godzinie</p>",
             "subtitle": "",
@@ -158,6 +164,7 @@
         "item_6": {
           "type": "item",
           "settings": {
+            "video_url": "",
             "image_position": "start",
             "title": "<p>Jedwab, który <em>chroni</em> twoją pielęgnację</p>",
             "subtitle": "",
@@ -176,6 +183,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Image-6.jpg",
+            "video_url": "",
             "image_position": "start",
             "title": "<p>Kobiety, które śpią z Monté, nie wyobrażają sobie powrotu do <em>bawełny</em></p>",
             "subtitle": "",
