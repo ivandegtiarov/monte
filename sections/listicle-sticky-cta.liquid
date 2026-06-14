@@ -71,50 +71,57 @@
 (function () {
   'use strict';
 
-  var barEl = document.getElementById('lsc-bar-{{ section.id }}');
-  if (!barEl) return;
+  function init() {
+    var barEl = document.getElementById('lsc-bar-{{ section.id }}');
+    if (!barEl) return;
 
-  if (window.matchMedia('(min-width: 900px)').matches) return;
+    if (window.matchMedia('(min-width: 900px)').matches) return;
 
-  var itemsSection = document.querySelector('.shopify-section--listicle-items');
-  if (!itemsSection) return;
+    var itemsSection = document.querySelector('.shopify-section--listicle-items');
+    if (!itemsSection) return;
 
-  var items = itemsSection.querySelectorAll('.listicle-item');
-  var triggerItem = items[1];   /* 2nd item — bar appears when scrolled past */
+    var items = itemsSection.querySelectorAll('.listicle-item');
+    var triggerItem = items[1]; /* 2nd item — bar appears when scrolled past */
+    if (!triggerItem) return;
 
-  if (!triggerItem) return;
+    /* Hide when Listicle – Offer CTA section enters the viewport */
+    var hideSection = document.querySelector('.shopify-section--listicle-offer-cta');
 
-  /* Hide when Listicle – Offer CTA section enters the viewport */
-  var hideSection = document.querySelector('.shopify-section--listicle-offer-cta');
+    var state = { triggerActive: false, hideActive: false };
 
-  var state = { triggerActive: false, hideActive: false };
+    function update() {
+      var shouldShow = state.triggerActive && !state.hideActive;
+      barEl.classList.toggle('lsc-bar--visible', shouldShow);
+      barEl.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+    }
 
-  function update() {
-    var shouldShow = state.triggerActive && !state.hideActive;
-    barEl.classList.toggle('lsc-bar--visible', shouldShow);
-    barEl.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
-  }
-
-  /* Appears once the 2nd item has entered or been scrolled past */
-  var obsTrigger = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      state.triggerActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
-      update();
-    });
-  }, { threshold: 0 });
-
-  obsTrigger.observe(triggerItem);
-
-  /* Hides once the Offer CTA section enters or is scrolled past */
-  if (hideSection) {
-    var obsHide = new IntersectionObserver(function (entries) {
+    /* Appears once the 2nd item has entered or been scrolled past */
+    var obsTrigger = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        state.hideActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
+        state.triggerActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
         update();
       });
     }, { threshold: 0 });
 
-    obsHide.observe(hideSection);
+    obsTrigger.observe(triggerItem);
+
+    /* Hides once the Offer CTA section enters or is scrolled past */
+    if (hideSection) {
+      var obsHide = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          state.hideActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
+          update();
+        });
+      }, { threshold: 0 });
+
+      obsHide.observe(hideSection);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
 </script>
