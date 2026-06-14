@@ -81,9 +81,11 @@
 
   var items = itemsSection.querySelectorAll('.listicle-item');
   var triggerItem = items[1];   /* 2nd item — bar appears when scrolled past */
-  var hideItem    = items[items.length - 1]; /* last item — bar hides */
 
   if (!triggerItem) return;
+
+  /* Hide when Listicle – Offer CTA section enters the viewport */
+  var hideSection = document.querySelector('.shopify-section--listicle-offer-cta');
 
   var state = { triggerActive: false, hideActive: false };
 
@@ -103,8 +105,8 @@
 
   obsTrigger.observe(triggerItem);
 
-  /* Hides once the last item has entered or been scrolled past */
-  if (hideItem && hideItem !== triggerItem) {
+  /* Hides once the Offer CTA section enters or is scrolled past */
+  if (hideSection) {
     var obsHide = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         state.hideActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
@@ -112,7 +114,7 @@
       });
     }, { threshold: 0 });
 
-    obsHide.observe(hideItem);
+    obsHide.observe(hideSection);
   }
 })();
 </script>
