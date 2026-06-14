@@ -234,10 +234,14 @@
 
               {%- if section.settings.reading_time_text != blank -%}
                 <div class="listicle-intro__reading-time">
-                  <svg class="listicle-intro__reading-time-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="10" cy="10" r="8.5" stroke="#182153" stroke-width="1.5"/>
-                    <path d="M10 5.5V10L13 12.5" stroke="#182153" stroke-width="1.5" stroke-linecap="square"/>
-                  </svg>
+                  {%- if section.settings.reading_time_icon != blank -%}
+                    {{- section.settings.reading_time_icon | image_url: width: 40 | image_tag: class: 'listicle-intro__reading-time-icon', loading: 'lazy', alt: '' -}}
+                  {%- else -%}
+                    <svg class="listicle-intro__reading-time-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <circle cx="10" cy="10" r="8.5" stroke="#182153" stroke-width="1.5"/>
+                      <path d="M10 5.5V10L13 12.5" stroke="#182153" stroke-width="1.5" stroke-linecap="square"/>
+                    </svg>
+                  {%- endif -%}
                   <p class="listicle-intro__reading-time-text">{{ section.settings.reading_time_text | escape }}</p>
                 </div>
               {%- endif -%}
@@ -324,6 +328,12 @@
       "type": "richtext",
       "id": "intro",
       "label": "Intro text"
+    },
+    {
+      "type": "image_picker",
+      "id": "reading_time_icon",
+      "label": "Reading time icon",
+      "info": "20×20px. Defaults to clock if empty."
     },
     {
       "type": "text",

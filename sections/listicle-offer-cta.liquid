@@ -256,37 +256,53 @@
           <div class="listicle-offer-cta__features">
             {%- if section.settings.feature_1 != blank -%}
               <div class="listicle-offer-cta__feature">
-                <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                  <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                {%- if section.settings.feature_1_icon != blank -%}
+                  {{- section.settings.feature_1_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                {%- else -%}
+                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- endif -%}
                 <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_1 | escape }}</p>
               </div>
             {%- endif -%}
             {%- if section.settings.feature_2 != blank -%}
               <div class="listicle-offer-cta__feature">
-                <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                  <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                {%- if section.settings.feature_2_icon != blank -%}
+                  {{- section.settings.feature_2_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                {%- else -%}
+                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- endif -%}
                 <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_2 | escape }}</p>
               </div>
             {%- endif -%}
             {%- if section.settings.feature_3 != blank -%}
               <div class="listicle-offer-cta__feature">
-                <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                  <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                {%- if section.settings.feature_3_icon != blank -%}
+                  {{- section.settings.feature_3_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                {%- else -%}
+                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- endif -%}
                 <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_3 | escape }}</p>
               </div>
             {%- endif -%}
             {%- if section.settings.feature_4 != blank -%}
               <div class="listicle-offer-cta__feature">
-                <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                  <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                {%- if section.settings.feature_4_icon != blank -%}
+                  {{- section.settings.feature_4_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                {%- else -%}
+                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- endif -%}
                 <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_4 | escape }}</p>
               </div>
             {%- endif -%}
@@ -385,9 +401,21 @@
       "content": "Features"
     },
     {
+      "type": "image_picker",
+      "id": "feature_1_icon",
+      "label": "Feature 1 icon",
+      "info": "20×20px. Defaults to checkmark if empty."
+    },
+    {
       "type": "text",
       "id": "feature_1",
       "label": "Feature 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_2_icon",
+      "label": "Feature 2 icon",
+      "info": "20×20px. Defaults to checkmark if empty."
     },
     {
       "type": "text",
@@ -395,9 +423,21 @@
       "label": "Feature 2"
     },
     {
+      "type": "image_picker",
+      "id": "feature_3_icon",
+      "label": "Feature 3 icon",
+      "info": "20×20px. Defaults to checkmark if empty."
+    },
+    {
       "type": "text",
       "id": "feature_3",
       "label": "Feature 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_4_icon",
+      "label": "Feature 4 icon",
+      "info": "20×20px. Defaults to checkmark if empty."
     },
     {
       "type": "text",
