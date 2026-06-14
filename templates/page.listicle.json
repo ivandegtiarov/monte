@@ -81,12 +81,12 @@
         "item_2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Image-1_3c4c3196-4a4b-4e20-ac3d-3047c329aca6.jpg",
+            "video": "shopify://files/videos/Black square.mp4",
             "video_url": "",
             "image_position": "start",
             "title": "<p>Jedwab to nie luksus - to ostatni element rutyny pielęgnacyjnej, którego Ci brakuje</p>",
             "subtitle": "",
-            "body": "<p>Wydajesz 200, 300, 500 zł na kosmetyki. A potem pozwalasz, żeby bawełna pochłonęła połowę ich działania. <br/><br/>Jedwabna maska Monté to uzupełnienie rutyny, nie dodatek do niej.<br/><br/>To decyzja, która sprawia, że wszystko inne zaczyna działać lepiej.</p>",
+            "body": "<p>Wydajesz 200, 300, 500 zł na kosmetyki. <br/><br/>A potem pozwalasz, żeby bawełna pochłonęła połowę ich działania. <br/><br/>Jedwabna maska Monté to uzupełnienie rutyny, nie dodatek do niej.<br/><br/>To decyzja, która sprawia, że wszystko inne zaczyna działać lepiej.</p>",
             "fact_label": "",
             "fact_content": "",
             "closing_text": "",
