@@ -30,7 +30,7 @@
       "settings": {
         "label": "Oferta specjalna:",
         "offer_text": "Kup 1 maskę, drugą otrzymasz 20% taniej",
-        "link_url": "",
+        "link_url": "shopify://products/classic-black-sleep-mask",
         "background_color": "#232e71",
         "text_color": "#f8f1e9"
       }
