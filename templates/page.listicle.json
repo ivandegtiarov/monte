@@ -38,13 +38,10 @@
     "listicle_intro": {
       "type": "listicle-intro",
       "settings": {
-        "social_proof_image_1": "shopify://shop_images/UGC_2.png",
-        "social_proof_image_2": "shopify://shop_images/UGC_3.png",
-        "social_proof_image_3": "shopify://shop_images/UGC_5.png",
-        "social_proof_text": "<p>Ponad 700+ zadowolonych kobiet</p>",
+        "social_proof_text": "",
         "tagline": "",
-        "title": "<p>Twój retinol <em>nie powinien</em><br/>kończyć na poduszce</p>",
-        "intro": "<p>Jeśli wydajesz 200-500 zł miesięcznie na pielęgnację, a rano nadal widzisz załamy i zmęczoną skórę, czytaj dalej. Oto 5 rzeczy, które dzieją się z twoją skórą między północą a poranem.</p>",
+        "title": "<p>7 powodów, dla których kobiety wybierają jedwabną maskę do snu (i nigdy nie wracają do bawełny)</p>",
+        "intro": "<p>Jeśli wydajesz pieniądze na dobre kosmetyki i zależy Ci na jakości snu, ten artykuł jest właśnie dla Ciebie.</p>",
         "reading_time_text": "Czas czytania - 4 min",
         "hero_image": "shopify://shop_images/Hero_image.jpg",
         "body_content": "",
@@ -68,9 +65,9 @@
             "image": "shopify://shop_images/Image_5b05cb15-c5a4-47cd-8ca1-9cb590c460e5.jpg",
             "video_url": "",
             "image_position": "start",
-            "title": "<p>Twoja bawełniana poszewka <em>wchłania</em> twoje kosmetyki</p>",
+            "title": "<p>Twoja bawełniana poduszka wchłania drogie kosmetyki, zanim zdążą zadziałać</p>",
             "subtitle": "",
-            "body": "<p>Bawełna jest tkaniną chłonną, używamy jej do ręczników, ścierek, waty. To dokładnie ta sama właściwość, która sprawia, że twoja poszewka działa jak gąbka dla wszystkiego, co nakładasz wiecz</p>",
+            "body": "<p>Nakładasz retinol, serum z witaminą C, krem nawilżający.<br/><br/>I zasypiasz. <br/><br/>A rano? <br/><br/>Sucha skóra, odcisk na policzku i poczucie, że coś nie działa. Problem nie leży w kosmetykach.<br/><br/>Leży w tym, z czym styka się Twoja twarz przez całą noc.<br/><br/>Bawełna ma strukturę włókien, które jak gąbka wchłaniają wszystko, w tym właśnie Twoją wieczorną pielęgnację. <br/><br/>Jedwab nie wchłania niczego. Twój krem zostaje tam, gdzie powinien - na Twojej skórze.</p>",
             "fact_label": "",
             "fact_content": "",
             "closing_text": "",
