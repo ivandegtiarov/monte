@@ -414,8 +414,14 @@
 <section class="stats-proof-{{ section.id }}">
   <div class="stats-proof__inner">
 
-    {%- if section.settings.image != blank -%}
-      <div class="stats-proof__image-wrap">
+    <div class="stats-proof__image-wrap">
+      {%- if section.settings.video != blank -%}
+        <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+          {%- for source in section.settings.video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      {%- elsif section.settings.image != blank -%}
         {{
           section.settings.image
           | image_url: width: 1360
@@ -424,12 +430,10 @@
             widths: '400, 600, 800, 1000, 1360',
             alt: section.settings.image.alt | escape
         }}
-      </div>
-    {%- else -%}
-      <div class="stats-proof__image-wrap">
+      {%- else -%}
         {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-      </div>
-    {%- endif -%}
+      {%- endif -%}
+    </div>
 
     <div class="stats-proof__content">
 
@@ -543,6 +547,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video (overrides image when set)"
     },
     {
       "type": "header",
