@@ -17,7 +17,9 @@
     padding-block-start: var(--padding-top);
     padding-block-end: var(--padding-bottom);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
   #shopify-section-{{ section.id }} .listicle-offer-cta__card {
@@ -220,168 +222,174 @@
 
 <div {% render 'section-properties' %}>
   <div class="listicle-offer-cta container">
-    <div class="listicle-offer-cta__card">
-      <div class="listicle-offer-cta__inner">
 
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'card' -%}
         {%- liquid
           assign has_features = false
-          if section.settings.feature_1 != blank or section.settings.feature_2 != blank or section.settings.feature_3 != blank or section.settings.feature_4 != blank
+          if block.settings.feature_1 != blank or block.settings.feature_2 != blank or block.settings.feature_3 != blank or block.settings.feature_4 != blank
             assign has_features = true
           endif
         -%}
 
-        <!-- Header -->
-        {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subtext != blank -%}
-          <div class="listicle-offer-cta__header">
-            {%- if section.settings.eyebrow != blank -%}
-              <p class="listicle-offer-cta__eyebrow">{{ section.settings.eyebrow | escape }}</p>
-            {%- endif -%}
-            {%- if section.settings.heading != blank -%}
-              <h2 class="listicle-offer-cta__heading">{{ section.settings.heading | escape }}</h2>
-            {%- endif -%}
-            {%- if section.settings.subtext != blank -%}
-              <div class="listicle-offer-cta__subtext listicle-offer-cta__subtext-wrap">{{ section.settings.subtext }}</div>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
+        <div class="listicle-offer-cta__card" {{ block.shopify_attributes }}>
+          <div class="listicle-offer-cta__inner">
 
-        <div class="listicle-offer-cta__divider"></div>
+            <!-- Header -->
+            {%- if block.settings.eyebrow != blank or block.settings.heading != blank or block.settings.subtext != blank -%}
+              <div class="listicle-offer-cta__header">
+                {%- if block.settings.eyebrow != blank -%}
+                  <p class="listicle-offer-cta__eyebrow">{{ block.settings.eyebrow | escape }}</p>
+                {%- endif -%}
+                {%- if block.settings.heading != blank -%}
+                  <h2 class="listicle-offer-cta__heading">{{ block.settings.heading | escape }}</h2>
+                {%- endif -%}
+                {%- if block.settings.subtext != blank -%}
+                  <div class="listicle-offer-cta__subtext listicle-offer-cta__subtext-wrap">{{ block.settings.subtext }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
 
-        <!-- Image -->
-        {%- if section.settings.image != blank -%}
-          <div class="listicle-offer-cta__image">
-            {{-
-              section.settings.image
-              | image_url: width: section.settings.image.width
-              | image_tag:
-                loading: 'lazy',
-                sizes: '(max-width: 749px) calc(100vw - 64px), 520px',
-                widths: '400,600,800,1000',
-                alt: section.settings.image.alt | escape
-            -}}
-          </div>
-        {%- endif -%}
+            <div class="listicle-offer-cta__divider"></div>
 
-        <!-- Features -->
-        {%- if has_features -%}
-          <div class="listicle-offer-cta__features">
-            {%- if section.settings.feature_1 != blank -%}
-              <div class="listicle-offer-cta__feature">
-                {%- if section.settings.feature_1_icon != blank -%}
-                  {{- section.settings.feature_1_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
-                {%- else -%}
-                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                {%- endif -%}
-                <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_1 | escape }}</p>
+            <!-- Image -->
+            {%- if block.settings.image != blank -%}
+              <div class="listicle-offer-cta__image">
+                {{-
+                  block.settings.image
+                  | image_url: width: block.settings.image.width
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '(max-width: 749px) calc(100vw - 64px), 520px',
+                    widths: '400,600,800,1000',
+                    alt: block.settings.image.alt | escape
+                -}}
               </div>
             {%- endif -%}
-            {%- if section.settings.feature_2 != blank -%}
-              <div class="listicle-offer-cta__feature">
-                {%- if section.settings.feature_2_icon != blank -%}
-                  {{- section.settings.feature_2_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
-                {%- else -%}
-                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                {%- endif -%}
-                <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_2 | escape }}</p>
-              </div>
-            {%- endif -%}
-            {%- if section.settings.feature_3 != blank -%}
-              <div class="listicle-offer-cta__feature">
-                {%- if section.settings.feature_3_icon != blank -%}
-                  {{- section.settings.feature_3_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
-                {%- else -%}
-                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                {%- endif -%}
-                <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_3 | escape }}</p>
-              </div>
-            {%- endif -%}
-            {%- if section.settings.feature_4 != blank -%}
-              <div class="listicle-offer-cta__feature">
-                {%- if section.settings.feature_4_icon != blank -%}
-                  {{- section.settings.feature_4_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
-                {%- else -%}
-                  <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="10" cy="10" r="10" fill="#232e71"/>
-                    <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                {%- endif -%}
-                <p class="listicle-offer-cta__feature-text">{{ section.settings.feature_4 | escape }}</p>
-              </div>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
 
-        <!-- CTA + trust -->
-        <div class="listicle-offer-cta__cta">
-          {%- if section.settings.button_label != blank -%}
-            {%- if section.settings.button_url != blank -%}
-              <a href="{{ section.settings.button_url }}" class="listicle-offer-cta__button">
-                {{- section.settings.button_label | escape -}}
-              </a>
-            {%- else -%}
-              <button type="button" class="listicle-offer-cta__button">
-                {{- section.settings.button_label | escape -}}
-              </button>
+            <!-- Features -->
+            {%- if has_features -%}
+              <div class="listicle-offer-cta__features">
+                {%- if block.settings.feature_1 != blank -%}
+                  <div class="listicle-offer-cta__feature">
+                    {%- if block.settings.feature_1_icon != blank -%}
+                      {{- block.settings.feature_1_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                    {%- else -%}
+                      <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                        <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    {%- endif -%}
+                    <p class="listicle-offer-cta__feature-text">{{ block.settings.feature_1 | escape }}</p>
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.feature_2 != blank -%}
+                  <div class="listicle-offer-cta__feature">
+                    {%- if block.settings.feature_2_icon != blank -%}
+                      {{- block.settings.feature_2_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                    {%- else -%}
+                      <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                        <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    {%- endif -%}
+                    <p class="listicle-offer-cta__feature-text">{{ block.settings.feature_2 | escape }}</p>
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.feature_3 != blank -%}
+                  <div class="listicle-offer-cta__feature">
+                    {%- if block.settings.feature_3_icon != blank -%}
+                      {{- block.settings.feature_3_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                    {%- else -%}
+                      <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                        <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    {%- endif -%}
+                    <p class="listicle-offer-cta__feature-text">{{ block.settings.feature_3 | escape }}</p>
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.feature_4 != blank -%}
+                  <div class="listicle-offer-cta__feature">
+                    {%- if block.settings.feature_4_icon != blank -%}
+                      {{- block.settings.feature_4_icon | image_url: width: 40 | image_tag: class: 'listicle-offer-cta__feature-icon', loading: 'lazy', alt: '' -}}
+                    {%- else -%}
+                      <svg class="listicle-offer-cta__feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="10" cy="10" r="10" fill="#232e71"/>
+                        <path d="M6 10l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    {%- endif -%}
+                    <p class="listicle-offer-cta__feature-text">{{ block.settings.feature_4 | escape }}</p>
+                  </div>
+                {%- endif -%}
+              </div>
             {%- endif -%}
-          {%- endif -%}
 
-          <div class="listicle-offer-cta__trust">
-            {%- if section.settings.trust_1 != blank -%}
-              <div class="listicle-offer-cta__trust-item">
-                {%- if section.settings.trust_1_icon != blank -%}
-                  {{- section.settings.trust_1_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
+            <!-- CTA + trust -->
+            <div class="listicle-offer-cta__cta">
+              {%- if block.settings.button_label != blank -%}
+                {%- if block.settings.button_url != blank -%}
+                  <a href="{{ block.settings.button_url }}" class="listicle-offer-cta__button">
+                    {{- block.settings.button_label | escape -}}
+                  </a>
                 {%- else -%}
-                  <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M2 5.5l6-3 6 3v5l-6 3-6-3v-5z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
-                    <path d="M2 5.5l6 3 6-3M8 8.5V14" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
-                    <path d="M5 4l6 3" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
-                  </svg>
+                  <button type="button" class="listicle-offer-cta__button">
+                    {{- block.settings.button_label | escape -}}
+                  </button>
                 {%- endif -%}
-                <p class="listicle-offer-cta__trust-text">{{ section.settings.trust_1 | escape }}</p>
-              </div>
-            {%- endif -%}
-            {%- if section.settings.trust_2 != blank -%}
-              <div class="listicle-offer-cta__trust-item">
-                {%- if section.settings.trust_2_icon != blank -%}
-                  {{- section.settings.trust_2_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
-                {%- else -%}
-                  <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M2 5h8a3 3 0 0 1 0 6H6" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4 3L2 5l2 2" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+              {%- endif -%}
+
+              <div class="listicle-offer-cta__trust">
+                {%- if block.settings.trust_1 != blank -%}
+                  <div class="listicle-offer-cta__trust-item">
+                    {%- if block.settings.trust_1_icon != blank -%}
+                      {{- block.settings.trust_1_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
+                    {%- else -%}
+                      <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M2 5.5l6-3 6 3v5l-6 3-6-3v-5z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
+                        <path d="M2 5.5l6 3 6-3M8 8.5V14" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M5 4l6 3" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
+                      </svg>
+                    {%- endif -%}
+                    <p class="listicle-offer-cta__trust-text">{{ block.settings.trust_1 | escape }}</p>
+                  </div>
                 {%- endif -%}
-                <p class="listicle-offer-cta__trust-text">{{ section.settings.trust_2 | escape }}</p>
-              </div>
-            {%- endif -%}
-            {%- if section.settings.trust_3 != blank -%}
-              <div class="listicle-offer-cta__trust-item">
-                {%- if section.settings.trust_3_icon != blank -%}
-                  {{- section.settings.trust_3_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
-                {%- else -%}
-                  <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M1 3h9v7H1V3z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
-                    <path d="M10 6h2l2 2.5V10h-4V6z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
-                    <circle cx="4" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
-                    <circle cx="12" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
-                  </svg>
+                {%- if block.settings.trust_2 != blank -%}
+                  <div class="listicle-offer-cta__trust-item">
+                    {%- if block.settings.trust_2_icon != blank -%}
+                      {{- block.settings.trust_2_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
+                    {%- else -%}
+                      <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M2 5h8a3 3 0 0 1 0 6H6" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 3L2 5l2 2" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    {%- endif -%}
+                    <p class="listicle-offer-cta__trust-text">{{ block.settings.trust_2 | escape }}</p>
+                  </div>
                 {%- endif -%}
-                <p class="listicle-offer-cta__trust-text">{{ section.settings.trust_3 | escape }}</p>
+                {%- if block.settings.trust_3 != blank -%}
+                  <div class="listicle-offer-cta__trust-item">
+                    {%- if block.settings.trust_3_icon != blank -%}
+                      {{- block.settings.trust_3_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
+                    {%- else -%}
+                      <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M1 3h9v7H1V3z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
+                        <path d="M10 6h2l2 2.5V10h-4V6z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
+                        <circle cx="4" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
+                        <circle cx="12" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
+                      </svg>
+                    {%- endif -%}
+                    <p class="listicle-offer-cta__trust-text">{{ block.settings.trust_3 | escape }}</p>
+                  </div>
+                {%- endif -%}
               </div>
-            {%- endif -%}
+            </div>
+
           </div>
         </div>
+      {%- endif -%}
+    {%- endfor -%}
 
-      </div>
-    </div>
   </div>
 </div>
 
@@ -390,134 +398,142 @@
   "name": "Listicle – Offer CTA",
   "class": "shopify-section--listicle-offer-cta",
   "tag": "section",
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Header"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow text"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Subtext"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Hero image"
+        },
+        {
+          "type": "header",
+          "content": "Features"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_1_icon",
+          "label": "Feature 1 icon",
+          "info": "20×20px. Defaults to checkmark if empty."
+        },
+        {
+          "type": "text",
+          "id": "feature_1",
+          "label": "Feature 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_2_icon",
+          "label": "Feature 2 icon",
+          "info": "20×20px. Defaults to checkmark if empty."
+        },
+        {
+          "type": "text",
+          "id": "feature_2",
+          "label": "Feature 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_3_icon",
+          "label": "Feature 3 icon",
+          "info": "20×20px. Defaults to checkmark if empty."
+        },
+        {
+          "type": "text",
+          "id": "feature_3",
+          "label": "Feature 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_4_icon",
+          "label": "Feature 4 icon",
+          "info": "20×20px. Defaults to checkmark if empty."
+        },
+        {
+          "type": "text",
+          "id": "feature_4",
+          "label": "Feature 4"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button link"
+        },
+        {
+          "type": "header",
+          "content": "Trust badges"
+        },
+        {
+          "type": "image_picker",
+          "id": "trust_1_icon",
+          "label": "Trust item 1 icon",
+          "info": "16×16px. Defaults to box icon if empty."
+        },
+        {
+          "type": "text",
+          "id": "trust_1",
+          "label": "Trust item 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "trust_2_icon",
+          "label": "Trust item 2 icon",
+          "info": "16×16px. Defaults to return icon if empty."
+        },
+        {
+          "type": "text",
+          "id": "trust_2",
+          "label": "Trust item 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "trust_3_icon",
+          "label": "Trust item 3 icon",
+          "info": "16×16px. Defaults to truck icon if empty."
+        },
+        {
+          "type": "text",
+          "id": "trust_3",
+          "label": "Trust item 3"
+        }
+      ]
+    }
+  ],
   "settings": [
-    {
-      "type": "header",
-      "content": "Header"
-    },
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow text"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading"
-    },
-    {
-      "type": "richtext",
-      "id": "subtext",
-      "label": "Subtext"
-    },
-    {
-      "type": "header",
-      "content": "Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Hero image"
-    },
-    {
-      "type": "header",
-      "content": "Features"
-    },
-    {
-      "type": "image_picker",
-      "id": "feature_1_icon",
-      "label": "Feature 1 icon",
-      "info": "20×20px. Defaults to checkmark if empty."
-    },
-    {
-      "type": "text",
-      "id": "feature_1",
-      "label": "Feature 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "feature_2_icon",
-      "label": "Feature 2 icon",
-      "info": "20×20px. Defaults to checkmark if empty."
-    },
-    {
-      "type": "text",
-      "id": "feature_2",
-      "label": "Feature 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "feature_3_icon",
-      "label": "Feature 3 icon",
-      "info": "20×20px. Defaults to checkmark if empty."
-    },
-    {
-      "type": "text",
-      "id": "feature_3",
-      "label": "Feature 3"
-    },
-    {
-      "type": "image_picker",
-      "id": "feature_4_icon",
-      "label": "Feature 4 icon",
-      "info": "20×20px. Defaults to checkmark if empty."
-    },
-    {
-      "type": "text",
-      "id": "feature_4",
-      "label": "Feature 4"
-    },
-    {
-      "type": "header",
-      "content": "Button"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button label"
-    },
-    {
-      "type": "url",
-      "id": "button_url",
-      "label": "Button link"
-    },
-    {
-      "type": "header",
-      "content": "Trust badges"
-    },
-    {
-      "type": "image_picker",
-      "id": "trust_1_icon",
-      "label": "Trust item 1 icon",
-      "info": "16×16px. Defaults to box icon if empty."
-    },
-    {
-      "type": "text",
-      "id": "trust_1",
-      "label": "Trust item 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "trust_2_icon",
-      "label": "Trust item 2 icon",
-      "info": "16×16px. Defaults to return icon if empty."
-    },
-    {
-      "type": "text",
-      "id": "trust_2",
-      "label": "Trust item 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "trust_3_icon",
-      "label": "Trust item 3 icon",
-      "info": "16×16px. Defaults to truck icon if empty."
-    },
-    {
-      "type": "text",
-      "id": "trust_3",
-      "label": "Trust item 3"
-    },
     {
       "type": "header",
       "content": "Colors"
@@ -584,18 +600,23 @@
   "presets": [
     {
       "name": "Listicle – Offer CTA",
-      "settings": {
-        "eyebrow": "Kup 1 maskę, drugą otrzymasz 20% taniej",
-        "heading": "Specjalna oferta - tylko teraz",
-        "button_label": "Sprawdź dostępność",
-        "feature_1": "Nie wchłania kosmetyków, zero załamów rano",
-        "feature_2": "Bez ucisku na oczy i rzęsy przez całą noc",
-        "feature_3": "Rzep zamiast gumki, nie ściska skroni",
-        "feature_4": "100% blackout dla całkowitej ciemności",
-        "trust_1": "Bezpieczna płatność za pomocą BLIK",
-        "trust_2": "30-nocna gwarancja zwrotu pieniędzy",
-        "trust_3": "Dostawa kurierem InPost w 1–2 dni robocze"
-      }
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Kup 1 maskę, drugą otrzymasz 20% taniej",
+            "heading": "Specjalna oferta - tylko teraz",
+            "button_label": "Sprawdź dostępność",
+            "feature_1": "Nie wchłania kosmetyków, zero załamów rano",
+            "feature_2": "Bez ucisku na oczy i rzęsy przez całą noc",
+            "feature_3": "Rzep zamiast gumki, nie ściska skroni",
+            "feature_4": "100% blackout dla całkowitej ciemności",
+            "trust_1": "Bezpieczna płatność za pomocą BLIK",
+            "trust_2": "30-nocna gwarancja zwrotu pieniędzy",
+            "trust_3": "Dostawa kurierem InPost w 1–2 dni robocze"
+          }
+        }
+      ]
     }
   ]
 }
