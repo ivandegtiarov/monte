@@ -326,31 +326,43 @@
           <div class="listicle-offer-cta__trust">
             {%- if section.settings.trust_1 != blank -%}
               <div class="listicle-offer-cta__trust-item">
-                <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M2 5.5l6-3 6 3v5l-6 3-6-3v-5z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
-                  <path d="M2 5.5l6 3 6-3M8 8.5V14" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
-                  <path d="M5 4l6 3" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
-                </svg>
+                {%- if section.settings.trust_1_icon != blank -%}
+                  {{- section.settings.trust_1_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
+                {%- else -%}
+                  <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2 5.5l6-3 6 3v5l-6 3-6-3v-5z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
+                    <path d="M2 5.5l6 3 6-3M8 8.5V14" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M5 4l6 3" stroke="#182153" stroke-width="1.2" stroke-linecap="round"/>
+                  </svg>
+                {%- endif -%}
                 <p class="listicle-offer-cta__trust-text">{{ section.settings.trust_1 | escape }}</p>
               </div>
             {%- endif -%}
             {%- if section.settings.trust_2 != blank -%}
               <div class="listicle-offer-cta__trust-item">
-                <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M2 5h8a3 3 0 0 1 0 6H6" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4 3L2 5l2 2" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                {%- if section.settings.trust_2_icon != blank -%}
+                  {{- section.settings.trust_2_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
+                {%- else -%}
+                  <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2 5h8a3 3 0 0 1 0 6H6" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 3L2 5l2 2" stroke="#182153" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {%- endif -%}
                 <p class="listicle-offer-cta__trust-text">{{ section.settings.trust_2 | escape }}</p>
               </div>
             {%- endif -%}
             {%- if section.settings.trust_3 != blank -%}
               <div class="listicle-offer-cta__trust-item">
-                <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M1 3h9v7H1V3z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
-                  <path d="M10 6h2l2 2.5V10h-4V6z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
-                  <circle cx="4" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
-                  <circle cx="12" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
-                </svg>
+                {%- if section.settings.trust_3_icon != blank -%}
+                  {{- section.settings.trust_3_icon | image_url: width: 32 | image_tag: class: 'listicle-offer-cta__trust-icon', loading: 'lazy', alt: '' -}}
+                {%- else -%}
+                  <svg class="listicle-offer-cta__trust-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M1 3h9v7H1V3z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
+                    <path d="M10 6h2l2 2.5V10h-4V6z" stroke="#182153" stroke-width="1.2" stroke-linejoin="round"/>
+                    <circle cx="4" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
+                    <circle cx="12" cy="11" r="1.2" stroke="#182153" stroke-width="1.1"/>
+                  </svg>
+                {%- endif -%}
                 <p class="listicle-offer-cta__trust-text">{{ section.settings.trust_3 | escape }}</p>
               </div>
             {%- endif -%}
@@ -463,14 +475,32 @@
       "content": "Trust badges"
     },
     {
+      "type": "image_picker",
+      "id": "trust_1_icon",
+      "label": "Trust item 1 icon",
+      "info": "16×16px. Defaults to box icon if empty."
+    },
+    {
       "type": "text",
       "id": "trust_1",
       "label": "Trust item 1"
     },
     {
+      "type": "image_picker",
+      "id": "trust_2_icon",
+      "label": "Trust item 2 icon",
+      "info": "16×16px. Defaults to return icon if empty."
+    },
+    {
       "type": "text",
       "id": "trust_2",
       "label": "Trust item 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "trust_3_icon",
+      "label": "Trust item 3 icon",
+      "info": "16×16px. Defaults to truck icon if empty."
     },
     {
       "type": "text",
