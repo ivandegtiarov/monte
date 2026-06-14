@@ -46,11 +46,19 @@
     position: relative;
   }
 
-  #shopify-section-{{ section.id }} .listicle-item__image img {
+  #shopify-section-{{ section.id }} .listicle-item__image img,
+  #shopify-section-{{ section.id }} .listicle-item__image video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  #shopify-section-{{ section.id }} .listicle-item__image iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
   }
 
   /* Content column */
@@ -354,18 +362,45 @@
         data-reveal-item
         {{ block.shopify_attributes }}
       >
-        {%- if block.settings.image != blank -%}
+        {%- liquid
+          assign has_media = false
+          if block.settings.video != blank or block.settings.video_url != blank or block.settings.image != blank
+            assign has_media = true
+          endif
+        -%}
+        {%- if has_media -%}
           <div class="listicle-item__image-col">
             <div class="listicle-item__image">
-              {{-
-                block.settings.image
-                | image_url: width: block.settings.image.width
-                | image_tag:
-                  loading: 'lazy',
-                  sizes: '(max-width: 899px) 100vw, 500px',
-                  widths: '400,600,800,1000,1200',
-                  alt: block.settings.image.alt | escape
-              -}}
+              {%- if block.settings.video != blank -%}
+                {{- block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true -}}
+              {%- elsif block.settings.video_url != blank -%}
+                {%- if block.settings.video_url.type == 'youtube' -%}
+                  <iframe
+                    src="https://www.youtube.com/embed/{{ block.settings.video_url.id }}?autoplay=1&loop=1&mute=1&playlist={{ block.settings.video_url.id }}&controls=0&rel=0&modestbranding=1&playsinline=1"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    loading="lazy"
+                    title=""
+                  ></iframe>
+                {%- elsif block.settings.video_url.type == 'vimeo' -%}
+                  <iframe
+                    src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}?autoplay=1&loop=1&muted=1&background=1&playsinline=1"
+                    allow="autoplay; fullscreen"
+                    loading="lazy"
+                    title=""
+                  ></iframe>
+                {%- endif -%}
+              {%- elsif block.settings.image != blank -%}
+                {{-
+                  block.settings.image
+                  | image_url: width: block.settings.image.width
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '(max-width: 899px) 100vw, 500px',
+                    widths: '400,600,800,1000,1200',
+                    alt: block.settings.image.alt | escape
+                -}}
+              {%- endif -%}
             </div>
           </div>
         {%- endif -%}
@@ -528,9 +563,22 @@
           "label": "Image"
         },
         {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "If set, shown instead of image"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Video URL (YouTube / Vimeo)",
+          "accept": ["youtube", "vimeo"],
+          "info": "Used only if no video file is set above"
+        },
+        {
           "type": "select",
           "id": "image_position",
-          "label": "Image position (desktop)",
+          "label": "Media position (desktop)",
           "options": [
             { "value": "start", "label": "Left" },
             { "value": "end", "label": "Right" }
