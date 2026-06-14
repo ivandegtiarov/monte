@@ -193,16 +193,25 @@
   /* Mobile */
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .listicle-offer-cta__card {
-      padding: 24px 20px;
+      padding: 12px 16px;
       border-radius: 24px;
+      border-width: 2px;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-offer-cta__inner {
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .listicle-offer-cta__eyebrow {
+      font-size: 16px;
     }
 
     #shopify-section-{{ section.id }} .listicle-offer-cta__heading {
-      font-size: 28px;
+      font-size: 32px;
     }
 
     #shopify-section-{{ section.id }} .listicle-offer-cta__image {
-      height: 220px;
+      border-radius: 16px;
     }
   }
 </style>
