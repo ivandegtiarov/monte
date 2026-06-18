@@ -206,7 +206,7 @@
             "title": "Zasypiaj szybciej. **Budź się wypoczęta.**",
             "body": "Monté eliminuje rozpraszające światło i otula twarz 100% jedwabiem, dając mózgowi sygnał, że czas na głęboki sen.",
             "feature_1": "Pełny blackout, całkowita ciemność od pierwszej nocy",
-            "feature_2": "Jedwab 22 momme który nie zostawia zalamów i nie wchłania kosmetyków",
+            "feature_2": "Jedwab 22 momme który nie zostawia załamów i nie wchłania kosmetyków",
             "feature_3": "Regulowany rzep trzyma się pewnie przez całą noc, bez ucisku na skronie",
             "desktop_padding_top": 0,
             "desktop_padding_bottom": 0,
@@ -392,7 +392,7 @@
         "video": "{{ product.metafields.custom.mask_preview.value }}",
         "tagline": "Beauty Sleep",
         "heading": "Jedwab, który **jest delikatny**",
-        "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez zalamów i śladów na skórze.",
+        "body": "Dobra rutyna zaczyna się od tego, co dotyka twojej skóry przez całą noc. Jedwab morwowy 22 momme jest gładki i spokojny dla twarzy, więc budzisz się wypoczęta, bez załamów i śladów na skórze.",
         "footnote": "*Based on post purchase customer survey responses.",
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
@@ -560,7 +560,7 @@
             "rating": 5,
             "author": "Anna B.",
             "title": "Nareszcie wysypiam się porządnie",
-            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero zalamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
+            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero załamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
           }
         },
         "testimonial_d8xwRT": {
