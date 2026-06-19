@@ -1,0 +1,475 @@
+{%- assign s = section.settings -%}
+
+{% style %}
+  #lv3-hero-{{ section.id }} {
+    background: linear-gradient(to bottom, {{ s.bg_gradient_start }}, {{ s.bg_gradient_end }});
+    padding-top: {{ s.padding_top_mobile }}px;
+    padding-bottom: {{ s.padding_bottom_mobile }}px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__inner {
+    max-width: {{ s.content_max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__title {
+    font-size: {{ s.heading_size_mobile }}px;
+    color: {{ s.heading_color }};
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: {{ s.text_align }};
+    width: 100%;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__title p {
+    margin: 0;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__title em {
+    font-style: normal;
+    text-decoration: underline wavy;
+    text-underline-offset: 4px;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__subtitle {
+    font-size: {{ s.body_size_mobile }}px;
+    color: {{ s.text_color }};
+    opacity: {{ s.text_opacity | times: 0.01 }};
+    line-height: 1.5;
+    text-align: {{ s.text_align }};
+    width: 100%;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__subtitle p {
+    margin: 0;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__subtitle strong {
+    font-weight: 800;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__reading-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__reading-time-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__reading-time-text {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+    color: {{ s.heading_color }};
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__image-wrap {
+    width: 100%;
+    height: {{ s.image_height_mobile }}px;
+    border-radius: {{ s.image_border_radius }}px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__body {
+    font-size: {{ s.body_size_mobile }}px;
+    color: {{ s.text_color }};
+    opacity: {{ s.text_opacity | times: 0.01 }};
+    line-height: 1.5;
+    text-align: {{ s.text_align }};
+    width: 100%;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__body p {
+    margin: 0 0 1.2em;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  #lv3-hero-{{ section.id }} .lv3-hero__body strong {
+    font-weight: 800;
+  }
+
+  @media (min-width: 768px) {
+    #lv3-hero-{{ section.id }} {
+      padding-top: {{ s.padding_top_desktop }}px;
+      padding-bottom: {{ s.padding_bottom_desktop }}px;
+    }
+
+    #lv3-hero-{{ section.id }} .lv3-hero__inner {
+      gap: 32px;
+    }
+
+    #lv3-hero-{{ section.id }} .lv3-hero__title {
+      font-size: {{ s.heading_size_desktop }}px;
+    }
+
+    #lv3-hero-{{ section.id }} .lv3-hero__subtitle,
+    #lv3-hero-{{ section.id }} .lv3-hero__body {
+      font-size: {{ s.body_size_desktop }}px;
+    }
+
+    #lv3-hero-{{ section.id }} .lv3-hero__image-wrap {
+      height: {{ s.image_height_desktop }}px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="lv3-hero-{{ section.id }}"
+  {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
+>
+  <div class="lv3-hero__inner">
+
+    {%- if s.title != blank -%}
+      <div class="lv3-hero__title">{{ s.title }}</div>
+    {%- endif -%}
+
+    {%- if s.subtitle != blank -%}
+      <div class="lv3-hero__subtitle">{{ s.subtitle }}</div>
+    {%- endif -%}
+
+    {%- if s.show_reading_time and s.reading_time_text != blank -%}
+      <div class="lv3-hero__reading-time" aria-label="{{ s.reading_time_text | escape }}">
+        <svg class="lv3-hero__reading-time-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="10" cy="10" r="8.5" stroke="{{ s.heading_color }}" stroke-width="1.5"/>
+          <path d="M10 5.5V10.3L13.2 12.2" stroke="{{ s.heading_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="lv3-hero__reading-time-text">{{ s.reading_time_text | escape }}</span>
+      </div>
+    {%- endif -%}
+
+    {%- if s.image != blank -%}
+      <div class="lv3-hero__image-wrap">
+        {{
+          s.image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'lv3-hero__image',
+            alt: s.image_alt,
+            loading: 'lazy',
+            widths: '400, 600, 900, 1200'
+        }}
+      </div>
+    {%- endif -%}
+
+    {%- if s.body != blank -%}
+      <div class="lv3-hero__body">{{ s.body }}</div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LV3 Hero",
+  "tag": "div",
+  "class": "lv3-hero-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "info": "Use italic formatting to apply wavy underline to a word or phrase.",
+      "default": "<p><em>7 powodów</em>, dla których kobiety dbające o skórę przerzucają się na jedwabną maskę do snu</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Przeczytaj do końca. <strong>Powód nr 3 wyjaśnia, dlaczego Twoje serum działa wolniej, niż powinno</strong>, mimo że używasz go od miesięcy.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Reading Time"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reading_time",
+      "label": "Show reading time",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "reading_time_text",
+      "label": "Reading time text",
+      "default": "Czas czytania: 5 minut"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "Image height — desktop",
+      "min": 100,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image height — mobile",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Body Text"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>Ile wydajesz miesięcznie na kosmetyki do twarzy? 200 zł? 400 zł? Może więcej?</p><p>Teraz odpowiedz szczerze: <strong>czy efekty są takie, jak powinny być?</strong></p><p>Jeśli mimo drogich serum, kremów i retinolu Twoja skóra wciąż nie wygląda tak, jak chcesz, problem nie leży w kosmetykach.</p><p>Leży w tym, <strong>co dzieje się z Twoją skórą przez 7-8 godzin, kiedy śpisz</strong>.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_start",
+      "label": "Background gradient — start",
+      "default": "#f8f1e9"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_end",
+      "label": "Background gradient — end",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading & accent color",
+      "default": "#182153"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text color",
+      "default": "#182153"
+    },
+    {
+      "type": "range",
+      "id": "text_opacity",
+      "label": "Body text opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 75
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size — desktop",
+      "min": 24,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size — mobile",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "body_size_desktop",
+      "label": "Body text size — desktop",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "body_size_mobile",
+      "label": "Body text size — mobile",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 400,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Custom anchor ID",
+      "info": "Used for scroll-to links. Leave blank to skip."
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV3 Hero",
+      "settings": {
+        "title": "<p><em>7 powodów</em>, dla których kobiety dbające o skórę przerzucają się na jedwabną maskę do snu</p>",
+        "subtitle": "<p>Przeczytaj do końca. <strong>Powód nr 3 wyjaśnia, dlaczego Twoje serum działa wolniej, niż powinno</strong>, mimo że używasz go od miesięcy.</p>",
+        "show_reading_time": true,
+        "reading_time_text": "Czas czytania: 5 minut",
+        "image_height_desktop": 320,
+        "image_height_mobile": 200,
+        "image_border_radius": 16,
+        "body": "<p>Ile wydajesz miesięcznie na kosmetyki do twarzy? 200 zł? 400 zł? Może więcej?</p><p>Teraz odpowiedz szczerze: <strong>czy efekty są takie, jak powinny być?</strong></p><p>Jeśli mimo drogich serum, kremów i retinolu Twoja skóra wciąż nie wygląda tak, jak chcesz, problem nie leży w kosmetykach.</p><p>Leży w tym, <strong>co dzieje się z Twoją skórą przez 7-8 godzin, kiedy śpisz</strong>.</p>",
+        "bg_gradient_start": "#f8f1e9",
+        "bg_gradient_end": "#ffffff",
+        "heading_color": "#182153",
+        "text_color": "#182153",
+        "text_opacity": 75,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "body_size_desktop": 20,
+        "body_size_mobile": 18,
+        "text_align": "center",
+        "content_max_width": 600,
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 32,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    }
+  ]
+}
+{% endschema %}

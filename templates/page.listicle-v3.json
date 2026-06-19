@@ -24,9 +24,38 @@
         "padding_top_mobile": 8,
         "padding_bottom_mobile": 8
       }
+    },
+    "lv3_hero": {
+      "type": "lv3-hero",
+      "settings": {
+        "title": "<p><em>7 powodów</em>, dla których kobiety dbające o skórę przerzucają się na jedwabną maskę do snu</p>",
+        "subtitle": "<p>Przeczytaj do końca. <strong>Powód nr 3 wyjaśnia, dlaczego Twoje serum działa wolniej, niż powinno</strong>, mimo że używasz go od miesięcy.</p>",
+        "show_reading_time": true,
+        "reading_time_text": "Czas czytania: 5 minut",
+        "image_height_desktop": 320,
+        "image_height_mobile": 200,
+        "image_border_radius": 16,
+        "body": "<p>Ile wydajesz miesięcznie na kosmetyki do twarzy? 200 zł? 400 zł? Może więcej?</p><p>Teraz odpowiedz szczerze: <strong>czy efekty są takie, jak powinny być?</strong></p><p>Jeśli mimo drogich serum, kremów i retinolu Twoja skóra wciąż nie wygląda tak, jak chcesz, problem nie leży w kosmetykach.</p><p>Leży w tym, <strong>co dzieje się z Twoją skórą przez 7-8 godzin, kiedy śpisz</strong>.</p>",
+        "bg_gradient_start": "#f8f1e9",
+        "bg_gradient_end": "#ffffff",
+        "heading_color": "#182153",
+        "text_color": "#182153",
+        "text_opacity": 75,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "body_size_desktop": 20,
+        "body_size_mobile": 18,
+        "text_align": "center",
+        "content_max_width": 600,
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 32,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
     }
   },
   "order": [
-    "lv3_announcement"
+    "lv3_announcement",
+    "lv3_hero"
   ]
 }
