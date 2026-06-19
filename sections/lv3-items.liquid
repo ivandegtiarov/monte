@@ -186,7 +186,7 @@
         </div>
 
         <div class="lv3-item__media">
-          {%- if b.media_type == 'video' and b.video != blank -%}
+          {%- if b.video != blank -%}
             <video
               class="lv3-item__video"
               autoplay
@@ -491,16 +491,6 @@
         {
           "type": "header",
           "content": "Media"
-        },
-        {
-          "type": "select",
-          "id": "media_type",
-          "label": "Media type",
-          "options": [
-            { "value": "image", "label": "Image" },
-            { "value": "video", "label": "Video" }
-          ],
-          "default": "image"
         },
         {
           "type": "image_picker",
