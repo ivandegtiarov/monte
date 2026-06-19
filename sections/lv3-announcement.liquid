@@ -1,57 +1,105 @@
 {%- assign s = section.settings -%}
 
 {% style %}
-    #lv3-announcement-{{ section.id }} {
-      display: block;
-      background-color: {{ s.background_color }};
-      padding-top: {{ s.padding_top_mobile }}px;
-      padding-bottom: {{ s.padding_bottom_mobile }}px;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+  .lv3-announcement-wrapper:has(#lv3-announcement-{{ section.id }}) {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
 
-    #lv3-announcement-{{ section.id }} .lv3-ann__inner {
-      width: 100%;
+  #lv3-announcement-{{ section.id }} {
+    display: block;
+    background-color: {{ s.background_color }};
+    padding-top: {{ s.padding_top_mobile }}px;
+    padding-bottom: {{ s.padding_bottom_mobile }}px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__inner {
+    width: 100%;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__text {
+    font-family: "PP Mori", sans-serif;
+    color: {{ s.text_color }};
+    font-size: {{ s.font_size_mobile }}px;
+    font-weight: {{ s.font_weight }};
+    text-align: {{ s.text_align }};
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__text p {
+    margin: 0;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__progress-track {
+    height: {{ s.progress_bar_height }}px;
+    background-color: {{ s.progress_track_color }};
+    width: 100%;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: {{ s.progress_fill_color }};
+  }
+
+  @media (min-width: 768px) {
+    #lv3-announcement-{{ section.id }} {
+      padding-top: {{ s.padding_top_desktop }}px;
+      padding-bottom: {{ s.padding_bottom_desktop }}px;
     }
 
     #lv3-announcement-{{ section.id }} .lv3-ann__text {
-      font-family: "PP Mori", sans-serif;
-      color: {{ s.text_color }};
-      font-size: {{ s.font_size_mobile }}px;
-      font-weight: {{ s.font_weight }};
-      text-align: {{ s.text_align }};
-      line-height: 1.5;
-      letter-spacing: 0;
-      margin: 0;
+      font-size: {{ s.font_size_desktop }}px;
     }
+  }
+{% endstyle %}
 
-    #lv3-announcement-{{ section.id }} .lv3-ann__text p {
-      margin: 0;
-    }
-
-    @media (min-width: 768px) {
-      #lv3-announcement-{{ section.id }} {
-        padding-top: {{ s.padding_top_desktop }}px;
-        padding-bottom: {{ s.padding_bottom_desktop }}px;
-      }
-
-      #lv3-announcement-{{ section.id }} .lv3-ann__text {
-        font-size: {{ s.font_size_desktop }}px;
-      }
-    }
-  {% endstyle %}
-
-  <section
-    id="lv3-announcement-{{ section.id }}"
-    {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
-    aria-label="Announcement"
-  >
-    <div class="lv3-ann__inner">
-      <div class="lv3-ann__text">
-        {{ s.text }}
-      </div>
+<section
+  id="lv3-announcement-{{ section.id }}"
+  {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
+  aria-label="Announcement"
+>
+  <div class="lv3-ann__inner">
+    <div class="lv3-ann__text">
+      {{ s.text }}
     </div>
-  </section>
+  </div>
+
+  <div
+    class="lv3-ann__progress-track"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    aria-label="Reading progress"
+  >
+    <div class="lv3-ann__progress-fill" id="lv3-progress-{{ section.id }}"></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var fill = document.getElementById('lv3-progress-{{ section.id }}');
+  if (!fill) return;
+  var track = fill.parentElement;
+
+  function update() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+    fill.style.width = pct + '%';
+    track.setAttribute('aria-valuenow', Math.round(pct));
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 
 {% schema %}
 {
@@ -74,6 +122,32 @@
       "id": "section_id",
       "label": "Custom anchor ID",
       "info": "Used for scroll-to links. E.g. 'announcement'. Leave blank to skip."
+    },
+    {
+      "type": "header",
+      "content": "Progress Bar"
+    },
+    {
+      "type": "range",
+      "id": "progress_bar_height",
+      "label": "Bar height",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "progress_fill_color",
+      "label": "Fill color",
+      "default": "#d9a17d"
+    },
+    {
+      "type": "color",
+      "id": "progress_track_color",
+      "label": "Track color",
+      "default": "#dcd6cf"
     },
     {
       "type": "header",
@@ -201,7 +275,10 @@
         "padding_top_desktop": 8,
         "padding_bottom_desktop": 8,
         "padding_top_mobile": 8,
-        "padding_bottom_mobile": 8
+        "padding_bottom_mobile": 8,
+        "progress_bar_height": 4,
+        "progress_fill_color": "#d9a17d",
+        "progress_track_color": "#dcd6cf"
       }
     }
   ]
