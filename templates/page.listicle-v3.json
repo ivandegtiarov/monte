@@ -99,6 +99,7 @@
           "settings": {
             "label": "Powód #3",
             "title": "<p>Jakość snu robi dla skóry więcej niż jakikolwiek krem</p>",
+            "image": "shopify://shop_images/Lis_img_4.jpg",
             "image_alt": "",
             "image_caption": "Regeneracja w ciemności",
             "image_position": "right",
@@ -110,6 +111,7 @@
           "settings": {
             "label": "Powód #4",
             "title": "<p>Elastyczna gumka niszczy Twoje włosy każdej nocy</p>",
+            "image": "shopify://shop_images/Lis_img_5.jpg",
             "image_alt": "",
             "image_caption": "Rzep zamiast gumki",
             "image_position": "right",
@@ -121,6 +123,7 @@
           "settings": {
             "label": "Powód #5",
             "title": "<p>Tania maska wygląda jak jedwab, ale nim nie jest</p>",
+            "image": "shopify://shop_images/Lis_img_6.jpg",
             "image_alt": "",
             "image_caption": "Jedwab, nie imitacja",
             "image_position": "right",
@@ -133,6 +136,7 @@
             "label": "Powód #6",
             "title": "<p>Maska to brakujący ostatni krok Twojej wieczornej rutyny</p>",
             "image_alt": "",
+            "video": "shopify://files/videos/Black square.mp4",
             "image_caption": "Ostatni krok rutyny",
             "image_position": "right",
             "body": "<p>Robisz oczyszczanie, toner, serum, krem. Pięć kroków, czasem więcej.</p><p>A potem <strong>kładziesz się spać i cała ta praca zostaje bez domknięcia</strong>.</p><p>Założenie maski to ten moment, w którym <strong>mózg dostaje sygnał: dzień się skończył.</strong> Światło znika, bodźce cichną, ciało wie, że może zwolnić.</p><p>Dla skóry to ma znaczenie, bo <strong>spokojniejsze zasypianie to głębszy sen</strong>, a głębszy sen to lepsza regeneracja tego wszystkiego, co właśnie nałożyłaś.</p><p>Maska Monté domyka rutynę, której do tej pory brakowało zakończenia.</p>"
@@ -143,6 +147,7 @@
           "settings": {
             "label": "Powód #7",
             "title": "<p>Różnicę czujesz już po pierwszej nocy</p>",
+            "image": "shopify://shop_images/Lis_img_7.jpg",
             "image_alt": "",
             "image_caption": "Już pierwszego ranka",
             "image_position": "right",
@@ -193,6 +198,7 @@
         "review_1": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC.jpg",
             "image_alt": "",
             "rating": 5,
             "quote": "\"Byłam pewna, że to kolejny gadżet. Po dwóch tygodniach mąż zapytał, co zmieniłam w pielęgnacji, bo skóra wygląda inaczej. Nie zmieniłam nic poza maską.\"",
@@ -203,6 +209,7 @@
         "review_2": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC-1.jpg",
             "image_alt": "",
             "rating": 5,
             "quote": "\"Skóra po przebudzeniu jest inna. Mniej opuchnięta, bardziej nawilżona. Serum naprawdę zostaje na twarzy przez całą noc, a nie wsiąka w poszewkę.\"",
@@ -213,6 +220,7 @@
         "review_3": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC-2.jpg",
             "image_alt": "",
             "rating": 5,
             "quote": "\"Byłam sceptyczna wobec ceny. Po miesiącu widzę różnicę. Zmarszczki przy oczach są mniej widoczne, skóra bardziej elastyczna rano.\"",
@@ -223,6 +231,7 @@
         "review_4": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/UGC-3.jpg",
             "image_alt": "",
             "rating": 5,
             "quote": "\"Sen jest głębszy, maska nie zsuwa się w nocy. Jedwab jest miękki i nie zostawia żadnych śladów na twarzy po przebudzeniu.\"",
