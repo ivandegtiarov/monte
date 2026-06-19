@@ -12,7 +12,8 @@
     "lv3_announcement": {
       "type": "lv3-announcement",
       "settings": {
-        "text": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br>oraz darmową dostawę</p>",
+        "text": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br/>oraz darmową dostawę</p>",
+        "section_id": "",
         "background_color": "#232e71",
         "text_color": "#fdfbf9",
         "font_size_desktop": 14,
@@ -25,13 +26,25 @@
         "padding_bottom_mobile": 8
       }
     },
+    "lv3_progress_bar": {
+      "type": "lv3-progress-bar",
+      "settings": {
+        "bar_height": 4,
+        "fill_color": "#d9a17d",
+        "track_color": "#dcd6cf"
+      }
+    },
     "lv3_hero": {
       "type": "lv3-hero",
       "settings": {
         "title": "<p><em>7 powodów</em>, dla których kobiety dbające o skórę przerzucają się na jedwabną maskę do snu</p>",
         "subtitle": "<p>Przeczytaj do końca. <strong>Powód nr 3 wyjaśnia, dlaczego Twoje serum działa wolniej, niż powinno</strong>, mimo że używasz go od miesięcy.</p>",
         "show_reading_time": true,
+        "reading_time_icon": "shopify://shop_images/Circle-Clock--Streamline-Sharp.svg",
+        "reading_time_icon_size": 20,
         "reading_time_text": "Czas czytania: 5 minut",
+        "image": "shopify://shop_images/Lis_img_1.jpg",
+        "image_alt": "",
         "image_height_desktop": 320,
         "image_height_mobile": 200,
         "image_border_radius": 16,
@@ -50,7 +63,8 @@
         "padding_top_desktop": 48,
         "padding_bottom_desktop": 32,
         "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
+        "padding_bottom_mobile": 32,
+        "section_id": ""
       }
     },
     "lv3_items": {
@@ -61,6 +75,7 @@
           "settings": {
             "label": "Powód #1",
             "title": "<p>Twoja poduszka wypija kosmetyki, zanim zdążą zadziałać</p>",
+            "image_alt": "",
             "image_caption": "Znika w tkaninie",
             "image_position": "right",
             "body": "<p>Bawełna, z której powstaje większość poszewek i masek do snu, ma włókna chłonące wilgoć i substancje aktywne. <strong>Te same, które nakładasz na twarz przed snem</strong>.</p><p>Retinol, kwas hialuronowy, niacynamid, peptydy. Część z nich ląduje na tkaninie, nie na Twojej skórze.</p><p>Jedwab zachowuje się inaczej. Jego naturalna struktura białkowa <strong>nie wciąga wilgoci tak, jak robi to bawełna</strong>.</p><p>Kosmetyki zostają tam, gdzie mają pracować: na Twojej twarzy, przez całą noc.</p>"
@@ -71,6 +86,7 @@
           "settings": {
             "label": "Powód #2",
             "title": "<p>Zagniecenia od snu są prawdziwe i kumulują się latami</p>",
+            "image_alt": "",
             "image_caption": "Zmarszczki od snu",
             "image_position": "right",
             "body": "<p>Budzisz się rano z odciskiem na policzku? <strong>Dermatolodzy nazywają to sleep lines</strong>, czyli zmarszczkami mechanicznymi od wielogodzinnego ucisku i tarcia twarzy o tkaninę.</p><p>W odróżnieniu od zmarszczek mimicznych, te powstają niezależnie od wieku i wyrazu twarzy.</p><p>Bawełna ma mikroskopijną fakturę, która <strong>przytrzymuje skórę</strong> podczas snu. Po jedwabiu skóra się ślizga, zamiast gnieść.</p><p>Efekt? <strong>Rano mniej śladów i mniej zagnieceń, dzień po dniu</strong>.</p>"
@@ -81,6 +97,7 @@
           "settings": {
             "label": "Powód #3",
             "title": "<p>Jakość snu robi dla skóry więcej niż jakikolwiek krem</p>",
+            "image_alt": "",
             "image_caption": "Regeneracja w ciemności",
             "image_position": "right",
             "body": "<p>Podczas głębokiego snu organizm produkuje hormon wzrostu, który odpowiada za <strong>regenerację komórek skóry</strong>.</p><p>To właśnie wtedy skóra się naprawia: odbudowuje kolagen, regeneruje barierę lipidową, wycisza stany zapalne.</p><p>Problem w tym, że <strong>nawet niewielka ilość światła zaburza melatoninę</strong> i spłyca sen.</p><p>Maska Monté daje pełny blackout, <strong>bez prześwitów i bez prawie ciemno</strong>. Twój organizm dostaje wtedy jasny sygnał: czas na regenerację.</p>"
@@ -91,6 +108,7 @@
           "settings": {
             "label": "Powód #4",
             "title": "<p>Elastyczna gumka niszczy Twoje włosy każdej nocy</p>",
+            "image_alt": "",
             "image_caption": "Rzep zamiast gumki",
             "image_position": "right",
             "body": "<p>Masz wrażenie, że włosy przy skroniach są słabsze i bardziej łamliwe?</p><p>Standardowe maski mają <strong>elastyczną gumkę, która przez 7-8 godzin uciska włosy</strong>. Tarcie i naciąganie są szczególnie odczuwalne przy włosach farbowanych i cienkich.</p><p>Monté zamiast gumki ma <strong>miękki, regulowany rzep</strong>. Dopasujesz go raz do swojej głowy, a maska trzyma się pewnie przez całą noc, bez ucisku i bez tarcia.</p>"
@@ -101,6 +119,7 @@
           "settings": {
             "label": "Powód #5",
             "title": "<p>Tania maska wygląda jak jedwab, ale nim nie jest</p>",
+            "image_alt": "",
             "image_caption": "Jedwab, nie imitacja",
             "image_position": "right",
             "body": "<p>Na rynku znajdziesz maski za 20-30 zł, które wyglądają podobnie. Różnica jest w materiale.</p><p>Tanie maski powstają z <strong>satyny poliestrowej</strong>. Poliester nie oddycha, zatrzymuje ciepło i wilgoć przy twarzy i drażni wrażliwą skórę.</p><p>Prawdziwy jedwab to <strong>naturalne białko, fibroina</strong>. Jest hipoalergiczny, reguluje temperaturę i nie wciąga substancji aktywnych z Twoich kosmetyków.</p><p>Tę różnicę <strong>czujesz na skórze przez całą noc</strong>.</p>"
@@ -111,6 +130,7 @@
           "settings": {
             "label": "Powód #6",
             "title": "<p>Maska to brakujący ostatni krok Twojej wieczornej rutyny</p>",
+            "image_alt": "",
             "image_caption": "Ostatni krok rutyny",
             "image_position": "right",
             "body": "<p>Robisz oczyszczanie, toner, serum, krem. Pięć kroków, czasem więcej.</p><p>A potem <strong>kładziesz się spać i cała ta praca zostaje bez domknięcia</strong>.</p><p>Założenie maski to ten moment, w którym <strong>mózg dostaje sygnał: dzień się skończył.</strong> Światło znika, bodźce cichną, ciało wie, że może zwolnić.</p><p>Dla skóry to ma znaczenie, bo <strong>spokojniejsze zasypianie to głębszy sen</strong>, a głębszy sen to lepsza regeneracja tego wszystkiego, co właśnie nałożyłaś.</p><p>Maska Monté domyka rutynę, której do tej pory brakowało zakończenia.</p>"
@@ -121,6 +141,7 @@
           "settings": {
             "label": "Powód #7",
             "title": "<p>Różnicę czujesz już po pierwszej nocy</p>",
+            "image_alt": "",
             "image_caption": "Już pierwszego ranka",
             "image_position": "right",
             "body": "<p>Pierwszego ranka budzisz się <strong>bez odcisku na twarzy</strong>.</p><p>Skóra jest <strong>lepiej nawilżona</strong>, bo kosmetyki z wieczora miały całą noc na pracę, zamiast wsiąkać w poszewkę.</p><p>Sen jest głębszy, bo organizm dostał pełną ciemność.</p><p>A jeśli zastanawiasz się, czy da się w niej w ogóle spać: maska jest <strong>lekka, nie uciska i nie zsuwa się w nocy</strong>. To ten moment, po którym łatwo pomyśleć: dlaczego nikt mi o tym wcześniej nie powiedział.</p>"
@@ -136,7 +157,32 @@
         "item_6",
         "item_7"
       ],
-      "settings": {}
+      "settings": {
+        "background_color": "#ffffff",
+        "label_color": "#d9a17d",
+        "heading_color": "#182153",
+        "text_color": "#182153",
+        "text_opacity": 75,
+        "caption_bg_color": "#f8f1e9",
+        "caption_text_color": "#182153",
+        "heading_size_desktop": 32,
+        "heading_size_mobile": 28,
+        "body_size_desktop": 18,
+        "body_size_mobile": 16,
+        "image_height_desktop": 300,
+        "image_height_mobile": 300,
+        "image_border_radius": 16,
+        "content_max_width": 760,
+        "text_col_width": 420,
+        "col_gap_desktop": 48,
+        "item_gap_desktop": 64,
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 48,
+        "item_gap_mobile": 40,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "section_id": ""
+      }
     },
     "lv3_reviews": {
       "type": "lv3-reviews",
@@ -144,6 +190,7 @@
         "review_1": {
           "type": "review",
           "settings": {
+            "image_alt": "",
             "rating": 5,
             "quote": "\"Byłam pewna, że to kolejny gadżet. Po dwóch tygodniach mąż zapytał, co zmieniłam w pielęgnacji, bo skóra wygląda inaczej. Nie zmieniłam nic poza maską.\"",
             "author_name": "Karolina, 42, Wrocław",
@@ -153,6 +200,7 @@
         "review_2": {
           "type": "review",
           "settings": {
+            "image_alt": "",
             "rating": 5,
             "quote": "\"Skóra po przebudzeniu jest inna. Mniej opuchnięta, bardziej nawilżona. Serum naprawdę zostaje na twarzy przez całą noc, a nie wsiąka w poszewkę.\"",
             "author_name": "Agnieszka, 35, Warszawa",
@@ -162,6 +210,7 @@
         "review_3": {
           "type": "review",
           "settings": {
+            "image_alt": "",
             "rating": 5,
             "quote": "\"Byłam sceptyczna wobec ceny. Po miesiącu widzę różnicę. Zmarszczki przy oczach są mniej widoczne, skóra bardziej elastyczna rano.\"",
             "author_name": "Marta, 48, Kraków",
@@ -171,6 +220,7 @@
         "review_4": {
           "type": "review",
           "settings": {
+            "image_alt": "",
             "rating": 5,
             "quote": "\"Sen jest głębszy, maska nie zsuwa się w nocy. Jedwab jest miękki i nie zostawia żadnych śladów na twarzy po przebudzeniu.\"",
             "author_name": "Zofia, 39, Gdańsk",
@@ -184,7 +234,26 @@
         "review_3",
         "review_4"
       ],
-      "settings": {}
+      "settings": {
+        "heading": "<p>Co mówią kobiety, które już używają Monté</p>",
+        "section_id": "",
+        "bg_gradient_start": "#f9f4ee",
+        "bg_gradient_end": "#f2dfd2",
+        "heading_color": "#182153",
+        "text_color": "#182153",
+        "star_icon_size": 16,
+        "star_color": "#f59e0b",
+        "verified_icon_size": 12,
+        "verified_text": "Zweryfikowany zakup",
+        "content_max_width": 1280,
+        "border_radius_top_desktop": 32,
+        "border_radius_top_mobile": 24,
+        "padding_horizontal_desktop": 80,
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 48,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
     },
     "lv3_product_cta": {
       "type": "lv3-product-cta",
@@ -255,16 +324,30 @@
         "title": "<p>Jutro rano możesz obudzić się inaczej</p>",
         "subtitle": "<p>Jedwabna maska Monté. Pełny blackout, gładki jedwab, regulowany rzep. Wszystko, o czym właśnie przeczytałaś, w jednej masce.</p>",
         "body": "<p>Idealna jako prezent dla mamy, siostry albo przyjaciółki, która wciąż śpi na bawełnie.</p>",
+        "image_alt": "",
+        "image_height_mobile": 260,
         "button_text": "Tak, chcę tę maskę",
-        "button_subtext": "Kolor i ilość wybierzesz na następnej stronie."
-      }
-    },
-    "lv3_progress_bar": {
-      "type": "lv3-progress-bar",
-      "settings": {
-        "bar_height": 4,
-        "fill_color": "#d9a17d",
-        "track_color": "#dcd6cf"
+        "button_url": "",
+        "button_new_tab": false,
+        "button_subtext": "Kolor i ilość wybierzesz na następnej stronie.",
+        "button_bg_color": "#d9a17d",
+        "button_text_color": "#fdfbf9",
+        "bg_color": "#232e71",
+        "heading_color": "#fdfbf9",
+        "text_color": "#fdfbf9",
+        "feature_icon_bg_color": "#d9a17d",
+        "heading_size_desktop": 32,
+        "heading_size_mobile": 32,
+        "body_size_desktop": 18,
+        "body_size_mobile": 18,
+        "content_max_width": 1440,
+        "col_gap_desktop": 80,
+        "padding_horizontal_desktop": 80,
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 48,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "section_id": ""
       }
     }
   },
