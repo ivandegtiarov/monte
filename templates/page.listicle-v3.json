@@ -348,7 +348,7 @@
         "image_alt": "",
         "image_height_mobile": 260,
         "button_text": "Tak, chcę tę maskę",
-        "button_url": "",
+        "button_url": "shopify://products/classic-black-sleep-mask",
         "button_new_tab": false,
         "button_subtext": "Kolor i ilość wybierzesz na następnej stronie.",
         "button_bg_color": "#d9a17d",
