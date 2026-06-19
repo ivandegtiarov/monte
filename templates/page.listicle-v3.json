@@ -377,14 +377,18 @@
       "name": "Listicle – Footer",
       "settings": {
         "link_1_label": "Polityka prywatności",
-        "link_1_url": "",
+        "link_1_url": "shopify://policies/privacy-policy",
         "link_2_label": "Regulamin sklepu",
-        "link_2_url": "",
+        "link_2_url": "shopify://policies/terms-of-service",
         "link_3_label": "Polityka wysyłki",
-        "link_3_url": "",
+        "link_3_url": "shopify://policies/shipping-policy",
         "link_4_label": "Polityka zwrotów",
-        "link_4_url": "",
-        "copyright_text": ""
+        "link_4_url": "shopify://policies/refund-policy",
+        "copyright_text": "",
+        "payment_logo_1": "shopify://shop_images/Visa_Logo_1.svg",
+        "payment_logo_2": "shopify://shop_images/Mastercard_Logo_1.svg",
+        "payment_logo_3": "shopify://shop_images/Przelewy24_1.svg",
+        "payment_logo_4": "shopify://shop_images/Blik_1.svg"
       }
     },
     "listicle_sticky_cta_Vijd4i": {
