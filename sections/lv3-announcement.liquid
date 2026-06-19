@@ -1,7 +1,6 @@
-{% if section.settings.show_section %}
-  {%- assign s = section.settings -%}
+{%- assign s = section.settings -%}
 
-  {% style %}
+{% style %}
     #lv3-announcement-{{ section.id }} {
       display: block;
       background-color: {{ s.background_color }};
@@ -52,7 +51,6 @@
       </div>
     </div>
   </section>
-{% endif %}
 
 {% schema %}
 {
@@ -69,12 +67,6 @@
       "id": "text",
       "label": "Announcement text",
       "default": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br>oraz darmową dostawę</p>"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_section",
-      "label": "Show section",
-      "default": true
     },
     {
       "type": "text",
@@ -199,7 +191,6 @@
       "name": "LV3 Announcement Bar",
       "settings": {
         "text": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br>oraz darmową dostawę</p>",
-        "show_section": true,
         "background_color": "#232e71",
         "text_color": "#fdfbf9",
         "font_size_desktop": 14,
