@@ -71,21 +71,13 @@
 (function () {
   'use strict';
 
+  var SHOW_THRESHOLD = 30; /* % of page scrolled before bar appears */
+
   function init() {
     var barEl = document.getElementById('lsc-bar-{{ section.id }}');
     if (!barEl) return;
 
     if (window.matchMedia('(min-width: 900px)').matches) return;
-
-    var itemsSection = document.querySelector('.shopify-section--listicle-items');
-    if (!itemsSection) return;
-
-    var items = itemsSection.querySelectorAll('.listicle-item');
-    var triggerItem = items[1]; /* 2nd item — bar appears when scrolled past */
-    if (!triggerItem) return;
-
-    /* Hide when Listicle – Offer CTA section enters the viewport */
-    var hideSection = document.querySelector('.shopify-section--listicle-offer-cta');
 
     var state = { triggerActive: false, hideActive: false };
 
@@ -95,17 +87,23 @@
       barEl.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
     }
 
-    /* Appears once the 2nd item has entered or been scrolled past */
-    var obsTrigger = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        state.triggerActive = entry.isIntersecting || entry.boundingClientRect.top < 0;
+    /* Appears when user has scrolled >= 30% of the page */
+    function onScroll() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      var next = pct >= SHOW_THRESHOLD;
+      if (next !== state.triggerActive) {
+        state.triggerActive = next;
         update();
-      });
-    }, { threshold: 0 });
+      }
+    }
 
-    obsTrigger.observe(triggerItem);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-    /* Hides once the Offer CTA section enters or is scrolled past */
+    /* Hides when LV3 Product CTA section enters or is scrolled past */
+    var hideSection = document.querySelector('.lv3-product-cta-wrapper');
     if (hideSection) {
       var obsHide = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
