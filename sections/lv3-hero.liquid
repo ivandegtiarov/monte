@@ -62,9 +62,11 @@
   }
 
   #lv3-hero-{{ section.id }} .lv3-hero__reading-time-icon {
-    width: 20px;
-    height: 20px;
+    width: {{ s.reading_time_icon_size }}px;
+    height: {{ s.reading_time_icon_size }}px;
     flex-shrink: 0;
+    display: block;
+    object-fit: contain;
   }
 
   #lv3-hero-{{ section.id }} .lv3-hero__reading-time-text {
@@ -153,10 +155,22 @@
 
     {%- if s.show_reading_time and s.reading_time_text != blank -%}
       <div class="lv3-hero__reading-time" aria-label="{{ s.reading_time_text | escape }}">
-        <svg class="lv3-hero__reading-time-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <circle cx="10" cy="10" r="8.5" stroke="{{ s.heading_color }}" stroke-width="1.5"/>
-          <path d="M10 5.5V10.3L13.2 12.2" stroke="{{ s.heading_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        {%- if s.reading_time_icon != blank -%}
+          <img
+            src="{{ s.reading_time_icon | image_url: width: 80 }}"
+            alt=""
+            class="lv3-hero__reading-time-icon"
+            width="{{ s.reading_time_icon_size }}"
+            height="{{ s.reading_time_icon_size }}"
+            aria-hidden="true"
+            loading="lazy"
+          >
+        {%- else -%}
+          <svg class="lv3-hero__reading-time-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="8.5" stroke="{{ s.heading_color }}" stroke-width="1.5"/>
+            <path d="M10 5.5V10.3L13.2 12.2" stroke="{{ s.heading_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        {%- endif -%}
         <span class="lv3-hero__reading-time-text">{{ s.reading_time_text | escape }}</span>
       </div>
     {%- endif -%}
@@ -214,6 +228,22 @@
       "id": "show_reading_time",
       "label": "Show reading time",
       "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "reading_time_icon",
+      "label": "Icon image",
+      "info": "Replaces the default clock SVG. Recommended: SVG or PNG with transparent background."
+    },
+    {
+      "type": "range",
+      "id": "reading_time_icon_size",
+      "label": "Icon size",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 20
     },
     {
       "type": "text",
