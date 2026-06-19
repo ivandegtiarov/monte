@@ -1,5 +1,22 @@
 {%- assign s = section.settings -%}
 
+<style>
+  @font-face {
+    font-family: "PP Mori";
+    src: url("https://cdn.shopify.com/s/files/1/1018/4258/3886/files/PPMori-Book_f435d735-c53f-4fd5-bb05-159f438bfe8b.ttf?v=1781891263") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+  }
+  @font-face {
+    font-family: "PP Mori";
+    src: url("https://cdn.shopify.com/s/files/1/1018/4258/3886/files/PPMori-Extrabold.ttf?v=1781891280") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: fallback;
+  }
+</style>
+
 {% style %}
   .lv3-announcement-wrapper:has(#lv3-announcement-{{ section.id }}) {
     position: sticky;
