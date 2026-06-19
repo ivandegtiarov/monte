@@ -1,0 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "lv3_announcement": {
+      "type": "lv3-announcement",
+      "settings": {
+        "text": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br>oraz darmową dostawę</p>",
+        "show_section": true,
+        "background_color": "#232e71",
+        "text_color": "#fdfbf9",
+        "font_size_desktop": 14,
+        "font_size_mobile": 13,
+        "font_weight": "600",
+        "text_align": "center",
+        "padding_top_desktop": 8,
+        "padding_bottom_desktop": 8,
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 8
+      }
+    }
+  },
+  "order": [
+    "lv3_announcement"
+  ]
+}
