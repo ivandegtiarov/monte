@@ -103,7 +103,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     {%- if request.page_type != 'password' -%}
-      {%- sections 'header-group' -%}
+      {%- unless template.suffix == 'listicle-v3' -%}
+        {%- sections 'header-group' -%}
+      {%- endunless -%}
       {%- sections 'overlay-group' -%}
 
       {%- if settings.cart_type == 'popover' -%}
@@ -122,7 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       IMPLEMENTATION NOTE: due to the very complex logic of margin/padding collapsing in Impact, the footer group is
       added into the main element to ensure that dynamic sections added into the footer group are properly laid out.
       {%- endcomment -%}
-      {%- if request.page_type != 'password' -%}
+      {%- if request.page_type != 'password' and template.suffix != 'listicle' and template.suffix != 'listicle-new-offer' and template.suffix != 'listicle-v3' -%}
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
