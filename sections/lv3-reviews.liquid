@@ -1,0 +1,575 @@
+{%- assign s = section.settings -%}
+
+{% style %}
+  #lv3-reviews-{{ section.id }} {
+    background: linear-gradient(to bottom, {{ s.bg_gradient_start }}, {{ s.bg_gradient_end }});
+    padding-top: {{ s.padding_top_mobile }}px;
+    padding-bottom: {{ s.padding_bottom_mobile }}px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: {{ s.border_radius_top_mobile }}px {{ s.border_radius_top_mobile }}px 0 0;
+    overflow: hidden;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__inner {
+    max-width: {{ s.content_max_width }}px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__heading {
+    font-family: "PP Pangaia", serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: {{ s.heading_color }};
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__heading p {
+    margin: 0;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__card {
+    background: #ffffff;
+    border: 1px solid #f8f1e9;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-start;
+    box-shadow: 0px 1px 1.5px rgba(16, 24, 40, 0.10), 0px 1px 1px rgba(16, 24, 40, 0.06);
+    box-sizing: border-box;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 999px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f8f1e9;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__top {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__stars {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__star {
+    display: block;
+    width: {{ s.star_icon_size }}px;
+    height: {{ s.star_icon_size }}px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__star--empty {
+    opacity: 0.25;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__quote {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: {{ s.text_color }};
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__author {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__author-name {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ s.text_color }};
+    line-height: 1.5;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__verified {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__verified-icon {
+    display: block;
+    width: {{ s.verified_icon_size }}px;
+    height: {{ s.verified_icon_size }}px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  #lv3-reviews-{{ section.id }} .lv3-reviews__verified-text {
+    font-family: "PP Mori", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(24, 33, 83, 0.75);
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    #lv3-reviews-{{ section.id }} {
+      padding-top: {{ s.padding_top_desktop }}px;
+      padding-bottom: {{ s.padding_bottom_desktop }}px;
+      padding-left: {{ s.padding_horizontal_desktop }}px;
+      padding-right: {{ s.padding_horizontal_desktop }}px;
+      border-radius: {{ s.border_radius_top_desktop }}px {{ s.border_radius_top_desktop }}px 0 0;
+    }
+
+    #lv3-reviews-{{ section.id }} .lv3-reviews__inner {
+      gap: 32px;
+    }
+
+    #lv3-reviews-{{ section.id }} .lv3-reviews__heading {
+      line-height: 1.3;
+    }
+
+    #lv3-reviews-{{ section.id }} .lv3-reviews__cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    #lv3-reviews-{{ section.id }} .lv3-reviews__card {
+      flex: 1 0 0;
+      min-width: 0;
+      padding: 24px;
+      gap: 20px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="lv3-reviews-{{ section.id }}"
+  {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
+>
+  <div class="lv3-reviews__inner">
+
+    {%- if s.heading != blank -%}
+      <div class="lv3-reviews__heading">{{ s.heading }}</div>
+    {%- endif -%}
+
+    <div class="lv3-reviews__cards">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="lv3-reviews__card" {{ block.shopify_attributes }}>
+
+          <div class="lv3-reviews__avatar">
+            {%- if b.image != blank -%}
+              {{
+                b.image
+                | image_url: width: 160
+                | image_tag:
+                  alt: b.image_alt,
+                  loading: 'lazy',
+                  width: 80,
+                  height: 80
+              }}
+            {%- endif -%}
+          </div>
+
+          <div class="lv3-reviews__content">
+            <div class="lv3-reviews__top">
+
+              <div class="lv3-reviews__stars" aria-label="{{ b.rating }} out of 5 stars">
+                {%- for i in (1..5) -%}
+                  {%- assign is_filled = false -%}
+                  {%- if i <= b.rating -%}
+                    {%- assign is_filled = true -%}
+                  {%- endif -%}
+                  {%- if s.star_icon != blank -%}
+                    <img
+                      class="lv3-reviews__star{% unless is_filled %} lv3-reviews__star--empty{% endunless %}"
+                      src="{{ s.star_icon | image_url: width: 48 }}"
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <svg
+                      class="lv3-reviews__star{% unless is_filled %} lv3-reviews__star--empty{% endunless %}"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 1.5L9.59 5.82L14.18 5.99L10.57 8.83L11.82 13.26L8 10.7L4.18 13.26L5.43 8.83L1.82 5.99L6.41 5.82Z" fill="{{ s.star_color }}"/>
+                    </svg>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+
+              {%- if b.quote != blank -%}
+                <p class="lv3-reviews__quote">{{ b.quote | escape | newline_to_br }}</p>
+              {%- endif -%}
+
+            </div>
+
+            <div class="lv3-reviews__author">
+              {%- if b.author_name != blank -%}
+                <span class="lv3-reviews__author-name">{{ b.author_name | escape }}</span>
+              {%- endif -%}
+              {%- if b.verified -%}
+                <div class="lv3-reviews__verified">
+                  {%- if s.verified_icon != blank -%}
+                    <img
+                      class="lv3-reviews__verified-icon"
+                      src="{{ s.verified_icon | image_url: width: 48 }}"
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <svg
+                      class="lv3-reviews__verified-icon"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <circle cx="6" cy="6" r="6" fill="#232e71"/>
+                      <path d="M3.5 6.5L5 8L8.5 4.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  {%- endif -%}
+                  {%- if s.verified_text != blank -%}
+                    <span class="lv3-reviews__verified-text">{{ s.verified_text | escape }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LV3 Reviews",
+  "tag": "div",
+  "class": "lv3-reviews-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Co mówią kobiety, które już używają Monté</p>"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Custom anchor ID",
+      "info": "Used for scroll-to links. Leave blank to skip."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_start",
+      "label": "Background gradient — start",
+      "default": "#f9f4ee"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_end",
+      "label": "Background gradient — end",
+      "default": "#f2dfd2"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#182153"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Review text color",
+      "default": "#182153"
+    },
+    {
+      "type": "header",
+      "content": "Stars"
+    },
+    {
+      "type": "image_picker",
+      "id": "star_icon",
+      "label": "Custom star icon"
+    },
+    {
+      "type": "range",
+      "id": "star_icon_size",
+      "label": "Star icon size",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Default star color",
+      "info": "Used when no custom icon is uploaded.",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "header",
+      "content": "Verified Badge"
+    },
+    {
+      "type": "image_picker",
+      "id": "verified_icon",
+      "label": "Custom verified icon"
+    },
+    {
+      "type": "range",
+      "id": "verified_icon_size",
+      "label": "Verified icon size",
+      "min": 10,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "text",
+      "id": "verified_text",
+      "label": "Verified badge text",
+      "default": "Zweryfikowany zakup"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 800,
+      "max": 1600,
+      "step": 40,
+      "unit": "px",
+      "default": 1280
+    },
+    {
+      "type": "range",
+      "id": "border_radius_top_desktop",
+      "label": "Top corner radius — desktop",
+      "min": 0,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "border_radius_top_mobile",
+      "label": "Top corner radius — mobile",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_desktop",
+      "label": "Padding left & right",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Avatar photo"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Avatar alt text"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Review text",
+          "default": "Review text goes here."
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "Karolina, 42, Wrocław"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Show verified badge",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV3 Reviews",
+      "settings": {
+        "heading": "<p>Co mówią kobiety, które już używają Monté</p>"
+      },
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Byłam pewna, że to kolejny gadżet. Po dwóch tygodniach mąż zapytał, co zmieniłam w pielęgnacji, bo skóra wygląda inaczej. Nie zmieniłam nic poza maską.\"",
+            "author_name": "Karolina, 42, Wrocław",
+            "verified": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Skóra po przebudzeniu jest inna. Mniej opuchnięta, bardziej nawilżona. Serum naprawdę zostaje na twarzy przez całą noc, a nie wsiąka w poszewkę.\"",
+            "author_name": "Agnieszka, 35, Warszawa",
+            "verified": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Byłam sceptyczna wobec ceny. Po miesiącu widzę różnicę. Zmarszczki przy oczach są mniej widoczne, skóra bardziej elastyczna rano.\"",
+            "author_name": "Marta, 48, Kraków",
+            "verified": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Sen jest głębszy, maska nie zsuwa się w nocy. Jedwab jest miękki i nie zostawia żadnych śladów na twarzy po przebudzeniu.\"",
+            "author_name": "Zofia, 39, Gdańsk",
+            "verified": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,107 @@
+{%- assign s = section.settings -%}
+
+{% style %}
+  .lv3-progress-bar-wrapper:has(#lv3-pb-{{ section.id }}) {
+    position: sticky;
+    top: 0;
+    z-index: 199;
+  }
+
+  #lv3-pb-{{ section.id }} {
+    height: {{ s.bar_height }}px;
+    background-color: {{ s.track_color }};
+    width: 100%;
+  }
+
+  #lv3-pb-{{ section.id }} .lv3-pb__fill {
+    height: 100%;
+    width: 0%;
+    background-color: {{ s.fill_color }};
+  }
+{% endstyle %}
+
+<div
+  id="lv3-pb-{{ section.id }}"
+  role="progressbar"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="0"
+  aria-label="Reading progress"
+>
+  <div class="lv3-pb__fill"></div>
+</div>
+
+<script>
+(function () {
+  var wrapper = document.querySelector('.lv3-progress-bar-wrapper');
+  var bar = document.getElementById('lv3-pb-{{ section.id }}');
+  if (!bar || !wrapper) return;
+
+  var fill = bar.querySelector('.lv3-pb__fill');
+
+  function getStickyOffset() {
+    var ann = document.querySelector('.lv3-announcement-wrapper');
+    return ann ? ann.offsetHeight : 0;
+  }
+
+  function updateTop() {
+    wrapper.style.top = getStickyOffset() + 'px';
+  }
+
+  function updateProgress() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+    fill.style.width = pct + '%';
+    bar.setAttribute('aria-valuenow', Math.round(pct));
+  }
+
+  updateTop();
+  updateProgress();
+
+  window.addEventListener('resize', updateTop, { passive: true });
+  window.addEventListener('scroll', updateProgress, { passive: true });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "LV3 Progress Bar",
+  "tag": "div",
+  "class": "lv3-progress-bar-wrapper",
+  "settings": [
+    {
+      "type": "range",
+      "id": "bar_height",
+      "label": "Bar height",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "fill_color",
+      "label": "Fill color",
+      "default": "#d9a17d"
+    },
+    {
+      "type": "color",
+      "id": "track_color",
+      "label": "Track color",
+      "default": "#dcd6cf"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV3 Progress Bar",
+      "settings": {
+        "bar_height": 4,
+        "fill_color": "#d9a17d",
+        "track_color": "#dcd6cf"
+      }
+    }
+  ]
+}
+{% endschema %}

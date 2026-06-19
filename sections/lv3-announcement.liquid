@@ -1,0 +1,215 @@
+{%- assign s = section.settings -%}
+
+{% style %}
+  .lv3-announcement-wrapper:has(#lv3-announcement-{{ section.id }}) {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+
+  #lv3-announcement-{{ section.id }} {
+    display: block;
+    background-color: {{ s.background_color }};
+    padding-top: {{ s.padding_top_mobile }}px;
+    padding-bottom: {{ s.padding_bottom_mobile }}px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__inner {
+    width: 100%;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__text {
+    font-family: "PP Mori", sans-serif;
+    color: {{ s.text_color }};
+    font-size: {{ s.font_size_mobile }}px;
+    font-weight: {{ s.font_weight }};
+    text-align: {{ s.text_align }};
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  #lv3-announcement-{{ section.id }} .lv3-ann__text p {
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    #lv3-announcement-{{ section.id }} {
+      padding-top: {{ s.padding_top_desktop }}px;
+      padding-bottom: {{ s.padding_bottom_desktop }}px;
+    }
+
+    #lv3-announcement-{{ section.id }} .lv3-ann__text {
+      font-size: {{ s.font_size_desktop }}px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="lv3-announcement-{{ section.id }}"
+  {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
+  aria-label="Announcement"
+>
+  <div class="lv3-ann__inner">
+    <div class="lv3-ann__text">
+      {{ s.text }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LV3 Announcement Bar",
+  "tag": "div",
+  "class": "lv3-announcement-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Announcement text",
+      "default": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br>oraz darmową dostawę</p>"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Custom anchor ID",
+      "info": "Used for scroll-to links. E.g. 'announcement'. Leave blank to skip."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#232e71"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Font size — desktop",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Font size — mobile",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        { "value": "400", "label": "400 — Regular" },
+        { "value": "500", "label": "500 — Medium" },
+        { "value": "600", "label": "600 — Semibold" },
+        { "value": "700", "label": "700 — Bold" }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV3 Announcement Bar",
+      "settings": {
+        "text": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br>oraz darmową dostawę</p>",
+        "background_color": "#232e71",
+        "text_color": "#fdfbf9",
+        "font_size_desktop": 14,
+        "font_size_mobile": 13,
+        "font_weight": "600",
+        "text_align": "center",
+        "padding_top_desktop": 8,
+        "padding_bottom_desktop": 8,
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 8
+      }
+    }
+  ]
+}
+{% endschema %}

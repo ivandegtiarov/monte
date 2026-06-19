@@ -1,0 +1,683 @@
+{%- assign s = section.settings -%}
+
+{% style %}
+  #lv3-cta-{{ section.id }} {
+    background-color: {{ s.bg_color }};
+    padding-top: {{ s.padding_top_mobile }}px;
+    padding-bottom: {{ s.padding_bottom_mobile }}px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__inner {
+    max-width: {{ s.content_max_width }}px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Heading block */
+  #lv3-cta-{{ section.id }} .lv3-cta__heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__title {
+    font-family: "PP Pangaia", serif;
+    font-size: {{ s.heading_size_mobile }}px;
+    font-weight: 500;
+    color: {{ s.heading_color }};
+    line-height: 1.2;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__title p { margin: 0; }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__subtitle,
+  #lv3-cta-{{ section.id }} .lv3-cta__body {
+    font-family: "PP Mori", sans-serif;
+    font-size: {{ s.body_size_mobile }}px;
+    font-weight: 400;
+    color: {{ s.text_color }};
+    opacity: 0.7;
+    line-height: 1.5;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__subtitle p,
+  #lv3-cta-{{ section.id }} .lv3-cta__body p { margin: 0 0 1em; }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__subtitle p:last-child,
+  #lv3-cta-{{ section.id }} .lv3-cta__body p:last-child { margin-bottom: 0; }
+
+  /* Image */
+  #lv3-cta-{{ section.id }} .lv3-cta__image-wrap {
+    width: 100%;
+    height: {{ s.image_height_mobile }}px;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Feature items */
+  #lv3-cta-{{ section.id }} .lv3-cta__features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__feature {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__feature-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__feature-text {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ s.text_color }};
+    line-height: 1.5;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* CTA block */
+  #lv3-cta-{{ section.id }} .lv3-cta__cta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__button-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 52px;
+    padding: 0 32px;
+    background-color: {{ s.button_bg_color }};
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ s.button_text_color }};
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__button:hover {
+    opacity: 0.88;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__button-subtext {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    color: {{ s.text_color }};
+    opacity: 0.7;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Trust items */
+  #lv3-cta-{{ section.id }} .lv3-cta__trust {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__trust-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__trust-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3-cta__trust-text {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ s.text_color }};
+    line-height: 1.5;
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (min-width: 768px) {
+    #lv3-cta-{{ section.id }} {
+      padding-top: {{ s.padding_top_desktop }}px;
+      padding-bottom: {{ s.padding_bottom_desktop }}px;
+      padding-left: {{ s.padding_horizontal_desktop }}px;
+      padding-right: {{ s.padding_horizontal_desktop }}px;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "image heading"
+        "image features"
+        "image cta";
+      column-gap: {{ s.col_gap_desktop }}px;
+      row-gap: 32px;
+      align-items: start;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__image-wrap {
+      grid-area: image;
+      height: 100%;
+      align-self: stretch;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__heading-block {
+      grid-area: heading;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__features {
+      grid-area: features;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__cta-block {
+      grid-area: cta;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__title {
+      font-size: {{ s.heading_size_desktop }}px;
+      line-height: 1.3;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__subtitle,
+    #lv3-cta-{{ section.id }} .lv3-cta__body {
+      font-size: {{ s.body_size_desktop }}px;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__feature-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3-cta__feature-text {
+      font-size: 16px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="lv3-cta-{{ section.id }}"
+  {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
+>
+  <div class="lv3-cta__inner">
+
+    <div class="lv3-cta__heading-block">
+      {%- if s.title != blank -%}
+        <div class="lv3-cta__title">{{ s.title }}</div>
+      {%- endif -%}
+      {%- if s.subtitle != blank -%}
+        <div class="lv3-cta__subtitle">{{ s.subtitle }}</div>
+      {%- endif -%}
+      {%- if s.body != blank -%}
+        <div class="lv3-cta__body">{{ s.body }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="lv3-cta__image-wrap">
+      {%- if s.image != blank -%}
+        {{
+          s.image
+          | image_url: width: 900
+          | image_tag:
+            class: 'lv3-cta__image',
+            alt: s.image_alt,
+            loading: 'lazy',
+            widths: '400, 600, 900'
+        }}
+      {%- endif -%}
+    </div>
+
+    {%- assign feature_blocks = section.blocks | where: 'type', 'feature' -%}
+    {%- if feature_blocks.size > 0 -%}
+      <div class="lv3-cta__features">
+        {%- for block in feature_blocks -%}
+          <div class="lv3-cta__feature" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <img
+                class="lv3-cta__feature-icon"
+                src="{{ block.settings.icon | image_url: width: 48 }}"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              >
+            {%- else -%}
+              <svg class="lv3-cta__feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="12" fill="{{ s.feature_icon_bg_color }}"/>
+                <path d="M7.5 12.5L10.5 15.5L16.5 9.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <span class="lv3-cta__feature-text">{{ block.settings.text | escape }}</span>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div class="lv3-cta__cta-block">
+      {%- if s.button_text != blank -%}
+        <div class="lv3-cta__button-wrap">
+          <a
+            href="{{ s.button_url | default: '#' }}"
+            class="lv3-cta__button"
+            {% if s.button_new_tab %}target="_blank" rel="noopener"{% endif %}
+          >
+            {{- s.button_text | escape -}}
+          </a>
+          {%- if s.button_subtext != blank -%}
+            <p class="lv3-cta__button-subtext">{{ s.button_subtext | escape }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- assign trust_blocks = section.blocks | where: 'type', 'trust' -%}
+      {%- if trust_blocks.size > 0 -%}
+        <div class="lv3-cta__trust">
+          {%- for block in trust_blocks -%}
+            <div class="lv3-cta__trust-item" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <img
+                  class="lv3-cta__trust-icon"
+                  src="{{ block.settings.icon | image_url: width: 32 }}"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {%- case block.settings.icon_type -%}
+                  {%- when 'shield' -%}
+                    <svg class="lv3-cta__trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M8 1.5L2 4.5V8.5C2 11.5 4.5 14 8 14.5C11.5 14 14 11.5 14 8.5V4.5L8 1.5Z" stroke="{{ s.text_color }}" stroke-width="1.2"/>
+                      <path d="M5.5 8.5L7 10L10.5 6.5" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  {%- when 'return' -%}
+                    <svg class="lv3-cta__trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M2.5 8H10C11.7 8 13 6.7 13 5C13 3.3 11.7 2 10 2H5" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round"/>
+                      <path d="M5 5L2.5 8L5 11" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <line x1="2.5" y1="13.5" x2="12" y2="13.5" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                  {%- when 'truck' -%}
+                    <svg class="lv3-cta__trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="1" y="4.5" width="9" height="6" rx="1" stroke="{{ s.text_color }}" stroke-width="1.2"/>
+                      <path d="M10 6.5H13L14.5 10.5H10V6.5Z" stroke="{{ s.text_color }}" stroke-width="1.2"/>
+                      <circle cx="3.5" cy="11.5" r="1" fill="{{ s.text_color }}"/>
+                      <circle cx="11.5" cy="11.5" r="1" fill="{{ s.text_color }}"/>
+                    </svg>
+                {%- endcase -%}
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <span class="lv3-cta__trust-text">{{ block.settings.text | escape }}</span>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LV3 Product CTA",
+  "tag": "div",
+  "class": "lv3-product-cta-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "<p>Jutro rano możesz obudzić się inaczej</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Jedwabna maska Monté. Pełny blackout, gładki jedwab, regulowany rzep. Wszystko, o czym właśnie przeczytałaś, w jednej masce.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Additional body text"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image height — mobile",
+      "min": 180,
+      "max": 400,
+      "step": 20,
+      "unit": "px",
+      "default": 260
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Tak, chcę tę maskę"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_new_tab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_subtext",
+      "label": "Button subtext",
+      "default": "Kolor i ilość wybierzesz na następnej stronie."
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#d9a17d"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#232e71"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text & icon color",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_bg_color",
+      "label": "Feature icon circle color",
+      "default": "#d9a17d"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size — desktop",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size — mobile",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "body_size_desktop",
+      "label": "Body text size — desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "body_size_mobile",
+      "label": "Body text size — mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Layout — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 1000,
+      "max": 1600,
+      "step": 40,
+      "unit": "px",
+      "default": 1440
+    },
+    {
+      "type": "range",
+      "id": "col_gap_desktop",
+      "label": "Gap between columns",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_desktop",
+      "label": "Padding left & right",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Custom anchor ID",
+      "info": "Used for scroll-to links. Leave blank to skip."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Custom icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Feature text"
+        }
+      ]
+    },
+    {
+      "type": "trust",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Custom icon"
+        },
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Default icon",
+          "info": "Used when no custom icon is uploaded.",
+          "options": [
+            { "value": "shield", "label": "Shield / Security" },
+            { "value": "return", "label": "Return / Refund" },
+            { "value": "truck", "label": "Truck / Delivery" }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Trust badge text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV3 Product CTA",
+      "settings": {
+        "title": "<p>Jutro rano możesz obudzić się inaczej</p>",
+        "subtitle": "<p>Jedwabna maska Monté. Pełny blackout, gładki jedwab, regulowany rzep. Wszystko, o czym właśnie przeczytałaś, w jednej masce.</p>",
+        "body": "<p>Idealna jako prezent dla mamy, siostry albo przyjaciółki, która wciąż śpi na bawełnie.</p>",
+        "button_text": "Tak, chcę tę maskę",
+        "button_subtext": "Kolor i ilość wybierzesz na następnej stronie."
+      },
+      "blocks": [
+        { "type": "feature", "settings": { "text": "Pełny blackout, bez prześwitów" } },
+        { "type": "feature", "settings": { "text": "100% jedwab, nie wchłania kosmetyków" } },
+        { "type": "feature", "settings": { "text": "Miękki regulowany rzep zamiast gumki" } },
+        { "type": "feature", "settings": { "text": "Lekka, nie uciska i nie zsuwa się w nocy" } },
+        { "type": "feature", "settings": { "text": "Jedwab z certyfikatem OEKO-TEX" } },
+        { "type": "trust", "settings": { "icon_type": "shield", "text": "Bezpieczna płatność za pomocą BLIK" } },
+        { "type": "trust", "settings": { "icon_type": "return", "text": "30-nocna gwarancja zwrotu pieniędzy" } },
+        { "type": "trust", "settings": { "icon_type": "truck", "text": "Dostawa kurierem InPost w 1–2 dni robocze" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
