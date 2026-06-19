@@ -61,7 +61,7 @@
       "name": "Listicle – Sticky CTA",
       "settings": {
         "button_label": "Sprawdź dostępność",
-        "button_url": ""
+        "button_url": "shopify://products/classic-black-sleep-mask"
       }
     }
   },
