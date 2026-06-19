@@ -253,6 +253,7 @@
         "bg_gradient_end": "#f2dfd2",
         "heading_color": "#182153",
         "text_color": "#182153",
+        "star_icon": "shopify://shop_images/Star-1--Streamline-Flex.svg",
         "star_icon_size": 16,
         "star_color": "#f59e0b",
         "verified_icon_size": 12,
