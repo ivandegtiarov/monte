@@ -71,17 +71,16 @@
   #lv3-items-{{ section.id }} .lv3-item__caption {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    width: 100%;
     background-color: {{ s.caption_bg_color }};
     color: {{ s.caption_text_color }};
     padding: 10px 20px;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.4;
-    white-space: nowrap;
-    max-width: calc(100% - 16px);
     text-align: center;
+    box-sizing: border-box;
   }
 
   /* Body text */
