@@ -11,6 +11,21 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
+    "listicle_footer_F4Bn7h": {
+      "type": "listicle-footer",
+      "name": "Listicle – Footer",
+      "settings": {
+        "link_1_label": "Polityka prywatności",
+        "link_1_url": "",
+        "link_2_label": "Regulamin sklepu",
+        "link_2_url": "",
+        "link_3_label": "Polityka wysyłki",
+        "link_3_url": "",
+        "link_4_label": "Polityka zwrotów",
+        "link_4_url": "",
+        "copyright_text": ""
+      }
+    },
     "trust_bar": {
       "type": "trust-bar",
       "blocks": {
@@ -44,6 +59,7 @@
         "trust_2",
         "trust_3"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
@@ -158,6 +174,7 @@
         "nav_legal",
         "nav_social"
       ],
+      "disabled": true,
       "settings": {
         "card_background": "#232e71",
         "logo": "shopify://shop_images/Heading.svg",
@@ -169,6 +186,7 @@
     }
   },
   "order": [
+    "listicle_footer_F4Bn7h",
     "trust_bar",
     "footer",
     "monte_footer"
