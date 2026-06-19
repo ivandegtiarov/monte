@@ -185,12 +185,86 @@
         "review_4"
       ],
       "settings": {}
+    },
+    "lv3_product_cta": {
+      "type": "lv3-product-cta",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "text": "Pełny blackout, bez prześwitów"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "text": "100% jedwab, nie wchłania kosmetyków"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "text": "Miękki regulowany rzep zamiast gumki"
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "text": "Lekka, nie uciska i nie zsuwa się w nocy"
+          }
+        },
+        "feature_5": {
+          "type": "feature",
+          "settings": {
+            "text": "Jedwab z certyfikatem OEKO-TEX"
+          }
+        },
+        "trust_1": {
+          "type": "trust",
+          "settings": {
+            "icon_type": "shield",
+            "text": "Bezpieczna płatność za pomocą BLIK"
+          }
+        },
+        "trust_2": {
+          "type": "trust",
+          "settings": {
+            "icon_type": "return",
+            "text": "30-nocna gwarancja zwrotu pieniędzy"
+          }
+        },
+        "trust_3": {
+          "type": "trust",
+          "settings": {
+            "icon_type": "truck",
+            "text": "Dostawa kurierem InPost w 1–2 dni robocze"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "trust_1",
+        "trust_2",
+        "trust_3"
+      ],
+      "settings": {
+        "title": "<p>Jutro rano możesz obudzić się inaczej</p>",
+        "subtitle": "<p>Jedwabna maska Monté. Pełny blackout, gładki jedwab, regulowany rzep. Wszystko, o czym właśnie przeczytałaś, w jednej masce.</p>",
+        "body": "<p>Idealna jako prezent dla mamy, siostry albo przyjaciółki, która wciąż śpi na bawełnie.</p>",
+        "button_text": "Tak, chcę tę maskę",
+        "button_subtext": "Kolor i ilość wybierzesz na następnej stronie."
+      }
     }
   },
   "order": [
     "lv3_announcement",
     "lv3_hero",
     "lv3_items",
-    "lv3_reviews"
+    "lv3_reviews",
+    "lv3_product_cta"
   ]
 }
