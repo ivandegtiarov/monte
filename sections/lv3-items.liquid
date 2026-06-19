@@ -1,0 +1,591 @@
+{%- assign s = section.settings -%}
+
+{% style %}
+  #lv3-items-{{ section.id }} {
+    background-color: {{ s.background_color }};
+    padding-top: {{ s.padding_top_mobile }}px;
+    padding-bottom: {{ s.padding_bottom_mobile }}px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-items__inner {
+    max-width: {{ s.content_max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: {{ s.item_gap_mobile }}px;
+  }
+
+  /* Item — mobile: vertical stack (header → image → body) */
+  #lv3-items-{{ section.id }} .lv3-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__label {
+    font-size: 18px;
+    font-weight: 600;
+    color: {{ s.label_color }};
+    line-height: 1.5;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__title {
+    font-size: {{ s.heading_size_mobile }}px;
+    font-weight: 500;
+    color: {{ s.heading_color }};
+    line-height: 1.2;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__title p {
+    margin: 0;
+  }
+
+  /* Image block */
+  #lv3-items-{{ section.id }} .lv3-item__media {
+    position: relative;
+    width: 100%;
+    height: {{ s.image_height_mobile }}px;
+    border-radius: {{ s.image_border_radius }}px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: {{ s.caption_bg_color }};
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__caption {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: {{ s.caption_bg_color }};
+    color: {{ s.caption_text_color }};
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    max-width: calc(100% - 16px);
+    text-align: center;
+  }
+
+  /* Body text */
+  #lv3-items-{{ section.id }} .lv3-item__body {
+    font-size: {{ s.body_size_mobile }}px;
+    color: {{ s.text_color }};
+    opacity: {{ s.text_opacity | times: 0.01 }};
+    line-height: 1.5;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__body p {
+    margin: 0 0 1em;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  #lv3-items-{{ section.id }} .lv3-item__body strong {
+    font-weight: 800;
+  }
+
+  /* Desktop: CSS Grid — text column left, image spans both rows right */
+  @media (min-width: 768px) {
+    #lv3-items-{{ section.id }} {
+      padding-top: {{ s.padding_top_desktop }}px;
+      padding-bottom: {{ s.padding_bottom_desktop }}px;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-items__inner {
+      gap: {{ s.item_gap_desktop }}px;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item {
+      display: grid;
+      grid-template-columns: {{ s.text_col_width }}px 1fr;
+      grid-template-rows: auto 1fr;
+      column-gap: {{ s.col_gap_desktop }}px;
+      row-gap: 16px;
+      align-items: start;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item__header {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item__media {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      height: {{ s.image_height_desktop }}px;
+      width: 100%;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item__body {
+      grid-column: 1;
+      grid-row: 2;
+      font-size: {{ s.body_size_desktop }}px;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item__title {
+      font-size: {{ s.heading_size_desktop }}px;
+    }
+
+    /* Image-left variant */
+    #lv3-items-{{ section.id }} .lv3-item--image-left {
+      grid-template-columns: 1fr {{ s.text_col_width }}px;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item--image-left .lv3-item__header {
+      grid-column: 2;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item--image-left .lv3-item__media {
+      grid-column: 1;
+    }
+
+    #lv3-items-{{ section.id }} .lv3-item--image-left .lv3-item__body {
+      grid-column: 2;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="lv3-items-{{ section.id }}"
+  {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
+>
+  <div class="lv3-items__inner">
+    {%- for block in section.blocks -%}
+      {%- assign b = block.settings -%}
+      <div
+        class="lv3-item{% if b.image_position == 'left' %} lv3-item--image-left{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+
+        <div class="lv3-item__header">
+          {%- if b.label != blank -%}
+            <span class="lv3-item__label">{{ b.label | escape }}</span>
+          {%- endif -%}
+          {%- if b.title != blank -%}
+            <div class="lv3-item__title">{{ b.title }}</div>
+          {%- endif -%}
+        </div>
+
+        <div class="lv3-item__media">
+          {%- if b.image != blank -%}
+            {{
+              b.image
+              | image_url: width: 900
+              | image_tag:
+                class: 'lv3-item__image',
+                alt: b.image_alt,
+                loading: 'lazy',
+                widths: '400, 600, 900'
+            }}
+          {%- endif -%}
+          {%- if b.image_caption != blank -%}
+            <div class="lv3-item__caption" aria-hidden="true">{{ b.image_caption | escape }}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if b.body != blank -%}
+          <div class="lv3-item__body">{{ b.body }}</div>
+        {%- endif -%}
+
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LV3 Items",
+  "tag": "div",
+  "class": "lv3-items-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#d9a17d"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#182153"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text color",
+      "default": "#182153"
+    },
+    {
+      "type": "range",
+      "id": "text_opacity",
+      "label": "Body text opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 75
+    },
+    {
+      "type": "color",
+      "id": "caption_bg_color",
+      "label": "Image caption background",
+      "default": "#f8f1e9"
+    },
+    {
+      "type": "color",
+      "id": "caption_text_color",
+      "label": "Image caption text color",
+      "default": "#182153"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Item heading size — desktop",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Item heading size — mobile",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "body_size_desktop",
+      "label": "Body text size — desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "body_size_mobile",
+      "label": "Body text size — mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "Image height — desktop",
+      "min": 100,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image height — mobile",
+      "min": 100,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Layout — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 400,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 760
+    },
+    {
+      "type": "range",
+      "id": "text_col_width",
+      "label": "Text column width",
+      "min": 200,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "col_gap_desktop",
+      "label": "Gap between columns",
+      "min": 16,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "item_gap_desktop",
+      "label": "Gap between items",
+      "min": 16,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "item_gap_mobile",
+      "label": "Gap between items",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Custom anchor ID",
+      "info": "Used for scroll-to links. Leave blank to skip."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Powód #1"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Item title</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "label": "Image caption",
+          "info": "Short text shown in the overlay bar at the bottom of the image."
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image position — desktop",
+          "options": [
+            { "value": "right", "label": "Right" },
+            { "value": "left", "label": "Left" }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body text",
+          "default": "<p>Item body text goes here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV3 Items",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "label": "Powód #1",
+            "title": "<p>Twoja poduszka wypija kosmetyki, zanim zdążą zadziałać</p>",
+            "image_caption": "Znika w tkaninie",
+            "image_position": "right",
+            "body": "<p>Bawełna, z której powstaje większość poszewek i masek do snu, ma włókna chłonące wilgoć i substancje aktywne. <strong>Te same, które nakładasz na twarz przed snem</strong>.</p><p>Retinol, kwas hialuronowy, niacynamid, peptydy. Część z nich ląduje na tkaninie, nie na Twojej skórze.</p><p>Jedwab zachowuje się inaczej. Jego naturalna struktura białkowa <strong>nie wciąga wilgoci tak, jak robi to bawełna</strong>.</p><p>Kosmetyki zostają tam, gdzie mają pracować: na Twojej twarzy, przez całą noc.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "label": "Powód #2",
+            "title": "<p>Zagniecenia od snu są prawdziwe i kumulują się latami</p>",
+            "image_caption": "Zmarszczki od snu",
+            "image_position": "right",
+            "body": "<p>Budzisz się rano z odciskiem na policzku? <strong>Dermatolodzy nazywają to sleep lines</strong>, czyli zmarszczkami mechanicznymi od wielogodzinnego ucisku i tarcia twarzy o tkaninę.</p><p>W odróżnieniu od zmarszczek mimicznych, te powstają niezależnie od wieku i wyrazu twarzy.</p><p>Bawełna ma mikroskopijną fakturę, która <strong>przytrzymuje skórę</strong> podczas snu. Po jedwabiu skóra się ślizga, zamiast gnieść.</p><p>Efekt? <strong>Rano mniej śladów i mniej zagnieceń, dzień po dniu</strong>.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "label": "Powód #3",
+            "title": "<p>Jakość snu robi dla skóry więcej niż jakikolwiek krem</p>",
+            "image_caption": "Regeneracja w ciemności",
+            "image_position": "right",
+            "body": "<p>Podczas głębokiego snu organizm produkuje hormon wzrostu, który odpowiada za <strong>regenerację komórek skóry</strong>.</p><p>To właśnie wtedy skóra się naprawia: odbudowuje kolagen, regeneruje barierę lipidową, wycisza stany zapalne.</p><p>Problem w tym, że <strong>nawet niewielka ilość światła zaburza melatoninę</strong> i spłyca sen. Latarnia za oknem, dioda ładowarki, światło z telefonu obok.</p><p>Maska Monté daje pełny blackout, <strong>bez prześwitów i bez „prawie ciemno”</strong>. Twój organizm dostaje wtedy jasny sygnał: czas na regenerację.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "label": "Powód #4",
+            "title": "<p>Elastyczna gumka niszczy Twoje włosy każdej nocy</p>",
+            "image_caption": "Rzep zamiast gumki",
+            "image_position": "right",
+            "body": "<p>Masz wrażenie, że włosy przy skroniach są słabsze i bardziej łamliwe?</p><p>Standardowe maski mają <strong>elastyczną gumkę, która przez 7-8 godzin uciska włosy</strong>. Tarcie i naciąganie są szczególnie odczuwalne przy włosach farbowanych i cienkich.</p><p>Monté zamiast gumki ma <strong>miękki, regulowany rzep</strong>. Dopasujesz go raz do swojej głowy, a maska trzyma się pewnie przez całą noc, bez ucisku i bez tarcia.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "label": "Powód #5",
+            "title": "<p>Tania maska wygląda jak jedwab, ale nim nie jest</p>",
+            "image_caption": "Jedwab, nie imitacja",
+            "image_position": "right",
+            "body": "<p>Na rynku znajdziesz maski za 20-30 zł, które wyglądają podobnie. Różnica jest w materiale.</p><p>Tanie maski powstają z <strong>satyny poliestrowej</strong>. Przypominają jedwab z wyglądu, ale poliester nie oddycha, zatrzymuje ciepło i wilgoć przy twarzy i drażni wrażliwą skórę.</p><p>Prawdziwy jedwab to <strong>naturalne białko, fibroina</strong>. Jest hipoalergiczny, reguluje temperaturę i nie wciąga substancji aktywnych z Twoich kosmetyków.</p><p>Tę różnicę <strong>czujesz na skórze przez całą noc</strong>.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "label": "Powód #6",
+            "title": "<p>Maska to brakujący ostatni krok Twojej wieczornej rutyny</p>",
+            "image_caption": "Ostatni krok rutyny",
+            "image_position": "right",
+            "body": "<p>Robisz oczyszczanie, toner, serum, krem. Pięć kroków, czasem więcej.</p><p>A potem <strong>kładziesz się spać i cała ta praca zostaje bez domknięcia</strong>.</p><p>Założenie maski to ten moment, w którym <strong>mózg dostaje sygnał: dzień się skończył.</strong> Światło znika, bodźce cichną, ciało wie, że może zwolnić.</p><p>Dla skóry to ma znaczenie, bo <strong>spokojniejsze zasypianie to głębszy sen</strong>, a głębszy sen to lepsza regeneracja tego wszystkiego, co właśnie nałożyłaś.</p><p>Maska Monté domyka rutynę, której do tej pory brakowało zakończenia.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "label": "Powód #7",
+            "title": "<p>Różnicę czujesz już po pierwszej nocy</p>",
+            "image_caption": "Już pierwszego ranka",
+            "image_position": "right",
+            "body": "<p>Pierwszego ranka budzisz się <strong>bez odcisku na twarzy</strong>.</p><p>Skóra jest <strong>lepiej nawilżona</strong>, bo kosmetyki z wieczora miały całą noc na pracę, zamiast wsiąkać w poszewkę.</p><p>Sen jest głębszy, bo organizm dostał pełną ciemność.</p><p>A jeśli zastanawiasz się, czy da się w niej w ogóle spać: maska jest <strong>lekka, nie uciska i nie zsuwa się w nocy</strong>. To ten moment, po którym łatwo pomyśleć: dlaczego nikt mi o tym wcześniej nie powiedział.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

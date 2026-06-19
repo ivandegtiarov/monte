@@ -52,10 +52,96 @@
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
+    },
+    "lv3_items": {
+      "type": "lv3-items",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "label": "Powód #1",
+            "title": "<p>Twoja poduszka wypija kosmetyki, zanim zdążą zadziałać</p>",
+            "image_caption": "Znika w tkaninie",
+            "image_position": "right",
+            "body": "<p>Bawełna, z której powstaje większość poszewek i masek do snu, ma włókna chłonące wilgoć i substancje aktywne. <strong>Te same, które nakładasz na twarz przed snem</strong>.</p><p>Retinol, kwas hialuronowy, niacynamid, peptydy. Część z nich ląduje na tkaninie, nie na Twojej skórze.</p><p>Jedwab zachowuje się inaczej. Jego naturalna struktura białkowa <strong>nie wciąga wilgoci tak, jak robi to bawełna</strong>.</p><p>Kosmetyki zostają tam, gdzie mają pracować: na Twojej twarzy, przez całą noc.</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "label": "Powód #2",
+            "title": "<p>Zagniecenia od snu są prawdziwe i kumulują się latami</p>",
+            "image_caption": "Zmarszczki od snu",
+            "image_position": "right",
+            "body": "<p>Budzisz się rano z odciskiem na policzku? <strong>Dermatolodzy nazywają to sleep lines</strong>, czyli zmarszczkami mechanicznymi od wielogodzinnego ucisku i tarcia twarzy o tkaninę.</p><p>W odróżnieniu od zmarszczek mimicznych, te powstają niezależnie od wieku i wyrazu twarzy.</p><p>Bawełna ma mikroskopijną fakturę, która <strong>przytrzymuje skórę</strong> podczas snu. Po jedwabiu skóra się ślizga, zamiast gnieść.</p><p>Efekt? <strong>Rano mniej śladów i mniej zagnieceń, dzień po dniu</strong>.</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "label": "Powód #3",
+            "title": "<p>Jakość snu robi dla skóry więcej niż jakikolwiek krem</p>",
+            "image_caption": "Regeneracja w ciemności",
+            "image_position": "right",
+            "body": "<p>Podczas głębokiego snu organizm produkuje hormon wzrostu, który odpowiada za <strong>regenerację komórek skóry</strong>.</p><p>To właśnie wtedy skóra się naprawia: odbudowuje kolagen, regeneruje barierę lipidową, wycisza stany zapalne.</p><p>Problem w tym, że <strong>nawet niewielka ilość światła zaburza melatoninę</strong> i spłyca sen.</p><p>Maska Monté daje pełny blackout, <strong>bez prześwitów i bez prawie ciemno</strong>. Twój organizm dostaje wtedy jasny sygnał: czas na regenerację.</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "label": "Powód #4",
+            "title": "<p>Elastyczna gumka niszczy Twoje włosy każdej nocy</p>",
+            "image_caption": "Rzep zamiast gumki",
+            "image_position": "right",
+            "body": "<p>Masz wrażenie, że włosy przy skroniach są słabsze i bardziej łamliwe?</p><p>Standardowe maski mają <strong>elastyczną gumkę, która przez 7-8 godzin uciska włosy</strong>. Tarcie i naciąganie są szczególnie odczuwalne przy włosach farbowanych i cienkich.</p><p>Monté zamiast gumki ma <strong>miękki, regulowany rzep</strong>. Dopasujesz go raz do swojej głowy, a maska trzyma się pewnie przez całą noc, bez ucisku i bez tarcia.</p>"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "label": "Powód #5",
+            "title": "<p>Tania maska wygląda jak jedwab, ale nim nie jest</p>",
+            "image_caption": "Jedwab, nie imitacja",
+            "image_position": "right",
+            "body": "<p>Na rynku znajdziesz maski za 20-30 zł, które wyglądają podobnie. Różnica jest w materiale.</p><p>Tanie maski powstają z <strong>satyny poliestrowej</strong>. Poliester nie oddycha, zatrzymuje ciepło i wilgoć przy twarzy i drażni wrażliwą skórę.</p><p>Prawdziwy jedwab to <strong>naturalne białko, fibroina</strong>. Jest hipoalergiczny, reguluje temperaturę i nie wciąga substancji aktywnych z Twoich kosmetyków.</p><p>Tę różnicę <strong>czujesz na skórze przez całą noc</strong>.</p>"
+          }
+        },
+        "item_6": {
+          "type": "item",
+          "settings": {
+            "label": "Powód #6",
+            "title": "<p>Maska to brakujący ostatni krok Twojej wieczornej rutyny</p>",
+            "image_caption": "Ostatni krok rutyny",
+            "image_position": "right",
+            "body": "<p>Robisz oczyszczanie, toner, serum, krem. Pięć kroków, czasem więcej.</p><p>A potem <strong>kładziesz się spać i cała ta praca zostaje bez domknięcia</strong>.</p><p>Założenie maski to ten moment, w którym <strong>mózg dostaje sygnał: dzień się skończył.</strong> Światło znika, bodźce cichną, ciało wie, że może zwolnić.</p><p>Dla skóry to ma znaczenie, bo <strong>spokojniejsze zasypianie to głębszy sen</strong>, a głębszy sen to lepsza regeneracja tego wszystkiego, co właśnie nałożyłaś.</p><p>Maska Monté domyka rutynę, której do tej pory brakowało zakończenia.</p>"
+          }
+        },
+        "item_7": {
+          "type": "item",
+          "settings": {
+            "label": "Powód #7",
+            "title": "<p>Różnicę czujesz już po pierwszej nocy</p>",
+            "image_caption": "Już pierwszego ranka",
+            "image_position": "right",
+            "body": "<p>Pierwszego ranka budzisz się <strong>bez odcisku na twarzy</strong>.</p><p>Skóra jest <strong>lepiej nawilżona</strong>, bo kosmetyki z wieczora miały całą noc na pracę, zamiast wsiąkać w poszewkę.</p><p>Sen jest głębszy, bo organizm dostał pełną ciemność.</p><p>A jeśli zastanawiasz się, czy da się w niej w ogóle spać: maska jest <strong>lekka, nie uciska i nie zsuwa się w nocy</strong>. To ten moment, po którym łatwo pomyśleć: dlaczego nikt mi o tym wcześniej nie powiedział.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6",
+        "item_7"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "lv3_announcement",
-    "lv3_hero"
+    "lv3_hero",
+    "lv3_items"
   ]
 }
