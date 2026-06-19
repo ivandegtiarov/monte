@@ -75,6 +75,7 @@
           "settings": {
             "label": "Powód #1",
             "title": "<p>Twoja poduszka wypija kosmetyki, zanim zdążą zadziałać</p>",
+            "image": "shopify://shop_images/Lis_img_2.jpg",
             "image_alt": "",
             "image_caption": "Znika w tkaninie",
             "image_position": "right",
@@ -86,6 +87,7 @@
           "settings": {
             "label": "Powód #2",
             "title": "<p>Zagniecenia od snu są prawdziwe i kumulują się latami</p>",
+            "image": "shopify://shop_images/Lis_img_3.jpg",
             "image_alt": "",
             "image_caption": "Zmarszczki od snu",
             "image_position": "right",
