@@ -371,6 +371,21 @@
         "padding_bottom_mobile": 32,
         "section_id": ""
       }
+    },
+    "listicle_footer_PNBjgT": {
+      "type": "listicle-footer",
+      "name": "Listicle – Footer",
+      "settings": {
+        "link_1_label": "Polityka prywatności",
+        "link_1_url": "",
+        "link_2_label": "Regulamin sklepu",
+        "link_2_url": "",
+        "link_3_label": "Polityka wysyłki",
+        "link_3_url": "",
+        "link_4_label": "Polityka zwrotów",
+        "link_4_url": "",
+        "copyright_text": ""
+      }
     }
   },
   "order": [
@@ -379,6 +394,7 @@
     "lv3_hero",
     "lv3_items",
     "lv3_reviews",
-    "lv3_product_cta"
+    "lv3_product_cta",
+    "listicle_footer_PNBjgT"
   ]
 }
