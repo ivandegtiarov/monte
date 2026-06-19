@@ -386,6 +386,14 @@
         "link_4_url": "",
         "copyright_text": ""
       }
+    },
+    "listicle_sticky_cta_Vijd4i": {
+      "type": "listicle-sticky-cta",
+      "name": "Listicle – Sticky CTA",
+      "settings": {
+        "button_label": "Sprawdź dostępność →",
+        "button_url": "shopify://products/classic-black-sleep-mask"
+      }
     }
   },
   "order": [
@@ -395,6 +403,7 @@
     "lv3_items",
     "lv3_reviews",
     "lv3_product_cta",
-    "listicle_footer_PNBjgT"
+    "listicle_footer_PNBjgT",
+    "listicle_sticky_cta_Vijd4i"
   ]
 }
