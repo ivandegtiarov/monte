@@ -60,7 +60,8 @@
     background-color: {{ s.caption_bg_color }};
   }
 
-  #lv3-items-{{ section.id }} .lv3-item__image {
+  #lv3-items-{{ section.id }} .lv3-item__image,
+  #lv3-items-{{ section.id }} .lv3-item__video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -186,7 +187,20 @@
         </div>
 
         <div class="lv3-item__media">
-          {%- if b.image != blank -%}
+          {%- if b.media_type == 'video' and b.video != blank -%}
+            <video
+              class="lv3-item__video"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+            >
+              {%- for source in b.video.sources -%}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {%- endfor -%}
+            </video>
+          {%- elsif b.image != blank -%}
             {{
               b.image
               | image_url: width: 900
@@ -313,7 +327,7 @@
     },
     {
       "type": "header",
-      "content": "Image"
+      "content": "Media"
     },
     {
       "type": "range",
@@ -476,6 +490,20 @@
           "default": "<p>Item title</p>"
         },
         {
+          "type": "header",
+          "content": "Media"
+        },
+        {
+          "type": "select",
+          "id": "media_type",
+          "label": "Media type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "video", "label": "Video" }
+          ],
+          "default": "image"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
@@ -486,10 +514,15 @@
           "label": "Image alt text"
         },
         {
+          "type": "video",
+          "id": "video",
+          "label": "Video file"
+        },
+        {
           "type": "text",
           "id": "image_caption",
-          "label": "Image caption",
-          "info": "Short text shown in the overlay bar at the bottom of the image."
+          "label": "Media caption",
+          "info": "Short text shown in the overlay bar at the bottom of the media."
         },
         {
           "type": "select",
