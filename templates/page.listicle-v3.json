@@ -137,11 +137,60 @@
         "item_7"
       ],
       "settings": {}
+    },
+    "lv3_reviews": {
+      "type": "lv3-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Byłam pewna, że to kolejny gadżet. Po dwóch tygodniach mąż zapytał, co zmieniłam w pielęgnacji, bo skóra wygląda inaczej. Nie zmieniłam nic poza maską.\"",
+            "author_name": "Karolina, 42, Wrocław",
+            "verified": true
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Skóra po przebudzeniu jest inna. Mniej opuchnięta, bardziej nawilżona. Serum naprawdę zostaje na twarzy przez całą noc, a nie wsiąka w poszewkę.\"",
+            "author_name": "Agnieszka, 35, Warszawa",
+            "verified": true
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Byłam sceptyczna wobec ceny. Po miesiącu widzę różnicę. Zmarszczki przy oczach są mniej widoczne, skóra bardziej elastyczna rano.\"",
+            "author_name": "Marta, 48, Kraków",
+            "verified": true
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Sen jest głębszy, maska nie zsuwa się w nocy. Jedwab jest miękki i nie zostawia żadnych śladów na twarzy po przebudzeniu.\"",
+            "author_name": "Zofia, 39, Gdańsk",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "lv3_announcement",
     "lv3_hero",
-    "lv3_items"
+    "lv3_items",
+    "lv3_reviews"
   ]
 }
