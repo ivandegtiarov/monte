@@ -1,3 +1,4 @@
+{%- if template.suffix == 'listicle-v3' -%}
 <style>
   #lsc-bar-{{ section.id }} {
     display: none;
@@ -123,6 +124,8 @@
   }
 })();
 </script>
+
+{%- endif -%}
 
 {% schema %}
 {
