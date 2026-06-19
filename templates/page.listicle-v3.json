@@ -308,6 +308,7 @@
         "trust_1": {
           "type": "trust",
           "settings": {
+            "icon": "shopify://shop_images/Shield-Check--Streamline-Sharp_45feeb51-bd03-484a-aede-e860aa3c2879.svg",
             "icon_type": "shield",
             "text": "Bezpieczna płatność za pomocą BLIK"
           }
@@ -315,6 +316,7 @@
         "trust_2": {
           "type": "trust",
           "settings": {
+            "icon": "shopify://shop_images/Shipment-Return--Streamline-Sharp_f6ef9496-73f9-4eef-9e87-d43b2c495d31.svg",
             "icon_type": "return",
             "text": "30-nocna gwarancja zwrotu pieniędzy"
           }
@@ -322,6 +324,7 @@
         "trust_3": {
           "type": "trust",
           "settings": {
+            "icon": "shopify://shop_images/Shipping-Transfer-Truck--Streamline-Sharp.svg",
             "icon_type": "truck",
             "text": "Dostawa kurierem InPost w 1–2 dni robocze"
           }
