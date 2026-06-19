@@ -58,6 +58,7 @@
     },
     "listicle_sticky_cta_ccqPbQ": {
       "type": "listicle-sticky-cta",
+      "disabled": true,
       "name": "Listicle – Sticky CTA",
       "settings": {
         "button_label": "Sprawdź dostępność →",
