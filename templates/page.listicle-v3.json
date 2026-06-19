@@ -48,7 +48,7 @@
         "image_height_desktop": 320,
         "image_height_mobile": 200,
         "image_border_radius": 16,
-        "body": "<p>Ile wydajesz miesięcznie na kosmetyki do twarzy? 200 zł? 400 zł? Może więcej? <br/><br/>Teraz odpowiedz szczerze: <strong>czy efekty są takie, jak powinny być? </strong><br/><br/>Jeśli mimo drogich serum, kremów i retinolu Twoja skóra wciąż nie wygląda tak, jak chcesz, problem nie leży w kosmetykach. <br/><br/>Leży w tym, <strong>co dzieje się z Twoją skórą przez 7-8 godzin, kiedy śpisz</strong>.</p>",
+        "body": "<p>Ile wydajesz miesięcznie na kosmetyki do twarzy? 200 zł? 400 zł? Może więcej?<br/><br/>Teraz odpowiedz szczerze: <strong>czy efekty są takie, jak powinny być?</strong><br/><br/>Jeśli mimo drogich serum, kremów i retinolu Twoja skóra wciąż nie wygląda tak, jak chcesz, problem nie leży w kosmetykach. <br/><br/>Leży w tym, <strong>co dzieje się z Twoją skórą przez 7-8 godzin, kiedy śpisz</strong>.</p>",
         "bg_gradient_start": "#f8f1e9",
         "bg_gradient_end": "#ffffff",
         "heading_color": "#182153",
@@ -79,7 +79,7 @@
             "image_alt": "",
             "image_caption": "Znika w tkaninie",
             "image_position": "right",
-            "body": "<p>Bawełna, z której powstaje większość poszewek i masek do snu, ma włókna chłonące wilgoć i substancje aktywne.<br/><br/><strong>Te same, które nakładasz na twarz przed snem.</strong><br/><br/>Retinol, kwas hialuronowy, niacynamid, peptydy. Część z nich ląduje na tkaninie, nie na Twojej skórze.<br/><br/>Jedwab zachowuje się inaczej. Jego naturalna struktura białkowa <strong>nie wciąga wilgoci tak, jak robi to bawełna.</strong><br/><br/>Kosmetyki zostają tam, gdzie mają pracować: na Twojej twarzy, przez całą noc.</p>"
+            "body": "<p>Bawełna, z której powstaje większość poszewek i masek do snu, ma włókna chłonące wilgoć i substancje aktywne.<br/><strong>Te same, które nakładasz na twarz przed snem</strong>.<br/><br/>Retinol, kwas hialuronowy, niacynamid, peptydy. Część z nich ląduje na tkaninie, nie na Twojej skórze.<br/><br/>Jedwab zachowuje się inaczej. Jego naturalna struktura białkowa <strong>nie wciąga wilgoci tak, jak robi to bawełna</strong>.<br/><br/>Kosmetyki zostają tam, gdzie mają pracować: na Twojej twarzy, przez całą noc.</p>"
           }
         },
         "item_2": {
@@ -91,7 +91,7 @@
             "image_alt": "",
             "image_caption": "Zmarszczki od snu",
             "image_position": "right",
-            "body": "<p>Budzisz się rano z odciskiem na policzku? <strong>Dermatolodzy nazywają to sleep lines</strong>, czyli zmarszczkami mechanicznymi od wielogodzinnego ucisku i tarcia twarzy o tkaninę.<br/><br/>W odróżnieniu od zmarszczek mimicznych, te powstają niezależnie od wieku i wyrazu twarzy.<br/><br/>Bawełna ma mikroskopijną fakturę, która <strong>przytrzymuje skórę</strong> podczas snu. Po jedwabiu skóra się ślizga, zamiast gnieść.<br/><br/>Efekt? <strong>Rano mniej śladów i mniej zagnieceń, dzień po dniu.</strong></p>"
+            "body": "<p>Budzisz się rano z odciskiem na policzku? <strong>Dermatolodzy nazywają to sleep lines</strong>, czyli zmarszczkami mechanicznymi od wielogodzinnego ucisku i tarcia twarzy o tkaninę.<br/><br/>W odróżnieniu od zmarszczek mimicznych, te powstają niezależnie od wieku i wyrazu twarzy.<br/><br/>Bawełna ma mikroskopijną fakturę, która <strong>przytrzymuje skórę</strong> podczas snu. Po jedwabiu skóra się ślizga, zamiast gnieść. <br/><br/>Efekt? <strong>Rano mniej śladów i mniej zagnieceń, dzień po dniu</strong>.</p>"
           }
         },
         "item_3": {
