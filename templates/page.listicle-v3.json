@@ -12,12 +12,13 @@
     "lv3_announcement": {
       "type": "lv3-announcement",
       "settings": {
-        "text": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br>oraz darmową dostawę</p>",
+        "text": "<p>Kup 2 maski i odbierz dodatkowe -20% na drugą<br/>oraz darmową dostawę</p>",
         "show_section": true,
+        "section_id": "",
         "background_color": "#232e71",
         "text_color": "#fdfbf9",
         "font_size_desktop": 14,
-        "font_size_mobile": 13,
+        "font_size_mobile": 14,
         "font_weight": "600",
         "text_align": "center",
         "padding_top_desktop": 8,
