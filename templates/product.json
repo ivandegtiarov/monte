@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "judge_me_reviews_preview_badge_DFRH67": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "maison_tagline_7wA46d": {
           "type": "maison-tagline",
           "settings": {
@@ -281,6 +285,7 @@
         }
       },
       "block_order": [
+        "judge_me_reviews_preview_badge_DFRH67",
         "maison_tagline_7wA46d",
         "maison_product_name_3gzmYY",
         "maison_rating_6TRbti",
@@ -762,6 +767,7 @@
         "testimonial_zxQaTW",
         "testimonial_h33GD6"
       ],
+      "disabled": true,
       "name": "Testimonials",
       "settings": {
         "full_width": true,
@@ -780,7 +786,43 @@
         "testimonial_card_text_color": "#182153"
       }
     },
+    "17820765206abd7f57": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_BP93xh": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "other_products_reviews"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_BP93xh"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "1777526803097e4acf": {
+      "type": "apps",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "1782076459c5859218": {
       "type": "apps",
       "settings": {
         "full_width": true,
@@ -881,7 +923,9 @@
     "stats_social_proof",
     "stats_social_proof_TKncbt",
     "testimonials_eU6FBb",
+    "17820765206abd7f57",
     "1777526803097e4acf",
+    "1782076459c5859218",
     "faq_accordion"
   ]
 }
