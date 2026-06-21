@@ -293,30 +293,6 @@
         "padding_bottom_mobile": 32
       }
     },
-    "1782076843e1172369": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_homepage_YqjEje": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "product": "classic-black-sleep-mask",
-            "review_data": "real_data",
-            "max_width": 1200
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_homepage_YqjEje"
-      ],
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "testimonials_fAAqzD": {
       "type": "testimonials",
       "blocks": {
@@ -552,7 +528,6 @@
         "testimonial_bHGbyc",
         "testimonial_NFG8K3"
       ],
-      "disabled": true,
       "name": "Testimonials",
       "settings": {
         "full_width": true,
@@ -688,17 +663,6 @@
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
-    },
-    "1782076825a38368a6": {
-      "type": "apps",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
     }
   },
   "order": [
@@ -708,10 +672,8 @@
     "section-15",
     "stats_social_proof_i9KQdr",
     "stats_social_proof_TgFgh4",
-    "1782076843e1172369",
     "testimonials_fAAqzD",
     "blog_posts_pRx46J",
-    "faq_accordion_GirgW4",
-    "1782076825a38368a6"
+    "faq_accordion_GirgW4"
   ]
 }
