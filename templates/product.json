@@ -262,6 +262,7 @@
         },
         "lumen_stat_wmiw8K": {
           "type": "lumen-stat",
+          "disabled": true,
           "settings": {
             "stat_label_1": "BLOKOWANIE ŚWIATŁA",
             "stat_value_1": "WYSOKI BLACKOUT",
