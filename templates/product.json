@@ -188,6 +188,7 @@
         },
         "lumen_ugc_gkMKAb": {
           "type": "lumen-ugc",
+          "disabled": true,
           "settings": {
             "title": "Zobacz jak wygląda Monté",
             "image_1": "shopify://shop_images/UGC_2.png",
