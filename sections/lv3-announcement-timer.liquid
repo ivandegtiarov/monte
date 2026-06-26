@@ -1,0 +1,250 @@
+{%- assign s = section.settings -%}
+
+{% style %}
+  #anntimer-{{ section.id }} {
+    background-color: {{ s.bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+  }
+
+  /* ---- Mobile: text left (flex-1), timer right ---- */
+  #anntimer-{{ section.id }} .anntimer__inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  #anntimer-{{ section.id }} .anntimer__text {
+    font-family: "PP Pangaia", serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: {{ s.text_color }};
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+  }
+
+  /* Hidden on mobile, shown on desktop */
+  #anntimer-{{ section.id }} .anntimer__divider {
+    display: none;
+    width: 1px;
+    height: 16px;
+    background-color: rgba(253, 251, 249, 0.2);
+    flex-shrink: 0;
+  }
+
+  #anntimer-{{ section.id }} .anntimer__label {
+    display: none;
+    font-family: "PP Mori", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: {{ s.text_color }};
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ---- Timer ---- */
+  #anntimer-{{ section.id }} .anntimer__timer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  /* One HH / MM / SS group */
+  #anntimer-{{ section.id }} .anntimer__counter {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+  }
+
+  /* Individual digit card — gradient gives the flip-card look from the design */
+  #anntimer-{{ section.id }} .anntimer__digit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    padding: 4px;
+    border: 1px solid rgba(253, 251, 249, 0.5);
+    border-radius: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(253, 251, 249, 0.5) 0%,
+      {{ s.bg_color }} 46.154%,
+      rgba(253, 251, 249, 0.5) 100%
+    );
+    font-family: "PP Mori", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* ---- Desktop (≥ 768px): all items centered as a group ---- */
+  @media (min-width: 768px) {
+    #anntimer-{{ section.id }} {
+      padding: 8px 40px;
+    }
+
+    #anntimer-{{ section.id }} .anntimer__inner {
+      width: auto;
+      gap: 16px;
+    }
+
+    #anntimer-{{ section.id }} .anntimer__text {
+      font-size: 18px;
+      flex: none;
+      white-space: nowrap;
+    }
+
+    #anntimer-{{ section.id }} .anntimer__divider {
+      display: block;
+    }
+
+    #anntimer-{{ section.id }} .anntimer__label {
+      display: block;
+    }
+  }
+{% endstyle %}
+
+<div id="anntimer-{{ section.id }}">
+  <div class="anntimer__inner">
+    <p class="anntimer__text">{{ s.text | escape }}</p>
+    <div class="anntimer__divider" aria-hidden="true"></div>
+    <span class="anntimer__label">{{ s.label | escape }}</span>
+    <div
+      class="anntimer__timer"
+      id="anntimer-timer-{{ section.id }}"
+      aria-label="Countdown timer"
+    ></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var SECTION_ID  = {{ section.id | json }};
+  var DAYS        = {{ s.countdown_days | default: 2 }};
+
+  // Including DAYS in the key means changing the setting resets the countdown
+  var STORAGE_KEY = 'anntimer_end_' + SECTION_ID + '_d' + DAYS;
+
+  var endTime = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+  if (!endTime || endTime <= Date.now()) {
+    endTime = Date.now() + DAYS * 24 * 60 * 60 * 1000;
+    localStorage.setItem(STORAGE_KEY, String(endTime));
+  }
+
+  // Two small dots as SVG separator between time groups
+  var DOTS_SVG =
+    '<svg width="2" height="12" viewBox="0 0 2 12" fill="none"'
+    + ' xmlns="http://www.w3.org/2000/svg" aria-hidden="true"'
+    + ' style="flex-shrink:0">'
+    + '<circle cx="1" cy="3.5" r="1" fill="rgba(253,251,249,0.7)"/>'
+    + '<circle cx="1" cy="8.5" r="1" fill="rgba(253,251,249,0.7)"/>'
+    + '</svg>';
+
+  function buildCounter(value, minLen) {
+    var str    = String(value).padStart(minLen, '0');
+    var digits = str.split('').map(function (d) {
+      return '<span class="anntimer__digit">' + d + '</span>';
+    }).join('');
+    return '<div class="anntimer__counter">' + digits + '</div>';
+  }
+
+  function tick() {
+    var el = document.getElementById('anntimer-timer-' + SECTION_ID);
+    if (!el) return;
+
+    var remaining = Math.max(0, endTime - Date.now());
+    var totalSecs = Math.floor(remaining / 1000);
+    var hours     = Math.floor(totalSecs / 3600);
+    var minutes   = Math.floor((totalSecs % 3600) / 60);
+    var seconds   = totalSecs % 60;
+
+    // Hours can exceed 2 digits for longer countdowns (30 days = 720 h)
+    var hoursLen  = Math.max(2, String(hours).length);
+
+    el.innerHTML =
+      buildCounter(hours, hoursLen) +
+      DOTS_SVG +
+      buildCounter(minutes, 2) +
+      DOTS_SVG +
+      buildCounter(seconds, 2);
+
+    if (remaining > 0) {
+      setTimeout(tick, 1000);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tick);
+  } else {
+    tick();
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Announcement + Timer",
+  "tag": "div",
+  "class": "anntimer-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement text",
+      "default": "-30% na pierwszą maskę, dodatkowe -50% na drugą"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Timer label",
+      "info": "Shown on desktop only, right before the countdown.",
+      "default": "Kończy się za:"
+    },
+    {
+      "type": "range",
+      "id": "countdown_days",
+      "label": "Countdown duration",
+      "info": "Counts down from the visitor's first visit. Stored in their browser. Changing this value resets the countdown.",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#232e71"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fdfbf9"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement + Timer",
+      "settings": {
+        "text": "-30% na pierwszą maskę, dodatkowe -50% na drugą",
+        "label": "Kończy się za:",
+        "countdown_days": 2
+      }
+    }
+  ]
+}
+{% endschema %}
