@@ -329,6 +329,7 @@
       "settings": {
         "tagline": "Tylko ten weekend 27 - 28 czerwca",
         "title": "<p>-30% na pierwszą maskę, <span style=\"text-decoration:underline\">dodatkowe -50% na drugą</span></p>",
+        "image": "shopify://shop_images/Desktop_Listicle_Image.jpg",
         "image_alt": "",
         "image_height_mobile": 320,
         "button_text": "Tak, chcę tę maskę",
