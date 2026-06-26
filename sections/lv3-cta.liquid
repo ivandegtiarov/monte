@@ -96,10 +96,12 @@
 
   /* Underlined text in richtext gets a dotted style matching the design */
   #lv3-cta-{{ section.id }} .lv3cta__title u {
-    text-decoration: underline;
+    text-decoration-line: underline;
     text-decoration-style: dotted;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: 6%;
+    text-underline-offset: 25%;
+    text-underline-position: from-font;
   }
 
   /* ---------- Feature items ---------- */
