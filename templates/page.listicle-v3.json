@@ -273,24 +273,28 @@
         "feature_QF7Ecr": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "text": "100% jedwab, nie wchłania kosmetyków"
           }
         },
         "feature_8wrBpj": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "text": "Pełny blackout, bez prześwitów"
           }
         },
         "feature_Wtjf3U": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "text": "Miękki regulowany rzep zamiast gumki"
           }
         },
         "feature_akNGfg": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Check-Circle--Streamline-Sharp_5.svg",
             "text": "Lekka, nie uciska i nie zsuwa się w nocy"
           }
         },
