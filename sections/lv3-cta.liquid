@@ -119,6 +119,14 @@
     justify-content: center;
   }
 
+  #lv3-cta-{{ section.id }} .lv3cta__feature-icon-img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+  }
+
   #lv3-cta-{{ section.id }} .lv3cta__feature-text {
     font-family: "PP Mori", sans-serif;
     font-size: 14px;
@@ -241,7 +249,8 @@
       text-align: {{ desktop_align }};
     }
 
-    #lv3-cta-{{ section.id }} .lv3cta__feature-check {
+    #lv3-cta-{{ section.id }} .lv3cta__feature-check,
+    #lv3-cta-{{ section.id }} .lv3cta__feature-icon-img {
       width: 24px;
       height: 24px;
     }
@@ -304,11 +313,23 @@
       <div class="lv3cta__features">
         {%- for block in feature_blocks -%}
           <div class="lv3cta__feature" {{ block.shopify_attributes }}>
-            <span class="lv3cta__feature-check" aria-hidden="true">
-              <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
+            {%- if block.settings.icon != blank -%}
+              <img
+                class="lv3cta__feature-icon-img"
+                src="{{ block.settings.icon | image_url: width: 48 }}"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                width="20"
+                height="20"
+              >
+            {%- else -%}
+              <span class="lv3cta__feature-check" aria-hidden="true">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            {%- endif -%}
             {%- if block.settings.text != blank -%}
               <span class="lv3cta__feature-text">{{ block.settings.text | escape }}</span>
             {%- endif -%}
@@ -623,6 +644,12 @@
       "type": "feature",
       "name": "Feature Item",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Optional. Leave blank to use the default checkmark."
+        },
         {
           "type": "text",
           "id": "text",
