@@ -49,6 +49,7 @@
         "message_RViAXw",
         "message"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky": false,
         "show_on_homepage_only": false,
@@ -87,10 +88,22 @@
         "background_opacity": 100,
         "background_blur_radius": 0
       }
+    },
+    "lv3_announcement_timer_B7RqUw": {
+      "type": "lv3-announcement-timer",
+      "name": "Announcement + Timer",
+      "settings": {
+        "text": "-30% na pierwszą maskę, dodatkowe -50% na drugą",
+        "label": "Kończy się za:",
+        "countdown_days": 2,
+        "bg_color": "#232e71",
+        "text_color": "#fdfbf9"
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "lv3_announcement_timer_B7RqUw"
   ]
 }
