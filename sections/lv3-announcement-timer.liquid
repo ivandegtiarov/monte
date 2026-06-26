@@ -1,6 +1,14 @@
 {%- assign s = section.settings -%}
 
 {% style %}
+  {% if s.sticky %}
+  .anntimer-wrapper:has(#anntimer-{{ section.id }}) {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  {% endif %}
+
   #anntimer-{{ section.id }} {
     background-color: {{ s.bg_color }};
     display: flex;
@@ -62,13 +70,15 @@
     gap: 2px;
   }
 
-  /* Individual digit card — gradient gives the flip-card look from the design */
+  /* Individual digit card — fixed 20px so bar width never shifts between ticks */
   #anntimer-{{ section.id }} .anntimer__digit {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 20px;
-    padding: 4px;
+    width: 20px;
+    height: 26px;
+    flex-shrink: 0;
+    overflow: hidden;
     border: 1px solid rgba(253, 251, 249, 0.5);
     border-radius: 2px;
     background: linear-gradient(
@@ -131,6 +141,10 @@
   var SECTION_ID  = {{ section.id | json }};
   var DAYS        = {{ s.countdown_days | default: 2 }};
 
+  // Hours digit count fixed at start so bar width never changes mid-countdown
+  // e.g. 2 days = 48h → 2 digits always; 5 days = 120h → 3 digits always
+  var HOURS_LEN   = Math.max(2, String(DAYS * 24).length);
+
   // Including DAYS in the key means changing the setting resets the countdown
   var STORAGE_KEY = 'anntimer_end_' + SECTION_ID + '_d' + DAYS;
 
@@ -167,11 +181,8 @@
     var minutes   = Math.floor((totalSecs % 3600) / 60);
     var seconds   = totalSecs % 60;
 
-    // Hours can exceed 2 digits for longer countdowns (30 days = 720 h)
-    var hoursLen  = Math.max(2, String(hours).length);
-
     el.innerHTML =
-      buildCounter(hours, hoursLen) +
+      buildCounter(hours, HOURS_LEN) +
       DOTS_SVG +
       buildCounter(minutes, 2) +
       DOTS_SVG +
@@ -196,6 +207,13 @@
   "tag": "div",
   "class": "anntimer-wrapper",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Sticky bar",
+      "info": "Pins the bar to the top of the page on scroll.",
+      "default": false
+    },
     {
       "type": "text",
       "id": "text",
