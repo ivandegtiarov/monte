@@ -267,6 +267,93 @@
         "padding_bottom_mobile": 32
       }
     },
+    "lv3_cta_Y7Lrgy": {
+      "type": "lv3-cta",
+      "blocks": {
+        "feature_QF7Ecr": {
+          "type": "feature",
+          "settings": {
+            "text": "100% jedwab, nie wchłania kosmetyków"
+          }
+        },
+        "feature_8wrBpj": {
+          "type": "feature",
+          "settings": {
+            "text": "Pełny blackout, bez prześwitów"
+          }
+        },
+        "feature_Wtjf3U": {
+          "type": "feature",
+          "settings": {
+            "text": "Miękki regulowany rzep zamiast gumki"
+          }
+        },
+        "feature_akNGfg": {
+          "type": "feature",
+          "settings": {
+            "text": "Lekka, nie uciska i nie zsuwa się w nocy"
+          }
+        },
+        "trust_fHLJ4a": {
+          "type": "trust",
+          "settings": {
+            "icon_type": "shield",
+            "text": "Bezpieczna płatność za pomocą BLIK"
+          }
+        },
+        "trust_LBbNQR": {
+          "type": "trust",
+          "settings": {
+            "icon_type": "return",
+            "text": "30-nocna gwarancja zwrotu pieniędzy"
+          }
+        },
+        "trust_w93iRf": {
+          "type": "trust",
+          "settings": {
+            "icon_type": "truck",
+            "text": "Dostawa kurierem InPost w 1–2 dni robocze"
+          }
+        }
+      },
+      "block_order": [
+        "feature_QF7Ecr",
+        "feature_8wrBpj",
+        "feature_Wtjf3U",
+        "feature_akNGfg",
+        "trust_fHLJ4a",
+        "trust_LBbNQR",
+        "trust_w93iRf"
+      ],
+      "name": "LV3 CTA",
+      "settings": {
+        "tagline": "Tylko ten weekend 27 - 28 czerwca",
+        "title": "<p>-30% na pierwszą maskę, <span style=\"text-decoration:underline\">dodatkowe -50% na drugą</span></p>",
+        "image_alt": "",
+        "image_height_mobile": 320,
+        "button_text": "Tak, chcę tę maskę",
+        "button_url": "",
+        "button_new_tab": false,
+        "button_subtext": "Kolor i ilość wybierzesz na następnej stronie.",
+        "button_bg_color": "#232e71",
+        "button_text_color": "#fdfbf9",
+        "bg_color": "#fdfbf9",
+        "heading_color": "#182153",
+        "text_color": "#182153",
+        "feature_icon_bg_color": "#232e71",
+        "tagline_bg_color": "#f8f1e9",
+        "tagline_border_color": "#232e71",
+        "heading_size_desktop": 30,
+        "heading_size_mobile": 30,
+        "desktop_content_align": "left",
+        "col_gap_desktop": 80,
+        "padding_horizontal_desktop": 80,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64,
+        "padding_bottom_mobile": 40,
+        "section_id": ""
+      }
+    },
     "lv3_product_cta": {
       "type": "lv3-product-cta",
       "blocks": {
@@ -332,6 +419,7 @@
         "trust_2",
         "trust_3"
       ],
+      "disabled": true,
       "settings": {
         "title": "<p>Jutro rano możesz obudzić się inaczej</p>",
         "subtitle": "<p>Jedwabna maska Monté. Pełny blackout, gładki jedwab, regulowany rzep. Wszystko, o czym właśnie przeczytałaś, w jednej masce.</p>",
@@ -385,6 +473,7 @@
     "lv3_hero",
     "lv3_items",
     "lv3_reviews",
+    "lv3_cta_Y7Lrgy",
     "lv3_product_cta",
     "listicle_footer_eA8wmW"
   ]
