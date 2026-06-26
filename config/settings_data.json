@@ -86,20 +86,6 @@
           "mobile_bottom_margin": 46
         }
       },
-      "15683396631634586217": {
-        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
-        "disabled": false,
-        "settings": {
-          "greeting_message": "Cześć! Masz pytanie o maskę lub zamówienie? Chętnie pomożemy.",
-          "button_color": "#232e71",
-          "secondary_color": "#fdfbf9",
-          "ternary_color": "#232e71",
-          "button_icon": "chat_bubble",
-          "button_text": "no_text",
-          "button_horizontal_position": "bottom_right",
-          "button_vertical_position": "lowest"
-        }
-      },
       "5061257265103808445": {
         "type": "shopify://apps/r-terms-conditions/blocks/embed-block/471882a9-9b1b-4918-8943-6c66b60c94ea",
         "disabled": true,
@@ -124,6 +110,25 @@
         "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
         "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "greeting_message": "Cześć! Masz pytanie o maskę lub zamówienie? Chętnie pomożemy.",
+          "background_color": "#FFFFFF",
+          "font_color": "#000000",
+          "button_color": "#232e71",
+          "secondary_color": "#fdfbf9",
+          "ternary_color": "#232e71",
+          "button_icon": "chat_bubble",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "agent_inherit_fonts": true,
+          "agent_font": "system_ui_n4",
+          "agent_border_radius": 16
+        }
       }
     }
   },
