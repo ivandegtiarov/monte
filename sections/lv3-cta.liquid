@@ -1,0 +1,679 @@
+{%- assign s = section.settings -%}
+{%- assign desktop_align = s.desktop_content_align | default: 'left' -%}
+
+{% style %}
+  /* ============================================================
+     LV3 CTA — mobile-first
+     Mobile:  image on top, content centered below
+     Desktop: image left half, content right half
+  ============================================================ */
+
+  #lv3-cta-{{ section.id }} {
+    background-color: {{ s.bg_color }};
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow: hidden;
+  }
+
+  /* ---------- Image ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__image-wrap {
+    position: relative;
+    width: 100%;
+    height: {{ s.image_height_mobile }}px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Mobile image gradients: fade from bg at top and bottom */
+  #lv3-cta-{{ section.id }} .lv3cta__image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, {{ s.bg_color }} 0% 32%, transparent 50%),
+      linear-gradient(0deg,   {{ s.bg_color }} 0%, transparent 17%);
+    pointer-events: none;
+  }
+
+  /* ---------- Content (mobile — centered) ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 0 20px {{ s.padding_bottom_mobile }}px;
+  }
+
+  /* ---------- Heading block ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__heading-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  /* ---------- Tagline ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__tagline {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 16px;
+    background-color: {{ s.tagline_bg_color }};
+    border: 1px dashed {{ s.tagline_border_color }};
+    border-radius: 999px;
+    font-family: "PP Neue Montreal Mono", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: {{ s.heading_color }};
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ---------- Title ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__title {
+    font-family: "PP Pangaia", serif;
+    font-size: {{ s.heading_size_mobile }}px;
+    font-weight: 500;
+    color: {{ s.heading_color }};
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__title p { margin: 0; }
+
+  /* Underlined text in richtext gets a dotted style matching the design */
+  #lv3-cta-{{ section.id }} .lv3cta__title u {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  /* ---------- Feature items ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__feature {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__feature-check {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    background-color: {{ s.feature_icon_bg_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__feature-text {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ s.heading_color }};
+    line-height: 1.5;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ---------- CTA block ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__cta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__button-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 52px;
+    padding: 0 32px;
+    background-color: {{ s.button_bg_color }};
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ s.button_text_color }};
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__button:hover { opacity: 0.88; }
+
+  #lv3-cta-{{ section.id }} .lv3cta__button-subtext {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    color: {{ s.text_color }};
+    opacity: 0.7;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+  }
+
+  /* ---------- Trust items ---------- */
+  #lv3-cta-{{ section.id }} .lv3cta__trust {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__trust-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__trust-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  #lv3-cta-{{ section.id }} .lv3cta__trust-text {
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ s.text_color }};
+    line-height: 1.5;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ============================================================
+     Desktop (≥ 768px): side-by-side layout
+  ============================================================ */
+  @media (min-width: 768px) {
+    #lv3-cta-{{ section.id }} {
+      flex-direction: row;
+      align-items: stretch;
+      gap: {{ s.col_gap_desktop }}px;
+      padding-right: {{ s.padding_horizontal_desktop }}px;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3cta__image-wrap {
+      width: 50%;
+      height: auto;
+      min-height: 500px;
+    }
+
+    /* Desktop image gradients: right edge + top + bottom */
+    #lv3-cta-{{ section.id }} .lv3cta__image-wrap::after {
+      background:
+        linear-gradient(270deg, {{ s.bg_color }} 0%, transparent 15%),
+        linear-gradient(180deg, {{ s.bg_color }} 0% 32%, transparent 50%),
+        linear-gradient(0deg,   {{ s.bg_color }} 0%, transparent 17%);
+    }
+
+    #lv3-cta-{{ section.id }} .lv3cta__content {
+      flex: 1;
+      min-width: 0;
+      align-items: {% if desktop_align == 'center' %}center{% else %}flex-start{% endif %};
+      padding: {{ s.padding_top_desktop }}px 48px {{ s.padding_bottom_desktop }}px;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3cta__heading-block {
+      align-items: {% if desktop_align == 'center' %}center{% else %}flex-start{% endif %};
+    }
+
+    #lv3-cta-{{ section.id }} .lv3cta__title {
+      font-size: {{ s.heading_size_desktop }}px;
+      text-align: {{ desktop_align }};
+    }
+
+    #lv3-cta-{{ section.id }} .lv3cta__feature-check {
+      width: 24px;
+      height: 24px;
+    }
+
+    #lv3-cta-{{ section.id }} .lv3cta__feature-text {
+      font-size: 16px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="lv3-cta-{{ section.id }}"
+  {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
+>
+
+  {%- if s.image != blank -%}
+    <div class="lv3cta__image-wrap">
+      {{
+        s.image
+        | image_url: width: 1400
+        | image_tag:
+          class: 'lv3cta__image',
+          alt: s.image_alt,
+          loading: 'lazy',
+          widths: '400, 700, 1000, 1400'
+      }}
+    </div>
+  {%- endif -%}
+
+  <div class="lv3cta__content">
+
+    {%- if s.tagline != blank or s.title != blank -%}
+      <div class="lv3cta__heading-block">
+        {%- if s.tagline != blank -%}
+          <span class="lv3cta__tagline">{{ s.tagline | escape }}</span>
+        {%- endif -%}
+        {%- if s.title != blank -%}
+          <div class="lv3cta__title">{{ s.title }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- assign feature_blocks = section.blocks | where: 'type', 'feature' -%}
+    {%- if feature_blocks.size > 0 -%}
+      <div class="lv3cta__features">
+        {%- for block in feature_blocks -%}
+          <div class="lv3cta__feature" {{ block.shopify_attributes }}>
+            <span class="lv3cta__feature-check" aria-hidden="true">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            {%- if block.settings.text != blank -%}
+              <span class="lv3cta__feature-text">{{ block.settings.text | escape }}</span>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div class="lv3cta__cta-block">
+      {%- if s.button_text != blank -%}
+        <div class="lv3cta__button-wrap">
+          <a
+            href="{{ s.button_url | default: '#' }}"
+            class="lv3cta__button"
+            {% if s.button_new_tab %}target="_blank" rel="noopener"{% endif %}
+          >
+            {{- s.button_text | escape -}}
+          </a>
+          {%- if s.button_subtext != blank -%}
+            <p class="lv3cta__button-subtext">{{ s.button_subtext | escape }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- assign trust_blocks = section.blocks | where: 'type', 'trust' -%}
+      {%- if trust_blocks.size > 0 -%}
+        <div class="lv3cta__trust">
+          {%- for block in trust_blocks -%}
+            <div class="lv3cta__trust-item" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <img
+                  class="lv3cta__trust-icon"
+                  src="{{ block.settings.icon | image_url: width: 32 }}"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {%- case block.settings.icon_type -%}
+                  {%- when 'shield' -%}
+                    <svg class="lv3cta__trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M8 1.5L2 4.5V8.5C2 11.5 4.5 14 8 14.5C11.5 14 14 11.5 14 8.5V4.5L8 1.5Z" stroke="{{ s.text_color }}" stroke-width="1.2"/>
+                      <path d="M5.5 8.5L7 10L10.5 6.5" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  {%- when 'return' -%}
+                    <svg class="lv3cta__trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M2.5 8H10C11.7 8 13 6.7 13 5C13 3.3 11.7 2 10 2H5" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round"/>
+                      <path d="M5 5L2.5 8L5 11" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <line x1="2.5" y1="13.5" x2="12" y2="13.5" stroke="{{ s.text_color }}" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                  {%- when 'truck' -%}
+                    <svg class="lv3cta__trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="1" y="4.5" width="9" height="6" rx="1" stroke="{{ s.text_color }}" stroke-width="1.2"/>
+                      <path d="M10 6.5H13L14.5 10.5H10V6.5Z" stroke="{{ s.text_color }}" stroke-width="1.2"/>
+                      <circle cx="3.5" cy="11.5" r="1" fill="{{ s.text_color }}"/>
+                      <circle cx="11.5" cy="11.5" r="1" fill="{{ s.text_color }}"/>
+                    </svg>
+                {%- endcase -%}
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <span class="lv3cta__trust-text">{{ block.settings.text | escape }}</span>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LV3 CTA",
+  "tag": "div",
+  "class": "lv3-cta-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "info": "Small pill badge above the heading. Leave blank to hide.",
+      "default": "Tylko ten weekend 27 - 28 czerwca"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Heading",
+      "info": "Use underline formatting in the editor to get a dotted underline effect (matches design).",
+      "default": "<p>-30% na pierwszą maskę, <u>dodatkowe -50% na drugą</u></p>"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image height — mobile",
+      "min": 200,
+      "max": 500,
+      "step": 20,
+      "unit": "px",
+      "default": 320
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Tak, chcę tę maskę"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_new_tab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_subtext",
+      "label": "Button subtext",
+      "info": "Small italic note below the button. Leave blank to hide.",
+      "default": "Kolor i ilość wybierzesz na następnej stronie."
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#232e71"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#fdfbf9"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading & feature text",
+      "default": "#182153"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text & icon color",
+      "default": "#182153"
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_bg_color",
+      "label": "Feature checkmark circle",
+      "default": "#232e71"
+    },
+    {
+      "type": "color",
+      "id": "tagline_bg_color",
+      "label": "Tagline background",
+      "default": "#f8f1e9"
+    },
+    {
+      "type": "color",
+      "id": "tagline_border_color",
+      "label": "Tagline border",
+      "default": "#232e71"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size — desktop",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size — mobile",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Layout — Desktop"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_align",
+      "label": "Content alignment — desktop",
+      "info": "Mobile is always centered. This controls desktop only.",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "col_gap_desktop",
+      "label": "Gap between image and content",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_desktop",
+      "label": "Section right padding",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Content padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Content padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Spacing — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Custom anchor ID",
+      "info": "Used for scroll-to links. Leave blank to skip."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Feature text"
+        }
+      ]
+    },
+    {
+      "type": "trust",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon",
+          "options": [
+            { "value": "shield", "label": "Shield (security / payment)" },
+            { "value": "return", "label": "Return arrow (refund)" },
+            { "value": "truck",  "label": "Truck (delivery)" }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Custom icon",
+          "info": "Upload a custom icon to override the default above."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Trust badge text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV3 CTA",
+      "settings": {
+        "tagline": "Tylko ten weekend 27 - 28 czerwca",
+        "button_text": "Tak, chcę tę maskę",
+        "button_subtext": "Kolor i ilość wybierzesz na następnej stronie."
+      },
+      "blocks": [
+        { "type": "feature", "settings": { "text": "100% jedwab, nie wchłania kosmetyków" } },
+        { "type": "feature", "settings": { "text": "Pełny blackout, bez prześwitów" } },
+        { "type": "feature", "settings": { "text": "Miękki regulowany rzep zamiast gumki" } },
+        { "type": "feature", "settings": { "text": "Lekka, nie uciska i nie zsuwa się w nocy" } },
+        { "type": "trust", "settings": { "icon_type": "shield", "text": "Bezpieczna płatność za pomocą BLIK" } },
+        { "type": "trust", "settings": { "icon_type": "return", "text": "30-nocna gwarancja zwrotu pieniędzy" } },
+        { "type": "trust", "settings": { "icon_type": "truck",  "text": "Dostawa kurierem InPost w 1–2 dni robocze" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
