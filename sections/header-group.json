@@ -93,6 +93,7 @@
       "type": "lv3-announcement-timer",
       "name": "Announcement + Timer",
       "settings": {
+        "sticky": false,
         "text": "-30% na pierwszą maskę, dodatkowe -50% na drugą",
         "label": "Kończy się za:",
         "countdown_days": 2,
