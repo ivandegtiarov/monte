@@ -34,16 +34,6 @@
     display: block;
   }
 
-  /* Mobile image gradients: fade from bg at top and bottom */
-  #lv3-cta-{{ section.id }} .lv3cta__image-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(180deg, {{ s.bg_color }} 0% 32%, transparent 50%),
-      linear-gradient(0deg,   {{ s.bg_color }} 0%, transparent 17%);
-    pointer-events: none;
-  }
 
   /* ---------- Content (mobile — centered) ---------- */
   #lv3-cta-{{ section.id }} .lv3cta__content {
@@ -235,14 +225,6 @@
       min-height: 500px;
     }
 
-    /* Desktop image gradients: right edge + top + bottom */
-    #lv3-cta-{{ section.id }} .lv3cta__image-wrap::after {
-      background:
-        linear-gradient(270deg, {{ s.bg_color }} 0%, transparent 15%),
-        linear-gradient(180deg, {{ s.bg_color }} 0% 32%, transparent 50%),
-        linear-gradient(0deg,   {{ s.bg_color }} 0%, transparent 17%);
-    }
-
     #lv3-cta-{{ section.id }} .lv3cta__content {
       flex: 1;
       min-width: 0;
@@ -275,17 +257,32 @@
   {% if s.section_id != blank %}data-anchor="{{ s.section_id | handleize }}"{% endif %}
 >
 
-  {%- if s.image != blank -%}
+  {%- assign img_desktop = s.image_desktop | default: s.image_mobile -%}
+  {%- assign img_mobile  = s.image_mobile  | default: s.image_desktop -%}
+  {%- if img_desktop != blank or img_mobile != blank -%}
     <div class="lv3cta__image-wrap">
-      {{
-        s.image
-        | image_url: width: 1400
-        | image_tag:
-          class: 'lv3cta__image',
-          alt: s.image_alt,
-          loading: 'lazy',
-          widths: '400, 700, 1000, 1400'
-      }}
+      <picture>
+        {%- if img_desktop != blank -%}
+          <source
+            media="(min-width: 768px)"
+            srcset="
+              {{ img_desktop | image_url: width: 700  }} 700w,
+              {{ img_desktop | image_url: width: 1000 }} 1000w,
+              {{ img_desktop | image_url: width: 1400 }} 1400w
+            "
+            sizes="50vw"
+          >
+        {%- endif -%}
+        {{
+          img_mobile
+          | image_url: width: 800
+          | image_tag:
+            class: 'lv3cta__image',
+            alt: s.image_alt,
+            loading: 'lazy',
+            widths: '400, 600, 800'
+        }}
+      </picture>
     </div>
   {%- endif -%}
 
@@ -413,8 +410,14 @@
     },
     {
       "type": "image_picker",
-      "id": "image",
-      "label": "Image"
+      "id": "image_desktop",
+      "label": "Image — desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image — mobile",
+      "info": "Shown on screens narrower than 768 px. Falls back to the desktop image if left blank."
     },
     {
       "type": "text",
