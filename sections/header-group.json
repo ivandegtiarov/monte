@@ -96,7 +96,8 @@
         "sticky": false,
         "text": "-30% na pierwszą maskę, dodatkowe -50% na drugą",
         "label": "Kończy się za:",
-        "countdown_days": 2,
+        "countdown_date": "2026-07-28",
+        "countdown_time": "23:59",
         "bg_color": "#232e71",
         "text_color": "#fdfbf9"
       }
