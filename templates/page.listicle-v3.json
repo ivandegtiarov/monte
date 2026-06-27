@@ -350,7 +350,7 @@
       "name": "LV3 CTA",
       "settings": {
         "tagline": "Tylko ten weekend 27 - 28 czerwca",
-        "title": "<p>-30% na pierwszą maskę, <span style=\"text-decoration:underline\">dodatkowe -50% na drugą</span></p>",
+        "title": "<p>-30% na pierwszą maskę,<br/><span style=\"text-decoration:underline\">dodatkowe -50% na drugą</span></p>",
         "image_desktop": "shopify://shop_images/Desktop_Listicle_Image.jpg",
         "image_mobile": "shopify://shop_images/Mobile_Listicle_Image.jpg",
         "image_alt": "",
