@@ -139,20 +139,20 @@
 <script>
 (function () {
   var SECTION_ID  = {{ section.id | json }};
-  var DAYS        = {{ s.countdown_days | default: 2 }};
+  var TARGET_DATE = {{ s.countdown_date | default: '' | json }};
+  var TARGET_TIME = {{ s.countdown_time | default: '23:59' | json }};
 
-  // Hours digit count fixed at start so bar width never changes mid-countdown
-  // e.g. 2 days = 48h → 2 digits always; 5 days = 120h → 3 digits always
-  var HOURS_LEN   = Math.max(2, String(DAYS * 24).length);
+  if (!TARGET_DATE) return;
 
-  // Including DAYS in the key means changing the setting resets the countdown
-  var STORAGE_KEY = 'anntimer_end_' + SECTION_ID + '_d' + DAYS;
+  // Parse as local browser time: "YYYY-MM-DDTHH:MM:00"
+  var endTime = new Date(TARGET_DATE + 'T' + TARGET_TIME + ':00').getTime();
 
-  var endTime = parseInt(localStorage.getItem(STORAGE_KEY), 10);
-  if (!endTime || endTime <= Date.now()) {
-    endTime = Date.now() + DAYS * 24 * 60 * 60 * 1000;
-    localStorage.setItem(STORAGE_KEY, String(endTime));
-  }
+  if (isNaN(endTime)) return;
+
+  // Fix digit count for hours at page load so bar width never shifts mid-countdown
+  var initialRemaining = Math.max(0, endTime - Date.now());
+  var initialHours     = Math.floor(initialRemaining / 3600000);
+  var HOURS_LEN        = Math.max(2, String(initialHours).length);
 
   // Two small dots as SVG separator between time groups
   var DOTS_SVG =
@@ -228,14 +228,18 @@
       "default": "Kończy się za:"
     },
     {
-      "type": "range",
-      "id": "countdown_days",
-      "label": "Countdown duration",
-      "info": "Counts down from the visitor's first visit. Stored in their browser. Changing this value resets the countdown.",
-      "min": 1,
-      "max": 30,
-      "step": 1,
-      "default": 2
+      "type": "text",
+      "id": "countdown_date",
+      "label": "Countdown end date",
+      "info": "Format: YYYY-MM-DD (e.g. 2026-07-31)",
+      "default": "2026-07-31"
+    },
+    {
+      "type": "text",
+      "id": "countdown_time",
+      "label": "Countdown end time",
+      "info": "Format: HH:MM — uses visitor's local timezone (e.g. 23:59)",
+      "default": "23:59"
     },
     {
       "type": "header",
@@ -260,7 +264,8 @@
       "settings": {
         "text": "-30% na pierwszą maskę, dodatkowe -50% na drugą",
         "label": "Kończy się za:",
-        "countdown_days": 2
+        "countdown_date": "2026-07-31",
+        "countdown_time": "23:59"
       }
     }
   ]
