@@ -49,7 +49,6 @@
         "message_RViAXw",
         "message"
       ],
-      "disabled": true,
       "settings": {
         "enable_sticky": false,
         "show_on_homepage_only": false,
@@ -91,6 +90,7 @@
     },
     "lv3_announcement_timer_aJt6UP": {
       "type": "lv3-announcement-timer",
+      "disabled": true,
       "name": "Announcement + Timer",
       "settings": {
         "sticky": false,
