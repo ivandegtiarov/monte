@@ -29,6 +29,7 @@
     },
     "lv3_announcement_timer_7e8wcm": {
       "type": "lv3-announcement-timer",
+      "disabled": true,
       "name": "Announcement + Timer",
       "settings": {
         "sticky": false,
