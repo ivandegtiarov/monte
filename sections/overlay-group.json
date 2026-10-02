@@ -55,21 +55,12 @@
         "search_menu": "",
         "search_menu_show_title": true
       }
-    },
-    "listicle_sticky_cta_tN4tWW": {
-      "type": "listicle-sticky-cta",
-      "name": "Listicle – Sticky CTA",
-      "settings": {
-        "button_label": "Sprawdź dostępność",
-        "button_url": "shopify://products/classic-black-silk-sleep-mask"
-      }
     }
   },
   "order": [
     "newsletter-popup",
     "privacy-banner",
     "cart-drawer",
-    "search-drawer",
-    "listicle_sticky_cta_tN4tWW"
+    "search-drawer"
   ]
 }

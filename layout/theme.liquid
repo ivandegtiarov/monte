@@ -72,6 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {{ content_for_header }}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+    {%- if template.suffix == 'listicle-v3' -%}
+      <style>shopify-chat, #shopify-inbox-chat, #shopify-chat { display: none !important; }</style>
+    {%- endif -%}
     <script src="https://t.contentsquare.net/uxa/683a72bf5a2da.js"></script>
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){

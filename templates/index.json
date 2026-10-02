@@ -54,7 +54,6 @@
     },
     "section-5": {
       "type": "featured-collection",
-      "disabled": true,
       "settings": {
         "collection": "",
         "products": [
@@ -81,58 +80,6 @@
         "heading_gradient": "",
         "product_card_background": "",
         "product_card_text_color": "#182153"
-      }
-    },
-    "about_products_A9dfTP": {
-      "type": "about-products",
-      "blocks": {
-        "product_card_eeYgpe": {
-          "type": "product_card",
-          "settings": {
-            "product": "champagne-gold-silk-sleep-mask",
-            "custom_title": "Champagne Gold",
-            "tagline": "100% Jedwab morwowy 22 momme"
-          }
-        },
-        "product_card_VwARjH": {
-          "type": "product_card",
-          "settings": {
-            "product": "classic-black-silk-sleep-mask",
-            "custom_title": "Classic Black",
-            "tagline": "100% Jedwab morwowy 22 momme"
-          }
-        },
-        "product_card_fyygRD": {
-          "type": "product_card",
-          "settings": {
-            "product": "midnight-blue-silk-sleep-mask",
-            "custom_title": "Midnight Blue",
-            "tagline": "100% Jedwab morwowy 22 momme"
-          }
-        },
-        "product_card_QJnp4Y": {
-          "type": "product_card",
-          "settings": {
-            "product": "rose-noir-silk-sleep-mask",
-            "custom_title": "Rose Noir",
-            "tagline": "100% Jedwab morwowy 22 momme"
-          }
-        }
-      },
-      "block_order": [
-        "product_card_eeYgpe",
-        "product_card_VwARjH",
-        "product_card_fyygRD",
-        "product_card_QJnp4Y"
-      ],
-      "settings": {
-        "title": "Twoja pierwsza noc z Monté",
-        "subtitle": "Wybierz kolor i przekonaj się, jak wiele może zmienić jedna dobra noc.",
-        "header_alignment": "left",
-        "padding_top": 64,
-        "padding_bottom": 40,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32
       }
     },
     "section-6": {
@@ -282,7 +229,7 @@
         "feature_item_bRAbUt": {
           "type": "feature_item",
           "settings": {
-            "text": "Zero zalamów na skórze po przebudzeniu"
+            "text": "Zero załamów na skórze po przebudzeniu"
           }
         }
       },
@@ -295,7 +242,7 @@
         "image": "shopify://shop_images/Hand_and_Mask.png",
         "tagline": "BEAUTY SLEEP",
         "heading": "Twoja skóra pracuje w nocy. Jedwab jej nie przeszkadza.",
-        "body": "Wieczorna pielęgnacja ma sens tylko wtedy, kiedy kosmetyki zostają na skórze, a nie na poduszce czy masce. Jedwab morwowy 22 momme nie wchłania kremów, nie trze o skórę i nie zostawia zalamów rano. Budzisz się tak, jak powinnaś.",
+        "body": "Wieczorna pielęgnacja ma sens tylko wtedy, kiedy kosmetyki zostają na skórze, a nie na poduszce czy masce. Jedwab morwowy 22 momme nie wchłania kremów, nie trze o skórę i nie zostawia załamów rano. Budzisz się tak, jak powinnaś.",
         "footnote": "",
         "background_color": "#fdfbf9",
         "heading_color": "#182153",
@@ -330,7 +277,7 @@
       ],
       "name": "Stats & Social Proof",
       "settings": {
-        "image": "shopify://shop_images/Image-1.jpg",
+        "image": "shopify://shop_images/onte-silk-sleep-mask-midnight-blue-lying-logo.jpg",
         "tagline": "GŁĘBOKI SEN",
         "heading": "Ciemność, której twój mózg  potrzebuje każdej nocy",
         "body": "Melatonina wydziela się tylko w ciemności. Każde źródło światła, poranne słońce, ekran telefonu, lampka w korytarzu, zakłóca ten proces i sprawia że śpisz płycej niż powinieneś. Monté eliminuje światło całkowicie, żebyś mogła spać tak jak twoje ciało naprawdę potrzebuje.",
@@ -379,7 +326,7 @@
             "rating": 5,
             "author": "Anna B.",
             "title": "Nareszcie wysypiam się porządnie",
-            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero zalamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
+            "content": "<p>Śpię z nią już trzeci tydzień. Mój krem zostaje na twarzy, zero załamów rano i w końcu nie budzi mnie poranne słońce przez zasłony.</p>"
           }
         },
         "testimonial_7XLJa3": {
@@ -468,7 +415,7 @@
             "rating": 5,
             "author": "Weronika D.",
             "title": "Pielęgnacja w nocy ma sens",
-            "content": "<p>Używam retinolu i peptydów na noc i zależało mi żeby maska tego nie wchłaniała. Jedwab morwowy naprawdę inaczej się zachowuje. Zero wchłoniętego kremu, zero zalamów.</p>"
+            "content": "<p>Używam retinolu i peptydów na noc i zależało mi żeby maska tego nie wchłaniała. Jedwab morwowy naprawdę inaczej się zachowuje. Zero wchłoniętego kremu, zero załamów.</p>"
           }
         },
         "testimonial_UHzVAA": {
@@ -721,7 +668,6 @@
   "order": [
     "section-1",
     "section-5",
-    "about_products_A9dfTP",
     "section-6",
     "section-15",
     "stats_social_proof_i9KQdr",
